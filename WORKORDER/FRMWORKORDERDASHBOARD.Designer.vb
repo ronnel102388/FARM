@@ -40,12 +40,9 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.ToolStripStatusLabel5 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.RbnCompany = New System.Windows.Forms.ToolStripStatusLabel()
         Me.FilterDGV = New System.Windows.Forms.ComboBox()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.grid1 = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnOpenNWO = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.RbnExeCode = New System.Windows.Forms.ToolStripStatusLabel()
@@ -75,13 +72,12 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.RbnBuildNo = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.statuscheck = New System.Windows.Forms.TextBox()
-        Me.TabPage1.SuspendLayout()
-        CType(Me.grid1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.TabControl1.SuspendLayout()
+        Me.grid1 = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.PanelHeader.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
+        CType(Me.grid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'ToolStripStatusLabel4
@@ -193,40 +189,6 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.FilterDGV.Size = New System.Drawing.Size(222, 24)
         Me.FilterDGV.TabIndex = 123185
         '
-        'TabPage1
-        '
-        Me.TabPage1.Controls.Add(Me.grid1)
-        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1434, 592)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "OverView"
-        Me.TabPage1.UseVisualStyleBackColor = True
-        '
-        'grid1
-        '
-        Me.grid1.AllowDragging = C1.Win.C1FlexGrid.AllowDraggingEnum.None
-        Me.grid1.AllowEditing = False
-        Me.grid1.AllowFiltering = True
-        Me.grid1.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.None
-        Me.grid1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.grid1.BackColor = System.Drawing.Color.White
-        Me.grid1.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle
-        Me.grid1.ColumnInfo = "0,0,0,0,0,105,Columns:"
-        Me.grid1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.grid1.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
-        Me.grid1.Location = New System.Drawing.Point(3, 3)
-        Me.grid1.Margin = New System.Windows.Forms.Padding(4)
-        Me.grid1.Name = "grid1"
-        Me.grid1.Rows.DefaultSize = 21
-        Me.grid1.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
-        Me.grid1.Size = New System.Drawing.Size(1428, 586)
-        Me.grid1.StyleInfo = resources.GetString("grid1.StyleInfo")
-        Me.grid1.TabIndex = 302
-        Me.grid1.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
@@ -254,15 +216,6 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.Label1.Size = New System.Drawing.Size(16, 17)
         Me.Label1.TabIndex = 123186
         Me.Label1.Text = "0"
-        '
-        'TabControl1
-        '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Location = New System.Drawing.Point(3, 141)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1442, 621)
-        Me.TabControl1.TabIndex = 123184
         '
         'ToolStripStatusLabel1
         '
@@ -556,26 +509,49 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.statuscheck.TabIndex = 123189
         Me.statuscheck.Visible = False
         '
+        'grid1
+        '
+        Me.grid1.AllowDragging = C1.Win.C1FlexGrid.AllowDraggingEnum.None
+        Me.grid1.AllowEditing = False
+        Me.grid1.AllowFiltering = True
+        Me.grid1.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.None
+        Me.grid1.BackColor = System.Drawing.Color.White
+        Me.grid1.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle
+        Me.grid1.ColumnInfo = "0,0,0,0,0,105,Columns:"
+        Me.grid1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.grid1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.grid1.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
+        Me.grid1.Location = New System.Drawing.Point(0, 140)
+        Me.grid1.Margin = New System.Windows.Forms.Padding(4)
+        Me.grid1.Name = "grid1"
+        Me.grid1.Rows.DefaultSize = 21
+        Me.grid1.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
+        Me.grid1.Size = New System.Drawing.Size(1439, 625)
+        Me.grid1.StyleInfo = resources.GetString("grid1.StyleInfo")
+        Me.grid1.TabIndex = 123191
+        Me.grid1.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
+        '
         'FRMWORKORDERDASHBOARD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1439, 789)
+        Me.Controls.Add(Me.grid1)
         Me.Controls.Add(Me.FilterDGV)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.btnOpenNWO)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.PanelHeader)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.statuscheck)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FRMWORKORDERDASHBOARD"
-        Me.Text = "FRMWORKORDERDASHBOARD"
-        Me.TabPage1.ResumeLayout(False)
-        CType(Me.grid1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.TabControl1.ResumeLayout(False)
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "NO WORK ORDER DASHBOARD"
         Me.PanelHeader.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
@@ -583,6 +559,7 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.MenuStrip1.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        CType(Me.grid1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -605,12 +582,9 @@ Partial Class FRMWORKORDERDASHBOARD
     Friend WithEvents ToolStripStatusLabel5 As ToolStripStatusLabel
     Friend WithEvents RbnCompany As ToolStripStatusLabel
     Friend WithEvents FilterDGV As ComboBox
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents grid1 As C1.Win.C1FlexGrid.C1FlexGrid
     Friend WithEvents Label2 As Label
     Friend WithEvents btnOpenNWO As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents TabControl1 As TabControl
     Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents Button1 As Button
     Friend WithEvents RbnExeCode As ToolStripStatusLabel
@@ -640,4 +614,5 @@ Partial Class FRMWORKORDERDASHBOARD
     Friend WithEvents RbnBuildNo As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
     Friend WithEvents statuscheck As TextBox
+    Friend WithEvents grid1 As C1.Win.C1FlexGrid.C1FlexGrid
 End Class

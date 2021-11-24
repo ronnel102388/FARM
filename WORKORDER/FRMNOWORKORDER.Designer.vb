@@ -655,8 +655,12 @@ Partial Class FRMNOWORKORDER
         Me.Controls.Add(Me.DFARID)
         Me.Controls.Add(Me.PanelHeader)
         Me.Controls.Add(Me.MAJORACTIVITY)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
+        Me.MinimizeBox = False
         Me.Name = "FRMNOWORKORDER"
-        Me.Text = "FRMNOWORKORDER"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "NO WORK ORDER"
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
         CType(Me.grid1, System.ComponentModel.ISupportInitialize).EndInit()
