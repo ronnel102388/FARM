@@ -135,5 +135,6 @@
         Else
             POPULATEFIELDDETAILS(xCBOSUBFIELDNO.Text)
         End If
+
     End Sub
 End Class
