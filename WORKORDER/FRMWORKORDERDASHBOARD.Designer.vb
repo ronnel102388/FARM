@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FRMWORKORDERDASHBOARD
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FRMWORKORDERDASHBOARD
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRMWORKORDERDASHBOARD))
         Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
@@ -210,10 +210,11 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.grid1.AllowEditing = False
         Me.grid1.AllowFiltering = True
         Me.grid1.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.None
+        Me.grid1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grid1.BackColor = System.Drawing.Color.White
         Me.grid1.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle
         Me.grid1.ColumnInfo = "0,0,0,0,0,105,Columns:"
-        Me.grid1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.grid1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.grid1.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
         Me.grid1.Location = New System.Drawing.Point(3, 3)
