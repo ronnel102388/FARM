@@ -18,6 +18,7 @@ Module DBConnect
     Public Comp, Username, CompName, MyDept As String
     Public EmpID As Integer
     Public DTPopulate As DataTable
+
     Function QueryCompanyCode(ByVal UserNeym As String) As String
 
         Dim CompanCode As String = ""
@@ -32,6 +33,7 @@ Module DBConnect
         Conn.Close()
         Return CompanCode
     End Function
+
     Public Sub ConnecttoDb()
         '  MsgBox(SConn)
         Conn = New SqlConnection(SConn)
