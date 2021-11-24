@@ -80,6 +80,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBConnect.vb" />
+    <Compile Include="FRMCHECKACTIVITYDATE.Designer.vb">
+      <DependentUpon>FRMCHECKACTIVITYDATE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRMCHECKACTIVITYDATE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMNOWORKORDER.Designer.vb">
+      <DependentUpon>FRMNOWORKORDER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRMNOWORKORDER.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMWORKORDERDASHBOARD.Designer.vb">
+      <DependentUpon>FRMWORKORDERDASHBOARD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRMWORKORDERDASHBOARD.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FRMWORKORDERS.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +123,15 @@
     <Compile Include="VBFUNCTIONS.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FRMCHECKACTIVITYDATE.resx">
+      <DependentUpon>FRMCHECKACTIVITYDATE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMNOWORKORDER.resx">
+      <DependentUpon>FRMNOWORKORDER.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMWORKORDERDASHBOARD.resx">
+      <DependentUpon>FRMWORKORDERDASHBOARD.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMWORKORDERS.resx">
       <DependentUpon>FRMWORKORDERS.vb</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +154,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bell.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

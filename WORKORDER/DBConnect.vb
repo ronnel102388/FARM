@@ -425,5 +425,39 @@ FROM T_LEDGERJOURNAL_LINES
 
         Return strValue
     End Function
+    '--putch
+    Function FindID(ByVal ToFind As String, ByVal Table As String, ByVal ColtoFind As String, ByVal ValToFind As String) As Integer
+        Dim sql As String = <s>
+                                SELECT <%= ToFind %> FROM <%= Table %> WHERE <%= ColtoFind %> = '<%= ValToFind %>' --AND ISACTIVE = 1
+                            </s>
+        ' MsgBox(sql)
+        ExeReader(sql)
+        Dim Find As Integer = 0
+        While dr.Read
+            Find = dr.Item(ToFind)
+        End While
+        dr.Close()
+        Conn.Close()
+
+        Return Find
+    End Function
+    '--putch
+    Function FindActivity(ByVal ToFind As String, ByVal ColtoFind As String, ByVal ValToFind As String) As String
+        Dim sql As String = <s>
+                                 
+                                SELECT <%= ToFind %>
+                                      FROM [vwAAA] WHERE <%= ColtoFind %>='<%= ValToFind %>'
+                            </s>
+        'MsgBox(sql)
+        ExeReader(sql)
+        Dim Find As String = ""
+        While dr.Read
+            Find = dr.Item(ToFind)
+        End While
+        dr.Close()
+        Conn.Close()
+
+        Return Find
+    End Function
 End Module
 
