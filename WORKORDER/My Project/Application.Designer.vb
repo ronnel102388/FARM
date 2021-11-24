@@ -32,7 +32,7 @@ Namespace My
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.WORKORDER.FRMWORKORDERDASHBOARD
+            Me.MainForm = Global.WORKORDER.FRMCHECKACTIVITYDATE
         End Sub
     End Class
 End Namespace
