@@ -43,7 +43,6 @@ Module DBConnect
             MsgBox("Not Connected: " & ex.Message, vbCritical)
         End Try
     End Sub
-
     Public Sub SelectQuery(ByVal query As String)
         ConnecttoDb()
         Conn.Open()
@@ -52,7 +51,6 @@ Module DBConnect
         da.Fill(ds, "table")
         Conn.Close()
     End Sub
-
     Public Sub ExeQuery(ByVal query As String)
         ConnecttoDb()
         Conn.Open()
@@ -61,82 +59,12 @@ Module DBConnect
         Conn.Close()
 
     End Sub
-
     Public Sub ExeReader(ByVal query As String)
         ConnecttoDb()
         Conn.Open()
         cmd = New SqlCommand(query, Conn)
         dr = cmd.ExecuteReader()
     End Sub
-    Public Function FindStatusID(StatusDescri As String) As Integer
-        Dim TransStatusID As Integer = 0
-        Dim query As String = "Exec IMS_FindTransStatusID " & StatusDescri
-        ConnecttoDb()
-        Conn.Open()
-        cmd = New SqlCommand(query, Conn)
-        dr = cmd.ExecuteReader()
-        While dr.Read
-            TransStatusID = dr.Item("TransStatusID")
-            Exit While
-        End While
-        dr.Close()
-        Conn.Close()
-        Return TransStatusID
-    End Function
-
-    Public Function FindMRTransStatus(MRHeaderID As Integer, isDescription As Integer) As String
-        Dim TransOutput As String = ""
-        Dim query As String = "Exec IMS_MR_FindMRTransStatus " & MRHeaderID
-        ConnecttoDb()
-        Conn.Open()
-        cmd = New SqlCommand(query, Conn)
-        dr = cmd.ExecuteReader()
-
-        While dr.Read
-            Dim Find As String = ""
-            If isDescription = 1 Then
-                Find = "TransDescription"
-            Else
-                Find = "TransStatusID"
-            End If
-            TransOutput = dr.Item(Find)
-            Exit While
-        End While
-        dr.Close()
-
-        Conn.Close()
-
-        Return TransOutput
-    End Function
-
-    Public Function POPULATEAX()
-        Dim isFROMAX As Integer = 0
-        Dim SQL As String = <s>
-        SELECT VALUE FROM M_GENERAL_SETUP WHERE DESCRIPTION = 'ISAX' AND COID = '<%= Comp %>'                        
-                            </s>
-        ExeReader(SQL)
-        While dr.Read
-            isFROMAX = Convert.ToInt32(dr.Item("value"))
-        End While
-        dr.Close()
-        Conn.Close()
-        Return isFROMAX
-    End Function
-
-    Public Function POPULATEIMMIS()
-        Dim isFROMIMMIS As Integer = 0
-        Dim SQL As String = <s>
-        SELECT VALUE FROM M_GENERAL_SETUP WHERE DESCRIPTION = 'ISIMMIS' AND COID = '<%= Comp %>'                        
-                            </s>
-        ExeReader(SQL)
-        While dr.Read
-            isFROMIMMIS = Convert.ToInt32(dr.Item("value"))
-        End While
-        dr.Close()
-        Conn.Close()
-        Return isFROMIMMIS
-    End Function
-
     Public Sub SaveAuditTrail(ByVal UserName As String, ByVal CompName As String,
                               ByVal IpAdd As String,
                               ByVal ConnName As String, ByVal FacCode As String,
@@ -174,7 +102,6 @@ Module DBConnect
 
         ExeQuery(InsertStr)
     End Sub
-
     Function GenerateSequence(ByVal Category As String) As String
         Dim NewPRID As String
         Dim str = <s>
@@ -215,23 +142,21 @@ Module DBConnect
         ExeQuery(UpdateStr)
 
     End Sub
-
-    Function FindID(ByVal Number As String, ByVal Table As String, ByVal ToFind As String) As Integer
-        Dim Sql As String = <s>
-        SELECT RECID FROM <%= Table %> WHERE <%= ToFind %> = '<%= Number %>' AND COID = '<%= Comp %>'                        
+    Function FindID(ByVal ToFind As String, ByVal Table As String, ByVal ColtoFind As String, ByVal ValToFind As String) As Integer
+        Dim sql As String = <s>
+                                SELECT <%= ToFind %> FROM <%= Table %> WHERE <%= ColtoFind %> = '<%= ValToFind %>' --AND ISACTIVE = 1
                             </s>
-
-        ExeReader(Sql)
-        Dim ReciD As Integer = 0
+        ' MsgBox(sql)
+        ExeReader(sql)
+        Dim Find As Integer = 0
         While dr.Read
-            ReciD = dr.Item("RECID")
+            Find = dr.Item(ToFind)
         End While
         dr.Close()
         Conn.Close()
 
-        Return ReciD
+        Return Find
     End Function
-
     Function CountExist(ByVal Number As String, ByVal Table As String, ByVal ToFind As String, ByVal isUpdate As Boolean, ByVal CurID As Integer) As Integer
         Dim Sql As String = <s>
             SELECT COUNT(RECID) as Counter FROM <%= Table %>
@@ -252,14 +177,6 @@ Module DBConnect
 
         Return Count
     End Function
-
-    Public Sub ClosingForm()
-        If MsgBox("Are You Sure You Want to Close this Application", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Close Application") = MsgBoxResult.Yes Then
-            'ClearAll()
-            Application.Exit()
-        End If
-    End Sub
-
     Public Sub FillCombo(ByVal Column As String, Combo As ComboBox, ByVal Table As String, ByVal Others As String)
         Dim sql As String = <s>
         SELECT <%= Column %> FROM <%= Table %> WHERE ISACTIVE = 1 AND COID = '<%= Comp %>'                        
@@ -275,122 +192,6 @@ Module DBConnect
         dr.Close()
         Conn.Close()
     End Sub
-
-    Sub UpdateJournalAmt(ByVal Debit As Double, ByVal Credit As Double, ByVal JournalNum As String)
-        Dim sql As String = <s>
-        UPDATE T_LEDGERJOURNAL_HEADER SET TOTALDEBIT = <%= Debit %>, TOTALCREDIT = <%= Credit %> WHERE
-        JOURNALNUM = '<%= JournalNum %>' AND ISACTIVE = 1 AND COID = '<%= Comp %>'
-                            </s>
-        ExeQuery(sql)
-    End Sub
-
-    Public Sub UpdateTotDebCred(ByVal JournalNum As String)
-
-        Dim TotCred As Double = 0
-        Dim TotDeb As Double = 0
-
-        Dim sql As String = <s>
-                                SELECT
-sum(case
-when
-OFFSETACCOUNT != ''
-then
-
-	case
-		when DEBIT = 0  then CREDIT
-	else
-		DEBIT
-	end
-	
-else
-DEBIT
-end) as TOTDEBIT,
-
-sum(case
-when
-OFFSETACCOUNT != ''
-then
-	case
-		when CREDIT = 0 then DEBIT
-	else
-		CREDIT
-	end
-else
-CREDIT
-end) as TOTCREDIT
-FROM T_LEDGERJOURNAL_LINES
-        WHERE JOURNALNUM = '<%= JournalNum %>' AND COID = '<%= Comp %>' AND ISACTIVE = 1                        
-                            </s>
-
-        ExeReader(sql)
-
-        While dr.Read
-            TotDeb = Val(dr.Item("TOTDEBIT").ToString)
-            TotCred = Val(dr.Item("TOTCREDIT").ToString)
-        End While
-        dr.Close()
-        Conn.Close()
-
-        sql = <s>
-         UPDATE T_LEDGERJOURNAL_HEADER SET TOTALDEBIT = <%= TotDeb %>, TOTALCREDIT = <%= TotCred %> 
-         WHERE JOURNALNUM = '<%= JournalNum %>' AND COID = '<%= Comp %>' AND ISACTIVE = 1
-              </s>
-
-        ExeQuery(sql)
-
-
-
-    End Sub
-
-    Public Sub PopulateApproval(ByVal MODULECODE As String, ByVal DROP As ContextMenuStrip)
-        Dim sql As String = <s>
-        SELECT * FROM M_GLOB_PROCESS_FLOW WHERE MODULECODE = '<%= MODULECODE %>' AND COID = '<%= Comp %>'                       
-                            </s>
-        ExeReader(sql)
-
-        While dr.Read
-            If dr.Item("LEVEL1") = True Then
-                DROP.Items(0).Visible = True
-                DROP.Items(0).Text = dr.Item("L1TXT")
-                If dr.Item("LEVEL2") = True Then
-                    DROP.Items(1).Visible = True
-                    DROP.Items(1).Text = dr.Item("L2TXT")
-                    If dr.Item("LEVEL3") = True Then
-                        DROP.Items(2).Visible = True
-                        DROP.Items(2).Text = dr.Item("L3TXT")
-                        If dr.Item("LEVEL4") = True Then
-                            DROP.Items(3).Visible = True
-                            DROP.Items(3).Text = dr.Item("L4TXT")
-                            If dr.Item("LEVEL5") = True Then
-                                DROP.Items(4).Visible = True
-                                DROP.Items(4).Text = dr.Item("L5TXT")
-                            End If
-                        End If
-                    End If
-                End If
-            End If
-        End While
-        dr.Close()
-        Conn.Close()
-    End Sub
-
-    Sub PosttoLedgerTrans(ByVal Journal As String, ByVal User As String)
-        Dim sql As String = <s>
-        exec GL_POST_LINE_TO_LEDGERTRANS '<%= Journal %>','<%= User %>','<%= Comp %>'                        
-                            </s>
-        ExeQuery(sql)
-    End Sub
-
-    Function VALIDATENEWENTRY(ByVal GRID As C1.Win.C1FlexGrid.C1FlexGrid) As String
-        For i = 1 To GRID.Rows.Count - 1
-            If GRID.Item(i, "RECID").ToString = "" Then
-                Return "Valid"
-            End If
-        Next
-        Return "No new entries!"
-
-    End Function
-
     Function ValidateSeries(ByVal Series As String)
         Dim sql As String = <s>
         select NumberSequenceCode from M_GLOB_NUMSEQUENCE where NumberSequenceCode = '<%= Series %>'
@@ -406,7 +207,6 @@ FROM T_LEDGERJOURNAL_LINES
 
         Return Code
     End Function
-
     Function GetSetupValue(ByVal Descri As String) As String
         Dim sql As String = <s>
         SELECT VALUE FROM M_GENERAL_SETUP WHERE DESCRIPTION = '<%= Descri %>' AND COID = '<%= Comp %>'
@@ -423,22 +223,7 @@ FROM T_LEDGERJOURNAL_LINES
 
         Return strValue
     End Function
-    '--putch
-    Function FindID(ByVal ToFind As String, ByVal Table As String, ByVal ColtoFind As String, ByVal ValToFind As String) As Integer
-        Dim sql As String = <s>
-                                SELECT <%= ToFind %> FROM <%= Table %> WHERE <%= ColtoFind %> = '<%= ValToFind %>' --AND ISACTIVE = 1
-                            </s>
-        ' MsgBox(sql)
-        ExeReader(sql)
-        Dim Find As Integer = 0
-        While dr.Read
-            Find = dr.Item(ToFind)
-        End While
-        dr.Close()
-        Conn.Close()
 
-        Return Find
-    End Function
     '--putch
     Function FindActivity(ByVal ToFind As String, ByVal ColtoFind As String, ByVal ValToFind As String) As String
         Dim sql As String = <s>
@@ -457,5 +242,21 @@ FROM T_LEDGERJOURNAL_LINES
 
         Return Find
     End Function
+    Function FindID(ByVal Number As String, ByVal Table As String, ByVal ToFind As String) As Integer
+        Dim Sql As String = <s>
+        SELECT RECID FROM <%= Table %> WHERE <%= ToFind %> = '<%= Number %>' AND COID = '<%= Comp %>'                        
+                            </s>
+
+        ExeReader(Sql)
+        Dim ReciD As Integer = 0
+        While dr.Read
+            ReciD = dr.Item("RECID")
+        End While
+        dr.Close()
+        Conn.Close()
+
+        Return ReciD
+    End Function
+    '--putch
 End Module
 

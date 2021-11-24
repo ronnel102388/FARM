@@ -117,25 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="RbnBuildNo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAUpJREFUOE/llLFKA0EQhg8L9RHEQhGtxNLC3G44EIszu7FLo09gZ2NhZWdKX8BS
-        a+1FLHwAGysbUbjbHIKPYJxv3Q1CEsKJ2OSHn5mdnfn3dna4ZMpRWKV7Ru/AqpUtYF+ybN6ZxgYsd9PN
-        qr21Rm6M+cJxcEa/Oqv7sGfVPlYOWSqNvoKy/yC2S26M+cJxQFCSLly7uY3QXwlWInQeBctWY9mLWX35
-        K0Guiv/UWZ91Vn2URt18H9I89oJW3xcmPQiHPIo99MWj4JPkumHpH8kZdS3x7nOez/HlpVW3WImf4FMT
-        0v8BXJm+1aLUhPJhsCk9OouzGCl9vINDccmdKBgf5Sfo06he+VmtI9g/TWYKo454GIhPLGzXF3zfSxdF
-        6E2u9gnxiYXt+oKgytNVhCB+CHtMFGTu+CmE5QAymyswLAcgl5qwnE4kyRd3Whiou+LQWQAAAABJRU5E
-        rkJggg==
-</value>
-  </data>
-  <metadata name="ToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>151, 19</value>
-  </metadata>
   <data name="BTNNOTIF.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
@@ -281,38 +263,30 @@
         gg==
 </value>
   </data>
-  <data name="BTNDASHBOARD.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5QsNBB8mF7nq4gAAAHRJREFU
-        SEvtlEEKgDAMBPMX23948P8f8hB3I0gpkZhL8ZCBhZRO2VMqRFU7cgTpJgPO052X28fQkBOJoEM35bNg
-        t+M36Kb8KoiogpA1BZnF2ZCUP26zt+5jmsmA83Tn5fH5oP6iN2oPQqogZE1BZnH+9heJXAnfPZ3CLoUz
-        AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="BTNWORKORDER.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
-        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5QsNBCUg23ORrgAAAPBJREFU
-        SEvllbEOwVAUhhurB7B0w2IRMTAyMVpMYjB4A2Jn4A0aM4PYxMMQiYmXkKC+tldSjbbOZcGXfENPT/6T
-        nHuTa3w/tm1ncYSTgGOsqjZ9CNliGCc0VaseXk4kFdWXxAY2BRYkA7rep4ijZEAC81gUmJIMMLGPgwhr
-        Tu8DFOO4D3B2enYr4azcUD8UD96/p1wwo1r1IKCEM1wGXGBLtf0zrKGMc7WW4Iraqk0fQqIO+YpvH3Ic
-        92uaQwunAnuSAXXc4V7g+uUB2qiQKCQr6rihfijGIVmR5Yb6objBMD7y4KRxiM+ezPf2/wMYxg3fUeRc
-        BFRV/gAAAABJRU5ErkJggg==
-</value>
-  </data>
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>261, 19</value>
+    <value>17, 17</value>
   </metadata>
-  <data name="C1FlexGrid2.StyleInfo" xml:space="preserve">
+  <data name="dgWOres.StyleInfo" xml:space="preserve">
     <value>Normal{BackColor:White;Margins:1, 1, 1, 1;Border:Flat,1,LightGray,Horizontal;}	Alternate{BackColor:WhiteSmoke;}	Fixed{BackColor:Control;ForeColor:ControlText;Margins:1, 1, 1, 1;Border:Flat,1,ControlDark,Both;BackgroundImageLayout:Hide;}	Highlight{Font:Microsoft Sans Serif, 8.25pt;BackColor:LightBlue;ForeColor:Black;Border:Double,1,DarkTurquoise,Horizontal;}	Focus{Border:None,1,Black,Both;}	Editor{BackColor:White;Border:None,1,Black,Both;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	FrozenAlternate{}	NewRow{ForeColor:GrayText;}	EmptyArea{BackColor:White;Border:Flat,0,ControlDarkDark,Both;}	SelectedColumnHeader{}	SelectedRowHeader{}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDark;ForeColor:Black;}	Subtotal2{BackColor:Gainsboro;ForeColor:Black;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	FilterEditor{}	FirstCustomStyle{}	</value>
   </data>
-  <data name="DGWORKORDER.StyleInfo" xml:space="preserve">
-    <value>Normal{BackColor:White;Margins:1, 1, 1, 1;Border:Flat,1,LightGray,Horizontal;}	Alternate{BackColor:WhiteSmoke;}	Fixed{BackColor:Control;ForeColor:ControlText;Margins:1, 1, 1, 1;Border:Flat,1,ControlDark,Both;BackgroundImageLayout:Hide;}	Highlight{Font:Microsoft Sans Serif, 8.25pt;BackColor:LightBlue;ForeColor:Black;Border:Double,1,DarkTurquoise,Horizontal;}	Focus{Border:None,1,Black,Both;}	Editor{BackColor:White;Border:None,1,Black,Both;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	FrozenAlternate{}	NewRow{ForeColor:GrayText;}	EmptyArea{BackColor:White;Border:Flat,0,ControlDarkDark,Both;}	SelectedColumnHeader{}	SelectedRowHeader{}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDark;ForeColor:Black;}	Subtotal2{BackColor:Gainsboro;ForeColor:Black;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	FilterEditor{}	FirstCustomStyle{}	</value>
+  <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>155, 17</value>
+  </metadata>
+  <data name="RbnBuildNo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vAAADrwBlbxySQAAAUpJREFUOE/llLFKA0EQhg8L9RHEQhGtxNLC3G44EIszu7FLo09gZ2NhZWdKX8BS
+        a+1FLHwAGysbUbjbHIKPYJxv3Q1CEsKJ2OSHn5mdnfn3dna4ZMpRWKV7Ru/AqpUtYF+ybN6ZxgYsd9PN
+        qr21Rm6M+cJxcEa/Oqv7sGfVPlYOWSqNvoKy/yC2S26M+cJxQFCSLly7uY3QXwlWInQeBctWY9mLWX35
+        K0Guiv/UWZ91Vn2URt18H9I89oJW3xcmPQiHPIo99MWj4JPkumHpH8kZdS3x7nOez/HlpVW3WImf4FMT
+        0v8BXJm+1aLUhPJhsCk9OouzGCl9vINDccmdKBgf5Sfo06he+VmtI9g/TWYKo454GIhPLGzXF3zfSxdF
+        6E2u9gnxiYXt+oKgytNVhCB+CHtMFGTu+CmE5QAymyswLAcgl5qwnE4kyRd3Whiou+LQWQAAAABJRU5E
+        rkJggg==
+</value>
   </data>
-  <data name="C1FlexGrid1.StyleInfo" xml:space="preserve">
-    <value>Normal{BackColor:White;Margins:1, 1, 1, 1;Border:Flat,1,LightGray,Horizontal;}	Alternate{BackColor:WhiteSmoke;}	Fixed{BackColor:Control;ForeColor:ControlText;Margins:1, 1, 1, 1;Border:Flat,1,ControlDark,Both;BackgroundImageLayout:Hide;}	Highlight{Font:Microsoft Sans Serif, 8.25pt;BackColor:LightBlue;ForeColor:Black;Border:Double,1,DarkTurquoise,Horizontal;}	Focus{Border:None,1,Black,Both;}	Editor{BackColor:White;Border:None,1,Black,Both;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	FrozenAlternate{}	NewRow{ForeColor:GrayText;}	EmptyArea{BackColor:White;Border:Flat,0,ControlDarkDark,Both;}	SelectedColumnHeader{}	SelectedRowHeader{}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDark;ForeColor:Black;}	Subtotal2{BackColor:Gainsboro;ForeColor:Black;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	FilterEditor{}	FirstCustomStyle{}	</value>
-  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>26</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAEBAAAAEAIABoBAAAZgAAABgYAAABACAAiAkAAM4EAAAgIAAAAQAgAKgQAABWDgAAMDAAAAEA

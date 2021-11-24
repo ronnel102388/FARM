@@ -180,7 +180,7 @@ Partial Class FRMWORKORDERS
         Me.StatusStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(19, 19)
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RbnBuildNo, Me.ToolStripStatusLabel7, Me.RbnExeCode, Me.ToolStripStatusLabel11, Me.RbnDev, Me.ToolStripStatusLabel13, Me.RbnStatus, Me.ToolStripStatusLabel15, Me.RbnUser, Me.ToolStripStatusLabel16, Me.RbnConnName, Me.ToolStripStatusLabel17, Me.RbnCN, Me.ToolStripStatusLabel18, Me.RbnIP, Me.ToolStripStatusLabel19, Me.RbnCompany})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 1033)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 1031)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
         Me.StatusStrip1.Size = New System.Drawing.Size(1566, 24)
@@ -326,7 +326,7 @@ Partial Class FRMWORKORDERS
         Me.XSEARCH.Font = New System.Drawing.Font("Century Gothic", 11.89565!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XSEARCH.Location = New System.Drawing.Point(6, 10)
         Me.XSEARCH.Name = "XSEARCH"
-        Me.XSEARCH.Size = New System.Drawing.Size(317, 24)
+        Me.XSEARCH.Size = New System.Drawing.Size(317, 25)
         Me.XSEARCH.TabIndex = 123147
         Me.ToolTip1.SetToolTip(Me.XSEARCH, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
         '
@@ -502,40 +502,40 @@ Partial Class FRMWORKORDERS
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
         Me.EditToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'SaveToolStripMenuItem
         '
         Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
         Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.SaveToolStripMenuItem.Text = "Save"
         '
         'CancelToolStripMenuItem
         '
         Me.CancelToolStripMenuItem.Name = "CancelToolStripMenuItem"
-        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.CancelToolStripMenuItem.Text = "Cancel"
         '
         'PrintToolStripMenuItem
         '
         Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
         Me.PrintToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.PrintToolStripMenuItem.Text = "Print"
         '
         'ExportToExcelToolStripMenuItem
         '
         Me.ExportToExcelToolStripMenuItem.Name = "ExportToExcelToolStripMenuItem"
         Me.ExportToExcelToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.ExportToExcelToolStripMenuItem.Text = "Export to Excel"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'PANELHEADER
@@ -587,7 +587,7 @@ Partial Class FRMWORKORDERS
         Me.MAINTAB.Location = New System.Drawing.Point(0, 174)
         Me.MAINTAB.Name = "MAINTAB"
         Me.MAINTAB.SelectedIndex = 0
-        Me.MAINTAB.Size = New System.Drawing.Size(1566, 859)
+        Me.MAINTAB.Size = New System.Drawing.Size(1566, 857)
         Me.MAINTAB.TabIndex = 251
         '
         'Dashboard
@@ -595,7 +595,7 @@ Partial Class FRMWORKORDERS
         Me.Dashboard.Location = New System.Drawing.Point(4, 25)
         Me.Dashboard.Name = "Dashboard"
         Me.Dashboard.Padding = New System.Windows.Forms.Padding(3)
-        Me.Dashboard.Size = New System.Drawing.Size(1558, 830)
+        Me.Dashboard.Size = New System.Drawing.Size(1558, 828)
         Me.Dashboard.TabIndex = 0
         Me.Dashboard.Text = "Dashboard"
         Me.Dashboard.UseVisualStyleBackColor = True
@@ -640,7 +640,7 @@ Partial Class FRMWORKORDERS
         Me.Details.Controls.Add(Me.Panel5)
         Me.Details.Location = New System.Drawing.Point(4, 25)
         Me.Details.Name = "Details"
-        Me.Details.Size = New System.Drawing.Size(1558, 830)
+        Me.Details.Size = New System.Drawing.Size(1558, 828)
         Me.Details.TabIndex = 2
         Me.Details.Text = "Details"
         Me.Details.UseVisualStyleBackColor = True
@@ -660,7 +660,7 @@ Partial Class FRMWORKORDERS
         Me.C1FlexGrid2.Name = "C1FlexGrid2"
         Me.C1FlexGrid2.Rows.DefaultSize = 21
         Me.C1FlexGrid2.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
-        Me.C1FlexGrid2.Size = New System.Drawing.Size(1054, 398)
+        Me.C1FlexGrid2.Size = New System.Drawing.Size(1054, 396)
         Me.C1FlexGrid2.StyleInfo = resources.GetString("C1FlexGrid2.StyleInfo")
         Me.C1FlexGrid2.TabIndex = 304
         Me.C1FlexGrid2.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
@@ -1001,16 +1001,18 @@ Partial Class FRMWORKORDERS
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(504, 830)
+        Me.Panel5.Size = New System.Drawing.Size(504, 828)
         Me.Panel5.TabIndex = 1
         '
         'TextBox34
         '
         Me.TextBox34.BackColor = System.Drawing.Color.WhiteSmoke
         Me.TextBox34.Location = New System.Drawing.Point(198, 692)
+        Me.TextBox34.Multiline = True
         Me.TextBox34.Name = "TextBox34"
         Me.TextBox34.ReadOnly = True
-        Me.TextBox34.Size = New System.Drawing.Size(224, 22)
+        Me.TextBox34.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
+        Me.TextBox34.Size = New System.Drawing.Size(274, 57)
         Me.TextBox34.TabIndex = 91
         '
         'Label36
@@ -1494,7 +1496,7 @@ Partial Class FRMWORKORDERS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1566, 1057)
+        Me.ClientSize = New System.Drawing.Size(1566, 1055)
         Me.Controls.Add(Me.MAINTAB)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PANELHEADER)
