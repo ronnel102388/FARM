@@ -129,6 +129,7 @@
         drl_FillCombo("SUBFIELDNO", xCBOSUBFIELDNO, "T_SUBFIELDNO", " CONTRACTEDFIELDID IN (SELECT CONTRACTEDFIELDID FROM T_CONTRACTFIELDINFORMATION WHERE ISACTIVE = 1)")
     End Sub
 
+
     Private Sub XCBOSUBFIELDNO_SelectedIndexChanged(sender As Object, e As EventArgs) Handles xCBOSUBFIELDNO.SelectedIndexChanged
         If xCBOSUBFIELDNO.Text = "" Or xCBOSUBFIELDNO.SelectedIndex = -1 Then
             POPULATEFIELDDETAILS("")
