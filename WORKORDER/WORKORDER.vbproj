@@ -80,6 +80,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBConnect.vb" />
+    <Compile Include="FRMCHECKACTIVITYDATE.Designer.vb">
+      <DependentUpon>FRMCHECKACTIVITYDATE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRMCHECKACTIVITYDATE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMCREATIONWORKORDERS.Designer.vb">
+      <DependentUpon>FRMCREATIONWORKORDERS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRMCREATIONWORKORDERS.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FRMNOWORKORDER.Designer.vb">
       <DependentUpon>FRMNOWORKORDER.vb</DependentUpon>
     </Compile>
@@ -118,6 +130,12 @@
     <Compile Include="VBFUNCTIONS.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FRMCHECKACTIVITYDATE.resx">
+      <DependentUpon>FRMCHECKACTIVITYDATE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMCREATIONWORKORDERS.resx">
+      <DependentUpon>FRMCREATIONWORKORDERS.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMNOWORKORDER.resx">
       <DependentUpon>FRMNOWORKORDER.vb</DependentUpon>
     </EmbeddedResource>
