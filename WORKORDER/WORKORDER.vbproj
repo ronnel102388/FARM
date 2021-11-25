@@ -80,6 +80,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBConnect.vb" />
+    <Compile Include="FRMARCHIVE.Designer.vb">
+      <DependentUpon>FRMARCHIVE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRMARCHIVE.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FRMCHECKACTIVITYDATE.Designer.vb">
       <DependentUpon>FRMCHECKACTIVITYDATE.vb</DependentUpon>
     </Compile>
@@ -130,6 +136,9 @@
     <Compile Include="VBFUNCTIONS.vb" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FRMARCHIVE.resx">
+      <DependentUpon>FRMARCHIVE.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMCHECKACTIVITYDATE.resx">
       <DependentUpon>FRMCHECKACTIVITYDATE.vb</DependentUpon>
     </EmbeddedResource>

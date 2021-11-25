@@ -55,6 +55,7 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.xAREAOFACTIVITY = New System.Windows.Forms.NumericUpDown()
         Me.xDTPWOACTIVITYDATE = New System.Windows.Forms.DateTimePicker()
         Me.xCBOMINORACTIVITY = New System.Windows.Forms.ComboBox()
         Me.xCBOMAJORACTIVITY = New System.Windows.Forms.ComboBox()
@@ -69,6 +70,14 @@ Partial Class FRMCREATIONWORKORDERS
         Me.xWOCODE = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.xPLANTINGDATE = New System.Windows.Forms.TextBox()
+        Me.Label24 = New System.Windows.Forms.Label()
+        Me.xAGE = New System.Windows.Forms.TextBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.xCROPCLASS = New System.Windows.Forms.TextBox()
+        Me.Label23 = New System.Windows.Forms.Label()
+        Me.xCBOSUBFIELDNO = New System.Windows.Forms.ComboBox()
         Me.xCROPYEAR = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.xFARMASSISTANT = New System.Windows.Forms.TextBox()
@@ -103,13 +112,8 @@ Partial Class FRMCREATIONWORKORDERS
         Me.xLANDOWNER = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.xCBOSUBFIELDNO = New System.Windows.Forms.ComboBox()
-        Me.xCROPCLASS = New System.Windows.Forms.TextBox()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.xAREAOFACTIVITY = New System.Windows.Forms.NumericUpDown()
         Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.RbnBuildNo = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel7 = New System.Windows.Forms.ToolStripStatusLabel()
@@ -129,10 +133,6 @@ Partial Class FRMCREATIONWORKORDERS
         Me.ToolStripStatusLabel19 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.RbnCompany = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.xAGE = New System.Windows.Forms.TextBox()
-        Me.Label16 = New System.Windows.Forms.Label()
-        Me.xPLANTINGDATE = New System.Windows.Forms.TextBox()
-        Me.Label24 = New System.Windows.Forms.Label()
         Me.PANELHEADER.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -141,9 +141,9 @@ Partial Class FRMCREATIONWORKORDERS
         CType(Me.dgWOres, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        CType(Me.xAREAOFACTIVITY, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        CType(Me.xAREAOFACTIVITY, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -197,7 +197,7 @@ Partial Class FRMCREATIONWORKORDERS
         Me.XSEARCH.Font = New System.Drawing.Font("Century Gothic", 11.89565!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XSEARCH.Location = New System.Drawing.Point(6, 10)
         Me.XSEARCH.Name = "XSEARCH"
-        Me.XSEARCH.Size = New System.Drawing.Size(317, 25)
+        Me.XSEARCH.Size = New System.Drawing.Size(317, 24)
         Me.XSEARCH.TabIndex = 123147
         '
         'BTSEARCHLINE
@@ -340,40 +340,40 @@ Partial Class FRMCREATIONWORKORDERS
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
         Me.EditToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'SaveToolStripMenuItem
         '
         Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
         Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.SaveToolStripMenuItem.Text = "Save"
         '
         'CancelToolStripMenuItem
         '
         Me.CancelToolStripMenuItem.Name = "CancelToolStripMenuItem"
-        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.CancelToolStripMenuItem.Text = "Cancel"
         '
         'PrintToolStripMenuItem
         '
         Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
         Me.PrintToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.PrintToolStripMenuItem.Text = "Print"
         '
         'ExportToExcelToolStripMenuItem
         '
         Me.ExportToExcelToolStripMenuItem.Name = "ExportToExcelToolStripMenuItem"
         Me.ExportToExcelToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.ExportToExcelToolStripMenuItem.Text = "Export to Excel"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'TabControl1
@@ -448,7 +448,7 @@ Partial Class FRMCREATIONWORKORDERS
         Me.xCHKSELECTALL.AutoSize = True
         Me.xCHKSELECTALL.Location = New System.Drawing.Point(106, 41)
         Me.xCHKSELECTALL.Name = "xCHKSELECTALL"
-        Me.xCHKSELECTALL.Size = New System.Drawing.Size(18, 17)
+        Me.xCHKSELECTALL.Size = New System.Drawing.Size(15, 14)
         Me.xCHKSELECTALL.TabIndex = 29
         Me.xCHKSELECTALL.UseVisualStyleBackColor = True
         '
@@ -501,6 +501,13 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(909, 162)
         Me.Panel2.TabIndex = 3
+        '
+        'xAREAOFACTIVITY
+        '
+        Me.xAREAOFACTIVITY.Location = New System.Drawing.Point(693, 60)
+        Me.xAREAOFACTIVITY.Name = "xAREAOFACTIVITY"
+        Me.xAREAOFACTIVITY.Size = New System.Drawing.Size(80, 22)
+        Me.xAREAOFACTIVITY.TabIndex = 39
         '
         'xDTPWOACTIVITYDATE
         '
@@ -667,6 +674,82 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(504, 628)
         Me.Panel5.TabIndex = 2
+        '
+        'xPLANTINGDATE
+        '
+        Me.xPLANTINGDATE.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xPLANTINGDATE.Location = New System.Drawing.Point(198, 303)
+        Me.xPLANTINGDATE.Name = "xPLANTINGDATE"
+        Me.xPLANTINGDATE.ReadOnly = True
+        Me.xPLANTINGDATE.Size = New System.Drawing.Size(113, 22)
+        Me.xPLANTINGDATE.TabIndex = 100
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(32, 306)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(97, 17)
+        Me.Label24.TabIndex = 99
+        Me.Label24.Text = "Planting Date:"
+        '
+        'xAGE
+        '
+        Me.xAGE.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xAGE.Location = New System.Drawing.Point(198, 330)
+        Me.xAGE.Name = "xAGE"
+        Me.xAGE.ReadOnly = True
+        Me.xAGE.Size = New System.Drawing.Size(95, 22)
+        Me.xAGE.TabIndex = 98
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(32, 333)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(133, 17)
+        Me.Label16.TabIndex = 97
+        Me.Label16.Text = "Age of Cane Month:"
+        '
+        'Panel11
+        '
+        Me.Panel11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel11.Location = New System.Drawing.Point(495, 0)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(2, 627)
+        Me.Panel11.TabIndex = 96
+        '
+        'xCROPCLASS
+        '
+        Me.xCROPCLASS.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xCROPCLASS.Location = New System.Drawing.Point(198, 59)
+        Me.xCROPCLASS.Name = "xCROPCLASS"
+        Me.xCROPCLASS.ReadOnly = True
+        Me.xCROPCLASS.Size = New System.Drawing.Size(113, 22)
+        Me.xCROPCLASS.TabIndex = 95
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(32, 62)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(80, 17)
+        Me.Label23.TabIndex = 94
+        Me.Label23.Text = "Crop Class:"
+        '
+        'xCBOSUBFIELDNO
+        '
+        Me.xCBOSUBFIELDNO.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.xCBOSUBFIELDNO.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.xCBOSUBFIELDNO.DropDownHeight = 100
+        Me.xCBOSUBFIELDNO.FormattingEnabled = True
+        Me.xCBOSUBFIELDNO.IntegralHeight = False
+        Me.xCBOSUBFIELDNO.Location = New System.Drawing.Point(198, 30)
+        Me.xCBOSUBFIELDNO.Name = "xCBOSUBFIELDNO"
+        Me.xCBOSUBFIELDNO.Size = New System.Drawing.Size(173, 24)
+        Me.xCBOSUBFIELDNO.TabIndex = 39
         '
         'xCROPYEAR
         '
@@ -975,52 +1058,6 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel3.Size = New System.Drawing.Size(376, 1)
         Me.Panel3.TabIndex = 39
         '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(14, 6)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(85, 17)
-        Me.Label10.TabIndex = 38
-        Me.Label10.Text = "Field Details"
-        '
-        'xCBOSUBFIELDNO
-        '
-        Me.xCBOSUBFIELDNO.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.xCBOSUBFIELDNO.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.xCBOSUBFIELDNO.DropDownHeight = 100
-        Me.xCBOSUBFIELDNO.FormattingEnabled = True
-        Me.xCBOSUBFIELDNO.IntegralHeight = False
-        Me.xCBOSUBFIELDNO.Location = New System.Drawing.Point(198, 30)
-        Me.xCBOSUBFIELDNO.Name = "xCBOSUBFIELDNO"
-        Me.xCBOSUBFIELDNO.Size = New System.Drawing.Size(173, 24)
-        Me.xCBOSUBFIELDNO.TabIndex = 39
-        '
-        'xCROPCLASS
-        '
-        Me.xCROPCLASS.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xCROPCLASS.Location = New System.Drawing.Point(198, 59)
-        Me.xCROPCLASS.Name = "xCROPCLASS"
-        Me.xCROPCLASS.ReadOnly = True
-        Me.xCROPCLASS.Size = New System.Drawing.Size(113, 22)
-        Me.xCROPCLASS.TabIndex = 95
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(32, 62)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(80, 17)
-        Me.Label23.TabIndex = 94
-        Me.Label23.Text = "Crop Class:"
-        '
-        'xAREAOFACTIVITY
-        '
-        Me.xAREAOFACTIVITY.Location = New System.Drawing.Point(693, 60)
-        Me.xAREAOFACTIVITY.Name = "xAREAOFACTIVITY"
-        Me.xAREAOFACTIVITY.Size = New System.Drawing.Size(80, 22)
-        Me.xAREAOFACTIVITY.TabIndex = 39
-        '
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
@@ -1029,15 +1066,14 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel6.Size = New System.Drawing.Size(380, 1)
         Me.Panel6.TabIndex = 40
         '
-        'Panel11
+        'Label10
         '
-        Me.Panel11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel11.Location = New System.Drawing.Point(495, 0)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(2, 627)
-        Me.Panel11.TabIndex = 96
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(14, 6)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(85, 17)
+        Me.Label10.TabIndex = 38
+        Me.Label10.Text = "Field Details"
         '
         'StatusStrip1
         '
@@ -1168,42 +1204,6 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel12.Size = New System.Drawing.Size(1427, 2)
         Me.Panel12.TabIndex = 254
         '
-        'xAGE
-        '
-        Me.xAGE.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xAGE.Location = New System.Drawing.Point(198, 330)
-        Me.xAGE.Name = "xAGE"
-        Me.xAGE.ReadOnly = True
-        Me.xAGE.Size = New System.Drawing.Size(95, 22)
-        Me.xAGE.TabIndex = 98
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(32, 333)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(133, 17)
-        Me.Label16.TabIndex = 97
-        Me.Label16.Text = "Age of Cane Month:"
-        '
-        'xPLANTINGDATE
-        '
-        Me.xPLANTINGDATE.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xPLANTINGDATE.Location = New System.Drawing.Point(198, 303)
-        Me.xPLANTINGDATE.Name = "xPLANTINGDATE"
-        Me.xPLANTINGDATE.ReadOnly = True
-        Me.xPLANTINGDATE.Size = New System.Drawing.Size(113, 22)
-        Me.xPLANTINGDATE.TabIndex = 100
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(32, 306)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(97, 17)
-        Me.Label24.TabIndex = 99
-        Me.Label24.Text = "Planting Date:"
-        '
         'FRMCREATIONWORKORDERS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1231,10 +1231,10 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel7.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.xAREAOFACTIVITY, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.Panel3.ResumeLayout(False)
-        CType(Me.xAREAOFACTIVITY, System.ComponentModel.ISupportInitialize).EndInit()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)

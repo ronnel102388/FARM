@@ -260,5 +260,7 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
         End If
     End Sub
 
-
+    Private Sub Button2_Click(sender As Object, e As EventArgs) 
+        FRMARCHIVE.ShowDialog()
+    End Sub
 End Class
