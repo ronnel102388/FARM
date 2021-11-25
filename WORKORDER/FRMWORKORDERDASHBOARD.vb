@@ -114,18 +114,6 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
 
     End Sub
 
-    Private Sub BtSave_Click(sender As Object, e As EventArgs) Handles BtSave.Click
-
-    End Sub
-
-
-
-    Private Sub grid1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-
-
     Private Sub grid1_DoubleClick(sender As Object, e As EventArgs)
 
 
@@ -219,8 +207,6 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
     End Sub
 
     Private Sub Grid1_Click_1(sender As Object, e As EventArgs) Handles grid1.Click
-
-
 
         If FilterDGV.Text = "VIEW ALL" Or FilterDGV.Text = "NO WORKORDER" Or FilterDGV.Text = "WITH WORKORDER" Then
             Dim ii As Integer = grid1.RowSel
