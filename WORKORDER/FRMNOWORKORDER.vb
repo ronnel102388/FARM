@@ -130,7 +130,7 @@ AND WO.SUBFIELDNO='<%= SUBFIELDNO.Text %>'
 
     Private Sub WorkOrder_SelectedIndexChanged(sender As Object, e As EventArgs) Handles WorkOrder.SelectedIndexChanged
 
-        WORKORDERID.Text = FindID("WorkOrderID", "vwAAA", "WorkOrderCode", WorkOrder.Text)
+        WORKORDERID.Text = FindID("WorkOrderID", "vwFindWorkOrder", "WorkOrderCode", WorkOrder.Text)
 
         FindMajorActivity.Text = FindActivity("MajorActivity", "WorkOrderCode", WorkOrder.Text)
         FindMinorActivity.Text = FindActivity("MinorActivity", "WorkOrderCode", WorkOrder.Text)

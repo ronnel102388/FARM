@@ -202,6 +202,11 @@ Public Class FRMCREATIONWORKORDERS
         End If
         POPULATE_METHODOFACTIVITY_RESOURCE(vVERSIONID, vMAJAID, vMINAID, xCROPCLASS.Text, IIf(Val(xPLANTEDAREA.Text) <> 0, Val(xPLANTEDAREA.Text), Val(xARABLEAREA.Text)))
     End Sub
+
+    Private Sub XCBOSUBFIELDNO_SelectedIndexChanged(sender As Object, e As EventArgs) Handles xCBOSUBFIELDNO.SelectedIndexChanged
+
+    End Sub
+
     Public Sub xCBOSUBFIELDNO_LostFocus(sender As Object, e As EventArgs) Handles xCBOSUBFIELDNO.LostFocus
         If xCBOSUBFIELDNO.Text = "" Or xCBOSUBFIELDNO.SelectedIndex = -1 Then
             POPULATEFIELDDETAILS("")
