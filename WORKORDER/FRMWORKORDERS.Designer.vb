@@ -71,7 +71,7 @@ Partial Class FRMWORKORDERS
         Me.MAINTAB = New System.Windows.Forms.TabControl()
         Me.Dashboard = New System.Windows.Forms.TabPage()
         Me.Overview = New System.Windows.Forms.TabPage()
-        Me.DGWORKORDER = New C1.Win.C1FlexGrid.C1FlexGrid()
+        Me.dgMAINWO = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.Details = New System.Windows.Forms.TabPage()
         Me.C1FlexGrid2 = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.Panel11 = New System.Windows.Forms.Panel()
@@ -106,7 +106,7 @@ Partial Class FRMWORKORDERS
         Me.Label36 = New System.Windows.Forms.Label()
         Me.TextBox33 = New System.Windows.Forms.TextBox()
         Me.Label35 = New System.Windows.Forms.Label()
-        Me.TextBox32 = New System.Windows.Forms.TextBox()
+        Me.xSUBFIELDNO = New System.Windows.Forms.TextBox()
         Me.Label34 = New System.Windows.Forms.Label()
         Me.TextBox31 = New System.Windows.Forms.TextBox()
         Me.Label33 = New System.Windows.Forms.Label()
@@ -163,7 +163,7 @@ Partial Class FRMWORKORDERS
         Me.Panel1.SuspendLayout()
         Me.MAINTAB.SuspendLayout()
         Me.Overview.SuspendLayout()
-        CType(Me.DGWORKORDER, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgMAINWO, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Details.SuspendLayout()
         CType(Me.C1FlexGrid2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel11.SuspendLayout()
@@ -602,34 +602,35 @@ Partial Class FRMWORKORDERS
         '
         'Overview
         '
-        Me.Overview.Controls.Add(Me.DGWORKORDER)
+        Me.Overview.Controls.Add(Me.dgMAINWO)
         Me.Overview.Location = New System.Drawing.Point(4, 25)
         Me.Overview.Name = "Overview"
         Me.Overview.Padding = New System.Windows.Forms.Padding(3)
-        Me.Overview.Size = New System.Drawing.Size(1558, 830)
+        Me.Overview.Size = New System.Drawing.Size(1558, 828)
         Me.Overview.TabIndex = 1
         Me.Overview.Text = "Work Orders"
         Me.Overview.UseVisualStyleBackColor = True
         '
-        'DGWORKORDER
+        'dgMAINWO
         '
-        Me.DGWORKORDER.AllowDragging = C1.Win.C1FlexGrid.AllowDraggingEnum.None
-        Me.DGWORKORDER.AllowFiltering = True
-        Me.DGWORKORDER.BackColor = System.Drawing.Color.White
-        Me.DGWORKORDER.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle
-        Me.DGWORKORDER.ColumnInfo = "0,0,0,0,0,105,Columns:"
-        Me.DGWORKORDER.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DGWORKORDER.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.DGWORKORDER.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
-        Me.DGWORKORDER.Location = New System.Drawing.Point(3, 3)
-        Me.DGWORKORDER.Margin = New System.Windows.Forms.Padding(4)
-        Me.DGWORKORDER.Name = "DGWORKORDER"
-        Me.DGWORKORDER.Rows.DefaultSize = 21
-        Me.DGWORKORDER.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
-        Me.DGWORKORDER.Size = New System.Drawing.Size(1552, 824)
-        Me.DGWORKORDER.StyleInfo = resources.GetString("DGWORKORDER.StyleInfo")
-        Me.DGWORKORDER.TabIndex = 301
-        Me.DGWORKORDER.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
+        Me.dgMAINWO.AllowDragging = C1.Win.C1FlexGrid.AllowDraggingEnum.None
+        Me.dgMAINWO.AllowEditing = False
+        Me.dgMAINWO.AllowFiltering = True
+        Me.dgMAINWO.BackColor = System.Drawing.Color.White
+        Me.dgMAINWO.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle
+        Me.dgMAINWO.ColumnInfo = "0,0,0,0,0,105,Columns:"
+        Me.dgMAINWO.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgMAINWO.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.dgMAINWO.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
+        Me.dgMAINWO.Location = New System.Drawing.Point(3, 3)
+        Me.dgMAINWO.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgMAINWO.Name = "dgMAINWO"
+        Me.dgMAINWO.Rows.DefaultSize = 21
+        Me.dgMAINWO.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
+        Me.dgMAINWO.Size = New System.Drawing.Size(1552, 822)
+        Me.dgMAINWO.StyleInfo = resources.GetString("dgMAINWO.StyleInfo")
+        Me.dgMAINWO.TabIndex = 301
+        Me.dgMAINWO.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
         '
         'Details
         '
@@ -948,7 +949,7 @@ Partial Class FRMWORKORDERS
         Me.Panel5.Controls.Add(Me.Label36)
         Me.Panel5.Controls.Add(Me.TextBox33)
         Me.Panel5.Controls.Add(Me.Label35)
-        Me.Panel5.Controls.Add(Me.TextBox32)
+        Me.Panel5.Controls.Add(Me.xSUBFIELDNO)
         Me.Panel5.Controls.Add(Me.Label34)
         Me.Panel5.Controls.Add(Me.TextBox31)
         Me.Panel5.Controls.Add(Me.Label33)
@@ -1042,14 +1043,14 @@ Partial Class FRMWORKORDERS
         Me.Label35.TabIndex = 88
         Me.Label35.Text = "Farm Manager:"
         '
-        'TextBox32
+        'xSUBFIELDNO
         '
-        Me.TextBox32.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.TextBox32.Location = New System.Drawing.Point(198, 32)
-        Me.TextBox32.Name = "TextBox32"
-        Me.TextBox32.ReadOnly = True
-        Me.TextBox32.Size = New System.Drawing.Size(274, 22)
-        Me.TextBox32.TabIndex = 87
+        Me.xSUBFIELDNO.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xSUBFIELDNO.Location = New System.Drawing.Point(198, 32)
+        Me.xSUBFIELDNO.Name = "xSUBFIELDNO"
+        Me.xSUBFIELDNO.ReadOnly = True
+        Me.xSUBFIELDNO.Size = New System.Drawing.Size(274, 22)
+        Me.xSUBFIELDNO.TabIndex = 87
         '
         'Label34
         '
@@ -1517,7 +1518,7 @@ Partial Class FRMWORKORDERS
         Me.Panel1.ResumeLayout(False)
         Me.MAINTAB.ResumeLayout(False)
         Me.Overview.ResumeLayout(False)
-        CType(Me.DGWORKORDER, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgMAINWO, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Details.ResumeLayout(False)
         CType(Me.C1FlexGrid2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel11.ResumeLayout(False)
@@ -1582,7 +1583,7 @@ Partial Class FRMWORKORDERS
     Friend WithEvents MAINTAB As TabControl
     Friend WithEvents Dashboard As TabPage
     Friend WithEvents Overview As TabPage
-    Friend WithEvents DGWORKORDER As C1.Win.C1FlexGrid.C1FlexGrid
+    Friend WithEvents dgMAINWO As C1.Win.C1FlexGrid.C1FlexGrid
     Friend WithEvents Details As TabPage
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel3 As Panel
@@ -1652,7 +1653,7 @@ Partial Class FRMWORKORDERS
     Friend WithEvents Label13 As Label
     Friend WithEvents TextBox12 As TextBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents TextBox32 As TextBox
+    Friend WithEvents xSUBFIELDNO As TextBox
     Friend WithEvents Label34 As Label
     Friend WithEvents C1FlexGrid2 As C1.Win.C1FlexGrid.C1FlexGrid
     Friend WithEvents Panel11 As Panel

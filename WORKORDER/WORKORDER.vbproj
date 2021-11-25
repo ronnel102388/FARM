@@ -46,6 +46,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="C1.Win.C1FlexGrid.2, Version=2.0.20201.416, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
     <Reference Include="Configuration, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
@@ -132,7 +135,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="RDL_FUNCTIONS.vb" />
+    <Compile Include="DRL_FUNCTIONS.vb" />
     <Compile Include="VBFUNCTIONS.vb" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +166,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

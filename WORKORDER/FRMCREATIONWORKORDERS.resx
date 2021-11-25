@@ -272,18 +272,6 @@
   <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>155, 17</value>
   </metadata>
-  <data name="RbnBuildNo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAUpJREFUOE/llLFKA0EQhg8L9RHEQhGtxNLC3G44EIszu7FLo09gZ2NhZWdKX8BS
-        a+1FLHwAGysbUbjbHIKPYJxv3Q1CEsKJ2OSHn5mdnfn3dna4ZMpRWKV7Ru/AqpUtYF+ybN6ZxgYsd9PN
-        qr21Rm6M+cJxcEa/Oqv7sGfVPlYOWSqNvoKy/yC2S26M+cJxQFCSLly7uY3QXwlWInQeBctWY9mLWX35
-        K0Guiv/UWZ91Vn2URt18H9I89oJW3xcmPQiHPIo99MWj4JPkumHpH8kZdS3x7nOez/HlpVW3WImf4FMT
-        0v8BXJm+1aLUhPJhsCk9OouzGCl9vINDccmdKBgf5Sfo06he+VmtI9g/TWYKo454GIhPLGzXF3zfSxdF
-        6E2u9gnxiYXt+oKgytNVhCB+CHtMFGTu+CmE5QAymyswLAcgl5qwnE4kyRd3Whiou+LQWQAAAABJRU5E
-        rkJggg==
-</value>
-  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>26</value>
   </metadata>
