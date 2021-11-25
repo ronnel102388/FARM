@@ -111,9 +111,10 @@ Public Class FRMWORKORDERS
     End Sub
 
     Private Sub BTNDASHBOARD_Click(sender As Object, e As EventArgs) Handles BTNDASHBOARD.Click
-        MAINTAB.TabPages.Remove(Dashboard)
         MAINTAB.TabPages.Remove(Overview)
         MAINTAB.TabPages.Remove(Details)
+        MAINTAB.TabPages.Remove(Dashboard)
+
         MAINTAB.TabPages.Add(Dashboard)
 
         CURRENTTAB = 1
