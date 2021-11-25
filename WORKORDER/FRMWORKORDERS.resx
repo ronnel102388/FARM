@@ -307,10 +307,71 @@
   <data name="dgMAINWO.StyleInfo" xml:space="preserve">
     <value>Normal{BackColor:White;Margins:1, 1, 1, 1;Border:Flat,1,LightGray,Horizontal;}	Alternate{BackColor:WhiteSmoke;}	Fixed{BackColor:Control;ForeColor:ControlText;Margins:1, 1, 1, 1;Border:Flat,1,ControlDark,Both;BackgroundImageLayout:Hide;}	Highlight{Font:Microsoft Sans Serif, 8.25pt;BackColor:LightBlue;ForeColor:Black;Border:Double,1,DarkTurquoise,Horizontal;}	Focus{Border:None,1,Black,Both;}	Editor{BackColor:White;Border:None,1,Black,Both;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	FrozenAlternate{}	NewRow{ForeColor:GrayText;}	EmptyArea{BackColor:White;Border:Flat,0,ControlDarkDark,Both;}	SelectedColumnHeader{}	SelectedRowHeader{}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDark;ForeColor:Black;}	Subtotal2{BackColor:Gainsboro;ForeColor:Black;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	FilterEditor{}	FirstCustomStyle{}	</value>
   </data>
-  <data name="C1FlexGrid2.StyleInfo" xml:space="preserve">
+  <data name="C1FlexGrid1.StyleInfo" xml:space="preserve">
     <value>Normal{BackColor:White;Margins:1, 1, 1, 1;Border:Flat,1,LightGray,Horizontal;}	Alternate{BackColor:WhiteSmoke;}	Fixed{BackColor:Control;ForeColor:ControlText;Margins:1, 1, 1, 1;Border:Flat,1,ControlDark,Both;BackgroundImageLayout:Hide;}	Highlight{Font:Microsoft Sans Serif, 8.25pt;BackColor:LightBlue;ForeColor:Black;Border:Double,1,DarkTurquoise,Horizontal;}	Focus{Border:None,1,Black,Both;}	Editor{BackColor:White;Border:None,1,Black,Both;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	FrozenAlternate{}	NewRow{ForeColor:GrayText;}	EmptyArea{BackColor:White;Border:Flat,0,ControlDarkDark,Both;}	SelectedColumnHeader{}	SelectedRowHeader{}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDark;ForeColor:Black;}	Subtotal2{BackColor:Gainsboro;ForeColor:Black;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	FilterEditor{}	FirstCustomStyle{}	</value>
   </data>
-  <data name="C1FlexGrid1.StyleInfo" xml:space="preserve">
+  <data name="btAddHeader.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        hQAAAIUB4uz/wQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAACnSURBVEhL7ZXB
+        DoMgEET5u9KLtl9rjAePws+w/IHdMZvG4FoMwUMTJnkXGWdIZNHk9PT0so4isybEh6NebOWyLoxKuBBG
+        sZWLg+Zj8JdZbOVCSBK6pxX8Q4H19LY+DmyeTgiMFg6wpr0zIRMzhB1qQ1QFHkRCgbpYi1aQxeBDaAuV
+        CCjo7zqml65zNre76LcQkoTuaQUouPmnj7OsDeP2bKFObCcy5gPHGajXLCtD0QAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btCancelHeader.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        pgAAAKYB3X3/OAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGVSURBVEhLtZQx
+        SwNBEIVXxZsNKCiClaCVja1gJVgIYmtjJdhbWgqiYOUfsAja2VjYKQrK3V5MIWJlEfEXKCgWgkjEjHN3
+        mtztvsQjicXXzLz3JrubG8XM/wos1inRJAe0CHs5gcUY4y2xoTehCvs5AUXVy0bvSHBN4BhHk59swVdD
+        EnhSD+7qgCtvSsIenPCuDGjctxvemne5zhvx73OoV/lI9bkDjLchwsZ9d8Yd+3reGkAVS9QN1hsD/MKY
+        HPMaiDrhi0NaSAZEk04VcegdAOEPegsS0K5wjz30yiU1XL+rGENrQjUlSkhrEH7/tLxl2fEFesUVB3pW
+        mo8Zoa1BXAyOyKleMj5Dx1hsvwvSIIw+TIUL3jMWRkTvElBRhLewjzC0lx1AFSxsF0OhNeAcC9sh2Qbp
+        cHlkKmJxblRPssPi7ftpDahxqTADTABDZ5b5b6LvSrw40AYFtET+ruWB0ciLA21gSDPkg7vU479eNwxh
+        6MMNcniSlb1tr+xsUDN8PSfHBrvI25RfvCz9CegTYLF7sPoGhdFaAAHwSMQAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btSaveHeader.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAARlJREFUSEvt
+        lDFuwkAQRX2MAKcArwsi6Eluk4KQMneIgtccDAFrhGTSJrWpkh30d8HMGJtNy5NeYfP4K4zk6M5NKL19
+        jrX5Utr8tjXR5kel5gUT17Ff2F8OtDY175ipx8XJIn/ErVribDuqHEA2HeJCXDZSGXdee1wuwmUjleGT
+        3/iY4yL6+bhVy2C+Hp+NVkTCkeIQMceR4hAxx5HiEDHHkeIQMceRYliqbDONs2WHVOnm1d47XDRezHGk
+        +KgdR+Kxr5SZ2FqRcKSYTD53D0g8dE9qSSQcKSbpsSDxDNN1T2pJJBwpPmqfORJPnJk3sbUi4UgxLOmQ
+        /seqS+L5B/3J4a/rkwXmOGqRP9ngP4cUic4nmLvThij6Az9arNZAfBANAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="btDeleteHeader.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        hQAAAIUB4uz/wQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFJSURBVEhL5ZXN
+        SsNQEEbjGyptli4Ut0Y3tYpFolB/0IqLKN2YF3Al7gTRRR9FagQrKrVUbB3na8amzb2ROHUh+MGBJpk5
+        03tvIE6ezPsHZEMeT55YuH/D+AL//v0BvlzyNYYoBqwG4XY5CN/KxyGpQO/JaVV0ZiaSJ3RFZ8ZSrEJ0
+        ZmzFGkRnZiUId+t7O42zrXXSgF44RGfPnVf0GVIyfNMyg6JU00/4lwOWXOo9RNS+Oh/eax1VqP/yRK1g
+        M6mL0a0AcqR9fTGQf3Q79B7d0v3a3Fgdo98iyAfp92J5ZcGoYfQD8M8hR14bl8ZzQTdgdFsgR7CidB2j
+        O2Qc6Oi2fG3XY72a1MUoV8BvS/pAIY9Ks2P3GP0Z5OQvDFh0NyyN+eBe0WSn6bkz1uYcNJcL06LJDn8t
+        piKveMgNz2nBN3BtoYZe0Ugc5xMZ0cLJCuQI5gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btEditHeader.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        sQAAALEBxi1JjQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJOSURBVEhLtZVd
+        T9NgGIYbE1sxmHhix8DRTQ/xzAM98Ff4JwgkYExwI0aMUQkYYzQxG3LMgSARXEYU1MAKzKioCWNAxNl1
+        bjF+jLK1Q2Eze+xb33d2pZul6p1cadI+ue72SdNS1cJ28KfZ9qe5hs5IweldmnN0LR7Dl/4+Le0z9Wzb
+        4yLb+ggcZyLg9EZVFsWWS8s0HrEftu3JFhITfhdgfNFlPGot3HXR09wXT7h6V0quK7GyuGqBiiegIHKe
+        gDzkvrlxEKvM09yvylUxgW2dtFqAkYewyjzkzgmOjumaBU0X3xoKlCxWmUcv17gcg8buBWg891yjqScG
+        h3uTGq7+NHhu54wFgFXm2VFggLuR2iE0glXmMZPq+acF74RkQRAE0CNJEhjzvQhrtgq6g4I8+iK5oefu
+        qy/xabEY1tP3bDtiq8CM3a4o86DuRCbEdAJQe7QTetnDNx+y0Xhqs4JkJv31W+m1noWPP3gidweUmCZS
+        sx6kexIjNAjDNHwaZ9a0EjsFL3EBkh8dUFgkz4ToC0SOUCZpAJ65ZX9FfmWVG9x01pAj5IqCrnFBHuTF
+        rJ47kc/x0dVCWI8vvHX/D3dOGKsosPiaLqkc0uQT9Pka8nmYpw7sbkXqWtz+fINlOYrxY2ekXDCgpMpr
+        sSpH0f4FJmICKTjiz59F85kg7U1gMTrmp8pigFlmDmaoek1M4rkqcNy190K1JyEF7kDuJJpPj+2VLMvt
+        RByhS7/WopMb12I32Yn9x/+bHEUK1Z1SphhFla7A7L57wNO+2muhqJ+RJQLCALKuQQAAAABJRU5ErkJg
+        gg==
+</value>
+  </data>
+  <data name="C1FlexGrid2.StyleInfo" xml:space="preserve">
     <value>Normal{BackColor:White;Margins:1, 1, 1, 1;Border:Flat,1,LightGray,Horizontal;}	Alternate{BackColor:WhiteSmoke;}	Fixed{BackColor:Control;ForeColor:ControlText;Margins:1, 1, 1, 1;Border:Flat,1,ControlDark,Both;BackgroundImageLayout:Hide;}	Highlight{Font:Microsoft Sans Serif, 8.25pt;BackColor:LightBlue;ForeColor:Black;Border:Double,1,DarkTurquoise,Horizontal;}	Focus{Border:None,1,Black,Both;}	Editor{BackColor:White;Border:None,1,Black,Both;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	FrozenAlternate{}	NewRow{ForeColor:GrayText;}	EmptyArea{BackColor:White;Border:Flat,0,ControlDarkDark,Both;}	SelectedColumnHeader{}	SelectedRowHeader{}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDark;ForeColor:Black;}	Subtotal2{BackColor:Gainsboro;ForeColor:Black;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	FilterEditor{}	FirstCustomStyle{}	</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
