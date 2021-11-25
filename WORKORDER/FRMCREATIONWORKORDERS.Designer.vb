@@ -50,8 +50,6 @@ Partial Class FRMCREATIONWORKORDERS
         Me.dgWOres = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.xCHKSELECTALL = New System.Windows.Forms.CheckBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -178,7 +176,7 @@ Partial Class FRMCREATIONWORKORDERS
         Me.XSEARCH.Font = New System.Drawing.Font("Century Gothic", 11.89565!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XSEARCH.Location = New System.Drawing.Point(6, 10)
         Me.XSEARCH.Name = "XSEARCH"
-        Me.XSEARCH.Size = New System.Drawing.Size(317, 24)
+        Me.XSEARCH.Size = New System.Drawing.Size(317, 25)
         Me.XSEARCH.TabIndex = 123147
         '
         'BTSEARCHLINE
@@ -197,6 +195,7 @@ Partial Class FRMCREATIONWORKORDERS
         'BTEXPORT
         '
         Me.BTEXPORT.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BTEXPORT.Enabled = False
         Me.BTEXPORT.FlatAppearance.BorderSize = 0
         Me.BTEXPORT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTEXPORT.Image = CType(resources.GetObject("BTEXPORT.Image"), System.Drawing.Image)
@@ -209,6 +208,7 @@ Partial Class FRMCREATIONWORKORDERS
         'btAdd
         '
         Me.btAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btAdd.Enabled = False
         Me.btAdd.FlatAppearance.BorderSize = 0
         Me.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAdd.Image = CType(resources.GetObject("btAdd.Image"), System.Drawing.Image)
@@ -221,6 +221,7 @@ Partial Class FRMCREATIONWORKORDERS
         'bTpRINT
         '
         Me.bTpRINT.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.bTpRINT.Enabled = False
         Me.bTpRINT.FlatAppearance.BorderSize = 0
         Me.bTpRINT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.bTpRINT.Image = CType(resources.GetObject("bTpRINT.Image"), System.Drawing.Image)
@@ -257,6 +258,7 @@ Partial Class FRMCREATIONWORKORDERS
         'BtRefresh
         '
         Me.BtRefresh.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtRefresh.Enabled = False
         Me.BtRefresh.FlatAppearance.BorderSize = 0
         Me.BtRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtRefresh.Image = CType(resources.GetObject("BtRefresh.Image"), System.Drawing.Image)
@@ -278,6 +280,7 @@ Partial Class FRMCREATIONWORKORDERS
         'BtDelete
         '
         Me.BtDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtDelete.Enabled = False
         Me.BtDelete.FlatAppearance.BorderSize = 0
         Me.BtDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtDelete.Image = CType(resources.GetObject("BtDelete.Image"), System.Drawing.Image)
@@ -290,6 +293,7 @@ Partial Class FRMCREATIONWORKORDERS
         'BtEdit
         '
         Me.BtEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtEdit.Enabled = False
         Me.BtEdit.FlatAppearance.BorderSize = 0
         Me.BtEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtEdit.Image = CType(resources.GetObject("BtEdit.Image"), System.Drawing.Image)
@@ -321,40 +325,40 @@ Partial Class FRMCREATIONWORKORDERS
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
         Me.EditToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'SaveToolStripMenuItem
         '
         Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
         Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.SaveToolStripMenuItem.Text = "Save"
         '
         'CancelToolStripMenuItem
         '
         Me.CancelToolStripMenuItem.Name = "CancelToolStripMenuItem"
-        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.CancelToolStripMenuItem.Text = "Cancel"
         '
         'PrintToolStripMenuItem
         '
         Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
         Me.PrintToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.PrintToolStripMenuItem.Text = "Print"
         '
         'ExportToExcelToolStripMenuItem
         '
         Me.ExportToExcelToolStripMenuItem.Name = "ExportToExcelToolStripMenuItem"
         Me.ExportToExcelToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.ExportToExcelToolStripMenuItem.Text = "Export to Excel"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'TabControl1
@@ -404,8 +408,6 @@ Partial Class FRMCREATIONWORKORDERS
         'Panel7
         '
         Me.Panel7.Controls.Add(Me.Panel1)
-        Me.Panel7.Controls.Add(Me.xCHKSELECTALL)
-        Me.Panel7.Controls.Add(Me.Label9)
         Me.Panel7.Controls.Add(Me.Panel9)
         Me.Panel7.Controls.Add(Me.Label37)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
@@ -423,26 +425,6 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(876, 1)
         Me.Panel1.TabIndex = 30
-        '
-        'xCHKSELECTALL
-        '
-        Me.xCHKSELECTALL.AutoSize = True
-        Me.xCHKSELECTALL.Location = New System.Drawing.Point(106, 36)
-        Me.xCHKSELECTALL.Name = "xCHKSELECTALL"
-        Me.xCHKSELECTALL.Size = New System.Drawing.Size(15, 14)
-        Me.xCHKSELECTALL.TabIndex = 29
-        Me.xCHKSELECTALL.UseVisualStyleBackColor = True
-        Me.xCHKSELECTALL.Visible = False
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(30, 36)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(74, 17)
-        Me.Label9.TabIndex = 28
-        Me.Label9.Text = "Select All: "
-        Me.Label9.Visible = False
         '
         'Panel9
         '
@@ -488,7 +470,7 @@ Partial Class FRMCREATIONWORKORDERS
         'xAREAOFACTIVITY
         '
         Me.xAREAOFACTIVITY.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xAREAOFACTIVITY.Location = New System.Drawing.Point(693, 61)
+        Me.xAREAOFACTIVITY.Location = New System.Drawing.Point(693, 65)
         Me.xAREAOFACTIVITY.Name = "xAREAOFACTIVITY"
         Me.xAREAOFACTIVITY.ReadOnly = True
         Me.xAREAOFACTIVITY.Size = New System.Drawing.Size(95, 22)
@@ -497,7 +479,7 @@ Partial Class FRMCREATIONWORKORDERS
         'xDTPWOACTIVITYDATE
         '
         Me.xDTPWOACTIVITYDATE.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.xDTPWOACTIVITYDATE.Location = New System.Drawing.Point(693, 32)
+        Me.xDTPWOACTIVITYDATE.Location = New System.Drawing.Point(693, 36)
         Me.xDTPWOACTIVITYDATE.Name = "xDTPWOACTIVITYDATE"
         Me.xDTPWOACTIVITYDATE.Size = New System.Drawing.Size(126, 22)
         Me.xDTPWOACTIVITYDATE.TabIndex = 38
@@ -505,7 +487,7 @@ Partial Class FRMCREATIONWORKORDERS
         'xCBOMINORACTIVITY
         '
         Me.xCBOMINORACTIVITY.FormattingEnabled = True
-        Me.xCBOMINORACTIVITY.Location = New System.Drawing.Point(204, 122)
+        Me.xCBOMINORACTIVITY.Location = New System.Drawing.Point(204, 126)
         Me.xCBOMINORACTIVITY.Name = "xCBOMINORACTIVITY"
         Me.xCBOMINORACTIVITY.Size = New System.Drawing.Size(261, 24)
         Me.xCBOMINORACTIVITY.TabIndex = 37
@@ -513,7 +495,7 @@ Partial Class FRMCREATIONWORKORDERS
         'xCBOMAJORACTIVITY
         '
         Me.xCBOMAJORACTIVITY.FormattingEnabled = True
-        Me.xCBOMAJORACTIVITY.Location = New System.Drawing.Point(204, 92)
+        Me.xCBOMAJORACTIVITY.Location = New System.Drawing.Point(204, 96)
         Me.xCBOMAJORACTIVITY.Name = "xCBOMAJORACTIVITY"
         Me.xCBOMAJORACTIVITY.Size = New System.Drawing.Size(224, 24)
         Me.xCBOMAJORACTIVITY.TabIndex = 36
@@ -521,7 +503,7 @@ Partial Class FRMCREATIONWORKORDERS
         'xVERSION
         '
         Me.xVERSION.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xVERSION.Location = New System.Drawing.Point(204, 64)
+        Me.xVERSION.Location = New System.Drawing.Point(204, 68)
         Me.xVERSION.Name = "xVERSION"
         Me.xVERSION.ReadOnly = True
         Me.xVERSION.Size = New System.Drawing.Size(107, 22)
@@ -530,7 +512,7 @@ Partial Class FRMCREATIONWORKORDERS
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(30, 66)
+        Me.Label8.Location = New System.Drawing.Point(30, 70)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(60, 17)
         Me.Label8.TabIndex = 34
@@ -539,7 +521,7 @@ Partial Class FRMCREATIONWORKORDERS
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(530, 65)
+        Me.Label7.Location = New System.Drawing.Point(530, 69)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(106, 17)
         Me.Label7.TabIndex = 32
@@ -548,7 +530,7 @@ Partial Class FRMCREATIONWORKORDERS
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(527, 35)
+        Me.Label6.Location = New System.Drawing.Point(527, 39)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(118, 17)
         Me.Label6.TabIndex = 30
@@ -557,7 +539,7 @@ Partial Class FRMCREATIONWORKORDERS
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(30, 125)
+        Me.Label4.Location = New System.Drawing.Point(30, 129)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(95, 17)
         Me.Label4.TabIndex = 26
@@ -566,7 +548,7 @@ Partial Class FRMCREATIONWORKORDERS
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(30, 94)
+        Me.Label3.Location = New System.Drawing.Point(30, 98)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(95, 17)
         Me.Label3.TabIndex = 24
@@ -577,7 +559,7 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel4.Location = New System.Drawing.Point(147, 16)
+        Me.Panel4.Location = New System.Drawing.Point(147, 20)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(744, 1)
         Me.Panel4.TabIndex = 23
@@ -585,7 +567,7 @@ Partial Class FRMCREATIONWORKORDERS
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(14, 7)
+        Me.Label2.Location = New System.Drawing.Point(14, 11)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(129, 17)
         Me.Label2.TabIndex = 22
@@ -594,7 +576,7 @@ Partial Class FRMCREATIONWORKORDERS
         'xWOCODE
         '
         Me.xWOCODE.BackColor = System.Drawing.SystemColors.Info
-        Me.xWOCODE.Location = New System.Drawing.Point(204, 36)
+        Me.xWOCODE.Location = New System.Drawing.Point(204, 40)
         Me.xWOCODE.Name = "xWOCODE"
         Me.xWOCODE.ReadOnly = True
         Me.xWOCODE.Size = New System.Drawing.Size(173, 22)
@@ -603,7 +585,7 @@ Partial Class FRMCREATIONWORKORDERS
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(30, 38)
+        Me.Label1.Location = New System.Drawing.Point(30, 42)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(123, 17)
         Me.Label1.TabIndex = 20
@@ -1196,8 +1178,6 @@ Partial Class FRMCREATIONWORKORDERS
     Friend WithEvents xVERSION As TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents xCHKSELECTALL As CheckBox
-    Friend WithEvents Label9 As Label
     Friend WithEvents xCBOSUBFIELDNO As ComboBox
     Friend WithEvents xCROPCLASS As TextBox
     Friend WithEvents Label23 As Label

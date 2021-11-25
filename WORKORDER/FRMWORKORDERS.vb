@@ -111,9 +111,10 @@ Public Class FRMWORKORDERS
     End Sub
 
     Private Sub BTNDASHBOARD_Click(sender As Object, e As EventArgs) Handles BTNDASHBOARD.Click
-        MAINTAB.TabPages.Remove(Dashboard)
         MAINTAB.TabPages.Remove(Overview)
         MAINTAB.TabPages.Remove(Details)
+        MAINTAB.TabPages.Remove(Dashboard)
+
         MAINTAB.TabPages.Add(Dashboard)
 
         CURRENTTAB = 1
@@ -133,34 +134,37 @@ Public Class FRMWORKORDERS
 
     Private Sub BtAdd_Click(sender As Object, e As EventArgs) Handles btAdd.Click
         If CURRENTTAB = 2 Then
+            FRMCREATIONWORKORDERS.ShowDialog()
+        End If
+    End Sub
 
-            If dgMAINWO.Rows.Count = 1 Then
-                Exit Sub
-            End If
+    Private Sub btAddHeader_Click(sender As Object, e As EventArgs) Handles btAddHeader.Click
 
-            Dim x As Integer = dgMAINWO.RowSel
+        If dgMAINWO.Rows.Count = 1 Then
+            Exit Sub
+        End If
 
-            If x = 0 Then
-                Exit Sub
-            End If
+        Dim x As Integer = dgMAINWO.RowSel
 
-            With dgMAINWO
-                If .Item(x, "MAINWOID") <> 0 And .Item(x, "ISCLOSED") = 0 Then
-                    If MsgBox("Do you want to add Work Order Activities in this SubField No. " & .Item(x, "FIELDNO") & " ?", vbQuestion + vbYesNo + vbDefaultButton2) = vbNo Then
-                        Exit Sub
-                    End If
-                Else
-                    MsgBox("Cannot create or add Work Order Activities in this Subfield No. " & .Item(x, "FIELDNO") & " because the Main Work Order is already closed." & vbNewLine & "Please select other transaction.", vbExclamation, "VALIDATION")
+        If x = 0 Then
+            Exit Sub
+        End If
+
+        With dgMAINWO
+            If .Item(x, "MAINWOID") <> 0 And .Item(x, "ISCLOSED") = 0 Then
+                If MsgBox("Do you want to add Work Order Activities in this SubField No. " & .Item(x, "FIELDNO") & " ?", vbQuestion + vbYesNo + vbDefaultButton2) = vbNo Then
                     Exit Sub
                 End If
-            End With
+            Else
+                MsgBox("Cannot create or add Work Order Activities in this Subfield No. " & .Item(x, "FIELDNO") & " because the Main Work Order is already closed." & vbNewLine & "Please select other transaction.", vbExclamation, "VALIDATION")
+                Exit Sub
+            End If
+        End With
 
-            With FRMCREATIONWORKORDERS
-                .vMAINWOID = dgMAINWO.Item(x, "MAINWOID")
-                .vSUBFIELDNO = dgMAINWO.Item(x, "FIELDNO").ToString
-                .ShowDialog()
-            End With
-
-        End If
+        With FRMCREATIONWORKORDERS
+            .vMAINWOID = dgMAINWO.Item(x, "MAINWOID")
+            .vSUBFIELDNO = dgMAINWO.Item(x, "FIELDNO").ToString
+            .ShowDialog()
+        End With
     End Sub
 End Class
