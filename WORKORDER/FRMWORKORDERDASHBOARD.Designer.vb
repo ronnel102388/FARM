@@ -73,6 +73,7 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.statuscheck = New System.Windows.Forms.TextBox()
         Me.grid1 = New C1.Win.C1FlexGrid.C1FlexGrid()
+        Me.SubFieldNum = New System.Windows.Forms.TextBox()
         Me.PanelHeader.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -206,6 +207,7 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.btnOpenNWO.Size = New System.Drawing.Size(40, 35)
         Me.btnOpenNWO.TabIndex = 123187
         Me.btnOpenNWO.UseVisualStyleBackColor = True
+        Me.btnOpenNWO.Visible = False
         '
         'Label1
         '
@@ -216,6 +218,7 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.Label1.Size = New System.Drawing.Size(16, 17)
         Me.Label1.TabIndex = 123186
         Me.Label1.Text = "0"
+        Me.Label1.Visible = False
         '
         'ToolStripStatusLabel1
         '
@@ -531,11 +534,20 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.grid1.TabIndex = 123191
         Me.grid1.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
         '
+        'SubFieldNum
+        '
+        Me.SubFieldNum.Location = New System.Drawing.Point(430, 98)
+        Me.SubFieldNum.Name = "SubFieldNum"
+        Me.SubFieldNum.Size = New System.Drawing.Size(100, 22)
+        Me.SubFieldNum.TabIndex = 123192
+        Me.SubFieldNum.Visible = False
+        '
         'FRMWORKORDERDASHBOARD
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1439, 789)
+        Me.Controls.Add(Me.SubFieldNum)
         Me.Controls.Add(Me.grid1)
         Me.Controls.Add(Me.FilterDGV)
         Me.Controls.Add(Me.Label2)
@@ -615,4 +627,5 @@ Partial Class FRMWORKORDERDASHBOARD
     Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
     Friend WithEvents statuscheck As TextBox
     Friend WithEvents grid1 As C1.Win.C1FlexGrid.C1FlexGrid
+    Friend WithEvents SubFieldNum As TextBox
 End Class

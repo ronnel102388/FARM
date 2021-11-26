@@ -101,6 +101,12 @@
     <Compile Include="FRMCREATIONWORKORDERS.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FRMCREATION_NO_WORKORDER.Designer.vb">
+      <DependentUpon>FRMCREATION_NO_WORKORDER.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRMCREATION_NO_WORKORDER.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FRMNOWORKORDER.Designer.vb">
       <DependentUpon>FRMNOWORKORDER.vb</DependentUpon>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMCREATIONWORKORDERS.resx">
       <DependentUpon>FRMCREATIONWORKORDERS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMCREATION_NO_WORKORDER.resx">
+      <DependentUpon>FRMCREATION_NO_WORKORDER.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMNOWORKORDER.resx">
       <DependentUpon>FRMNOWORKORDER.vb</DependentUpon>

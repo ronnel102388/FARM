@@ -57,6 +57,11 @@ Partial Class FRMWORKORDERS
         Me.BtEdit = New System.Windows.Forms.Button()
         Me.BTNDASHBOARD = New System.Windows.Forms.Button()
         Me.BTNWORKORDER = New System.Windows.Forms.Button()
+        Me.btAddHeader = New System.Windows.Forms.Button()
+        Me.btCancelHeader = New System.Windows.Forms.Button()
+        Me.btSaveHeader = New System.Windows.Forms.Button()
+        Me.btDeleteHeader = New System.Windows.Forms.Button()
+        Me.btEditHeader = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -73,30 +78,16 @@ Partial Class FRMWORKORDERS
         Me.Overview = New System.Windows.Forms.TabPage()
         Me.dgMAINWO = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.Details = New System.Windows.Forms.TabPage()
-        Me.C1FlexGrid2 = New C1.Win.C1FlexGrid.C1FlexGrid()
-        Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.Label38 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.C1FlexGrid1 = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.xSUBFIELDNO = New System.Windows.Forms.TextBox()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.btAddHeader = New System.Windows.Forms.Button()
-        Me.btCancelHeader = New System.Windows.Forms.Button()
-        Me.btSaveHeader = New System.Windows.Forms.Button()
-        Me.btDeleteHeader = New System.Windows.Forms.Button()
-        Me.btEditHeader = New System.Windows.Forms.Button()
+        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.xAREAOFACTIVITY = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.xVERSION = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -105,9 +96,14 @@ Partial Class FRMWORKORDERS
         Me.Label3 = New System.Windows.Forms.Label()
         Me.xWOCODE = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.C1FlexGrid2 = New C1.Win.C1FlexGrid.C1FlexGrid()
+        Me.Panel5 = New System.Windows.Forms.Panel()
         Me.xPLANTINGDATE = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.xAGE = New System.Windows.Forms.TextBox()
@@ -146,6 +142,10 @@ Partial Class FRMWORKORDERS
         Me.Label13 = New System.Windows.Forms.Label()
         Me.xLANDOWNER = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.xSUBFIELDNO = New System.Windows.Forms.TextBox()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -155,14 +155,14 @@ Partial Class FRMWORKORDERS
         Me.Overview.SuspendLayout()
         CType(Me.dgMAINWO, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Details.SuspendLayout()
-        CType(Me.C1FlexGrid2, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel11.SuspendLayout()
         Me.Panel6.SuspendLayout()
         CType(Me.C1FlexGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
         Me.Panel2.SuspendLayout()
-        Me.Panel5.SuspendLayout()
+        Me.Panel11.SuspendLayout()
         Me.Panel13.SuspendLayout()
+        CType(Me.C1FlexGrid2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -317,7 +317,7 @@ Partial Class FRMWORKORDERS
         Me.XSEARCH.Font = New System.Drawing.Font("Century Gothic", 11.89565!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XSEARCH.Location = New System.Drawing.Point(6, 10)
         Me.XSEARCH.Name = "XSEARCH"
-        Me.XSEARCH.Size = New System.Drawing.Size(317, 25)
+        Me.XSEARCH.Size = New System.Drawing.Size(317, 24)
         Me.XSEARCH.TabIndex = 123147
         Me.ToolTip1.SetToolTip(Me.XSEARCH, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
         '
@@ -471,6 +471,71 @@ Partial Class FRMWORKORDERS
         Me.ToolTip1.SetToolTip(Me.BTNWORKORDER, "Work Order")
         Me.BTNWORKORDER.UseVisualStyleBackColor = False
         '
+        'btAddHeader
+        '
+        Me.btAddHeader.BackColor = System.Drawing.Color.Transparent
+        Me.btAddHeader.FlatAppearance.BorderSize = 0
+        Me.btAddHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btAddHeader.Image = CType(resources.GetObject("btAddHeader.Image"), System.Drawing.Image)
+        Me.btAddHeader.Location = New System.Drawing.Point(13, 10)
+        Me.btAddHeader.Name = "btAddHeader"
+        Me.btAddHeader.Size = New System.Drawing.Size(38, 36)
+        Me.btAddHeader.TabIndex = 123158
+        Me.ToolTip1.SetToolTip(Me.btAddHeader, "Add")
+        Me.btAddHeader.UseVisualStyleBackColor = False
+        '
+        'btCancelHeader
+        '
+        Me.btCancelHeader.BackColor = System.Drawing.Color.Transparent
+        Me.btCancelHeader.FlatAppearance.BorderSize = 0
+        Me.btCancelHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btCancelHeader.Image = CType(resources.GetObject("btCancelHeader.Image"), System.Drawing.Image)
+        Me.btCancelHeader.Location = New System.Drawing.Point(146, 10)
+        Me.btCancelHeader.Name = "btCancelHeader"
+        Me.btCancelHeader.Size = New System.Drawing.Size(38, 36)
+        Me.btCancelHeader.TabIndex = 123157
+        Me.ToolTip1.SetToolTip(Me.btCancelHeader, "Cancel")
+        Me.btCancelHeader.UseVisualStyleBackColor = False
+        '
+        'btSaveHeader
+        '
+        Me.btSaveHeader.BackColor = System.Drawing.Color.Transparent
+        Me.btSaveHeader.FlatAppearance.BorderSize = 0
+        Me.btSaveHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btSaveHeader.Image = CType(resources.GetObject("btSaveHeader.Image"), System.Drawing.Image)
+        Me.btSaveHeader.Location = New System.Drawing.Point(102, 10)
+        Me.btSaveHeader.Name = "btSaveHeader"
+        Me.btSaveHeader.Size = New System.Drawing.Size(38, 36)
+        Me.btSaveHeader.TabIndex = 123156
+        Me.ToolTip1.SetToolTip(Me.btSaveHeader, "Save")
+        Me.btSaveHeader.UseVisualStyleBackColor = False
+        '
+        'btDeleteHeader
+        '
+        Me.btDeleteHeader.BackColor = System.Drawing.Color.Transparent
+        Me.btDeleteHeader.FlatAppearance.BorderSize = 0
+        Me.btDeleteHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btDeleteHeader.Image = CType(resources.GetObject("btDeleteHeader.Image"), System.Drawing.Image)
+        Me.btDeleteHeader.Location = New System.Drawing.Point(190, 10)
+        Me.btDeleteHeader.Name = "btDeleteHeader"
+        Me.btDeleteHeader.Size = New System.Drawing.Size(38, 36)
+        Me.btDeleteHeader.TabIndex = 123155
+        Me.ToolTip1.SetToolTip(Me.btDeleteHeader, "Delete")
+        Me.btDeleteHeader.UseVisualStyleBackColor = False
+        '
+        'btEditHeader
+        '
+        Me.btEditHeader.BackColor = System.Drawing.Color.Transparent
+        Me.btEditHeader.FlatAppearance.BorderSize = 0
+        Me.btEditHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btEditHeader.Image = CType(resources.GetObject("btEditHeader.Image"), System.Drawing.Image)
+        Me.btEditHeader.Location = New System.Drawing.Point(59, 10)
+        Me.btEditHeader.Name = "btEditHeader"
+        Me.btEditHeader.Size = New System.Drawing.Size(38, 36)
+        Me.btEditHeader.TabIndex = 123154
+        Me.ToolTip1.SetToolTip(Me.btEditHeader, "Edit")
+        Me.btEditHeader.UseVisualStyleBackColor = False
+        '
         'MenuStrip1
         '
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(19, 19)
@@ -493,40 +558,40 @@ Partial Class FRMWORKORDERS
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
         Me.EditToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'SaveToolStripMenuItem
         '
         Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
         Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.SaveToolStripMenuItem.Text = "Save"
         '
         'CancelToolStripMenuItem
         '
         Me.CancelToolStripMenuItem.Name = "CancelToolStripMenuItem"
-        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.CancelToolStripMenuItem.Text = "Cancel"
         '
         'PrintToolStripMenuItem
         '
         Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
         Me.PrintToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.PrintToolStripMenuItem.Text = "Print"
         '
         'ExportToExcelToolStripMenuItem
         '
         Me.ExportToExcelToolStripMenuItem.Name = "ExportToExcelToolStripMenuItem"
         Me.ExportToExcelToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.ExportToExcelToolStripMenuItem.Text = "Export to Excel"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'PANELHEADER
@@ -638,55 +703,6 @@ Partial Class FRMWORKORDERS
         Me.Details.Text = "Details"
         Me.Details.UseVisualStyleBackColor = True
         '
-        'C1FlexGrid2
-        '
-        Me.C1FlexGrid2.AllowDragging = C1.Win.C1FlexGrid.AllowDraggingEnum.None
-        Me.C1FlexGrid2.AllowFiltering = True
-        Me.C1FlexGrid2.BackColor = System.Drawing.Color.White
-        Me.C1FlexGrid2.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle
-        Me.C1FlexGrid2.ColumnInfo = "0,0,0,0,0,105,Columns:"
-        Me.C1FlexGrid2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.C1FlexGrid2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.C1FlexGrid2.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
-        Me.C1FlexGrid2.Location = New System.Drawing.Point(504, 520)
-        Me.C1FlexGrid2.Margin = New System.Windows.Forms.Padding(4)
-        Me.C1FlexGrid2.Name = "C1FlexGrid2"
-        Me.C1FlexGrid2.Rows.DefaultSize = 21
-        Me.C1FlexGrid2.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
-        Me.C1FlexGrid2.Size = New System.Drawing.Size(1054, 308)
-        Me.C1FlexGrid2.StyleInfo = resources.GetString("C1FlexGrid2.StyleInfo")
-        Me.C1FlexGrid2.TabIndex = 304
-        Me.C1FlexGrid2.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
-        '
-        'Panel11
-        '
-        Me.Panel11.Controls.Add(Me.Panel12)
-        Me.Panel11.Controls.Add(Me.Label38)
-        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel11.Location = New System.Drawing.Point(504, 470)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(1054, 50)
-        Me.Panel11.TabIndex = 303
-        '
-        'Panel12
-        '
-        Me.Panel12.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel12.Location = New System.Drawing.Point(174, 24)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(852, 1)
-        Me.Panel12.TabIndex = 25
-        '
-        'Label38
-        '
-        Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(14, 15)
-        Me.Label38.Name = "Label38"
-        Me.Label38.Size = New System.Drawing.Size(157, 17)
-        Me.Label38.TabIndex = 24
-        Me.Label38.Text = "Work Order of Activities"
-        '
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.Transparent
@@ -769,188 +785,23 @@ Partial Class FRMWORKORDERS
         Me.Panel2.Size = New System.Drawing.Size(1054, 151)
         Me.Panel2.TabIndex = 0
         '
-        'Panel4
+        'TextBox3
         '
-        Me.Panel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel4.Location = New System.Drawing.Point(107, 16)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(932, 1)
-        Me.Panel4.TabIndex = 23
+        Me.TextBox3.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.TextBox3.Location = New System.Drawing.Point(731, 30)
+        Me.TextBox3.Name = "TextBox3"
+        Me.TextBox3.ReadOnly = True
+        Me.TextBox3.Size = New System.Drawing.Size(107, 22)
+        Me.TextBox3.TabIndex = 114
         '
-        'Label2
+        'TextBox1
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 9)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(85, 17)
-        Me.Label2.TabIndex = 22
-        Me.Label2.Text = "Informations"
-        '
-        'Panel5
-        '
-        Me.Panel5.Controls.Add(Me.xPLANTINGDATE)
-        Me.Panel5.Controls.Add(Me.Label24)
-        Me.Panel5.Controls.Add(Me.xAGE)
-        Me.Panel5.Controls.Add(Me.Label16)
-        Me.Panel5.Controls.Add(Me.xCROPCLASS)
-        Me.Panel5.Controls.Add(Me.Label23)
-        Me.Panel5.Controls.Add(Me.xCROPYEAR)
-        Me.Panel5.Controls.Add(Me.Label19)
-        Me.Panel5.Controls.Add(Me.xFARMASSISTANT)
-        Me.Panel5.Controls.Add(Me.Label36)
-        Me.Panel5.Controls.Add(Me.xFARMMANAGER)
-        Me.Panel5.Controls.Add(Me.Label35)
-        Me.Panel5.Controls.Add(Me.xCROPCLASSDETAIL)
-        Me.Panel5.Controls.Add(Me.Label5)
-        Me.Panel5.Controls.Add(Me.xLAAS)
-        Me.Panel5.Controls.Add(Me.Label33)
-        Me.Panel5.Controls.Add(Me.xFAS)
-        Me.Panel5.Controls.Add(Me.Label32)
-        Me.Panel5.Controls.Add(Me.xFARMCLUSTER)
-        Me.Panel5.Controls.Add(Me.Label22)
-        Me.Panel5.Controls.Add(Me.xMILLINGSEASON)
-        Me.Panel5.Controls.Add(Me.Label21)
-        Me.Panel5.Controls.Add(Me.xCONTRACTEDTAREA)
-        Me.Panel5.Controls.Add(Me.Label20)
-        Me.Panel5.Controls.Add(Me.xFARMCLASSIFICATION)
-        Me.Panel5.Controls.Add(Me.Label18)
-        Me.Panel5.Controls.Add(Me.xFARMADDRESS)
-        Me.Panel5.Controls.Add(Me.Label17)
-        Me.Panel5.Controls.Add(Me.xPLANTEDAREA)
-        Me.Panel5.Controls.Add(Me.Label15)
-        Me.Panel5.Controls.Add(Me.xARABLEAREA)
-        Me.Panel5.Controls.Add(Me.Label11)
-        Me.Panel5.Controls.Add(Me.xMAINFIELDNO)
-        Me.Panel5.Controls.Add(Me.Label12)
-        Me.Panel5.Controls.Add(Me.xFARMMODEL)
-        Me.Panel5.Controls.Add(Me.Label13)
-        Me.Panel5.Controls.Add(Me.xLANDOWNER)
-        Me.Panel5.Controls.Add(Me.Label14)
-        Me.Panel5.Controls.Add(Me.xSUBFIELDNO)
-        Me.Panel5.Controls.Add(Me.Label34)
-        Me.Panel5.Controls.Add(Me.Panel3)
-        Me.Panel5.Controls.Add(Me.Label10)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel5.Location = New System.Drawing.Point(0, 0)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(504, 828)
-        Me.Panel5.TabIndex = 1
-        '
-        'xSUBFIELDNO
-        '
-        Me.xSUBFIELDNO.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xSUBFIELDNO.Location = New System.Drawing.Point(198, 32)
-        Me.xSUBFIELDNO.Name = "xSUBFIELDNO"
-        Me.xSUBFIELDNO.ReadOnly = True
-        Me.xSUBFIELDNO.Size = New System.Drawing.Size(274, 22)
-        Me.xSUBFIELDNO.TabIndex = 87
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(32, 37)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(93, 17)
-        Me.Label34.TabIndex = 86
-        Me.Label34.Text = "Sub Field No:"
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel3.Location = New System.Drawing.Point(109, 15)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(380, 1)
-        Me.Panel3.TabIndex = 39
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(14, 6)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(85, 17)
-        Me.Label10.TabIndex = 38
-        Me.Label10.Text = "Field Details"
-        '
-        'Panel13
-        '
-        Me.Panel13.BackColor = System.Drawing.Color.Gainsboro
-        Me.Panel13.Controls.Add(Me.btAddHeader)
-        Me.Panel13.Controls.Add(Me.btCancelHeader)
-        Me.Panel13.Controls.Add(Me.btSaveHeader)
-        Me.Panel13.Controls.Add(Me.btDeleteHeader)
-        Me.Panel13.Controls.Add(Me.btEditHeader)
-        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel13.Location = New System.Drawing.Point(504, 0)
-        Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(1054, 54)
-        Me.Panel13.TabIndex = 38
-        '
-        'btAddHeader
-        '
-        Me.btAddHeader.BackColor = System.Drawing.Color.Transparent
-        Me.btAddHeader.FlatAppearance.BorderSize = 0
-        Me.btAddHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAddHeader.Image = CType(resources.GetObject("btAddHeader.Image"), System.Drawing.Image)
-        Me.btAddHeader.Location = New System.Drawing.Point(13, 10)
-        Me.btAddHeader.Name = "btAddHeader"
-        Me.btAddHeader.Size = New System.Drawing.Size(38, 36)
-        Me.btAddHeader.TabIndex = 123158
-        Me.ToolTip1.SetToolTip(Me.btAddHeader, "Add")
-        Me.btAddHeader.UseVisualStyleBackColor = False
-        '
-        'btCancelHeader
-        '
-        Me.btCancelHeader.BackColor = System.Drawing.Color.Transparent
-        Me.btCancelHeader.FlatAppearance.BorderSize = 0
-        Me.btCancelHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btCancelHeader.Image = CType(resources.GetObject("btCancelHeader.Image"), System.Drawing.Image)
-        Me.btCancelHeader.Location = New System.Drawing.Point(146, 10)
-        Me.btCancelHeader.Name = "btCancelHeader"
-        Me.btCancelHeader.Size = New System.Drawing.Size(38, 36)
-        Me.btCancelHeader.TabIndex = 123157
-        Me.ToolTip1.SetToolTip(Me.btCancelHeader, "Cancel")
-        Me.btCancelHeader.UseVisualStyleBackColor = False
-        '
-        'btSaveHeader
-        '
-        Me.btSaveHeader.BackColor = System.Drawing.Color.Transparent
-        Me.btSaveHeader.FlatAppearance.BorderSize = 0
-        Me.btSaveHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btSaveHeader.Image = CType(resources.GetObject("btSaveHeader.Image"), System.Drawing.Image)
-        Me.btSaveHeader.Location = New System.Drawing.Point(102, 10)
-        Me.btSaveHeader.Name = "btSaveHeader"
-        Me.btSaveHeader.Size = New System.Drawing.Size(38, 36)
-        Me.btSaveHeader.TabIndex = 123156
-        Me.ToolTip1.SetToolTip(Me.btSaveHeader, "Save")
-        Me.btSaveHeader.UseVisualStyleBackColor = False
-        '
-        'btDeleteHeader
-        '
-        Me.btDeleteHeader.BackColor = System.Drawing.Color.Transparent
-        Me.btDeleteHeader.FlatAppearance.BorderSize = 0
-        Me.btDeleteHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btDeleteHeader.Image = CType(resources.GetObject("btDeleteHeader.Image"), System.Drawing.Image)
-        Me.btDeleteHeader.Location = New System.Drawing.Point(190, 10)
-        Me.btDeleteHeader.Name = "btDeleteHeader"
-        Me.btDeleteHeader.Size = New System.Drawing.Size(38, 36)
-        Me.btDeleteHeader.TabIndex = 123155
-        Me.ToolTip1.SetToolTip(Me.btDeleteHeader, "Delete")
-        Me.btDeleteHeader.UseVisualStyleBackColor = False
-        '
-        'btEditHeader
-        '
-        Me.btEditHeader.BackColor = System.Drawing.Color.Transparent
-        Me.btEditHeader.FlatAppearance.BorderSize = 0
-        Me.btEditHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btEditHeader.Image = CType(resources.GetObject("btEditHeader.Image"), System.Drawing.Image)
-        Me.btEditHeader.Location = New System.Drawing.Point(59, 10)
-        Me.btEditHeader.Name = "btEditHeader"
-        Me.btEditHeader.Size = New System.Drawing.Size(38, 36)
-        Me.btEditHeader.TabIndex = 123154
-        Me.ToolTip1.SetToolTip(Me.btEditHeader, "Edit")
-        Me.btEditHeader.UseVisualStyleBackColor = False
+        Me.TextBox1.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.TextBox1.Location = New System.Drawing.Point(242, 112)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(226, 22)
+        Me.TextBox1.TabIndex = 93
         '
         'xAREAOFACTIVITY
         '
@@ -960,6 +811,15 @@ Partial Class FRMWORKORDERS
         Me.xAREAOFACTIVITY.ReadOnly = True
         Me.xAREAOFACTIVITY.Size = New System.Drawing.Size(95, 22)
         Me.xAREAOFACTIVITY.TabIndex = 113
+        '
+        'TextBox2
+        '
+        Me.TextBox2.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.TextBox2.Location = New System.Drawing.Point(242, 85)
+        Me.TextBox2.Name = "TextBox2"
+        Me.TextBox2.ReadOnly = True
+        Me.TextBox2.Size = New System.Drawing.Size(226, 22)
+        Me.TextBox2.TabIndex = 92
         '
         'xVERSION
         '
@@ -1033,32 +893,137 @@ Partial Class FRMWORKORDERS
         Me.Label1.TabIndex = 102
         Me.Label1.Text = "Work Order Code:"
         '
-        'TextBox1
+        'Panel4
         '
-        Me.TextBox1.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.TextBox1.Location = New System.Drawing.Point(242, 112)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(226, 22)
-        Me.TextBox1.TabIndex = 93
+        Me.Panel4.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel4.Location = New System.Drawing.Point(107, 16)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(932, 1)
+        Me.Panel4.TabIndex = 23
         '
-        'TextBox2
+        'Label2
         '
-        Me.TextBox2.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.TextBox2.Location = New System.Drawing.Point(242, 85)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.ReadOnly = True
-        Me.TextBox2.Size = New System.Drawing.Size(226, 22)
-        Me.TextBox2.TabIndex = 92
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(12, 9)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(85, 17)
+        Me.Label2.TabIndex = 22
+        Me.Label2.Text = "Informations"
         '
-        'TextBox3
+        'Panel11
         '
-        Me.TextBox3.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.TextBox3.Location = New System.Drawing.Point(731, 30)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.ReadOnly = True
-        Me.TextBox3.Size = New System.Drawing.Size(107, 22)
-        Me.TextBox3.TabIndex = 114
+        Me.Panel11.Controls.Add(Me.Panel12)
+        Me.Panel11.Controls.Add(Me.Label38)
+        Me.Panel11.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel11.Location = New System.Drawing.Point(504, 470)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(1054, 50)
+        Me.Panel11.TabIndex = 303
+        '
+        'Panel12
+        '
+        Me.Panel12.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel12.Location = New System.Drawing.Point(174, 24)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(852, 1)
+        Me.Panel12.TabIndex = 25
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Location = New System.Drawing.Point(14, 15)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(157, 17)
+        Me.Label38.TabIndex = 24
+        Me.Label38.Text = "Work Order of Activities"
+        '
+        'Panel13
+        '
+        Me.Panel13.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel13.Controls.Add(Me.btAddHeader)
+        Me.Panel13.Controls.Add(Me.btCancelHeader)
+        Me.Panel13.Controls.Add(Me.btSaveHeader)
+        Me.Panel13.Controls.Add(Me.btDeleteHeader)
+        Me.Panel13.Controls.Add(Me.btEditHeader)
+        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel13.Location = New System.Drawing.Point(504, 0)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(1054, 54)
+        Me.Panel13.TabIndex = 38
+        '
+        'C1FlexGrid2
+        '
+        Me.C1FlexGrid2.AllowDragging = C1.Win.C1FlexGrid.AllowDraggingEnum.None
+        Me.C1FlexGrid2.AllowFiltering = True
+        Me.C1FlexGrid2.BackColor = System.Drawing.Color.White
+        Me.C1FlexGrid2.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle
+        Me.C1FlexGrid2.ColumnInfo = "0,0,0,0,0,105,Columns:"
+        Me.C1FlexGrid2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.C1FlexGrid2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.C1FlexGrid2.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
+        Me.C1FlexGrid2.Location = New System.Drawing.Point(504, 520)
+        Me.C1FlexGrid2.Margin = New System.Windows.Forms.Padding(4)
+        Me.C1FlexGrid2.Name = "C1FlexGrid2"
+        Me.C1FlexGrid2.Rows.DefaultSize = 21
+        Me.C1FlexGrid2.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
+        Me.C1FlexGrid2.Size = New System.Drawing.Size(1054, 308)
+        Me.C1FlexGrid2.StyleInfo = resources.GetString("C1FlexGrid2.StyleInfo")
+        Me.C1FlexGrid2.TabIndex = 304
+        Me.C1FlexGrid2.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.xPLANTINGDATE)
+        Me.Panel5.Controls.Add(Me.Label24)
+        Me.Panel5.Controls.Add(Me.xAGE)
+        Me.Panel5.Controls.Add(Me.Label16)
+        Me.Panel5.Controls.Add(Me.xCROPCLASS)
+        Me.Panel5.Controls.Add(Me.Label23)
+        Me.Panel5.Controls.Add(Me.xCROPYEAR)
+        Me.Panel5.Controls.Add(Me.Label19)
+        Me.Panel5.Controls.Add(Me.xFARMASSISTANT)
+        Me.Panel5.Controls.Add(Me.Label36)
+        Me.Panel5.Controls.Add(Me.xFARMMANAGER)
+        Me.Panel5.Controls.Add(Me.Label35)
+        Me.Panel5.Controls.Add(Me.xCROPCLASSDETAIL)
+        Me.Panel5.Controls.Add(Me.Label5)
+        Me.Panel5.Controls.Add(Me.xLAAS)
+        Me.Panel5.Controls.Add(Me.Label33)
+        Me.Panel5.Controls.Add(Me.xFAS)
+        Me.Panel5.Controls.Add(Me.Label32)
+        Me.Panel5.Controls.Add(Me.xFARMCLUSTER)
+        Me.Panel5.Controls.Add(Me.Label22)
+        Me.Panel5.Controls.Add(Me.xMILLINGSEASON)
+        Me.Panel5.Controls.Add(Me.Label21)
+        Me.Panel5.Controls.Add(Me.xCONTRACTEDTAREA)
+        Me.Panel5.Controls.Add(Me.Label20)
+        Me.Panel5.Controls.Add(Me.xFARMCLASSIFICATION)
+        Me.Panel5.Controls.Add(Me.Label18)
+        Me.Panel5.Controls.Add(Me.xFARMADDRESS)
+        Me.Panel5.Controls.Add(Me.Label17)
+        Me.Panel5.Controls.Add(Me.xPLANTEDAREA)
+        Me.Panel5.Controls.Add(Me.Label15)
+        Me.Panel5.Controls.Add(Me.xARABLEAREA)
+        Me.Panel5.Controls.Add(Me.Label11)
+        Me.Panel5.Controls.Add(Me.xMAINFIELDNO)
+        Me.Panel5.Controls.Add(Me.Label12)
+        Me.Panel5.Controls.Add(Me.xFARMMODEL)
+        Me.Panel5.Controls.Add(Me.Label13)
+        Me.Panel5.Controls.Add(Me.xLANDOWNER)
+        Me.Panel5.Controls.Add(Me.Label14)
+        Me.Panel5.Controls.Add(Me.xSUBFIELDNO)
+        Me.Panel5.Controls.Add(Me.Label34)
+        Me.Panel5.Controls.Add(Me.Panel3)
+        Me.Panel5.Controls.Add(Me.Label10)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(504, 828)
+        Me.Panel5.TabIndex = 1
         '
         'xPLANTINGDATE
         '
@@ -1403,6 +1368,41 @@ Partial Class FRMWORKORDERS
         Me.Label14.TabIndex = 103
         Me.Label14.Text = "Land Owner:"
         '
+        'xSUBFIELDNO
+        '
+        Me.xSUBFIELDNO.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xSUBFIELDNO.Location = New System.Drawing.Point(198, 32)
+        Me.xSUBFIELDNO.Name = "xSUBFIELDNO"
+        Me.xSUBFIELDNO.ReadOnly = True
+        Me.xSUBFIELDNO.Size = New System.Drawing.Size(274, 22)
+        Me.xSUBFIELDNO.TabIndex = 87
+        '
+        'Label34
+        '
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(32, 37)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(93, 17)
+        Me.Label34.TabIndex = 86
+        Me.Label34.Text = "Sub Field No:"
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel3.Location = New System.Drawing.Point(109, 15)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(380, 1)
+        Me.Panel3.TabIndex = 39
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(14, 6)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(85, 17)
+        Me.Label10.TabIndex = 38
+        Me.Label10.Text = "Field Details"
+        '
         'FRMWORKORDERS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1430,18 +1430,18 @@ Partial Class FRMWORKORDERS
         Me.Overview.ResumeLayout(False)
         CType(Me.dgMAINWO, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Details.ResumeLayout(False)
-        CType(Me.C1FlexGrid2, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel11.ResumeLayout(False)
-        Me.Panel11.PerformLayout()
         Me.Panel6.ResumeLayout(False)
         CType(Me.C1FlexGrid1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel11.ResumeLayout(False)
+        Me.Panel11.PerformLayout()
+        Me.Panel13.ResumeLayout(False)
+        CType(Me.C1FlexGrid2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        Me.Panel13.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

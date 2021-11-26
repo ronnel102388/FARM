@@ -108,8 +108,25 @@ Public Class FRMWORKORDERS
         PrepareUser()
         BTNDASHBOARD.PerformClick()
         'POPULATEWORKORDER()
+        BTNNOTIF.Text = x()
     End Sub
+    Function x() As Integer
+        Dim sql As String = <s>
+ SELECT COUNT(WORKORDERCODE) as Count
+FROM R_DAILYFIELDACTIVITYREPORT
+WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
+                            </s>
+        ExeReader(sql)
+        Dim find As Integer = 0
+        While dr.Read
+            find = dr.Item("count").ToString
+        End While
 
+        dr.Close()
+        Conn.Close()
+
+        Return find
+    End Function
     Private Sub BTNDASHBOARD_Click(sender As Object, e As EventArgs) Handles BTNDASHBOARD.Click
         MAINTAB.TabPages.Remove(Overview)
         MAINTAB.TabPages.Remove(Details)
@@ -166,5 +183,10 @@ Public Class FRMWORKORDERS
             .vSUBFIELDNO = dgMAINWO.Item(x, "FIELDNO").ToString
             .ShowDialog()
         End With
+    End Sub
+
+    Private Sub BTNNOTIF_Click(sender As Object, e As EventArgs) Handles BTNNOTIF.Click
+        FRMWORKORDERDASHBOARD.ShowDialog()
+
     End Sub
 End Class

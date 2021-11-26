@@ -1,8 +1,9 @@
 ﻿Imports C1.Win.C1FlexGrid
-Public Class FRMCREATIONWORKORDERS
+Public Class FRMCREATION_NO_WORKORDER
     Dim vMAJAID, vMINAID, vVERSIONID As Integer
     Public vMAINWOID As Integer
     Public vSUBFIELDNO As String
+
 
 #Region "ROUTINE"
     Sub Clear()
@@ -35,6 +36,7 @@ Public Class FRMCREATIONWORKORDERS
 
         xDTPWOACTIVITYDATE.Value = Date.Now
         xAREAOFACTIVITY.Text = 0
+
 
 
     End Sub
@@ -206,6 +208,52 @@ Public Class FRMCREATIONWORKORDERS
 
     End Sub
 
+    Private Sub BtSave_Click(sender As Object, e As EventArgs) Handles BtSave.Click
+
+    End Sub
+
+    Public Sub Button1_Click(sender As Object, e As EventArgs)
+        If xCBOSUBFIELDNO.Text = "" Or xCBOSUBFIELDNO.SelectedIndex = -1 Then
+            POPULATEFIELDDETAILS("")
+            Clear()
+        Else
+            POPULATEFIELDDETAILS(xCBOSUBFIELDNO.Text)
+            xCBOMAJORACTIVITY.Text = ""
+            xCBOMAJORACTIVITY.SelectedIndex = -1
+            xCBOMINORACTIVITY.Text = ""
+            xCBOMINORACTIVITY.SelectedIndex = -1
+        End If
+        If Val(xPLANTEDAREA.Text) <> 0 Then
+            xAREAOFACTIVITY.Text = xPLANTEDAREA.Text
+        Else
+            xAREAOFACTIVITY.Text = xARABLEAREA.Text
+        End If
+        drl_FillCombo("MAJORACTIVITY", xCBOMAJORACTIVITY, "M_FARM_POT_VERSION_DETAIL", "CROPCLASS = '" & xCROPCLASS.Text & "' AND VERSIONID = " & vVERSIONID & " AND COID = '" & Comp & "'")
+
+    End Sub
+
+    Public Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
+        If xCBOSUBFIELDNO.Text = "" Or xCBOSUBFIELDNO.SelectedIndex = -1 Then
+            POPULATEFIELDDETAILS("")
+            Clear()
+        Else
+            POPULATEFIELDDETAILS(xCBOSUBFIELDNO.Text)
+            xCBOMAJORACTIVITY.Text = ""
+            xCBOMAJORACTIVITY.SelectedIndex = -1
+            xCBOMINORACTIVITY.Text = ""
+            xCBOMINORACTIVITY.SelectedIndex = -1
+        End If
+        If Val(xPLANTEDAREA.Text) <> 0 Then
+            xAREAOFACTIVITY.Text = xPLANTEDAREA.Text
+        Else
+            xAREAOFACTIVITY.Text = xARABLEAREA.Text
+        End If
+        drl_FillCombo("MAJORACTIVITY", xCBOMAJORACTIVITY, "M_FARM_POT_VERSION_DETAIL", "CROPCLASS = '" & xCROPCLASS.Text & "' AND VERSIONID = " & vVERSIONID & " AND COID = '" & Comp & "'")
+
+    End Sub
+
+
+
     Public Sub xCBOSUBFIELDNO_LostFocus(sender As Object, e As EventArgs) Handles xCBOSUBFIELDNO.LostFocus
         If xCBOSUBFIELDNO.Text = "" Or xCBOSUBFIELDNO.SelectedIndex = -1 Then
             POPULATEFIELDDETAILS("")
@@ -225,7 +273,10 @@ Public Class FRMCREATIONWORKORDERS
         drl_FillCombo("MAJORACTIVITY", xCBOMAJORACTIVITY, "M_FARM_POT_VERSION_DETAIL", "CROPCLASS = '" & xCROPCLASS.Text & "' AND VERSIONID = " & vVERSIONID & " AND COID = '" & Comp & "'")
     End Sub
 #End Region
-    Private Sub FRMCREATEWORKORDERS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+
+    Private Sub FRMCREATION_NO_WORKORDER_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Clear()
         vVERSIONID = drl_FINDDefault()
         xVERSION.Text = drl_FINDDescription("VERSION", "M_FARM_POT_VERSION", "RECID =" & vVERSIONID)
@@ -235,7 +286,7 @@ Public Class FRMCREATIONWORKORDERS
         xCBOSUBFIELDNO.Text = vSUBFIELDNO
         xCBOSUBFIELDNO_LostFocus(sender, e)
 
-        If vSUBFIELDNO <> "" Then
+        If vSUBFIELDNO <> "" And vMAINWOID <> 0 Then
             xCBOSUBFIELDNO.Enabled = False
         End If
 
@@ -243,6 +294,5 @@ Public Class FRMCREATIONWORKORDERS
         POPULATE_METHODOFACTIVITY_RESOURCE(vVERSIONID, 0, 0, "", 0)
 
     End Sub
-
 
 End Class

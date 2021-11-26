@@ -207,43 +207,62 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
     End Sub
 
     Private Sub Grid1_Click_1(sender As Object, e As EventArgs) Handles grid1.Click
+        FRMCREATION_NO_WORKORDER.Show()
 
-        If FilterDGV.Text = "VIEW ALL" Or FilterDGV.Text = "NO WORKORDER" Or FilterDGV.Text = "WITH WORKORDER" Then
-            Dim ii As Integer = grid1.RowSel
-
-            If grid1.Rows.Count - 1 > 0 Then
-                statuscheck.Text = grid1.Item(ii, "STATUS").ToString
-
-                If statuscheck.Text = "NO WORKORDER" Then
-
-                    FRMNOWORKORDER.Show()
-
-                    Dim i As Integer = grid1.RowSel
-
-                    If grid1.Rows.Count - 1 > 0 Then
-                        FRMNOWORKORDER.DFARID.Text = grid1.Item(i, "DFARID").ToString
-                        FRMNOWORKORDER.TRANSMITTALNO.Text = grid1.Item(i, "TRANSMITTALNO").ToString
-                        FRMNOWORKORDER.SUBFIELDNO.Text = grid1.Item(i, "SUBFIELDNO").ToString
-                        FRMNOWORKORDER.MAJORACTIVITY.Text = grid1.Item(i, "MAJORACTIVITY").ToString
-                        FRMNOWORKORDER.MINORACTIVITY.Text = grid1.Item(i, "MINORACTIVITY").ToString
-                        FRMNOWORKORDER.SUBWAREHOUSE.Text = grid1.Item(i, "SUBWAREHOUSE").ToString
-                        FRMNOWORKORDER.METHODOFACTIVITY.Text = grid1.Item(i, "METHODOFACTIVITY").ToString
-                        FRMNOWORKORDER.TEAMLEADER.Text = grid1.Item(i, "TEAMLEADER").ToString
-                        FRMNOWORKORDER.CONTRACTOR.Text = grid1.Item(i, "CONTRACTOR").ToString
-                        FRMNOWORKORDER.FARMMANAGER.Text = grid1.Item(i, "FARMMANAGER").ToString
-                        FRMNOWORKORDER.FARMASSISTANT.Text = grid1.Item(i, "FARMASSISTANT").ToString
-                        FRMNOWORKORDER.STATUS.Text = grid1.Item(i, "STATUS").ToString
-                    End If
-                    FRMNOWORKORDER.btnrefreshworkorder.PerformClick()
-                    FRMNOWORKORDER.BtEdit.Enabled = False
-                    FRMNOWORKORDER.BtSave.Enabled = True
-                Else
-                    MsgBox("Item already have WorkOrder.", MsgBoxStyle.Critical, "warning...")
-                End If
-            End If
-
-
+        If grid1.Rows.Count = 1 Then
+            Exit Sub
         End If
+        Dim i As Integer = grid1.RowSel
+
+        If grid1.Rows.Count - 1 > 0 Then
+            SubFieldNum.Text = grid1.Item(i, "SUBFIELDNO").ToString
+        End If
+
+
+
+
+        FRMCREATION_NO_WORKORDER.xCBOSUBFIELDNO.Text = SubFieldNum.Text
+        FRMCREATION_NO_WORKORDER.Button1.PerformClick()
+
+        FRMCREATION_NO_WORKORDER.xCBOSUBFIELDNO.Enabled = False
+
+
+        'If FilterDGV.Text = "VIEW ALL" Or FilterDGV.Text = "NO WORKORDER" Or FilterDGV.Text = "WITH WORKORDER" Then
+        '    Dim ii As Integer = grid1.RowSel
+
+        '    If grid1.Rows.Count - 1 > 0 Then
+        '        statuscheck.Text = grid1.Item(ii, "STATUS").ToString
+
+        '        If statuscheck.Text = "NO WORKORDER" Then
+
+        '            FRMNOWORKORDER.Show()
+
+        '            Dim i As Integer = grid1.RowSel
+
+        '            If grid1.Rows.Count - 1 > 0 Then
+        '                FRMNOWORKORDER.DFARID.Text = grid1.Item(i, "DFARID").ToString
+        '                FRMNOWORKORDER.TRANSMITTALNO.Text = grid1.Item(i, "TRANSMITTALNO").ToString
+        '                FRMNOWORKORDER.SUBFIELDNO.Text = grid1.Item(i, "SUBFIELDNO").ToString
+        '                FRMNOWORKORDER.MAJORACTIVITY.Text = grid1.Item(i, "MAJORACTIVITY").ToString
+        '                FRMNOWORKORDER.MINORACTIVITY.Text = grid1.Item(i, "MINORACTIVITY").ToString
+        '                FRMNOWORKORDER.SUBWAREHOUSE.Text = grid1.Item(i, "SUBWAREHOUSE").ToString
+        '                FRMNOWORKORDER.METHODOFACTIVITY.Text = grid1.Item(i, "METHODOFACTIVITY").ToString
+        '                FRMNOWORKORDER.TEAMLEADER.Text = grid1.Item(i, "TEAMLEADER").ToString
+        '                FRMNOWORKORDER.CONTRACTOR.Text = grid1.Item(i, "CONTRACTOR").ToString
+        '                FRMNOWORKORDER.FARMMANAGER.Text = grid1.Item(i, "FARMMANAGER").ToString
+        '                FRMNOWORKORDER.FARMASSISTANT.Text = grid1.Item(i, "FARMASSISTANT").ToString
+        '                FRMNOWORKORDER.STATUS.Text = grid1.Item(i, "STATUS").ToString
+        '            End If
+        '            FRMNOWORKORDER.btnrefreshworkorder.PerformClick()
+        '            FRMNOWORKORDER.BtEdit.Enabled = False
+        '            FRMNOWORKORDER.BtSave.Enabled = True
+        '        Else
+        '            MsgBox("Item already have WorkOrder.", MsgBoxStyle.Critical, "warning...")
+        '        End If
+        '    End If
+
+
+        'End If
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) 
