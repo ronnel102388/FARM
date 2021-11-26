@@ -231,7 +231,7 @@ Module DBConnect
         Dim sql As String = <s>
                                  
                                 SELECT <%= ToFind %>
-                                      FROM [vwAAA] WHERE <%= ColtoFind %>='<%= ValToFind %>'
+                                      FROM [vwFindWorkOrder] WHERE <%= ColtoFind %>='<%= ValToFind %>'
                             </s>
         'MsgBox(sql)
         ExeReader(sql)
