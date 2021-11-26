@@ -50,10 +50,13 @@
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>..\..\..\..\..\..\..\Launcherv5\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
     <Reference Include="C1.Win.C1FlexGrid.2, Version=2.0.20201.416, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
     <Reference Include="Configuration, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>D:\ROZ-BU\VS2019\FARMSYSTEM\WORKORDER\bin\Debug\Configuration.dll</HintPath>
+      <HintPath>bin\Debug\Configuration.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -61,6 +64,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -180,6 +184,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bell.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_padlock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

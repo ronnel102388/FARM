@@ -22,22 +22,12 @@ Partial Class FRMCREATIONWORKORDERS
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRMCREATIONWORKORDERS))
         Me.PANELHEADER = New System.Windows.Forms.Panel()
-        Me.BTNNOTIF = New System.Windows.Forms.Button()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.XSEARCH = New System.Windows.Forms.TextBox()
-        Me.BTSEARCHLINE = New System.Windows.Forms.Button()
-        Me.BTEXPORT = New System.Windows.Forms.Button()
-        Me.btAdd = New System.Windows.Forms.Button()
-        Me.bTpRINT = New System.Windows.Forms.Button()
-        Me.btCancelUpdate = New System.Windows.Forms.Button()
-        Me.BtSave = New System.Windows.Forms.Button()
-        Me.BtRefresh = New System.Windows.Forms.Button()
         Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.BtDelete = New System.Windows.Forms.Button()
-        Me.BtEdit = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.ToolStripTextBox1 = New System.Windows.Forms.ToolStripTextBox()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -114,8 +104,21 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.BunifuElipse1 = New ns1.BunifuElipse(Me.components)
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.BTEXPORT = New System.Windows.Forms.Button()
+        Me.btAdd = New System.Windows.Forms.Button()
+        Me.bTpRINT = New System.Windows.Forms.Button()
+        Me.btCancelUpdate = New System.Windows.Forms.Button()
+        Me.BtSave = New System.Windows.Forms.Button()
+        Me.BtRefresh = New System.Windows.Forms.Button()
+        Me.BtDelete = New System.Windows.Forms.Button()
+        Me.BtEdit = New System.Windows.Forms.Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.btnclose = New System.Windows.Forms.Button()
+        Me.btnmax = New System.Windows.Forms.Button()
+        Me.btnmin = New System.Windows.Forms.Button()
         Me.PANELHEADER.SuspendLayout()
-        Me.Panel8.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
@@ -124,13 +127,13 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel2.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel3.SuspendLayout()
+        Me.Panel8.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PANELHEADER
         '
         Me.PANELHEADER.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.PANELHEADER.Controls.Add(Me.BTNNOTIF)
-        Me.PANELHEADER.Controls.Add(Me.Panel8)
         Me.PANELHEADER.Controls.Add(Me.BTEXPORT)
         Me.PANELHEADER.Controls.Add(Me.btAdd)
         Me.PANELHEADER.Controls.Add(Me.bTpRINT)
@@ -141,132 +144,10 @@ Partial Class FRMCREATIONWORKORDERS
         Me.PANELHEADER.Controls.Add(Me.BtDelete)
         Me.PANELHEADER.Controls.Add(Me.BtEdit)
         Me.PANELHEADER.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PANELHEADER.Location = New System.Drawing.Point(0, 28)
+        Me.PANELHEADER.Location = New System.Drawing.Point(0, 37)
         Me.PANELHEADER.Name = "PANELHEADER"
         Me.PANELHEADER.Size = New System.Drawing.Size(1427, 73)
         Me.PANELHEADER.TabIndex = 250
-        '
-        'BTNNOTIF
-        '
-        Me.BTNNOTIF.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BTNNOTIF.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BTNNOTIF.FlatAppearance.BorderSize = 0
-        Me.BTNNOTIF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNNOTIF.Image = CType(resources.GetObject("BTNNOTIF.Image"), System.Drawing.Image)
-        Me.BTNNOTIF.Location = New System.Drawing.Point(997, 19)
-        Me.BTNNOTIF.Name = "BTNNOTIF"
-        Me.BTNNOTIF.Size = New System.Drawing.Size(38, 36)
-        Me.BTNNOTIF.TabIndex = 123156
-        Me.BTNNOTIF.UseVisualStyleBackColor = False
-        '
-        'Panel8
-        '
-        Me.Panel8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel8.BackColor = System.Drawing.Color.White
-        Me.Panel8.Controls.Add(Me.XSEARCH)
-        Me.Panel8.Controls.Add(Me.BTSEARCHLINE)
-        Me.Panel8.Location = New System.Drawing.Point(1041, 14)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(367, 43)
-        Me.Panel8.TabIndex = 123155
-        '
-        'XSEARCH
-        '
-        Me.XSEARCH.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.XSEARCH.Font = New System.Drawing.Font("Century Gothic", 11.89565!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XSEARCH.Location = New System.Drawing.Point(6, 10)
-        Me.XSEARCH.Name = "XSEARCH"
-        Me.XSEARCH.Size = New System.Drawing.Size(317, 25)
-        Me.XSEARCH.TabIndex = 123147
-        '
-        'BTSEARCHLINE
-        '
-        Me.BTSEARCHLINE.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BTSEARCHLINE.BackColor = System.Drawing.Color.White
-        Me.BTSEARCHLINE.FlatAppearance.BorderSize = 0
-        Me.BTSEARCHLINE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTSEARCHLINE.Image = CType(resources.GetObject("BTSEARCHLINE.Image"), System.Drawing.Image)
-        Me.BTSEARCHLINE.Location = New System.Drawing.Point(326, 3)
-        Me.BTSEARCHLINE.Name = "BTSEARCHLINE"
-        Me.BTSEARCHLINE.Size = New System.Drawing.Size(38, 36)
-        Me.BTSEARCHLINE.TabIndex = 123146
-        Me.BTSEARCHLINE.UseVisualStyleBackColor = False
-        '
-        'BTEXPORT
-        '
-        Me.BTEXPORT.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BTEXPORT.Enabled = False
-        Me.BTEXPORT.FlatAppearance.BorderSize = 0
-        Me.BTEXPORT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTEXPORT.Image = CType(resources.GetObject("BTEXPORT.Image"), System.Drawing.Image)
-        Me.BTEXPORT.Location = New System.Drawing.Point(340, 19)
-        Me.BTEXPORT.Name = "BTEXPORT"
-        Me.BTEXPORT.Size = New System.Drawing.Size(38, 36)
-        Me.BTEXPORT.TabIndex = 123154
-        Me.BTEXPORT.UseVisualStyleBackColor = False
-        '
-        'btAdd
-        '
-        Me.btAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btAdd.Enabled = False
-        Me.btAdd.FlatAppearance.BorderSize = 0
-        Me.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAdd.Image = CType(resources.GetObject("btAdd.Image"), System.Drawing.Image)
-        Me.btAdd.Location = New System.Drawing.Point(12, 19)
-        Me.btAdd.Name = "btAdd"
-        Me.btAdd.Size = New System.Drawing.Size(38, 36)
-        Me.btAdd.TabIndex = 123153
-        Me.btAdd.UseVisualStyleBackColor = False
-        '
-        'bTpRINT
-        '
-        Me.bTpRINT.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.bTpRINT.Enabled = False
-        Me.bTpRINT.FlatAppearance.BorderSize = 0
-        Me.bTpRINT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bTpRINT.Image = CType(resources.GetObject("bTpRINT.Image"), System.Drawing.Image)
-        Me.bTpRINT.Location = New System.Drawing.Point(252, 19)
-        Me.bTpRINT.Name = "bTpRINT"
-        Me.bTpRINT.Size = New System.Drawing.Size(38, 36)
-        Me.bTpRINT.TabIndex = 123152
-        Me.bTpRINT.UseVisualStyleBackColor = False
-        '
-        'btCancelUpdate
-        '
-        Me.btCancelUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btCancelUpdate.FlatAppearance.BorderSize = 0
-        Me.btCancelUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btCancelUpdate.Image = CType(resources.GetObject("btCancelUpdate.Image"), System.Drawing.Image)
-        Me.btCancelUpdate.Location = New System.Drawing.Point(145, 19)
-        Me.btCancelUpdate.Name = "btCancelUpdate"
-        Me.btCancelUpdate.Size = New System.Drawing.Size(38, 36)
-        Me.btCancelUpdate.TabIndex = 123151
-        Me.btCancelUpdate.UseVisualStyleBackColor = False
-        '
-        'BtSave
-        '
-        Me.BtSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtSave.FlatAppearance.BorderSize = 0
-        Me.BtSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtSave.Image = CType(resources.GetObject("BtSave.Image"), System.Drawing.Image)
-        Me.BtSave.Location = New System.Drawing.Point(101, 19)
-        Me.BtSave.Name = "BtSave"
-        Me.BtSave.Size = New System.Drawing.Size(38, 36)
-        Me.BtSave.TabIndex = 123150
-        Me.BtSave.UseVisualStyleBackColor = False
-        '
-        'BtRefresh
-        '
-        Me.BtRefresh.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtRefresh.Enabled = False
-        Me.BtRefresh.FlatAppearance.BorderSize = 0
-        Me.BtRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtRefresh.Image = CType(resources.GetObject("BtRefresh.Image"), System.Drawing.Image)
-        Me.BtRefresh.Location = New System.Drawing.Point(296, 19)
-        Me.BtRefresh.Name = "BtRefresh"
-        Me.BtRefresh.Size = New System.Drawing.Size(38, 36)
-        Me.BtRefresh.TabIndex = 123149
-        Me.BtRefresh.UseVisualStyleBackColor = False
         '
         'Panel10
         '
@@ -277,48 +158,31 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel10.Size = New System.Drawing.Size(2, 32)
         Me.Panel10.TabIndex = 123148
         '
-        'BtDelete
-        '
-        Me.BtDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtDelete.Enabled = False
-        Me.BtDelete.FlatAppearance.BorderSize = 0
-        Me.BtDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtDelete.Image = CType(resources.GetObject("BtDelete.Image"), System.Drawing.Image)
-        Me.BtDelete.Location = New System.Drawing.Point(189, 19)
-        Me.BtDelete.Name = "BtDelete"
-        Me.BtDelete.Size = New System.Drawing.Size(38, 36)
-        Me.BtDelete.TabIndex = 123147
-        Me.BtDelete.UseVisualStyleBackColor = False
-        '
-        'BtEdit
-        '
-        Me.BtEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtEdit.Enabled = False
-        Me.BtEdit.FlatAppearance.BorderSize = 0
-        Me.BtEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtEdit.Image = CType(resources.GetObject("BtEdit.Image"), System.Drawing.Image)
-        Me.BtEdit.Location = New System.Drawing.Point(58, 19)
-        Me.BtEdit.Name = "BtEdit"
-        Me.BtEdit.Size = New System.Drawing.Size(38, 36)
-        Me.BtEdit.TabIndex = 123146
-        Me.BtEdit.UseVisualStyleBackColor = False
-        '
         'MenuStrip1
         '
+        Me.MenuStrip1.AutoSize = False
+        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ControlLight
         Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(19, 19)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripTextBox1, Me.FileToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1427, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1427, 36)
         Me.MenuStrip1.TabIndex = 251
         Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'ToolStripTextBox1
+        '
+        Me.ToolStripTextBox1.AutoSize = False
+        Me.ToolStripTextBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.ToolStripTextBox1.Name = "ToolStripTextBox1"
+        Me.ToolStripTextBox1.Size = New System.Drawing.Size(30, 32)
         '
         'FileToolStripMenuItem
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem, Me.SaveToolStripMenuItem, Me.CancelToolStripMenuItem, Me.PrintToolStripMenuItem, Me.ExportToExcelToolStripMenuItem, Me.ExitToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
         Me.FileToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(44, 24)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(44, 32)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'EditToolStripMenuItem
@@ -365,10 +229,10 @@ Partial Class FRMCREATIONWORKORDERS
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl1.Location = New System.Drawing.Point(0, 101)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 110)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1427, 665)
+        Me.TabControl1.Size = New System.Drawing.Size(1427, 656)
         Me.TabControl1.TabIndex = 252
         '
         'TabPage1
@@ -380,7 +244,7 @@ Partial Class FRMCREATIONWORKORDERS
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1419, 636)
+        Me.TabPage1.Size = New System.Drawing.Size(1419, 627)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Identification"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -400,7 +264,7 @@ Partial Class FRMCREATIONWORKORDERS
         Me.dgWOres.Name = "dgWOres"
         Me.dgWOres.Rows.DefaultSize = 21
         Me.dgWOres.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
-        Me.dgWOres.Size = New System.Drawing.Size(909, 427)
+        Me.dgWOres.Size = New System.Drawing.Size(909, 418)
         Me.dgWOres.StyleInfo = resources.GetString("dgWOres.StyleInfo")
         Me.dgWOres.TabIndex = 303
         Me.dgWOres.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
@@ -639,7 +503,7 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel5.Location = New System.Drawing.Point(3, 3)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(504, 630)
+        Me.Panel5.Size = New System.Drawing.Size(504, 621)
         Me.Panel5.TabIndex = 2
         '
         'xPLANTINGDATE
@@ -683,7 +547,7 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel11.Location = New System.Drawing.Point(495, 0)
+        Me.Panel11.Location = New System.Drawing.Point(496, -5)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(2, 629)
         Me.Panel11.TabIndex = 96
@@ -1064,24 +928,191 @@ Partial Class FRMCREATIONWORKORDERS
         Me.StatusStrip1.Tag = "XC"
         Me.StatusStrip1.Text = "PROGEN 1.2.x as of DateTime"
         '
+        'BunifuElipse1
+        '
+        Me.BunifuElipse1.ElipseRadius = 10
+        Me.BunifuElipse1.TargetControl = Me
+        '
+        'Panel8
+        '
+        Me.Panel8.Controls.Add(Me.PictureBox1)
+        Me.Panel8.Controls.Add(Me.btnclose)
+        Me.Panel8.Controls.Add(Me.btnmax)
+        Me.Panel8.Controls.Add(Me.btnmin)
+        Me.Panel8.Controls.Add(Me.MenuStrip1)
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel8.Location = New System.Drawing.Point(0, 0)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(1427, 37)
+        Me.Panel8.TabIndex = 304
+        '
+        'BTEXPORT
+        '
+        Me.BTEXPORT.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BTEXPORT.Enabled = False
+        Me.BTEXPORT.FlatAppearance.BorderSize = 0
+        Me.BTEXPORT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTEXPORT.Image = CType(resources.GetObject("BTEXPORT.Image"), System.Drawing.Image)
+        Me.BTEXPORT.Location = New System.Drawing.Point(340, 19)
+        Me.BTEXPORT.Name = "BTEXPORT"
+        Me.BTEXPORT.Size = New System.Drawing.Size(38, 36)
+        Me.BTEXPORT.TabIndex = 123154
+        Me.BTEXPORT.UseVisualStyleBackColor = False
+        '
+        'btAdd
+        '
+        Me.btAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btAdd.Enabled = False
+        Me.btAdd.FlatAppearance.BorderSize = 0
+        Me.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btAdd.Image = CType(resources.GetObject("btAdd.Image"), System.Drawing.Image)
+        Me.btAdd.Location = New System.Drawing.Point(12, 19)
+        Me.btAdd.Name = "btAdd"
+        Me.btAdd.Size = New System.Drawing.Size(38, 36)
+        Me.btAdd.TabIndex = 123153
+        Me.btAdd.UseVisualStyleBackColor = False
+        '
+        'bTpRINT
+        '
+        Me.bTpRINT.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.bTpRINT.Enabled = False
+        Me.bTpRINT.FlatAppearance.BorderSize = 0
+        Me.bTpRINT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bTpRINT.Image = CType(resources.GetObject("bTpRINT.Image"), System.Drawing.Image)
+        Me.bTpRINT.Location = New System.Drawing.Point(252, 19)
+        Me.bTpRINT.Name = "bTpRINT"
+        Me.bTpRINT.Size = New System.Drawing.Size(38, 36)
+        Me.bTpRINT.TabIndex = 123152
+        Me.bTpRINT.UseVisualStyleBackColor = False
+        '
+        'btCancelUpdate
+        '
+        Me.btCancelUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btCancelUpdate.FlatAppearance.BorderSize = 0
+        Me.btCancelUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btCancelUpdate.Image = CType(resources.GetObject("btCancelUpdate.Image"), System.Drawing.Image)
+        Me.btCancelUpdate.Location = New System.Drawing.Point(145, 19)
+        Me.btCancelUpdate.Name = "btCancelUpdate"
+        Me.btCancelUpdate.Size = New System.Drawing.Size(38, 36)
+        Me.btCancelUpdate.TabIndex = 123151
+        Me.btCancelUpdate.UseVisualStyleBackColor = False
+        '
+        'BtSave
+        '
+        Me.BtSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtSave.FlatAppearance.BorderSize = 0
+        Me.BtSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtSave.Image = CType(resources.GetObject("BtSave.Image"), System.Drawing.Image)
+        Me.BtSave.Location = New System.Drawing.Point(101, 19)
+        Me.BtSave.Name = "BtSave"
+        Me.BtSave.Size = New System.Drawing.Size(38, 36)
+        Me.BtSave.TabIndex = 123150
+        Me.BtSave.UseVisualStyleBackColor = False
+        '
+        'BtRefresh
+        '
+        Me.BtRefresh.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtRefresh.Enabled = False
+        Me.BtRefresh.FlatAppearance.BorderSize = 0
+        Me.BtRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtRefresh.Image = CType(resources.GetObject("BtRefresh.Image"), System.Drawing.Image)
+        Me.BtRefresh.Location = New System.Drawing.Point(296, 19)
+        Me.BtRefresh.Name = "BtRefresh"
+        Me.BtRefresh.Size = New System.Drawing.Size(38, 36)
+        Me.BtRefresh.TabIndex = 123149
+        Me.BtRefresh.UseVisualStyleBackColor = False
+        '
+        'BtDelete
+        '
+        Me.BtDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtDelete.Enabled = False
+        Me.BtDelete.FlatAppearance.BorderSize = 0
+        Me.BtDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtDelete.Image = CType(resources.GetObject("BtDelete.Image"), System.Drawing.Image)
+        Me.BtDelete.Location = New System.Drawing.Point(189, 19)
+        Me.BtDelete.Name = "BtDelete"
+        Me.BtDelete.Size = New System.Drawing.Size(38, 36)
+        Me.BtDelete.TabIndex = 123147
+        Me.BtDelete.UseVisualStyleBackColor = False
+        '
+        'BtEdit
+        '
+        Me.BtEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtEdit.Enabled = False
+        Me.BtEdit.FlatAppearance.BorderSize = 0
+        Me.BtEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtEdit.Image = CType(resources.GetObject("BtEdit.Image"), System.Drawing.Image)
+        Me.BtEdit.Location = New System.Drawing.Point(58, 19)
+        Me.BtEdit.Name = "BtEdit"
+        Me.BtEdit.Size = New System.Drawing.Size(38, 36)
+        Me.BtEdit.TabIndex = 123146
+        Me.BtEdit.UseVisualStyleBackColor = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(-2, -1)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(37, 39)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.PictureBox1.TabIndex = 304
+        Me.PictureBox1.TabStop = False
+        '
+        'btnclose
+        '
+        Me.btnclose.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnclose.FlatAppearance.BorderSize = 0
+        Me.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnclose.Image = CType(resources.GetObject("btnclose.Image"), System.Drawing.Image)
+        Me.btnclose.Location = New System.Drawing.Point(1394, 4)
+        Me.btnclose.Name = "btnclose"
+        Me.btnclose.Size = New System.Drawing.Size(28, 28)
+        Me.btnclose.TabIndex = 123153
+        Me.btnclose.UseVisualStyleBackColor = False
+        '
+        'btnmax
+        '
+        Me.btnmax.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.btnmax.FlatAppearance.BorderSize = 0
+        Me.btnmax.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnmax.Image = CType(resources.GetObject("btnmax.Image"), System.Drawing.Image)
+        Me.btnmax.Location = New System.Drawing.Point(1365, 4)
+        Me.btnmax.Name = "btnmax"
+        Me.btnmax.Size = New System.Drawing.Size(28, 28)
+        Me.btnmax.TabIndex = 123154
+        Me.btnmax.UseVisualStyleBackColor = False
+        '
+        'btnmin
+        '
+        Me.btnmin.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnmin.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnmin.FlatAppearance.BorderSize = 0
+        Me.btnmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnmin.Image = CType(resources.GetObject("btnmin.Image"), System.Drawing.Image)
+        Me.btnmin.Location = New System.Drawing.Point(1336, 4)
+        Me.btnmin.Name = "btnmin"
+        Me.btnmin.Size = New System.Drawing.Size(28, 28)
+        Me.btnmin.TabIndex = 123152
+        Me.btnmin.UseVisualStyleBackColor = False
+        '
         'FRMCREATIONWORKORDERS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1427, 790)
         Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.PANELHEADER)
+        Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel12)
         Me.Controls.Add(Me.StatusStrip1)
-        Me.Controls.Add(Me.PANELHEADER)
-        Me.Controls.Add(Me.MenuStrip1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "FRMCREATIONWORKORDERS"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "CREATION OF WORK ORDER DETAILS"
         Me.PANELHEADER.ResumeLayout(False)
-        Me.Panel8.ResumeLayout(False)
-        Me.Panel8.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
@@ -1094,16 +1125,14 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.Panel3.ResumeLayout(False)
+        Me.Panel8.ResumeLayout(False)
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents PANELHEADER As Panel
-    Friend WithEvents BTNNOTIF As Button
-    Friend WithEvents Panel8 As Panel
-    Friend WithEvents XSEARCH As TextBox
-    Friend WithEvents BTSEARCHLINE As Button
     Friend WithEvents BTEXPORT As Button
     Friend WithEvents btAdd As Button
     Friend WithEvents bTpRINT As Button
@@ -1190,4 +1219,11 @@ Partial Class FRMCREATIONWORKORDERS
     Friend WithEvents Label24 As Label
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents xAREAOFACTIVITY As TextBox
+    Friend WithEvents BunifuElipse1 As ns1.BunifuElipse
+    Friend WithEvents btnmax As Button
+    Friend WithEvents btnclose As Button
+    Friend WithEvents btnmin As Button
+    Friend WithEvents ToolStripTextBox1 As ToolStripTextBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents Panel8 As Panel
 End Class
