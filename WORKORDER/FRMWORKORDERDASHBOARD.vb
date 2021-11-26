@@ -29,7 +29,7 @@
             .AutoSizeCols()
 
         End With
-        xrecordcount.Text = grid1.Rows.Count
+
 
     End Sub
 #End Region
@@ -76,7 +76,7 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
                 .AutoSizeCols()
 
             End With
-            xrecordcount.Text = grid1.Rows.Count - 1
+            'xrecordcount.Text = grid1.Rows.Count - 1
             Label1.Text = x()
         Else
 
@@ -98,7 +98,7 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
                 .AutoSizeCols()
 
             End With
-            xrecordcount.Text = grid1.Rows.Count - 1
+            ' xrecordcount.Text = grid1.Rows.Count - 1
             Label1.Text = x()
         End If
     End Sub

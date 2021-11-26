@@ -264,26 +264,14 @@
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>546, 17</value>
   </metadata>
-  <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>675, 17</value>
-  </metadata>
-  <data name="RbnBuildNo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vAAADrwBlbxySQAAAUpJREFUOE/llLFKA0EQhg8L9RHEQhGtxNLC3G44EIszu7FLo09gZ2NhZWdKX8BS
-        a+1FLHwAGysbUbjbHIKPYJxv3Q1CEsKJ2OSHn5mdnfn3dna4ZMpRWKV7Ru/AqpUtYF+ybN6ZxgYsd9PN
-        qr21Rm6M+cJxcEa/Oqv7sGfVPlYOWSqNvoKy/yC2S26M+cJxQFCSLly7uY3QXwlWInQeBctWY9mLWX35
-        K0Guiv/UWZ91Vn2URt18H9I89oJW3xcmPQiHPIo99MWj4JPkumHpH8kZdS3x7nOez/HlpVW3WImf4FMT
-        0v8BXJm+1aLUhPJhsCk9OouzGCl9vINDccmdKBgf5Sfo06he+VmtI9g/TWYKo454GIhPLGzXF3zfSxdF
-        6E2u9gnxiYXt+oKgytNVhCB+CHtMFGTu+CmE5QAymyswLAcgl5qwnE4kyRd3Whiou+LQWQAAAABJRU5E
-        rkJggg==
-</value>
-  </data>
   <data name="grid1.StyleInfo" xml:space="preserve">
     <value>Normal{BackColor:White;Margins:1, 1, 1, 1;Border:Flat,1,LightGray,Horizontal;}	Alternate{BackColor:WhiteSmoke;}	Fixed{BackColor:Control;ForeColor:ControlText;Margins:1, 1, 1, 1;Border:Flat,1,ControlDark,Both;BackgroundImageLayout:Hide;}	Highlight{Font:Microsoft Sans Serif, 8.25pt;BackColor:LightBlue;ForeColor:Black;Border:Double,1,DarkTurquoise,Horizontal;}	Focus{Border:None,1,Black,Both;}	Editor{BackColor:White;Border:None,1,Black,Both;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	FrozenAlternate{}	NewRow{ForeColor:GrayText;}	EmptyArea{BackColor:White;Border:Flat,0,ControlDarkDark,Both;}	SelectedColumnHeader{}	SelectedRowHeader{}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDark;ForeColor:Black;}	Subtotal2{BackColor:Gainsboro;ForeColor:Black;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	FilterEditor{}	FirstCustomStyle{}	</value>
   </data>
+  <metadata name="StatusStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>675, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>76</value>
+    <value>59</value>
   </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

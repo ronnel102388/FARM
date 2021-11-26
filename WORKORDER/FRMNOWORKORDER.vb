@@ -157,7 +157,7 @@ AND WO.SUBFIELDNO='<%= SUBFIELDNO.Text %>'
                                SET [WORKORDERID] =  '<%= WORKORDERID.Text %>'
                                 ,[WorkOrderCode]='<%= WorkOrder.Text %>'
                                 ,[STATUS]='WITH WORKORDER'
-                                ,[MODIFIEDBY]='<%= FRMWORKORDERDASHBOARD.RbnUser %>'
+                                ,[MODIFIEDBY]='<%= FRMWORKORDERS.RbnUser %>'
                                 ,[MODIFICATIONDATE]=getdate()
                              WHERE DFARID = <%= DFARID.Text %>
                             </s>

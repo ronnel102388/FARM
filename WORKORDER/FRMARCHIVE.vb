@@ -68,7 +68,7 @@ ORDER BY CREATIONDATE DESC
            ('<%= DAYSTOARCHIVE.Text %>'
             ,'<%= INTERVALDAYSTOARCHIVE.Text %>'
             ,'<%= EFFECTIVITYDATE.Text %>'
-            ,'<%= FRMWORKORDERDASHBOARD.RbnUser.Text %>'
+            ,'<%= FRMWORKORDERS.RbnUser.Text %>'
             ,getdate()
             
             ,1

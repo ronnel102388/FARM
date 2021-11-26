@@ -25,6 +25,7 @@ Partial Class FRMWORKORDERS
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRMWORKORDERS))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.RbnBuildNo = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel7 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.RbnExeCode = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel11 = New System.Windows.Forms.ToolStripStatusLabel()
@@ -44,6 +45,26 @@ Partial Class FRMWORKORDERS
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.XSEARCH = New System.Windows.Forms.TextBox()
+        Me.BTSEARCHLINE = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.btAddHeader = New System.Windows.Forms.Button()
+        Me.btEditHeader = New System.Windows.Forms.Button()
+        Me.BTNWORKORDER = New System.Windows.Forms.Button()
+        Me.BTNDASHBOARD = New System.Windows.Forms.Button()
+        Me.BTNNOTIF = New System.Windows.Forms.Button()
+        Me.BTEXPORT = New System.Windows.Forms.Button()
+        Me.btAdd = New System.Windows.Forms.Button()
+        Me.bTpRINT = New System.Windows.Forms.Button()
+        Me.btCancelUpdate = New System.Windows.Forms.Button()
+        Me.BtSave = New System.Windows.Forms.Button()
+        Me.BtRefresh = New System.Windows.Forms.Button()
+        Me.BtDelete = New System.Windows.Forms.Button()
+        Me.BtEdit = New System.Windows.Forms.Button()
+        Me.Panel19 = New System.Windows.Forms.Panel()
+        Me.xsearchHeader = New System.Windows.Forms.TextBox()
+        Me.Button4 = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -56,22 +77,20 @@ Partial Class FRMWORKORDERS
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.MAINTAB = New System.Windows.Forms.TabControl()
-        Me.Dashboard = New System.Windows.Forms.TabPage()
-        Me.Overview = New System.Windows.Forms.TabPage()
-        Me.dgMAINWO = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.Details = New System.Windows.Forms.TabPage()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.dgWORes = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Label37 = New System.Windows.Forms.Label()
+        Me.dgWOHeader = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
-        Me.dgWOHeader = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.xPLANTINGDATE = New System.Windows.Forms.TextBox()
@@ -116,45 +135,27 @@ Partial Class FRMWORKORDERS
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.btAddHeader = New System.Windows.Forms.Button()
-        Me.btEditHeader = New System.Windows.Forms.Button()
-        Me.BTNWORKORDER = New System.Windows.Forms.Button()
-        Me.BTNDASHBOARD = New System.Windows.Forms.Button()
-        Me.BTNNOTIF = New System.Windows.Forms.Button()
-        Me.BTSEARCHLINE = New System.Windows.Forms.Button()
-        Me.BTEXPORT = New System.Windows.Forms.Button()
-        Me.btAdd = New System.Windows.Forms.Button()
-        Me.bTpRINT = New System.Windows.Forms.Button()
-        Me.btCancelUpdate = New System.Windows.Forms.Button()
-        Me.BtSave = New System.Windows.Forms.Button()
-        Me.BtRefresh = New System.Windows.Forms.Button()
-        Me.BtDelete = New System.Windows.Forms.Button()
-        Me.BtEdit = New System.Windows.Forms.Button()
-        Me.RbnBuildNo = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.Panel19 = New System.Windows.Forms.Panel()
-        Me.xsearchHeader = New System.Windows.Forms.TextBox()
-        Me.Button4 = New System.Windows.Forms.Button()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Dashboard = New System.Windows.Forms.TabPage()
+        Me.Overview = New System.Windows.Forms.TabPage()
+        Me.dgMAINWO = New C1.Win.C1FlexGrid.C1FlexGrid()
+        Me.BTNSETTING = New System.Windows.Forms.Button()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel8.SuspendLayout()
+        Me.Panel19.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.PANELHEADER.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.MAINTAB.SuspendLayout()
-        Me.Overview.SuspendLayout()
-        CType(Me.dgMAINWO, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Details.SuspendLayout()
         Me.Panel6.SuspendLayout()
         CType(Me.dgWORes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
+        CType(Me.dgWOHeader, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel11.SuspendLayout()
         Me.Panel13.SuspendLayout()
-        CType(Me.dgWOHeader, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
-        Me.Panel19.SuspendLayout()
+        Me.Overview.SuspendLayout()
+        CType(Me.dgMAINWO, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -170,6 +171,13 @@ Partial Class FRMWORKORDERS
         Me.StatusStrip1.TabIndex = 245
         Me.StatusStrip1.Tag = "XC"
         Me.StatusStrip1.Text = "PROGEN 1.2.x as of DateTime"
+        '
+        'RbnBuildNo
+        '
+        Me.RbnBuildNo.Image = CType(resources.GetObject("RbnBuildNo.Image"), System.Drawing.Image)
+        Me.RbnBuildNo.Name = "RbnBuildNo"
+        Me.RbnBuildNo.Size = New System.Drawing.Size(211, 19)
+        Me.RbnBuildNo.Text = "PROGEN 5.0 as of DateTime"
         '
         'ToolStripStatusLabel7
         '
@@ -288,9 +296,275 @@ Partial Class FRMWORKORDERS
         Me.XSEARCH.Font = New System.Drawing.Font("Century Gothic", 11.89565!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XSEARCH.Location = New System.Drawing.Point(6, 10)
         Me.XSEARCH.Name = "XSEARCH"
-        Me.XSEARCH.Size = New System.Drawing.Size(317, 25)
+        Me.XSEARCH.Size = New System.Drawing.Size(317, 24)
         Me.XSEARCH.TabIndex = 123147
         Me.ToolTip1.SetToolTip(Me.XSEARCH, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
+        '
+        'BTSEARCHLINE
+        '
+        Me.BTSEARCHLINE.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BTSEARCHLINE.BackColor = System.Drawing.Color.White
+        Me.BTSEARCHLINE.FlatAppearance.BorderSize = 0
+        Me.BTSEARCHLINE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTSEARCHLINE.Image = CType(resources.GetObject("BTSEARCHLINE.Image"), System.Drawing.Image)
+        Me.BTSEARCHLINE.Location = New System.Drawing.Point(326, 3)
+        Me.BTSEARCHLINE.Name = "BTSEARCHLINE"
+        Me.BTSEARCHLINE.Size = New System.Drawing.Size(38, 36)
+        Me.BTSEARCHLINE.TabIndex = 123146
+        Me.ToolTip1.SetToolTip(Me.BTSEARCHLINE, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
+        Me.BTSEARCHLINE.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.Color.Transparent
+        Me.Button1.FlatAppearance.BorderSize = 0
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
+        Me.Button1.Location = New System.Drawing.Point(127, 10)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(38, 36)
+        Me.Button1.TabIndex = 123166
+        Me.ToolTip1.SetToolTip(Me.Button1, "Print")
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.BackColor = System.Drawing.Color.Transparent
+        Me.Button2.FlatAppearance.BorderSize = 0
+        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
+        Me.Button2.Location = New System.Drawing.Point(216, 10)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(38, 36)
+        Me.Button2.TabIndex = 123165
+        Me.ToolTip1.SetToolTip(Me.Button2, "Cancelled")
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.BackColor = System.Drawing.Color.Transparent
+        Me.Button3.FlatAppearance.BorderSize = 0
+        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button3.Image = Global.WORKORDER.My.Resources.Resources.padlock
+        Me.Button3.Location = New System.Drawing.Point(173, 10)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(38, 36)
+        Me.Button3.TabIndex = 123164
+        Me.ToolTip1.SetToolTip(Me.Button3, "Close")
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'btAddHeader
+        '
+        Me.btAddHeader.BackColor = System.Drawing.Color.Transparent
+        Me.btAddHeader.FlatAppearance.BorderSize = 0
+        Me.btAddHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btAddHeader.Image = CType(resources.GetObject("btAddHeader.Image"), System.Drawing.Image)
+        Me.btAddHeader.Location = New System.Drawing.Point(13, 10)
+        Me.btAddHeader.Name = "btAddHeader"
+        Me.btAddHeader.Size = New System.Drawing.Size(38, 36)
+        Me.btAddHeader.TabIndex = 123158
+        Me.ToolTip1.SetToolTip(Me.btAddHeader, "Add")
+        Me.btAddHeader.UseVisualStyleBackColor = False
+        '
+        'btEditHeader
+        '
+        Me.btEditHeader.BackColor = System.Drawing.Color.Transparent
+        Me.btEditHeader.FlatAppearance.BorderSize = 0
+        Me.btEditHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btEditHeader.Image = CType(resources.GetObject("btEditHeader.Image"), System.Drawing.Image)
+        Me.btEditHeader.Location = New System.Drawing.Point(59, 10)
+        Me.btEditHeader.Name = "btEditHeader"
+        Me.btEditHeader.Size = New System.Drawing.Size(38, 36)
+        Me.btEditHeader.TabIndex = 123154
+        Me.ToolTip1.SetToolTip(Me.btEditHeader, "Edit")
+        Me.btEditHeader.UseVisualStyleBackColor = False
+        '
+        'BTNWORKORDER
+        '
+        Me.BTNWORKORDER.BackColor = System.Drawing.Color.DimGray
+        Me.BTNWORKORDER.FlatAppearance.BorderSize = 0
+        Me.BTNWORKORDER.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNWORKORDER.ForeColor = System.Drawing.Color.White
+        Me.BTNWORKORDER.Image = CType(resources.GetObject("BTNWORKORDER.Image"), System.Drawing.Image)
+        Me.BTNWORKORDER.Location = New System.Drawing.Point(163, 4)
+        Me.BTNWORKORDER.Name = "BTNWORKORDER"
+        Me.BTNWORKORDER.Size = New System.Drawing.Size(152, 64)
+        Me.BTNWORKORDER.TabIndex = 123154
+        Me.BTNWORKORDER.Text = "   Work Orders"
+        Me.BTNWORKORDER.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.BTNWORKORDER, "Work Order")
+        Me.BTNWORKORDER.UseVisualStyleBackColor = False
+        '
+        'BTNDASHBOARD
+        '
+        Me.BTNDASHBOARD.BackColor = System.Drawing.Color.DimGray
+        Me.BTNDASHBOARD.FlatAppearance.BorderSize = 0
+        Me.BTNDASHBOARD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNDASHBOARD.ForeColor = System.Drawing.Color.White
+        Me.BTNDASHBOARD.Image = CType(resources.GetObject("BTNDASHBOARD.Image"), System.Drawing.Image)
+        Me.BTNDASHBOARD.Location = New System.Drawing.Point(5, 4)
+        Me.BTNDASHBOARD.Name = "BTNDASHBOARD"
+        Me.BTNDASHBOARD.Size = New System.Drawing.Size(152, 64)
+        Me.BTNDASHBOARD.TabIndex = 123153
+        Me.BTNDASHBOARD.Text = "   Dashboard"
+        Me.BTNDASHBOARD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.BTNDASHBOARD, "Dashboard")
+        Me.BTNDASHBOARD.UseVisualStyleBackColor = False
+        '
+        'BTNNOTIF
+        '
+        Me.BTNNOTIF.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BTNNOTIF.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BTNNOTIF.FlatAppearance.BorderSize = 0
+        Me.BTNNOTIF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNNOTIF.Image = CType(resources.GetObject("BTNNOTIF.Image"), System.Drawing.Image)
+        Me.BTNNOTIF.Location = New System.Drawing.Point(1136, 19)
+        Me.BTNNOTIF.Name = "BTNNOTIF"
+        Me.BTNNOTIF.Size = New System.Drawing.Size(38, 36)
+        Me.BTNNOTIF.TabIndex = 123156
+        Me.ToolTip1.SetToolTip(Me.BTNNOTIF, "Notification")
+        Me.BTNNOTIF.UseVisualStyleBackColor = False
+        '
+        'BTEXPORT
+        '
+        Me.BTEXPORT.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BTEXPORT.FlatAppearance.BorderSize = 0
+        Me.BTEXPORT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTEXPORT.Image = CType(resources.GetObject("BTEXPORT.Image"), System.Drawing.Image)
+        Me.BTEXPORT.Location = New System.Drawing.Point(340, 19)
+        Me.BTEXPORT.Name = "BTEXPORT"
+        Me.BTEXPORT.Size = New System.Drawing.Size(38, 36)
+        Me.BTEXPORT.TabIndex = 123154
+        Me.ToolTip1.SetToolTip(Me.BTEXPORT, "Export to Excel")
+        Me.BTEXPORT.UseVisualStyleBackColor = False
+        '
+        'btAdd
+        '
+        Me.btAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btAdd.FlatAppearance.BorderSize = 0
+        Me.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btAdd.Image = CType(resources.GetObject("btAdd.Image"), System.Drawing.Image)
+        Me.btAdd.Location = New System.Drawing.Point(12, 19)
+        Me.btAdd.Name = "btAdd"
+        Me.btAdd.Size = New System.Drawing.Size(38, 36)
+        Me.btAdd.TabIndex = 123153
+        Me.ToolTip1.SetToolTip(Me.btAdd, "Add")
+        Me.btAdd.UseVisualStyleBackColor = False
+        '
+        'bTpRINT
+        '
+        Me.bTpRINT.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.bTpRINT.FlatAppearance.BorderSize = 0
+        Me.bTpRINT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.bTpRINT.Image = CType(resources.GetObject("bTpRINT.Image"), System.Drawing.Image)
+        Me.bTpRINT.Location = New System.Drawing.Point(252, 19)
+        Me.bTpRINT.Name = "bTpRINT"
+        Me.bTpRINT.Size = New System.Drawing.Size(38, 36)
+        Me.bTpRINT.TabIndex = 123152
+        Me.ToolTip1.SetToolTip(Me.bTpRINT, "Print")
+        Me.bTpRINT.UseVisualStyleBackColor = False
+        '
+        'btCancelUpdate
+        '
+        Me.btCancelUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.btCancelUpdate.FlatAppearance.BorderSize = 0
+        Me.btCancelUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btCancelUpdate.Image = CType(resources.GetObject("btCancelUpdate.Image"), System.Drawing.Image)
+        Me.btCancelUpdate.Location = New System.Drawing.Point(145, 19)
+        Me.btCancelUpdate.Name = "btCancelUpdate"
+        Me.btCancelUpdate.Size = New System.Drawing.Size(38, 36)
+        Me.btCancelUpdate.TabIndex = 123151
+        Me.ToolTip1.SetToolTip(Me.btCancelUpdate, "Cancel")
+        Me.btCancelUpdate.UseVisualStyleBackColor = False
+        '
+        'BtSave
+        '
+        Me.BtSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtSave.FlatAppearance.BorderSize = 0
+        Me.BtSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtSave.Image = CType(resources.GetObject("BtSave.Image"), System.Drawing.Image)
+        Me.BtSave.Location = New System.Drawing.Point(101, 19)
+        Me.BtSave.Name = "BtSave"
+        Me.BtSave.Size = New System.Drawing.Size(38, 36)
+        Me.BtSave.TabIndex = 123150
+        Me.ToolTip1.SetToolTip(Me.BtSave, "Save")
+        Me.BtSave.UseVisualStyleBackColor = False
+        '
+        'BtRefresh
+        '
+        Me.BtRefresh.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtRefresh.FlatAppearance.BorderSize = 0
+        Me.BtRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtRefresh.Image = CType(resources.GetObject("BtRefresh.Image"), System.Drawing.Image)
+        Me.BtRefresh.Location = New System.Drawing.Point(296, 19)
+        Me.BtRefresh.Name = "BtRefresh"
+        Me.BtRefresh.Size = New System.Drawing.Size(38, 36)
+        Me.BtRefresh.TabIndex = 123149
+        Me.ToolTip1.SetToolTip(Me.BtRefresh, "Refresh")
+        Me.BtRefresh.UseVisualStyleBackColor = False
+        '
+        'BtDelete
+        '
+        Me.BtDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtDelete.FlatAppearance.BorderSize = 0
+        Me.BtDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtDelete.Image = CType(resources.GetObject("BtDelete.Image"), System.Drawing.Image)
+        Me.BtDelete.Location = New System.Drawing.Point(189, 19)
+        Me.BtDelete.Name = "BtDelete"
+        Me.BtDelete.Size = New System.Drawing.Size(38, 36)
+        Me.BtDelete.TabIndex = 123147
+        Me.ToolTip1.SetToolTip(Me.BtDelete, "Delete")
+        Me.BtDelete.UseVisualStyleBackColor = False
+        '
+        'BtEdit
+        '
+        Me.BtEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BtEdit.FlatAppearance.BorderSize = 0
+        Me.BtEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtEdit.Image = CType(resources.GetObject("BtEdit.Image"), System.Drawing.Image)
+        Me.BtEdit.Location = New System.Drawing.Point(58, 19)
+        Me.BtEdit.Name = "BtEdit"
+        Me.BtEdit.Size = New System.Drawing.Size(38, 36)
+        Me.BtEdit.TabIndex = 123146
+        Me.ToolTip1.SetToolTip(Me.BtEdit, "Edit")
+        Me.BtEdit.UseVisualStyleBackColor = False
+        '
+        'Panel19
+        '
+        Me.Panel19.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel19.BackColor = System.Drawing.Color.White
+        Me.Panel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel19.Controls.Add(Me.xsearchHeader)
+        Me.Panel19.Controls.Add(Me.Button4)
+        Me.Panel19.Location = New System.Drawing.Point(679, 9)
+        Me.Panel19.Name = "Panel19"
+        Me.Panel19.Size = New System.Drawing.Size(367, 43)
+        Me.Panel19.TabIndex = 123169
+        Me.ToolTip1.SetToolTip(Me.Panel19, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
+        '
+        'xsearchHeader
+        '
+        Me.xsearchHeader.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.xsearchHeader.Font = New System.Drawing.Font("Century Gothic", 11.89565!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.xsearchHeader.Location = New System.Drawing.Point(6, 10)
+        Me.xsearchHeader.Name = "xsearchHeader"
+        Me.xsearchHeader.Size = New System.Drawing.Size(317, 24)
+        Me.xsearchHeader.TabIndex = 123147
+        Me.ToolTip1.SetToolTip(Me.xsearchHeader, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
+        '
+        'Button4
+        '
+        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button4.BackColor = System.Drawing.Color.White
+        Me.Button4.FlatAppearance.BorderSize = 0
+        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
+        Me.Button4.Location = New System.Drawing.Point(324, 3)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(38, 36)
+        Me.Button4.TabIndex = 123146
+        Me.ToolTip1.SetToolTip(Me.Button4, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
+        Me.Button4.UseVisualStyleBackColor = False
         '
         'MenuStrip1
         '
@@ -314,40 +588,40 @@ Partial Class FRMWORKORDERS
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
         Me.EditToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'SaveToolStripMenuItem
         '
         Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
         Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.SaveToolStripMenuItem.Text = "Save"
         '
         'CancelToolStripMenuItem
         '
         Me.CancelToolStripMenuItem.Name = "CancelToolStripMenuItem"
-        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.CancelToolStripMenuItem.Text = "Cancel"
         '
         'PrintToolStripMenuItem
         '
         Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
         Me.PrintToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.PrintToolStripMenuItem.Text = "Print"
         '
         'ExportToExcelToolStripMenuItem
         '
         Me.ExportToExcelToolStripMenuItem.Name = "ExportToExcelToolStripMenuItem"
         Me.ExportToExcelToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.ExportToExcelToolStripMenuItem.Text = "Export to Excel"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'PANELHEADER
@@ -382,6 +656,7 @@ Partial Class FRMWORKORDERS
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.DimGray
+        Me.Panel1.Controls.Add(Me.BTNSETTING)
         Me.Panel1.Controls.Add(Me.BTNWORKORDER)
         Me.Panel1.Controls.Add(Me.BTNDASHBOARD)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
@@ -401,48 +676,6 @@ Partial Class FRMWORKORDERS
         Me.MAINTAB.SelectedIndex = 0
         Me.MAINTAB.Size = New System.Drawing.Size(1566, 857)
         Me.MAINTAB.TabIndex = 251
-        '
-        'Dashboard
-        '
-        Me.Dashboard.Location = New System.Drawing.Point(4, 25)
-        Me.Dashboard.Name = "Dashboard"
-        Me.Dashboard.Padding = New System.Windows.Forms.Padding(3)
-        Me.Dashboard.Size = New System.Drawing.Size(1558, 828)
-        Me.Dashboard.TabIndex = 0
-        Me.Dashboard.Text = "Dashboard"
-        Me.Dashboard.UseVisualStyleBackColor = True
-        '
-        'Overview
-        '
-        Me.Overview.Controls.Add(Me.dgMAINWO)
-        Me.Overview.Location = New System.Drawing.Point(4, 25)
-        Me.Overview.Name = "Overview"
-        Me.Overview.Padding = New System.Windows.Forms.Padding(3)
-        Me.Overview.Size = New System.Drawing.Size(1558, 828)
-        Me.Overview.TabIndex = 1
-        Me.Overview.Text = "Work Orders"
-        Me.Overview.UseVisualStyleBackColor = True
-        '
-        'dgMAINWO
-        '
-        Me.dgMAINWO.AllowDragging = C1.Win.C1FlexGrid.AllowDraggingEnum.None
-        Me.dgMAINWO.AllowEditing = False
-        Me.dgMAINWO.AllowFiltering = True
-        Me.dgMAINWO.BackColor = System.Drawing.Color.White
-        Me.dgMAINWO.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle
-        Me.dgMAINWO.ColumnInfo = "0,0,0,0,0,105,Columns:"
-        Me.dgMAINWO.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgMAINWO.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.dgMAINWO.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
-        Me.dgMAINWO.Location = New System.Drawing.Point(3, 3)
-        Me.dgMAINWO.Margin = New System.Windows.Forms.Padding(4)
-        Me.dgMAINWO.Name = "dgMAINWO"
-        Me.dgMAINWO.Rows.DefaultSize = 21
-        Me.dgMAINWO.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
-        Me.dgMAINWO.Size = New System.Drawing.Size(1552, 822)
-        Me.dgMAINWO.StyleInfo = resources.GetString("dgMAINWO.StyleInfo")
-        Me.dgMAINWO.TabIndex = 301
-        Me.dgMAINWO.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
         '
         'Details
         '
@@ -518,6 +751,27 @@ Partial Class FRMWORKORDERS
         Me.Label37.TabIndex = 24
         Me.Label37.Text = "Method of Activity | Resources"
         '
+        'dgWOHeader
+        '
+        Me.dgWOHeader.AllowDragging = C1.Win.C1FlexGrid.AllowDraggingEnum.None
+        Me.dgWOHeader.AllowEditing = False
+        Me.dgWOHeader.AllowFiltering = True
+        Me.dgWOHeader.BackColor = System.Drawing.Color.White
+        Me.dgWOHeader.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle
+        Me.dgWOHeader.ColumnInfo = "0,0,0,0,0,105,Columns:"
+        Me.dgWOHeader.Dock = System.Windows.Forms.DockStyle.Top
+        Me.dgWOHeader.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.dgWOHeader.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
+        Me.dgWOHeader.Location = New System.Drawing.Point(504, 104)
+        Me.dgWOHeader.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgWOHeader.Name = "dgWOHeader"
+        Me.dgWOHeader.Rows.DefaultSize = 21
+        Me.dgWOHeader.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
+        Me.dgWOHeader.Size = New System.Drawing.Size(1054, 222)
+        Me.dgWOHeader.StyleInfo = resources.GetString("dgWOHeader.StyleInfo")
+        Me.dgWOHeader.TabIndex = 304
+        Me.dgWOHeader.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
+        '
         'Panel11
         '
         Me.Panel11.Controls.Add(Me.Panel12)
@@ -527,15 +781,6 @@ Partial Class FRMWORKORDERS
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(1054, 45)
         Me.Panel11.TabIndex = 303
-        '
-        'Panel18
-        '
-        Me.Panel18.BackColor = System.Drawing.Color.Gainsboro
-        Me.Panel18.Enabled = False
-        Me.Panel18.Location = New System.Drawing.Point(270, 12)
-        Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(2, 32)
-        Me.Panel18.TabIndex = 123168
         '
         'Panel12
         '
@@ -574,6 +819,24 @@ Partial Class FRMWORKORDERS
         Me.Panel13.Size = New System.Drawing.Size(1054, 59)
         Me.Panel13.TabIndex = 38
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel2.Enabled = False
+        Me.Panel2.Location = New System.Drawing.Point(110, 14)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(2, 32)
+        Me.Panel2.TabIndex = 123169
+        '
+        'Panel18
+        '
+        Me.Panel18.BackColor = System.Drawing.Color.Gainsboro
+        Me.Panel18.Enabled = False
+        Me.Panel18.Location = New System.Drawing.Point(270, 12)
+        Me.Panel18.Name = "Panel18"
+        Me.Panel18.Size = New System.Drawing.Size(2, 32)
+        Me.Panel18.TabIndex = 123168
+        '
         'Panel15
         '
         Me.Panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
@@ -582,27 +845,6 @@ Partial Class FRMWORKORDERS
         Me.Panel15.Name = "Panel15"
         Me.Panel15.Size = New System.Drawing.Size(1054, 1)
         Me.Panel15.TabIndex = 123159
-        '
-        'dgWOHeader
-        '
-        Me.dgWOHeader.AllowDragging = C1.Win.C1FlexGrid.AllowDraggingEnum.None
-        Me.dgWOHeader.AllowEditing = False
-        Me.dgWOHeader.AllowFiltering = True
-        Me.dgWOHeader.BackColor = System.Drawing.Color.White
-        Me.dgWOHeader.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle
-        Me.dgWOHeader.ColumnInfo = "0,0,0,0,0,105,Columns:"
-        Me.dgWOHeader.Dock = System.Windows.Forms.DockStyle.Top
-        Me.dgWOHeader.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.dgWOHeader.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
-        Me.dgWOHeader.Location = New System.Drawing.Point(504, 104)
-        Me.dgWOHeader.Margin = New System.Windows.Forms.Padding(4)
-        Me.dgWOHeader.Name = "dgWOHeader"
-        Me.dgWOHeader.Rows.DefaultSize = 21
-        Me.dgWOHeader.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
-        Me.dgWOHeader.Size = New System.Drawing.Size(1054, 222)
-        Me.dgWOHeader.StyleInfo = resources.GetString("dgWOHeader.StyleInfo")
-        Me.dgWOHeader.TabIndex = 304
-        Me.dgWOHeader.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
         '
         'Panel5
         '
@@ -1044,287 +1286,63 @@ Partial Class FRMWORKORDERS
         Me.Label10.TabIndex = 38
         Me.Label10.Text = "Field Details"
         '
-        'Button1
+        'Dashboard
         '
-        Me.Button1.BackColor = System.Drawing.Color.Transparent
-        Me.Button1.FlatAppearance.BorderSize = 0
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(127, 10)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(38, 36)
-        Me.Button1.TabIndex = 123166
-        Me.ToolTip1.SetToolTip(Me.Button1, "Print")
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.Dashboard.Location = New System.Drawing.Point(4, 25)
+        Me.Dashboard.Name = "Dashboard"
+        Me.Dashboard.Padding = New System.Windows.Forms.Padding(3)
+        Me.Dashboard.Size = New System.Drawing.Size(1558, 828)
+        Me.Dashboard.TabIndex = 0
+        Me.Dashboard.Text = "Dashboard"
+        Me.Dashboard.UseVisualStyleBackColor = True
         '
-        'Button2
+        'Overview
         '
-        Me.Button2.BackColor = System.Drawing.Color.Transparent
-        Me.Button2.FlatAppearance.BorderSize = 0
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(216, 10)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(38, 36)
-        Me.Button2.TabIndex = 123165
-        Me.ToolTip1.SetToolTip(Me.Button2, "Cancelled")
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.Overview.Controls.Add(Me.dgMAINWO)
+        Me.Overview.Location = New System.Drawing.Point(4, 25)
+        Me.Overview.Name = "Overview"
+        Me.Overview.Padding = New System.Windows.Forms.Padding(3)
+        Me.Overview.Size = New System.Drawing.Size(1558, 828)
+        Me.Overview.TabIndex = 1
+        Me.Overview.Text = "Work Orders"
+        Me.Overview.UseVisualStyleBackColor = True
         '
-        'Button3
+        'dgMAINWO
         '
-        Me.Button3.BackColor = System.Drawing.Color.Transparent
-        Me.Button3.FlatAppearance.BorderSize = 0
-        Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button3.Image = Global.WORKORDER.My.Resources.Resources.padlock
-        Me.Button3.Location = New System.Drawing.Point(173, 10)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(38, 36)
-        Me.Button3.TabIndex = 123164
-        Me.ToolTip1.SetToolTip(Me.Button3, "Close")
-        Me.Button3.UseVisualStyleBackColor = False
+        Me.dgMAINWO.AllowDragging = C1.Win.C1FlexGrid.AllowDraggingEnum.None
+        Me.dgMAINWO.AllowEditing = False
+        Me.dgMAINWO.AllowFiltering = True
+        Me.dgMAINWO.BackColor = System.Drawing.Color.White
+        Me.dgMAINWO.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle
+        Me.dgMAINWO.ColumnInfo = "0,0,0,0,0,105,Columns:"
+        Me.dgMAINWO.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgMAINWO.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.dgMAINWO.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
+        Me.dgMAINWO.Location = New System.Drawing.Point(3, 3)
+        Me.dgMAINWO.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgMAINWO.Name = "dgMAINWO"
+        Me.dgMAINWO.Rows.DefaultSize = 21
+        Me.dgMAINWO.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
+        Me.dgMAINWO.Size = New System.Drawing.Size(1552, 822)
+        Me.dgMAINWO.StyleInfo = resources.GetString("dgMAINWO.StyleInfo")
+        Me.dgMAINWO.TabIndex = 301
+        Me.dgMAINWO.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
         '
-        'btAddHeader
+        'BTNSETTING
         '
-        Me.btAddHeader.BackColor = System.Drawing.Color.Transparent
-        Me.btAddHeader.FlatAppearance.BorderSize = 0
-        Me.btAddHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAddHeader.Image = CType(resources.GetObject("btAddHeader.Image"), System.Drawing.Image)
-        Me.btAddHeader.Location = New System.Drawing.Point(13, 10)
-        Me.btAddHeader.Name = "btAddHeader"
-        Me.btAddHeader.Size = New System.Drawing.Size(38, 36)
-        Me.btAddHeader.TabIndex = 123158
-        Me.ToolTip1.SetToolTip(Me.btAddHeader, "Add")
-        Me.btAddHeader.UseVisualStyleBackColor = False
-        '
-        'btEditHeader
-        '
-        Me.btEditHeader.BackColor = System.Drawing.Color.Transparent
-        Me.btEditHeader.FlatAppearance.BorderSize = 0
-        Me.btEditHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btEditHeader.Image = CType(resources.GetObject("btEditHeader.Image"), System.Drawing.Image)
-        Me.btEditHeader.Location = New System.Drawing.Point(59, 10)
-        Me.btEditHeader.Name = "btEditHeader"
-        Me.btEditHeader.Size = New System.Drawing.Size(38, 36)
-        Me.btEditHeader.TabIndex = 123154
-        Me.ToolTip1.SetToolTip(Me.btEditHeader, "Edit")
-        Me.btEditHeader.UseVisualStyleBackColor = False
-        '
-        'BTNWORKORDER
-        '
-        Me.BTNWORKORDER.BackColor = System.Drawing.Color.DimGray
-        Me.BTNWORKORDER.FlatAppearance.BorderSize = 0
-        Me.BTNWORKORDER.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNWORKORDER.ForeColor = System.Drawing.Color.White
-        Me.BTNWORKORDER.Image = CType(resources.GetObject("BTNWORKORDER.Image"), System.Drawing.Image)
-        Me.BTNWORKORDER.Location = New System.Drawing.Point(163, 4)
-        Me.BTNWORKORDER.Name = "BTNWORKORDER"
-        Me.BTNWORKORDER.Size = New System.Drawing.Size(152, 64)
-        Me.BTNWORKORDER.TabIndex = 123154
-        Me.BTNWORKORDER.Text = "   Work Orders"
-        Me.BTNWORKORDER.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.BTNWORKORDER, "Work Order")
-        Me.BTNWORKORDER.UseVisualStyleBackColor = False
-        '
-        'BTNDASHBOARD
-        '
-        Me.BTNDASHBOARD.BackColor = System.Drawing.Color.DimGray
-        Me.BTNDASHBOARD.FlatAppearance.BorderSize = 0
-        Me.BTNDASHBOARD.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNDASHBOARD.ForeColor = System.Drawing.Color.White
-        Me.BTNDASHBOARD.Image = CType(resources.GetObject("BTNDASHBOARD.Image"), System.Drawing.Image)
-        Me.BTNDASHBOARD.Location = New System.Drawing.Point(5, 4)
-        Me.BTNDASHBOARD.Name = "BTNDASHBOARD"
-        Me.BTNDASHBOARD.Size = New System.Drawing.Size(152, 64)
-        Me.BTNDASHBOARD.TabIndex = 123153
-        Me.BTNDASHBOARD.Text = "   Dashboard"
-        Me.BTNDASHBOARD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.BTNDASHBOARD, "Dashboard")
-        Me.BTNDASHBOARD.UseVisualStyleBackColor = False
-        '
-        'BTNNOTIF
-        '
-        Me.BTNNOTIF.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BTNNOTIF.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BTNNOTIF.FlatAppearance.BorderSize = 0
-        Me.BTNNOTIF.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNNOTIF.Image = CType(resources.GetObject("BTNNOTIF.Image"), System.Drawing.Image)
-        Me.BTNNOTIF.Location = New System.Drawing.Point(1136, 19)
-        Me.BTNNOTIF.Name = "BTNNOTIF"
-        Me.BTNNOTIF.Size = New System.Drawing.Size(38, 36)
-        Me.BTNNOTIF.TabIndex = 123156
-        Me.ToolTip1.SetToolTip(Me.BTNNOTIF, "Notification")
-        Me.BTNNOTIF.UseVisualStyleBackColor = False
-        '
-        'BTSEARCHLINE
-        '
-        Me.BTSEARCHLINE.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BTSEARCHLINE.BackColor = System.Drawing.Color.White
-        Me.BTSEARCHLINE.FlatAppearance.BorderSize = 0
-        Me.BTSEARCHLINE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTSEARCHLINE.Image = CType(resources.GetObject("BTSEARCHLINE.Image"), System.Drawing.Image)
-        Me.BTSEARCHLINE.Location = New System.Drawing.Point(326, 3)
-        Me.BTSEARCHLINE.Name = "BTSEARCHLINE"
-        Me.BTSEARCHLINE.Size = New System.Drawing.Size(38, 36)
-        Me.BTSEARCHLINE.TabIndex = 123146
-        Me.ToolTip1.SetToolTip(Me.BTSEARCHLINE, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
-        Me.BTSEARCHLINE.UseVisualStyleBackColor = False
-        '
-        'BTEXPORT
-        '
-        Me.BTEXPORT.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BTEXPORT.FlatAppearance.BorderSize = 0
-        Me.BTEXPORT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTEXPORT.Image = CType(resources.GetObject("BTEXPORT.Image"), System.Drawing.Image)
-        Me.BTEXPORT.Location = New System.Drawing.Point(340, 19)
-        Me.BTEXPORT.Name = "BTEXPORT"
-        Me.BTEXPORT.Size = New System.Drawing.Size(38, 36)
-        Me.BTEXPORT.TabIndex = 123154
-        Me.ToolTip1.SetToolTip(Me.BTEXPORT, "Export to Excel")
-        Me.BTEXPORT.UseVisualStyleBackColor = False
-        '
-        'btAdd
-        '
-        Me.btAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btAdd.FlatAppearance.BorderSize = 0
-        Me.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btAdd.Image = CType(resources.GetObject("btAdd.Image"), System.Drawing.Image)
-        Me.btAdd.Location = New System.Drawing.Point(12, 19)
-        Me.btAdd.Name = "btAdd"
-        Me.btAdd.Size = New System.Drawing.Size(38, 36)
-        Me.btAdd.TabIndex = 123153
-        Me.ToolTip1.SetToolTip(Me.btAdd, "Add")
-        Me.btAdd.UseVisualStyleBackColor = False
-        '
-        'bTpRINT
-        '
-        Me.bTpRINT.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.bTpRINT.FlatAppearance.BorderSize = 0
-        Me.bTpRINT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bTpRINT.Image = CType(resources.GetObject("bTpRINT.Image"), System.Drawing.Image)
-        Me.bTpRINT.Location = New System.Drawing.Point(252, 19)
-        Me.bTpRINT.Name = "bTpRINT"
-        Me.bTpRINT.Size = New System.Drawing.Size(38, 36)
-        Me.bTpRINT.TabIndex = 123152
-        Me.ToolTip1.SetToolTip(Me.bTpRINT, "Print")
-        Me.bTpRINT.UseVisualStyleBackColor = False
-        '
-        'btCancelUpdate
-        '
-        Me.btCancelUpdate.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btCancelUpdate.FlatAppearance.BorderSize = 0
-        Me.btCancelUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btCancelUpdate.Image = CType(resources.GetObject("btCancelUpdate.Image"), System.Drawing.Image)
-        Me.btCancelUpdate.Location = New System.Drawing.Point(145, 19)
-        Me.btCancelUpdate.Name = "btCancelUpdate"
-        Me.btCancelUpdate.Size = New System.Drawing.Size(38, 36)
-        Me.btCancelUpdate.TabIndex = 123151
-        Me.ToolTip1.SetToolTip(Me.btCancelUpdate, "Cancel")
-        Me.btCancelUpdate.UseVisualStyleBackColor = False
-        '
-        'BtSave
-        '
-        Me.BtSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtSave.FlatAppearance.BorderSize = 0
-        Me.BtSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtSave.Image = CType(resources.GetObject("BtSave.Image"), System.Drawing.Image)
-        Me.BtSave.Location = New System.Drawing.Point(101, 19)
-        Me.BtSave.Name = "BtSave"
-        Me.BtSave.Size = New System.Drawing.Size(38, 36)
-        Me.BtSave.TabIndex = 123150
-        Me.ToolTip1.SetToolTip(Me.BtSave, "Save")
-        Me.BtSave.UseVisualStyleBackColor = False
-        '
-        'BtRefresh
-        '
-        Me.BtRefresh.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtRefresh.FlatAppearance.BorderSize = 0
-        Me.BtRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtRefresh.Image = CType(resources.GetObject("BtRefresh.Image"), System.Drawing.Image)
-        Me.BtRefresh.Location = New System.Drawing.Point(296, 19)
-        Me.BtRefresh.Name = "BtRefresh"
-        Me.BtRefresh.Size = New System.Drawing.Size(38, 36)
-        Me.BtRefresh.TabIndex = 123149
-        Me.ToolTip1.SetToolTip(Me.BtRefresh, "Refresh")
-        Me.BtRefresh.UseVisualStyleBackColor = False
-        '
-        'BtDelete
-        '
-        Me.BtDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtDelete.FlatAppearance.BorderSize = 0
-        Me.BtDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtDelete.Image = CType(resources.GetObject("BtDelete.Image"), System.Drawing.Image)
-        Me.BtDelete.Location = New System.Drawing.Point(189, 19)
-        Me.BtDelete.Name = "BtDelete"
-        Me.BtDelete.Size = New System.Drawing.Size(38, 36)
-        Me.BtDelete.TabIndex = 123147
-        Me.ToolTip1.SetToolTip(Me.BtDelete, "Delete")
-        Me.BtDelete.UseVisualStyleBackColor = False
-        '
-        'BtEdit
-        '
-        Me.BtEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtEdit.FlatAppearance.BorderSize = 0
-        Me.BtEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtEdit.Image = CType(resources.GetObject("BtEdit.Image"), System.Drawing.Image)
-        Me.BtEdit.Location = New System.Drawing.Point(58, 19)
-        Me.BtEdit.Name = "BtEdit"
-        Me.BtEdit.Size = New System.Drawing.Size(38, 36)
-        Me.BtEdit.TabIndex = 123146
-        Me.ToolTip1.SetToolTip(Me.BtEdit, "Edit")
-        Me.BtEdit.UseVisualStyleBackColor = False
-        '
-        'RbnBuildNo
-        '
-        Me.RbnBuildNo.Image = CType(resources.GetObject("RbnBuildNo.Image"), System.Drawing.Image)
-        Me.RbnBuildNo.Name = "RbnBuildNo"
-        Me.RbnBuildNo.Size = New System.Drawing.Size(211, 19)
-        Me.RbnBuildNo.Text = "PROGEN 5.0 as of DateTime"
-        '
-        'Panel19
-        '
-        Me.Panel19.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Panel19.BackColor = System.Drawing.Color.White
-        Me.Panel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel19.Controls.Add(Me.xsearchHeader)
-        Me.Panel19.Controls.Add(Me.Button4)
-        Me.Panel19.Location = New System.Drawing.Point(679, 9)
-        Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(367, 43)
-        Me.Panel19.TabIndex = 123169
-        Me.ToolTip1.SetToolTip(Me.Panel19, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
-        '
-        'xsearchHeader
-        '
-        Me.xsearchHeader.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.xsearchHeader.Font = New System.Drawing.Font("Century Gothic", 11.89565!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.xsearchHeader.Location = New System.Drawing.Point(6, 10)
-        Me.xsearchHeader.Name = "xsearchHeader"
-        Me.xsearchHeader.Size = New System.Drawing.Size(317, 25)
-        Me.xsearchHeader.TabIndex = 123147
-        Me.ToolTip1.SetToolTip(Me.xsearchHeader, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
-        '
-        'Button4
-        '
-        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button4.BackColor = System.Drawing.Color.White
-        Me.Button4.FlatAppearance.BorderSize = 0
-        Me.Button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button4.Image = CType(resources.GetObject("Button4.Image"), System.Drawing.Image)
-        Me.Button4.Location = New System.Drawing.Point(324, 3)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(38, 36)
-        Me.Button4.TabIndex = 123146
-        Me.ToolTip1.SetToolTip(Me.Button4, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
-        Me.Button4.UseVisualStyleBackColor = False
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.Gainsboro
-        Me.Panel2.Enabled = False
-        Me.Panel2.Location = New System.Drawing.Point(110, 14)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(2, 32)
-        Me.Panel2.TabIndex = 123169
+        Me.BTNSETTING.BackColor = System.Drawing.Color.DimGray
+        Me.BTNSETTING.FlatAppearance.BorderSize = 0
+        Me.BTNSETTING.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNSETTING.ForeColor = System.Drawing.Color.White
+        Me.BTNSETTING.Image = CType(resources.GetObject("BTNSETTING.Image"), System.Drawing.Image)
+        Me.BTNSETTING.Location = New System.Drawing.Point(321, 3)
+        Me.BTNSETTING.Name = "BTNSETTING"
+        Me.BTNSETTING.Size = New System.Drawing.Size(152, 64)
+        Me.BTNSETTING.TabIndex = 123155
+        Me.BTNSETTING.Text = "   Work Orders Archive Setting"
+        Me.BTNSETTING.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.BTNSETTING, "Work Order")
+        Me.BTNSETTING.UseVisualStyleBackColor = False
         '
         'FRMWORKORDERS
         '
@@ -1345,26 +1363,26 @@ Partial Class FRMWORKORDERS
         Me.StatusStrip1.PerformLayout()
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
+        Me.Panel19.ResumeLayout(False)
+        Me.Panel19.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         Me.PANELHEADER.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         Me.MAINTAB.ResumeLayout(False)
-        Me.Overview.ResumeLayout(False)
-        CType(Me.dgMAINWO, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Details.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         CType(Me.dgWORes, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
+        CType(Me.dgWOHeader, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
         Me.Panel13.ResumeLayout(False)
-        CType(Me.dgWOHeader, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        Me.Panel19.ResumeLayout(False)
-        Me.Panel19.PerformLayout()
+        Me.Overview.ResumeLayout(False)
+        CType(Me.dgMAINWO, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1484,4 +1502,5 @@ Partial Class FRMWORKORDERS
     Friend WithEvents xsearchHeader As TextBox
     Friend WithEvents Button4 As Button
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents BTNSETTING As Button
 End Class

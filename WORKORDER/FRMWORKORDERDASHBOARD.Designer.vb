@@ -23,29 +23,11 @@ Partial Class FRMWORKORDERDASHBOARD
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRMWORKORDERDASHBOARD))
-        Me.ToolStripStatusLabel4 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel6 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.RbnStatus = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel8 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.RbnUser = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel10 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.RbnConnName = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel12 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.RbnCN = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel14 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.RbnIP = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.RbnDev = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel3 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.xrecordcount = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel5 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.RbnCompany = New System.Windows.Forms.ToolStripStatusLabel()
         Me.FilterDGV = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.btnOpenNWO = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.RbnExeCode = New System.Windows.Forms.ToolStripStatusLabel()
         Me.PanelHeader = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.xsearch = New System.Windows.Forms.TextBox()
@@ -68,118 +50,15 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LinesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.RbnBuildNo = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel2 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.statuscheck = New System.Windows.Forms.TextBox()
         Me.grid1 = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.SubFieldNum = New System.Windows.Forms.TextBox()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.PanelHeader.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        Me.StatusStrip1.SuspendLayout()
         CType(Me.grid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'ToolStripStatusLabel4
-        '
-        Me.ToolStripStatusLabel4.Name = "ToolStripStatusLabel4"
-        Me.ToolStripStatusLabel4.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel4.Text = "|"
-        '
-        'ToolStripStatusLabel6
-        '
-        Me.ToolStripStatusLabel6.Name = "ToolStripStatusLabel6"
-        Me.ToolStripStatusLabel6.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel6.Text = "|"
-        '
-        'RbnStatus
-        '
-        Me.RbnStatus.Name = "RbnStatus"
-        Me.RbnStatus.Size = New System.Drawing.Size(576, 19)
-        Me.RbnStatus.Spring = True
-        Me.RbnStatus.Text = "Status"
-        Me.RbnStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'ToolStripStatusLabel8
-        '
-        Me.ToolStripStatusLabel8.Name = "ToolStripStatusLabel8"
-        Me.ToolStripStatusLabel8.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel8.Text = "|"
-        '
-        'RbnUser
-        '
-        Me.RbnUser.Name = "RbnUser"
-        Me.RbnUser.Size = New System.Drawing.Size(47, 19)
-        Me.RbnUser.Text = "Admin"
-        '
-        'ToolStripStatusLabel10
-        '
-        Me.ToolStripStatusLabel10.Name = "ToolStripStatusLabel10"
-        Me.ToolStripStatusLabel10.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel10.Text = "|"
-        '
-        'RbnConnName
-        '
-        Me.RbnConnName.Name = "RbnConnName"
-        Me.RbnConnName.Size = New System.Drawing.Size(35, 19)
-        Me.RbnConnName.Text = "CoN"
-        '
-        'ToolStripStatusLabel12
-        '
-        Me.ToolStripStatusLabel12.Name = "ToolStripStatusLabel12"
-        Me.ToolStripStatusLabel12.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel12.Text = "|"
-        '
-        'RbnCN
-        '
-        Me.RbnCN.Name = "RbnCN"
-        Me.RbnCN.Size = New System.Drawing.Size(27, 19)
-        Me.RbnCN.Text = "CN"
-        '
-        'ToolStripStatusLabel14
-        '
-        Me.ToolStripStatusLabel14.Name = "ToolStripStatusLabel14"
-        Me.ToolStripStatusLabel14.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel14.Text = "|"
-        '
-        'RbnIP
-        '
-        Me.RbnIP.Name = "RbnIP"
-        Me.RbnIP.Size = New System.Drawing.Size(20, 19)
-        Me.RbnIP.Text = "IP"
-        '
-        'RbnDev
-        '
-        Me.RbnDev.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RbnDev.ForeColor = System.Drawing.Color.Red
-        Me.RbnDev.Name = "RbnDev"
-        Me.RbnDev.Size = New System.Drawing.Size(73, 19)
-        Me.RbnDev.Text = "DevCode"
-        '
-        'ToolStripStatusLabel3
-        '
-        Me.ToolStripStatusLabel3.Name = "ToolStripStatusLabel3"
-        Me.ToolStripStatusLabel3.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel3.Text = "|"
-        '
-        'xrecordcount
-        '
-        Me.xrecordcount.Name = "xrecordcount"
-        Me.xrecordcount.Size = New System.Drawing.Size(16, 19)
-        Me.xrecordcount.Text = "0"
-        '
-        'ToolStripStatusLabel5
-        '
-        Me.ToolStripStatusLabel5.Name = "ToolStripStatusLabel5"
-        Me.ToolStripStatusLabel5.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel5.Text = "|"
-        '
-        'RbnCompany
-        '
-        Me.RbnCompany.Name = "RbnCompany"
-        Me.RbnCompany.Size = New System.Drawing.Size(93, 19)
-        Me.RbnCompany.Text = "RbnCompany"
         '
         'FilterDGV
         '
@@ -220,14 +99,6 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.Label1.Text = "0"
         Me.Label1.Visible = False
         '
-        'ToolStripStatusLabel1
-        '
-        Me.ToolStripStatusLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ToolStripStatusLabel1.ForeColor = System.Drawing.Color.Red
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(110, 19)
-        Me.ToolStripStatusLabel1.Text = "Total Records"
-        '
         'Button1
         '
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
@@ -236,12 +107,6 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.Button1.Size = New System.Drawing.Size(34, 28)
         Me.Button1.TabIndex = 123190
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'RbnExeCode
-        '
-        Me.RbnExeCode.Name = "RbnExeCode"
-        Me.RbnExeCode.Size = New System.Drawing.Size(112, 19)
-        Me.RbnExeCode.Text = "SubModuleCode"
         '
         'PanelHeader
         '
@@ -477,33 +342,6 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.LinesToolStripMenuItem.Size = New System.Drawing.Size(165, 26)
         Me.LinesToolStripMenuItem.Text = "Lines"
         '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.Transparent
-        Me.StatusStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(19, 19)
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RbnBuildNo, Me.ToolStripStatusLabel2, Me.RbnExeCode, Me.ToolStripStatusLabel4, Me.RbnDev, Me.ToolStripStatusLabel6, Me.RbnStatus, Me.ToolStripStatusLabel8, Me.RbnUser, Me.ToolStripStatusLabel10, Me.RbnConnName, Me.ToolStripStatusLabel12, Me.RbnCN, Me.ToolStripStatusLabel14, Me.RbnIP, Me.ToolStripStatusLabel3, Me.ToolStripStatusLabel1, Me.xrecordcount, Me.ToolStripStatusLabel5, Me.RbnCompany})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 765)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(1439, 24)
-        Me.StatusStrip1.TabIndex = 123183
-        Me.StatusStrip1.Tag = "XC"
-        Me.StatusStrip1.Text = "PROGEN 1.2.x as of DateTime"
-        '
-        'RbnBuildNo
-        '
-        Me.RbnBuildNo.Image = CType(resources.GetObject("RbnBuildNo.Image"), System.Drawing.Image)
-        Me.RbnBuildNo.Name = "RbnBuildNo"
-        Me.RbnBuildNo.Size = New System.Drawing.Size(211, 19)
-        Me.RbnBuildNo.Text = "PROGEN 5.0 as of DateTime"
-        '
-        'ToolStripStatusLabel2
-        '
-        Me.ToolStripStatusLabel2.Name = "ToolStripStatusLabel2"
-        Me.ToolStripStatusLabel2.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel2.Text = "|"
-        '
         'statuscheck
         '
         Me.statuscheck.Location = New System.Drawing.Point(324, 98)
@@ -524,7 +362,7 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.grid1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.grid1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.grid1.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
-        Me.grid1.Location = New System.Drawing.Point(0, 140)
+        Me.grid1.Location = New System.Drawing.Point(0, 142)
         Me.grid1.Margin = New System.Windows.Forms.Padding(4)
         Me.grid1.Name = "grid1"
         Me.grid1.Rows.DefaultSize = 21
@@ -541,6 +379,19 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.SubFieldNum.Size = New System.Drawing.Size(100, 22)
         Me.SubFieldNum.TabIndex = 123192
         Me.SubFieldNum.Visible = False
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.Transparent
+        Me.StatusStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(19, 19)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 767)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1439, 22)
+        Me.StatusStrip1.TabIndex = 123183
+        Me.StatusStrip1.Tag = "XC"
+        Me.StatusStrip1.Text = "PROGEN 1.2.x as of DateTime"
         '
         'FRMWORKORDERDASHBOARD
         '
@@ -569,37 +420,16 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.Panel6.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout()
         CType(Me.grid1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents ToolStripStatusLabel4 As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel6 As ToolStripStatusLabel
-    Friend WithEvents RbnStatus As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel8 As ToolStripStatusLabel
-    Friend WithEvents RbnUser As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel10 As ToolStripStatusLabel
-    Friend WithEvents RbnConnName As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel12 As ToolStripStatusLabel
-    Friend WithEvents RbnCN As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel14 As ToolStripStatusLabel
-    Friend WithEvents RbnIP As ToolStripStatusLabel
-    Friend WithEvents RbnDev As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel3 As ToolStripStatusLabel
-    Friend WithEvents xrecordcount As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel5 As ToolStripStatusLabel
-    Friend WithEvents RbnCompany As ToolStripStatusLabel
     Friend WithEvents FilterDGV As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents btnOpenNWO As Button
     Friend WithEvents Label1 As Label
-    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents Button1 As Button
-    Friend WithEvents RbnExeCode As ToolStripStatusLabel
     Friend WithEvents PanelHeader As Panel
     Friend WithEvents Panel6 As Panel
     Friend WithEvents xsearch As TextBox
@@ -622,10 +452,8 @@ Partial Class FRMWORKORDERDASHBOARD
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LinesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents RbnBuildNo As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel2 As ToolStripStatusLabel
     Friend WithEvents statuscheck As TextBox
     Friend WithEvents grid1 As C1.Win.C1FlexGrid.C1FlexGrid
     Friend WithEvents SubFieldNum As TextBox
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class
