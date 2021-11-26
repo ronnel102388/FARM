@@ -179,6 +179,29 @@ Public Class FRMCREATIONWORKORDERS
         End With
     End Sub
 #End Region
+#Region "CONTROL EVENTS TOP "
+    Private Sub btnclose_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnclose.MouseEnter, btnmax.MouseEnter, btnmin.MouseEnter
+        sender.backcolor = Color.Gainsboro
+    End Sub
+    Private Sub btnclose_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnclose.MouseLeave, btnmax.MouseLeave, btnmin.MouseLeave
+        sender.backcolor = Color.FromArgb(224, 224, 224)
+    End Sub
+    Private Sub btnclose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnclose.Click
+        If MsgBox("Are You Sure You Want to Close this Application", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Close Application") = MsgBoxResult.Yes Then
+            Me.Dispose()
+        End If
+    End Sub
+    Private Sub btnmax_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnmax.Click
+        If Me.WindowState = FormWindowState.Normal Then
+            Me.WindowState = FormWindowState.Maximized
+        Else
+            Me.WindowState = FormWindowState.Normal
+        End If
+    End Sub
+    Private Sub btnmin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnmin.Click
+        Me.WindowState = FormWindowState.Minimized
+    End Sub
+#End Region
 #Region "FORM CONTROL EVENTS"
     Private Sub XCBOMAJORACTIVITY_SelectedIndexChanged(sender As Object, e As EventArgs) Handles xCBOMAJORACTIVITY.SelectedIndexChanged
         If xCBOMAJORACTIVITY.SelectedIndex = -1 Or xCBOMAJORACTIVITY.Text = "" Then
@@ -202,9 +225,6 @@ Public Class FRMCREATIONWORKORDERS
         POPULATE_METHODOFACTIVITY_RESOURCE(vVERSIONID, vMAJAID, vMINAID, xCROPCLASS.Text, IIf(Val(xPLANTEDAREA.Text) <> 0, Val(xPLANTEDAREA.Text), Val(xARABLEAREA.Text)))
     End Sub
 
-    Private Sub XCBOSUBFIELDNO_SelectedIndexChanged(sender As Object, e As EventArgs) Handles xCBOSUBFIELDNO.SelectedIndexChanged
-
-    End Sub
 
     Public Sub xCBOSUBFIELDNO_LostFocus(sender As Object, e As EventArgs) Handles xCBOSUBFIELDNO.LostFocus
         If xCBOSUBFIELDNO.Text = "" Or xCBOSUBFIELDNO.SelectedIndex = -1 Then
