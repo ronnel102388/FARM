@@ -35,21 +35,23 @@ Partial Class FRMARCHIVE
         Me.BtEdit = New System.Windows.Forms.Button()
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.grid1 = New C1.Win.C1FlexGrid.C1FlexGrid()
-        Me.RECID = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.DAYSTOARCHIVE = New System.Windows.Forms.NumericUpDown()
-        Me.INTERVALDAYSTOARCHIVE = New System.Windows.Forms.NumericUpDown()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
+        Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.EFFECTIVITYDATE = New System.Windows.Forms.DateTimePicker()
+        Me.INTERVALDAYSTOARCHIVE = New System.Windows.Forms.NumericUpDown()
+        Me.DAYSTOARCHIVE = New System.Windows.Forms.NumericUpDown()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.RECID = New System.Windows.Forms.TextBox()
+        Me.grid1 = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.PanelHeader.SuspendLayout()
-        CType(Me.grid1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DAYSTOARCHIVE, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControl1.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
         CType(Me.INTERVALDAYSTOARCHIVE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DAYSTOARCHIVE, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.grid1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PanelHeader
@@ -204,6 +206,99 @@ Partial Class FRMARCHIVE
         Me.StatusStrip1.Tag = "XC"
         Me.StatusStrip1.Text = "PROGEN 1.2.x as of DateTime"
         '
+        'TabControl1
+        '
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 65)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(651, 360)
+        Me.TabControl1.TabIndex = 123221
+        '
+        'TabPage1
+        '
+        Me.TabPage1.Controls.Add(Me.EFFECTIVITYDATE)
+        Me.TabPage1.Controls.Add(Me.INTERVALDAYSTOARCHIVE)
+        Me.TabPage1.Controls.Add(Me.DAYSTOARCHIVE)
+        Me.TabPage1.Controls.Add(Me.Label4)
+        Me.TabPage1.Controls.Add(Me.Label3)
+        Me.TabPage1.Controls.Add(Me.Label2)
+        Me.TabPage1.Controls.Add(Me.Label1)
+        Me.TabPage1.Controls.Add(Me.RECID)
+        Me.TabPage1.Controls.Add(Me.grid1)
+        Me.TabPage1.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage1.Name = "TabPage1"
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage1.Size = New System.Drawing.Size(643, 331)
+        Me.TabPage1.TabIndex = 0
+        Me.TabPage1.Text = "IDENTIFICATION"
+        Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'EFFECTIVITYDATE
+        '
+        Me.EFFECTIVITYDATE.Location = New System.Drawing.Point(219, 88)
+        Me.EFFECTIVITYDATE.Name = "EFFECTIVITYDATE"
+        Me.EFFECTIVITYDATE.Size = New System.Drawing.Size(200, 22)
+        Me.EFFECTIVITYDATE.TabIndex = 123243
+        '
+        'INTERVALDAYSTOARCHIVE
+        '
+        Me.INTERVALDAYSTOARCHIVE.Location = New System.Drawing.Point(219, 60)
+        Me.INTERVALDAYSTOARCHIVE.Name = "INTERVALDAYSTOARCHIVE"
+        Me.INTERVALDAYSTOARCHIVE.Size = New System.Drawing.Size(77, 22)
+        Me.INTERVALDAYSTOARCHIVE.TabIndex = 123242
+        '
+        'DAYSTOARCHIVE
+        '
+        Me.DAYSTOARCHIVE.Location = New System.Drawing.Point(219, 32)
+        Me.DAYSTOARCHIVE.Name = "DAYSTOARCHIVE"
+        Me.DAYSTOARCHIVE.Size = New System.Drawing.Size(77, 22)
+        Me.DAYSTOARCHIVE.TabIndex = 123241
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(75, 91)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(138, 17)
+        Me.Label4.TabIndex = 123240
+        Me.Label4.Text = "EFFECTIVITY DATE:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(6, 60)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(207, 17)
+        Me.Label3.TabIndex = 123239
+        Me.Label3.Text = "INTERVAL DAYS TO ARCHIVE:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(77, 32)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(136, 17)
+        Me.Label2.TabIndex = 123238
+        Me.Label2.Text = "DAYS TO ARCHIVE:"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(160, 4)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(53, 17)
+        Me.Label1.TabIndex = 123237
+        Me.Label1.Text = "RECID:"
+        '
+        'RECID
+        '
+        Me.RECID.Enabled = False
+        Me.RECID.Location = New System.Drawing.Point(219, 4)
+        Me.RECID.Name = "RECID"
+        Me.RECID.Size = New System.Drawing.Size(77, 22)
+        Me.RECID.TabIndex = 123236
+        '
         'grid1
         '
         Me.grid1.AllowDragging = C1.Win.C1FlexGrid.AllowDraggingEnum.None
@@ -215,115 +310,22 @@ Partial Class FRMARCHIVE
         Me.grid1.ColumnInfo = "0,0,0,0,0,105,Columns:"
         Me.grid1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.grid1.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
-        Me.grid1.Location = New System.Drawing.Point(9, 224)
+        Me.grid1.Location = New System.Drawing.Point(7, 126)
         Me.grid1.Margin = New System.Windows.Forms.Padding(4)
         Me.grid1.Name = "grid1"
         Me.grid1.Rows.DefaultSize = 21
         Me.grid1.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
         Me.grid1.Size = New System.Drawing.Size(629, 200)
         Me.grid1.StyleInfo = resources.GetString("grid1.StyleInfo")
-        Me.grid1.TabIndex = 123221
+        Me.grid1.TabIndex = 123235
         Me.grid1.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
-        '
-        'RECID
-        '
-        Me.RECID.Enabled = False
-        Me.RECID.Location = New System.Drawing.Point(221, 102)
-        Me.RECID.Name = "RECID"
-        Me.RECID.Size = New System.Drawing.Size(77, 22)
-        Me.RECID.TabIndex = 123222
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(162, 102)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 17)
-        Me.Label1.TabIndex = 123223
-        Me.Label1.Text = "RECID:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(79, 130)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(136, 17)
-        Me.Label2.TabIndex = 123225
-        Me.Label2.Text = "DAYS TO ARCHIVE:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(8, 158)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(207, 17)
-        Me.Label3.TabIndex = 123227
-        Me.Label3.Text = "INTERVAL DAYS TO ARCHIVE:"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(77, 189)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(138, 17)
-        Me.Label4.TabIndex = 123229
-        Me.Label4.Text = "EFFECTIVITY DATE:"
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(8, 72)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(118, 17)
-        Me.Label8.TabIndex = 123231
-        Me.Label8.Text = "IDENTIFICATION:"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.Panel1.Location = New System.Drawing.Point(106, 80)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(551, 1)
-        Me.Panel1.TabIndex = 123230
-        '
-        'DAYSTOARCHIVE
-        '
-        Me.DAYSTOARCHIVE.Location = New System.Drawing.Point(221, 130)
-        Me.DAYSTOARCHIVE.Name = "DAYSTOARCHIVE"
-        Me.DAYSTOARCHIVE.Size = New System.Drawing.Size(77, 22)
-        Me.DAYSTOARCHIVE.TabIndex = 123232
-        '
-        'INTERVALDAYSTOARCHIVE
-        '
-        Me.INTERVALDAYSTOARCHIVE.Location = New System.Drawing.Point(221, 158)
-        Me.INTERVALDAYSTOARCHIVE.Name = "INTERVALDAYSTOARCHIVE"
-        Me.INTERVALDAYSTOARCHIVE.Size = New System.Drawing.Size(77, 22)
-        Me.INTERVALDAYSTOARCHIVE.TabIndex = 123233
-        '
-        'EFFECTIVITYDATE
-        '
-        Me.EFFECTIVITYDATE.Location = New System.Drawing.Point(221, 186)
-        Me.EFFECTIVITYDATE.Name = "EFFECTIVITYDATE"
-        Me.EFFECTIVITYDATE.Size = New System.Drawing.Size(200, 22)
-        Me.EFFECTIVITYDATE.TabIndex = 123234
         '
         'FRMARCHIVE
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(651, 450)
-        Me.Controls.Add(Me.EFFECTIVITYDATE)
-        Me.Controls.Add(Me.INTERVALDAYSTOARCHIVE)
-        Me.Controls.Add(Me.DAYSTOARCHIVE)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Label4)
-        Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.RECID)
-        Me.Controls.Add(Me.grid1)
+        Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.PanelHeader)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -334,9 +336,12 @@ Partial Class FRMARCHIVE
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "WORKORDER ARCHIVE SETTINGS"
         Me.PanelHeader.ResumeLayout(False)
-        CType(Me.grid1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DAYSTOARCHIVE, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabControl1.ResumeLayout(False)
+        Me.TabPage1.ResumeLayout(False)
+        Me.TabPage1.PerformLayout()
         CType(Me.INTERVALDAYSTOARCHIVE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DAYSTOARCHIVE, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.grid1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -354,15 +359,15 @@ Partial Class FRMARCHIVE
     Friend WithEvents BtEdit As Button
     Friend WithEvents Panel7 As Panel
     Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents grid1 As C1.Win.C1FlexGrid.C1FlexGrid
-    Friend WithEvents RECID As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents DAYSTOARCHIVE As NumericUpDown
-    Friend WithEvents INTERVALDAYSTOARCHIVE As NumericUpDown
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents TabPage1 As TabPage
     Friend WithEvents EFFECTIVITYDATE As DateTimePicker
+    Friend WithEvents INTERVALDAYSTOARCHIVE As NumericUpDown
+    Friend WithEvents DAYSTOARCHIVE As NumericUpDown
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents RECID As TextBox
+    Friend WithEvents grid1 As C1.Win.C1FlexGrid.C1FlexGrid
 End Class

@@ -238,9 +238,9 @@ Public Class FRMCREATION_NO_WORKORDER
             Clear()
         Else
             POPULATEFIELDDETAILS(xCBOSUBFIELDNO.Text)
-            xCBOMAJORACTIVITY.Text = ""
+            ' xCBOMAJORACTIVITY.Text = ""
             xCBOMAJORACTIVITY.SelectedIndex = -1
-            xCBOMINORACTIVITY.Text = ""
+            ' xCBOMINORACTIVITY.Text = ""
             xCBOMINORACTIVITY.SelectedIndex = -1
         End If
         If Val(xPLANTEDAREA.Text) <> 0 Then
@@ -249,6 +249,7 @@ Public Class FRMCREATION_NO_WORKORDER
             xAREAOFACTIVITY.Text = xARABLEAREA.Text
         End If
         drl_FillCombo("MAJORACTIVITY", xCBOMAJORACTIVITY, "M_FARM_POT_VERSION_DETAIL", "CROPCLASS = '" & xCROPCLASS.Text & "' AND VERSIONID = " & vVERSIONID & " AND COID = '" & Comp & "'")
+
 
     End Sub
 

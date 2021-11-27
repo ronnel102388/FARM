@@ -97,7 +97,6 @@ Partial Class FRMCREATION_NO_WORKORDER
         Me.BTSEARCHLINE = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.PANELHEADER = New System.Windows.Forms.Panel()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.BTEXPORT = New System.Windows.Forms.Button()
         Me.btAdd = New System.Windows.Forms.Button()
         Me.bTpRINT = New System.Windows.Forms.Button()
@@ -107,6 +106,7 @@ Partial Class FRMCREATION_NO_WORKORDER
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.BtDelete = New System.Windows.Forms.Button()
         Me.BtEdit = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExportToExcelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -897,15 +897,6 @@ Partial Class FRMCREATION_NO_WORKORDER
         Me.PANELHEADER.Size = New System.Drawing.Size(1427, 73)
         Me.PANELHEADER.TabIndex = 255
         '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(715, 32)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(1, 1)
-        Me.Button1.TabIndex = 100
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'BTEXPORT
         '
         Me.BTEXPORT.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
@@ -1016,6 +1007,15 @@ Partial Class FRMCREATION_NO_WORKORDER
         Me.BtEdit.Size = New System.Drawing.Size(38, 36)
         Me.BtEdit.TabIndex = 123146
         Me.BtEdit.UseVisualStyleBackColor = False
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(706, 23)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(1, 1)
+        Me.Button1.TabIndex = 100
+        Me.Button1.Text = "Button1"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'ExitToolStripMenuItem
         '

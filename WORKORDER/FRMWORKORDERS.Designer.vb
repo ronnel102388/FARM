@@ -65,6 +65,7 @@ Partial Class FRMWORKORDERS
         Me.Panel19 = New System.Windows.Forms.Panel()
         Me.xsearchHeader = New System.Windows.Forms.TextBox()
         Me.Button4 = New System.Windows.Forms.Button()
+        Me.BTNSETTING = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -138,7 +139,6 @@ Partial Class FRMWORKORDERS
         Me.Dashboard = New System.Windows.Forms.TabPage()
         Me.Overview = New System.Windows.Forms.TabPage()
         Me.dgMAINWO = New C1.Win.C1FlexGrid.C1FlexGrid()
-        Me.BTNSETTING = New System.Windows.Forms.Button()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel19.SuspendLayout()
@@ -565,6 +565,22 @@ Partial Class FRMWORKORDERS
         Me.Button4.TabIndex = 123146
         Me.ToolTip1.SetToolTip(Me.Button4, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
         Me.Button4.UseVisualStyleBackColor = False
+        '
+        'BTNSETTING
+        '
+        Me.BTNSETTING.BackColor = System.Drawing.Color.DimGray
+        Me.BTNSETTING.FlatAppearance.BorderSize = 0
+        Me.BTNSETTING.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTNSETTING.ForeColor = System.Drawing.Color.White
+        Me.BTNSETTING.Image = CType(resources.GetObject("BTNSETTING.Image"), System.Drawing.Image)
+        Me.BTNSETTING.Location = New System.Drawing.Point(321, 3)
+        Me.BTNSETTING.Name = "BTNSETTING"
+        Me.BTNSETTING.Size = New System.Drawing.Size(152, 64)
+        Me.BTNSETTING.TabIndex = 123155
+        Me.BTNSETTING.Text = "   Work Orders Archive Setting"
+        Me.BTNSETTING.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip1.SetToolTip(Me.BTNSETTING, "Work Order")
+        Me.BTNSETTING.UseVisualStyleBackColor = False
         '
         'MenuStrip1
         '
@@ -1327,22 +1343,6 @@ Partial Class FRMWORKORDERS
         Me.dgMAINWO.StyleInfo = resources.GetString("dgMAINWO.StyleInfo")
         Me.dgMAINWO.TabIndex = 301
         Me.dgMAINWO.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
-        '
-        'BTNSETTING
-        '
-        Me.BTNSETTING.BackColor = System.Drawing.Color.DimGray
-        Me.BTNSETTING.FlatAppearance.BorderSize = 0
-        Me.BTNSETTING.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BTNSETTING.ForeColor = System.Drawing.Color.White
-        Me.BTNSETTING.Image = CType(resources.GetObject("BTNSETTING.Image"), System.Drawing.Image)
-        Me.BTNSETTING.Location = New System.Drawing.Point(321, 3)
-        Me.BTNSETTING.Name = "BTNSETTING"
-        Me.BTNSETTING.Size = New System.Drawing.Size(152, 64)
-        Me.BTNSETTING.TabIndex = 123155
-        Me.BTNSETTING.Text = "   Work Orders Archive Setting"
-        Me.BTNSETTING.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.BTNSETTING, "Work Order")
-        Me.BTNSETTING.UseVisualStyleBackColor = False
         '
         'FRMWORKORDERS
         '
