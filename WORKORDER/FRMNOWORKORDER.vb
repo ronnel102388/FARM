@@ -98,7 +98,7 @@ AND WO.SUBFIELDNO='<%= SUBFIELDNO.Text %>'
 
         populate()
         WordOrder()
-        FRMWORKORDERDASHBOARD.Button1.PerformClick()
+        BtRefresh.PerformClick()
         BtEdit.Enabled = True
         BtSave.Enabled = False
     End Sub
@@ -164,8 +164,8 @@ AND WO.SUBFIELDNO='<%= SUBFIELDNO.Text %>'
         ExeQuery(Sql)
         MsgBox("SUCCESS.", MsgBoxStyle.Information, "Information...")
 
+
         BtRefresh.PerformClick()
-        FRMWORKORDERDASHBOARD.Button1.PerformClick()
     End Sub
 
 

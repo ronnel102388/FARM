@@ -56,7 +56,7 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
         Return find
     End Function
 
-    Private Sub FilterDGV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles FilterDGV.SelectedIndexChanged
+    Private Sub FilterDGV_SelectedIndexChanged(sender As Object, e As EventArgs)
         If FilterDGV.Text = "VIEW ALL" Then
             Dim sql As String = ""
             Dim search As String = FilterDGV.Text.Replace(" ", "")
@@ -109,8 +109,27 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
     End Sub
 
     Private Sub BtRefresh_Click(sender As Object, e As EventArgs) Handles BtRefresh.Click
+
+        FilterDGV.Text = "NO WORKORDER"
+        Dim sql As String = ""
+        Dim search As String = FilterDGV.Text.Replace(" ", "")
+
+        sql = <s>
+                  SELECT * from R_DAILYFIELDACTIVITYREPORT where isactive ='true' and Status like '%<%= FilterDGV.Text %>%'
+
+              </s>
+
+        SelectQuery(sql)
+        With grid1
+            .DataSource = ds
+            .DataMember = "table"
+            .Rows(0).Height = 50
+            .Cols.Fixed = 0
+            '.Cols("RECID").Caption = "ID"
+            .AutoSizeCols()
+
+        End With
         Label1.Text = x()
-        Button1.PerformClick()
 
     End Sub
 
@@ -162,28 +181,7 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
 
     End Sub
 
-    Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles Button1.Click
-        FilterDGV.Text = "NO WORKORDER"
-        Dim sql As String = ""
-        Dim search As String = FilterDGV.Text.Replace(" ", "")
 
-        sql = <s>
-                  SELECT * from R_DAILYFIELDACTIVITYREPORT where isactive ='true' and Status like '%<%= FilterDGV.Text %>%'
-
-              </s>
-
-        SelectQuery(sql)
-        With grid1
-            .DataSource = ds
-            .DataMember = "table"
-            .Rows(0).Height = 50
-            .Cols.Fixed = 0
-            '.Cols("RECID").Caption = "ID"
-            .AutoSizeCols()
-
-        End With
-        Label1.Text = x()
-    End Sub
 
     Private Sub btSearch_Click(sender As Object, e As EventArgs) Handles btSearch.Click
         Dim sql As String = ""
@@ -206,7 +204,7 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
         End With
     End Sub
 
-    Private Sub Grid1_Click_1(sender As Object, e As EventArgs) Handles grid1.Click
+    Private Sub Grid1_Click_1(sender As Object, e As EventArgs)
         FRMCREATION_NO_WORKORDER.Show()
 
         If grid1.Rows.Count = 1 Then
@@ -268,4 +266,6 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
     Private Sub Button2_Click(sender As Object, e As EventArgs) 
         FRMARCHIVE.ShowDialog()
     End Sub
+
+
 End Class
