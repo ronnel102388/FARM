@@ -48,20 +48,21 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LinesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.MinorActivity = New System.Windows.Forms.TextBox()
+        Me.MajorActivity = New System.Windows.Forms.TextBox()
         Me.SubFieldNum = New System.Windows.Forms.TextBox()
         Me.grid1 = New C1.Win.C1FlexGrid.C1FlexGrid()
+        Me.statuscheck = New System.Windows.Forms.TextBox()
         Me.FilterDGV = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.statuscheck = New System.Windows.Forms.TextBox()
+        Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.PanelHeader.SuspendLayout()
         Me.Panel6.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
         CType(Me.grid1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControl1.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnOpenNWO
@@ -332,40 +333,38 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.StatusStrip1.Tag = "XC"
         Me.StatusStrip1.Text = "PROGEN 1.2.x as of DateTime"
         '
-        'TabControl1
-        '
-        Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
-        Me.TabControl1.Location = New System.Drawing.Point(0, 93)
-        Me.TabControl1.Name = "TabControl1"
-        Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(1439, 671)
-        Me.TabControl1.TabIndex = 123193
-        '
         'TabPage1
         '
+        Me.TabPage1.Controls.Add(Me.MinorActivity)
+        Me.TabPage1.Controls.Add(Me.MajorActivity)
         Me.TabPage1.Controls.Add(Me.SubFieldNum)
         Me.TabPage1.Controls.Add(Me.grid1)
+        Me.TabPage1.Controls.Add(Me.statuscheck)
         Me.TabPage1.Controls.Add(Me.FilterDGV)
         Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Controls.Add(Me.statuscheck)
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1431, 642)
+        Me.TabPage1.Size = New System.Drawing.Size(1431, 646)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "TabPage1"
+        Me.TabPage1.Text = "IDENTIFICATION"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
-        'TabPage2
+        'MinorActivity
         '
-        Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1431, 642)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "TabPage2"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.MinorActivity.Location = New System.Drawing.Point(585, 34)
+        Me.MinorActivity.Name = "MinorActivity"
+        Me.MinorActivity.Size = New System.Drawing.Size(100, 22)
+        Me.MinorActivity.TabIndex = 123199
+        Me.MinorActivity.Visible = False
+        '
+        'MajorActivity
+        '
+        Me.MajorActivity.Location = New System.Drawing.Point(585, 6)
+        Me.MajorActivity.Name = "MajorActivity"
+        Me.MajorActivity.Size = New System.Drawing.Size(100, 22)
+        Me.MajorActivity.TabIndex = 123198
+        Me.MajorActivity.Visible = False
         '
         'SubFieldNum
         '
@@ -387,7 +386,7 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.grid1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.grid1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.grid1.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
-        Me.grid1.Location = New System.Drawing.Point(3, 60)
+        Me.grid1.Location = New System.Drawing.Point(3, 64)
         Me.grid1.Margin = New System.Windows.Forms.Padding(4)
         Me.grid1.Name = "grid1"
         Me.grid1.Rows.DefaultSize = 21
@@ -397,11 +396,19 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.grid1.TabIndex = 123196
         Me.grid1.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
         '
+        'statuscheck
+        '
+        Me.statuscheck.Location = New System.Drawing.Point(329, 18)
+        Me.statuscheck.Name = "statuscheck"
+        Me.statuscheck.Size = New System.Drawing.Size(100, 22)
+        Me.statuscheck.TabIndex = 123195
+        Me.statuscheck.Visible = False
+        '
         'FilterDGV
         '
         Me.FilterDGV.FormattingEnabled = True
         Me.FilterDGV.Items.AddRange(New Object() {"NO WORKORDER", "WITH WORKORDER", "VIEW ALL"})
-        Me.FilterDGV.Location = New System.Drawing.Point(61, 18)
+        Me.FilterDGV.Location = New System.Drawing.Point(77, 18)
         Me.FilterDGV.Name = "FilterDGV"
         Me.FilterDGV.Size = New System.Drawing.Size(222, 24)
         Me.FilterDGV.TabIndex = 123193
@@ -411,17 +418,19 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(12, 18)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(43, 17)
+        Me.Label2.Size = New System.Drawing.Size(59, 17)
         Me.Label2.TabIndex = 123194
-        Me.Label2.Text = "Filter:"
+        Me.Label2.Text = "FILTER:"
         '
-        'statuscheck
+        'TabControl1
         '
-        Me.statuscheck.Location = New System.Drawing.Point(329, 18)
-        Me.statuscheck.Name = "statuscheck"
-        Me.statuscheck.Size = New System.Drawing.Size(100, 22)
-        Me.statuscheck.TabIndex = 123195
-        Me.statuscheck.Visible = False
+        Me.TabControl1.Controls.Add(Me.TabPage1)
+        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TabControl1.Location = New System.Drawing.Point(0, 92)
+        Me.TabControl1.Name = "TabControl1"
+        Me.TabControl1.SelectedIndex = 0
+        Me.TabControl1.Size = New System.Drawing.Size(1439, 675)
+        Me.TabControl1.TabIndex = 123193
         '
         'FRMWORKORDERDASHBOARD
         '
@@ -446,10 +455,10 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.Panel6.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
         Me.TabPage1.PerformLayout()
         CType(Me.grid1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.TabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -479,12 +488,13 @@ Partial Class FRMWORKORDERDASHBOARD
     Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LinesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
     Friend WithEvents SubFieldNum As TextBox
     Friend WithEvents grid1 As C1.Win.C1FlexGrid.C1FlexGrid
+    Friend WithEvents statuscheck As TextBox
     Friend WithEvents FilterDGV As ComboBox
     Friend WithEvents Label2 As Label
-    Friend WithEvents statuscheck As TextBox
+    Friend WithEvents TabControl1 As TabControl
+    Friend WithEvents MinorActivity As TextBox
+    Friend WithEvents MajorActivity As TextBox
 End Class

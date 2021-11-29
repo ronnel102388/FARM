@@ -43,6 +43,10 @@ ORDER BY CREATIONDATE DESC
 
 
     End Sub
+
+
+
+
     Private Sub DAYSTOARCHIVE_ValueChanged(sender As Object, e As EventArgs) Handles DAYSTOARCHIVE.ValueChanged
         If Not DAYSTOARCHIVE.Value = 0 Then
             btAdd.Enabled = True
@@ -98,7 +102,7 @@ ORDER BY CREATIONDATE DESC
 
 
         Dim Sql As String = <s>
-                          UPDATE T_DateToArchive
+                          UPDATE M_WORKORDER_ARCHIVE_SETTINGS
                                SET [ISACTIVE] = '0'
                              WHERE RECID = <%= RECID.Text %>
                             </s>
