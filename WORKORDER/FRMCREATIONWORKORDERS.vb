@@ -1,13 +1,17 @@
 ﻿Imports C1.Win.C1FlexGrid
 Public Class FRMCREATIONWORKORDERS
-    Dim vMAJAID, vMINAID, vVERSIONID As Integer
+    Dim vMAJAID, vMINAID, vVERSIONID, vWOID, vWORESID As Integer
     Public vMAINWOID As Integer
     Public vSUBFIELDNO As String
 
 #Region "ROUTINE"
     Sub Clear()
-        'xCBOSUBFIELDNO.Text = ""
-        'xCBOSUBFIELDNO.SelectedIndex = -1
+        '===================================== VARIALBLES
+        vMAJAID = 0
+        vMINAID = 0
+
+
+        '===================================== TOOLS
         xCROPCLASS.Text = ""
         xCROPCLASSDETAIL.Text = ""
         xLANDOWNER.Text = ""
@@ -42,64 +46,7 @@ Public Class FRMCREATIONWORKORDERS
 #Region "POPULATE"
     Sub POPULATEFIELDDETAILS(ByVal sf As String)
         Dim sql As String = <s>
-                                                                      SELECT DISTINCT
-                                    CC.CROPCLASS
-                                    ,CCD.CROPCLASSDETAIL
-                                    ,LO.LANDOWNER
-                                    ,FM.FARMMODEL
-                                    ,MF.MAINFIELDNO
-                                    ,MF.RECRUITEDAREA AS CONTRACTEDAREA
-                                    ,SF.CROPYEAR
-                                    ,SF.ARABLEAREA
-                                    ,SF.PLANTEDAREA
-                                    ,CASE WHEN SF.PLANTINGDATE = '1900-01-01' THEN '' ELSE CONVERT(VARCHAR,SF.PLANTINGDATE,0) END PLANTINGDATE
-                                    ,CASE 
-	                                    WHEN CONVERT(DATE,SF.PLANTINGDATE) = CONVERT(DATE,'1900-01-01') THEN
-			                                     'IDLE'                                                                                                     
-	                                    ELSE 
-			                                    CONVERT(VARCHAR,CASE WHEN DATEPART (DAY,SF.PLANTINGDATE) > DATEPART (DAY,GETDATE()) THEN 
-					                                    DATEDIFF(MONTH,SF.PLANTINGDATE,GETDATE()) - 1 
-	                                    ELSE DATEDIFF(MONTH,SF.PLANTINGDATE,GETDATE()) END) 
-	                                    END [AGEOFCANEMONTH]
-                                    ,FBS.FARMCLUSTER
-                                    ,FBS.FARMADDRESS
-                                    ,CASE WHEN SF.ISNURSERY=0 THEN 'Full Term' ELSE 'Nursery' END [FARMINGCLASSIFICATION]   
-                                    ,(SELECT TOP 1 MILLINGSEASON FROM M_FARMCROPYEAR ORDER BY CROPYEARID DESC) [MILLINGSEASON]  
-                                    ,CI.FAS
-                                    ,FBS.LAAS
-                                    ,(SELECT Employee FROM vwEmployee X WHERE X.EmployeeID = FMS.FARMMANID) AS FARMMANAGER
-                                    FROM 
-                                    T_SUBFIELDNO SF
-                                    INNER JOIN 
-                                    M_FARMCROPCLASSDETAIL CCD ON CCD.CROPCLASSDETAILID = SF.CROPCLASSDETAILID
-                                    INNER JOIN 
-                                    M_FARMCROPCLASS CC ON CC.CROPCLASSID = CCD.CROPCLASSID
-                                    INNER JOIN
-                                    T_CONTRACTFIELDINFORMATION CFI ON CFI.CONTRACTEDFIELDID = SF.CONTRACTEDFIELDID 
-                                    LEFT JOIN 
-                                    T_CONTRACTINFORMATION CI ON CI.CONTRACTID = CFI.CONTRACTID 
-                                    INNER JOIN 
-                                    M_LANDOWNERINFORMATION LO ON LO.LANDOWNERID = CI.LANDOWNERID
-                                    INNER JOIN 
-                                    M_FARMMODEL FM ON FM.FARMMODELID = CI.FARMMODELID 
-                                    INNER JOIN 
-                                    M_LANDMAINFIELDNO  MF ON MF.MAINFIELDID =  CFI.MAINFIELDID
-                                    INNER JOIN 
-                                    VWFARMBARANGAYSETUP FBS ON FBS.FARMBARANGAYID = CI.FARMBARANGAYID
-                                    LEFT JOIN 
-                                    M_FM_SUBFIELD FMS ON FMS.SUBFIELDID = SF.SUBFIELDID AND FMS.TAG = 1 AND FMS.ISACTIVE = 1
-                                    LEFT JOIN 
-                                    M_FA_SUBFIELD FAS ON FAS.SUBFIELDID = SF.SUBFIELDID AND FAS.TAG = 1 AND FAS.ISACTIVE = 1
-                                    WHERE SF.ISACTIVE = 1 
-                                    AND CFI.ISACTIVE = 1 AND CFI.ISACCEPTED = 1
-                                    AND CI.ISACTIVE = 1 AND ISNULL( CI.ISFORRENEWAL,0) = 0
-                                    AND FM.ISACTIVE = 1
-                                    AND LO.ISACTIVE = 1
-                                    AND MF.ISACTIVE = 1 
-       
-                                    
-                                    AND SUBFIELDNO ='<%= sf %>'
-
+                                   EXEC WORKORDER_LIST_FIELDDETAILS'<%= sf %>'
                             </s>
         ExeReader(sql)
         With dr
@@ -128,30 +75,11 @@ Public Class FRMCREATIONWORKORDERS
         dr.Close()
         Conn.Close()
     End Sub
-    Sub POPULATE_METHODOFACTIVITY_RESOURCE(ByVal VERID As Integer, ByVal MAJID As Integer, ByVal MINID As Integer, ByVal CC As String, ByVal Area As Double)
+    Sub POPULATE_METHODOFACTIVITY_RESOURCE(ByVal VERID As Integer, ByVal MAJID As Integer, ByVal MINID As Integer, ByVal CC As String, ByVal ActDate As Date, ByVal Area As Double)
         Dim sql As String = <s>
-                                SELECT DISTINCT CONVERT(BIT,0) AS TAG
-                                ,METHODOFACTIVITY
-                                ,RESOURCE
-                                ,RESOURCETYPE
-                          
-                                ,(STANDARDQTY * <%= Area %>) AS PLANQTY
-                                ,STANDARDQTY
-                                ,UOM
-                                ,ISNULL(ISMAINMETHOD,0) AS ISMAINMETHOD
-                                ,ISNULL(ISALTERNATIVE,0) AS ISALTERNATIVE
-                                ,RECID
-                                ,DETAILCODE
-                                ,METHODOFACTIVITYID
-                                ,RESOURCEID
-                                FROM 
-                                M_FARM_POT_VERSION_DETAIL
-                                WHERE ISACTIVE = 1
-                                AND VERSIONID = <%= VERID %>
-                                AND CROPCLASS = '<%= CC %>'
-                                AND COID = '<%= Comp %>'
-                                AND MAJORACTIVITYID = <%= MAJID %>
-                                AND MINORACTIVITYID = <%= MINID %>
+
+                                EXEC WORKORDER_SELECTION_WORKORDERDETAIL  '<%= VERID %>', <%= MAJID %>, <%= MINID %>, '<%= CC %>', '<%= ActDate %>','<%= Area %>', '<%= Comp %>'
+
                             </s>
         SelectQuery(sql)
         With dgWOres
@@ -159,21 +87,19 @@ Public Class FRMCREATIONWORKORDERS
             .DataMember = "table"
             .Cols.Fixed = 0
             .Rows(0).Height = 50
-            .Cols("RECID").Visible = False
-            .Cols("DETAILCODE").Visible = False
-            .Cols("METHODOFACTIVITYID").Visible = False
             .Cols("METHODOFACTIVITY").Visible = False
-            .Cols("RESOURCEID").Visible = False
             .Cols("PLANQTY").Format = "N2"
             .Cols("STANDARDQTY").Format = "N2"
-
+            .Cols("UNITPRICE").Visible = False
+            .Cols("COSTPRICE").Visible = False
+            .Cols("RESOURCEGROUP").Visible = False
             .Tree.Column = .Cols("RESOURCE").Index
             .Tree.Style = TreeStyleFlags.Complete
             .Subtotal(AggregateEnum.None, 0, .Cols("METHODOFACTIVITY").Index, .Cols("METHODOFACTIVITY").Index, "{0}")
             .Tree.Show(1)
             .AutoSizeCols()
 
-            .Cols.Frozen = 3
+            .Cols.Frozen = 4
             '.Cols("RESOURCETYPE").Style.Font = New Font("Microsoft Sans Serif", 8, FontStyle.Regular)
             '.Styles(CellStyleEnum.Subtotal0).Font = New Font("Microsoft Sans Serif", 8, FontStyle.Bold)
         End With
@@ -215,17 +141,23 @@ Public Class FRMCREATIONWORKORDERS
         End If
         drl_FillCombo("MINORACTIVITY", xCBOMINORACTIVITY, "M_FARM_POT_VERSION_DETAIL", "MAJORACTIVITYID = '" & vMAJAID & "' AND VERSIONID = " & vVERSIONID & " AND COID = '" & Comp & "'")
     End Sub
-
+    Private Sub BtCancelUpdate_Click(sender As Object, e As EventArgs) Handles btCancelUpdate.Click
+        If xCBOMAJORACTIVITY.Text <> "" Then
+            If MsgBox("Are you sure you want to cancel the transaction?", vbQuestion + vbYesNo + vbDefaultButton2, "VALIDATION") = vbNo Then
+                Exit Sub
+            End If
+        End If
+        Clear()
+        Me.Dispose()
+    End Sub
     Private Sub XCBOMINORACTIVITY_SelectedIndexChanged(sender As Object, e As EventArgs) Handles xCBOMINORACTIVITY.SelectedIndexChanged
         If xCBOMINORACTIVITY.SelectedIndex = -1 Or xCBOMINORACTIVITY.Text = "" Then
             vMINAID = 0
         Else
             vMINAID = drl_FindID("MINORACTIVITYID", "M_FARM_POT_VERSION_DETAIL", "MINORACTIVITY = '" & xCBOMINORACTIVITY.Text & "' AND VERSIONID = " & vVERSIONID & " AND COID = '" & Comp & "'")
         End If
-        POPULATE_METHODOFACTIVITY_RESOURCE(vVERSIONID, vMAJAID, vMINAID, xCROPCLASS.Text, IIf(Val(xPLANTEDAREA.Text) <> 0, Val(xPLANTEDAREA.Text), Val(xARABLEAREA.Text)))
+        POPULATE_METHODOFACTIVITY_RESOURCE(vVERSIONID, vMAJAID, vMINAID, xCROPCLASS.Text, xDTPWOACTIVITYDATE.Value, IIf(Val(xPLANTEDAREA.Text) <> 0, Val(xPLANTEDAREA.Text), Val(xARABLEAREA.Text)))
     End Sub
-
-
     Public Sub xCBOSUBFIELDNO_LostFocus(sender As Object, e As EventArgs) Handles xCBOSUBFIELDNO.LostFocus
         If xCBOSUBFIELDNO.Text = "" Or xCBOSUBFIELDNO.SelectedIndex = -1 Then
             POPULATEFIELDDETAILS("")
@@ -244,6 +176,149 @@ Public Class FRMCREATIONWORKORDERS
         End If
         drl_FillCombo("MAJORACTIVITY", xCBOMAJORACTIVITY, "M_FARM_POT_VERSION_DETAIL", "CROPCLASS = '" & xCROPCLASS.Text & "' AND VERSIONID = " & vVERSIONID & " AND COID = '" & Comp & "'")
     End Sub
+    Private Sub BtSave_Click(sender As Object, e As EventArgs) Handles BtSave.Click
+        If xCBOMAJORACTIVITY.Text = "" And xCBOMAJORACTIVITY.SelectedIndex = -1 Then
+            MsgBox("Please Add Major Activity", vbInformation, "VALIDATION")
+            Exit Sub
+        End If
+
+        If vMAJAID = 0 Then
+            MsgBox("Major Activity is not exist.", vbInformation, "VALIDATION")
+        End If
+
+        If xCBOMINORACTIVITY.Text = "" And xCBOMINORACTIVITY.SelectedIndex = -1 Then
+            MsgBox("Please Add Minor Activity", vbInformation, "VALIDATION")
+            Exit Sub
+        End If
+
+        If vMINAID = 0 Then
+            MsgBox("Minor Activity is not exist", vbInformation, "VALIDATION")
+            Exit Sub
+        End If
+
+        With dgWOres
+            For x As Integer = 1 To .Rows.Count - 1
+                If .Item(x, "TAG").ToString = False Then
+                    MsgBox("Please select MethodActivity / Resource.", vbInformation, "VALIDATION")
+                    Exit Sub
+                End If
+            Next
+        End With
+
+        If MsgBox("Do you want to save the transaction?", vbQuestion + vbYesNo + vbDefaultButton2, "VALIDATION") = vbNo Then
+            Exit Sub
+        End If
+
+
+        If vMAINWOID = 0 Then
+            Dim vMAINWOCODE As String = drl_GenerateCodeMAINWO()
+
+            Dim sql As String = <s>
+                                    EXEC MAIN_WORKORDER_ACTION 
+                                    0
+                                    '<%= vMAINWOCODE %>' --MAINWOCODE
+                                    ,'<%= xCROPCLASSDETAIL.Text %>' --CROPCLASSDETAIL
+                                    ,'<%= xCROPYEAR.Text %>' --CROPYEAR
+                                    ,0  -- ISCLOSED
+                                    ,'' -- REMARKS
+                                    ,'' -- ISREOPEN
+                                    ,'' -- REOPENRMAINWOREMARKS
+                                    ,'<%= FRMWORKORDERS.RbnUser.Text %>' -- CREATEDBY
+                                    ,0  --ISCROPLOGGED
+                                </s>
+            ExeReader(sql)
+            While dr.Read
+                vMAINWOID = dr.Item("ID")
+            End While
+            dr.Close()
+            Conn.Close()
+        End If
+
+        If vWOID = 0 Then
+            xWOCODE.Text = drl_GenerateCodeWORKORDER()
+            Dim sql As String = <s>
+                                    EXEC WORKORDER_HEADER_ACTION
+                                        ,0 --WORKORDERID
+
+                                        ,<%= vMAINWOID %> -- MAINWOID
+                                        ,'<%= xCBOSUBFIELDNO.Text %>' -- SUBFIELDNO
+                                        ,'<%= xWOCODE.Text %>' -- WORKORDERCODE
+                                        ,'<%= xLANDOWNER.Text %>' -- LANDOWNER
+                                        ,'<%= xFARMMODEL.Text %>' -- FARMMODEL
+
+                                        ,'<%= drl_GetLastDayOfWeek(xDTPWOACTIVITYDATE.Value) %>' -- WEEKENDING
+                                        ,'<%= Val(xARABLEAREA.Text) %>' -- ARABLEAREA
+                                        ,'<%= Val(xPLANTEDAREA.Text) %>' -- PLANTEDAREA
+
+                                        ,'<%= xCROPYEAR.Text %>' -- CROPYEAR
+                                        ,'<%= xPLANTINGDATE.Text %>' -- PLANTINGDATE
+                                        ,'<%= xCROPCLASS.Text %>' -- CROPCLASS
+                                        ,'<%= xCROPCLASSDETAIL.Text %>' -- CROPCLASSDETAIL
+
+                                        ,'<%= xFARMMANAGER.Text %>' -- FARMMANAGER
+                                        ,'<%= xFARMASSISTANT.Text %>' -- FARMASSISTANT
+                                        ,'<%= xFARMADDRESS.Text %>' -- FARMADDRESS
+
+                                        ,'<%= xDTPWOACTIVITYDATE.Value.ToShortDateString %>' -- WORK ORDER ACTIVITY DATE
+                                        ,'<%= Val(xAREAOFACTIVITY.Text) %>' -- AREAOFACTIVITY
+                                        ,'<%= xCBOMAJORACTIVITY.Text %>' -- MAJORACTIVITY
+                                        ,'<%= xCBOMINORACTIVITY.Text %>' -- MINORACTIVITY
+                                        ,'<%= xVERSION.Text %>' -- VERSION
+                                        
+                                        ,0 -- ISCLOSED
+                                        ,0 -- ISCANCELLED
+                                        ,'' -- CANCELLATIONREMARKS
+                                        ,'' -- REOPENWOREMARKS
+                                        ,'' -- UPDATEJUSTIFICATION
+                                        ,0 -- FURROWDISTANCE 
+                                        ,0 -- TOTALSTALKWEIGHT
+                                        ,0 -- YIELD
+                                        ,0 -- ISMANUAL
+                                        ,'' -- CROPLOGREMARKS
+                                </s>
+            ExeReader(sql)
+            While dr.Read
+                vWORESID = dr.Item("ID").ToString
+            End While
+            dr.Close()
+            Conn.Close()
+
+            With dgWOres
+                For x As Integer = 1 To .Rows.Count - 1
+                    If .Item(x, "TAG").ToString = True Then
+                        Dim vWORESCODE As String = drl_GenerateCodeWORESOURCE()
+
+                        Dim sqlx As String = <s>
+                                                EXEC WORKORDER_DETAIL_ACTION
+                                                 0   
+                                                ,<%= vWORESCODE %> -- WORKORDERRESOURCECODE
+                                                ,<%= vWOID %> -- WORKORDERID
+                                                ,'<%= xWOCODE.Text %>' -- WORKORDERCODE
+                                                ,<%= .Item(x, "PLANQTY") %> -- PLANQTY
+                                                ,<%= .Item(x, "RECID") %> -- POTID
+                                                ,'<%= .Item(x, "JUSTIFICATION") %>' -- JUSTIFICATION
+                                                ,'<%= .Item(x, "DEACTIVATIONREMARKS") %>' -- DEACTIVATIONREMARKS
+                                                ,'<%= FRMWORKORDERS.RbnUser.Text %>' -- CREATEDBY
+                                             </s>
+                        ExeQuery(sqlx)
+                    End If
+                Next
+            End With
+
+        End If
+
+        MsgBox("WorkOrder SuccessFully Saved", vbInformation, "VALIDATION")
+        Clear()
+
+        With FRMWORKORDERS
+            .xSUBFIELDNO.Text = xCBOSUBFIELDNO.Text
+            .POPULATEFIELDDETAILS(xCBOSUBFIELDNO.Text)
+            .POPULATEMAINWORKORDER()
+            .POPULATEWODETAIL(vMAINWOID)
+        End With
+
+        Me.Dispose()
+    End Sub
 #End Region
     Private Sub FRMCREATEWORKORDERS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Clear()
@@ -260,9 +335,10 @@ Public Class FRMCREATIONWORKORDERS
         End If
 
         '=================================METHOD AND RESOURCE
-        POPULATE_METHODOFACTIVITY_RESOURCE(vVERSIONID, 0, 0, "", 0)
+        POPULATE_METHODOFACTIVITY_RESOURCE(vVERSIONID, 0, 0, "", Date.Now, 0)
 
     End Sub
+
 
 
 End Class

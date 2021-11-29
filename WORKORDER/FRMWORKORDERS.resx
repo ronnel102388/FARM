@@ -373,41 +373,35 @@
         nKaq2vazaHIalC8VTU5z+OjJGnOZRSo1708etFYG2OP/FJPpD/T5Ivf5yWwHAAAAAElFTkSuQmCC
 </value>
   </data>
+  <data name="BTNSETTING.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABoAAAAaCAYAAACpSkzOAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAB3RJTUUH5QscFzo7aol7DwAAAsxJREFU
+        SEvF1TmMTVEYwPEnEVuIndiCROgIyVBqBIVGSSNBhVg6CiSKKUgUxGQyGhVae2yJyk4UGltILBFL7Pvy
+        /P8v5+PMvPvuexq+5JeZd++557vnO8ut/LOoVqsahaVYWWIFpsH2vfz7V5EeNMkn/CjxDSYbicXoh9RL
+        C2Fj+MZ2VhbeN9EkXMMG9EHqqUnYEJHoCS4W8Hokmoh7eIN1aC2ZjWCiL/DBwRia8bfXvR+J7sJ4BUfW
+        F6nHBmEDmOg7TmNrgVPwvokGYQ3i3lqMRuqxQdgAUTrf+mUBrxvbMCyJEfu/oy5fid6Eib6iHTMxK+Nv
+        rzuiF7iMmLtLcGHsg8lSrwXhTUSiDizAwoy/vW6iPKzAc1zHbljS1GtBeBNROjt718MH5El+4ja2oA0j
+        MAAtl84NeRBOeFiOXXAzGyY8hBmIZxdhD3bCMqeee4Q3YCInfBMmwCUs/1+C1zBMMg5T4DNzcRaGIzWh
+        13xJR5qyEP5AlO4tHuB+4sZ0HoxbcCQmsfPP8F5e1rjm304MQV0iH7iKvejCAbjKDN/WOYm2dpSH95XH
+        I8xBXSIfXoX+cHLHIsryFE68bS1NjNIqnIcvsR13EOGyH49ajjyRD9nwBI7jHCyl4X4ZDife5FGuC5iK
+        6Gc+PBeN99iP6ahL5Jtbviu4iVhtJh8I90seHkHRh6zGYUT4QsvQLVF+qDqJfg4clXESJnIJ57EDtf2T
+        +OwZRNin37q6xeDhab03w04ewriBMXDVuYRjMVhqy+Xp7cmwGn4+jGfYiNo85YksXaPwczAPts0Xg/EY
+        lsuTP/ab8Xsx5KvODVaWyHDZ+5HztPjohSZhNWajWyJPaY+fozhS4Bg8oSfDT4Ob0ZG4cFxdEZbLkbiH
+        1uPP19d/Euvs/inTG7Y1mZvR0riE3axOvHPiEeW95l/dVsJOEveJS9jV5dmYWvyXqFR+ASE0GuYP7NXL
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
   <metadata name="MenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>261, 19</value>
   </metadata>
-  <data name="BTNSETTING.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAAOwAAADsAXkocb0AAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwa
-        AAAENElEQVRYR6WWTahWVRSGr5qlqaSSoaZiJBVqZg4a2Mgu/gzsBw0TbGJRAxsUBCUYSKCokA21giii
-        BqXgQPwhsCiCwiZGRopKFEU/ppZkIAa35zl3n33X2XdrV1vw6Hfetc5397f32mutnr6+vmsCmwmHwYeW
-        U9Bbi78cVXEoYJvhXRgfeBEO1eIvR1WMYMNhEUws9NdgfaEtgyOFNgoWw+ioZ39NbMH8VZ/D93AWHkj6
-        GPgM1hbx98JpmJaeZ8EPcBJ+grtifBNTCi3YBPgS3gF34SE4B3vgT9gF4yrvvQIXYB/8DBuS/lx67iyi
-        83IE+xjeguFBmw3r/D/GlmBT4ElYVOguwp3Ix5GdEWwS+GFszf9/wDyOxfk5OiPYh+A2X1fzC+ZVXAEb
-        YA3MgRG1WElx5sSorMWACHYTfAFvVHxTYS+YcAfAc/8ATsBXML/yjjfJHJjV0eNDCeYilhbaPPgdtsD1
-        0Zf8j8MvsK7QzYl9UWv0UijBvAHe49WwEm6DO2uxLdgM+BXyTmAmprejuaJZjw81MLf2OByET+E8jK/F
-        RjB3wuPIOYF5VB7bETgEvbUXF0r67K+/BJOD/xNYlT5PB5PwhtYfwewNcwrNYmXFtGyfio5hsAO8pz+C
-        Bec9OFp8wUtqsAn+gK/hW8iLDLHu3ppSTz6rbEcwqb6BW2AibAP/yKTiRRf6FLwO96VnF+4iOjuBbYem
-        EpZgAwvARsJfMLcMHAqYi3AnVhT6/lILvkE78BFsjEFJ98s9s2fhntKfYtwJj2N60OyCv8HMoI2DtbAe
-        bOWH45fMh9Ptc9JMSM/7GLwNFh2fX4BhIc7j2Fq86xHuLTQrq13UVu48YSXN9/xNyMMEZln1FzwD8Srd
-        Dm73y0EzJ1zYKnBr7wCv29QQYyOzi45ptaTne+4CZgSHt+DVGBx8rtycuTU9e0zeDq+odcJFdsoxZhfd
-        E7WkN/d8SiHeCBehMwVFMBPsiYpusVpZ0d0B54lmqAl603Y7lQ0bDf9ErQRzVni+olsxV5d68jnUOFnl
-        H6adgV7otF3M858XteAzb6xy9xf6ZPA4c78v/L7neJcHFe1pcBEmyCPB4ZnthjwRBZ9JdyI8O8CYhB6n
-        OeUfehB2QpPASXO8c8YcmLLClzwM8UtHgPOAyXh30m4Gh4q/4dEQa8W0bMfxrZ0n3oex4JE5Y3aPO7zw
-        GBzvOPsX4U7Y/816f6FJtqCI887vilrSXYSTlQ/OmBMGxaRAt+c7WF4GJL+l2s43aApOfnuHDazpohV/
-        p59E+v8ZWEC1bv8XmA3MLlpdwJUY+NDTswSs5/b35WA2O+PlxExxTjsOE1a6jTAX7KI7YtxQ6T70L8Kd
-        EHPCxPR25CuKWTHF3mEDMzds5bk3XA2Dhf7jiNnc1glrvHNd555jI9vP10JVjGBtnfAh3/Na7NXT1/Mv
-        QRO5hIL5WkcAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="dgWORes.StyleInfo" xml:space="preserve">
-    <value>Normal{BackColor:White;Margins:1, 1, 1, 1;Border:Flat,1,LightGray,Horizontal;}	Alternate{BackColor:WhiteSmoke;}	Fixed{BackColor:Control;ForeColor:ControlText;Margins:1, 1, 1, 1;Border:Flat,1,ControlDark,Both;BackgroundImageLayout:Hide;}	Highlight{Font:Microsoft Sans Serif, 8.25pt;BackColor:LightBlue;ForeColor:Black;Border:Double,1,DarkTurquoise,Horizontal;}	Focus{Border:None,1,Black,Both;}	Editor{BackColor:White;Border:None,1,Black,Both;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	FrozenAlternate{}	NewRow{ForeColor:GrayText;}	EmptyArea{BackColor:White;Border:Flat,0,ControlDarkDark,Both;}	SelectedColumnHeader{}	SelectedRowHeader{}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDark;ForeColor:Black;}	Subtotal2{BackColor:Gainsboro;ForeColor:Black;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	FilterEditor{}	FirstCustomStyle{}	</value>
-  </data>
   <data name="dgWOHeader.StyleInfo" xml:space="preserve">
     <value>Normal{BackColor:White;Margins:1, 1, 1, 1;Border:Flat,1,LightGray,Horizontal;}	Alternate{BackColor:WhiteSmoke;}	Fixed{BackColor:Control;ForeColor:ControlText;Margins:1, 1, 1, 1;Border:Flat,1,ControlDark,Both;BackgroundImageLayout:Hide;}	Highlight{Font:Microsoft Sans Serif, 8.25pt;BackColor:LightBlue;ForeColor:Black;Border:Double,1,DarkTurquoise,Horizontal;}	Focus{Border:None,1,Black,Both;}	Editor{BackColor:White;Border:None,1,Black,Both;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	FrozenAlternate{}	NewRow{ForeColor:GrayText;}	EmptyArea{BackColor:White;Border:Flat,0,ControlDarkDark,Both;}	SelectedColumnHeader{}	SelectedRowHeader{}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDark;ForeColor:Black;}	Subtotal2{BackColor:Gainsboro;ForeColor:Black;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	FilterEditor{}	FirstCustomStyle{}	</value>
   </data>
   <data name="dgMAINWO.StyleInfo" xml:space="preserve">
+    <value>Normal{BackColor:White;Margins:1, 1, 1, 1;Border:Flat,1,LightGray,Horizontal;}	Alternate{BackColor:WhiteSmoke;}	Fixed{BackColor:Control;ForeColor:ControlText;Margins:1, 1, 1, 1;Border:Flat,1,ControlDark,Both;BackgroundImageLayout:Hide;}	Highlight{Font:Microsoft Sans Serif, 8.25pt;BackColor:LightBlue;ForeColor:Black;Border:Double,1,DarkTurquoise,Horizontal;}	Focus{Border:None,1,Black,Both;}	Editor{BackColor:White;Border:None,1,Black,Both;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	FrozenAlternate{}	NewRow{ForeColor:GrayText;}	EmptyArea{BackColor:White;Border:Flat,0,ControlDarkDark,Both;}	SelectedColumnHeader{}	SelectedRowHeader{}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDark;ForeColor:Black;}	Subtotal2{BackColor:Gainsboro;ForeColor:Black;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	FilterEditor{}	FirstCustomStyle{}	</value>
+  </data>
+  <data name="dgWORes.StyleInfo" xml:space="preserve">
     <value>Normal{BackColor:White;Margins:1, 1, 1, 1;Border:Flat,1,LightGray,Horizontal;}	Alternate{BackColor:WhiteSmoke;}	Fixed{BackColor:Control;ForeColor:ControlText;Margins:1, 1, 1, 1;Border:Flat,1,ControlDark,Both;BackgroundImageLayout:Hide;}	Highlight{Font:Microsoft Sans Serif, 8.25pt;BackColor:LightBlue;ForeColor:Black;Border:Double,1,DarkTurquoise,Horizontal;}	Focus{Border:None,1,Black,Both;}	Editor{BackColor:White;Border:None,1,Black,Both;}	Search{BackColor:Highlight;ForeColor:HighlightText;}	Frozen{BackColor:Beige;}	FrozenAlternate{}	NewRow{ForeColor:GrayText;}	EmptyArea{BackColor:White;Border:Flat,0,ControlDarkDark,Both;}	SelectedColumnHeader{}	SelectedRowHeader{}	GrandTotal{BackColor:Black;ForeColor:White;}	Subtotal0{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal1{BackColor:ControlDark;ForeColor:Black;}	Subtotal2{BackColor:Gainsboro;ForeColor:Black;}	Subtotal3{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal4{BackColor:ControlDarkDark;ForeColor:White;}	Subtotal5{BackColor:ControlDarkDark;ForeColor:White;}	FilterEditor{}	FirstCustomStyle{}	</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

@@ -2,6 +2,8 @@
 Public Class FRMWORKORDERS
     Dim CURRENTTAB As Integer
     Public checkstate = IniCon.ReadString("CheckState", "UnderDevelopment")
+
+#Region "ROUTINE"
     Function FindEmID(ByVal Username As String) As Integer
         Dim sql As String = <s>
          SELECT EmployeeID FROM a_Employee where UserName = '<%= Username %>'                       
@@ -39,39 +41,12 @@ Public Class FRMWORKORDERS
         'DeptId = 1
         'EmpID = FindEmID(Username)
     End Sub
+#End Region
 #Region "POPULATE"
     Sub POPULATEMAINWORKORDER()
         Dim search As String = XSEARCH.Text.Replace("'", "")
         Dim sql As String = <s>     
-
-                    SELECT TOP 100 [MainWOID]
-                          ,[MainWO]
-                          ,[FieldID]
-                          ,[FieldNo]
-                          ,[CropClassDetailID]
-                          ,[CroplClassDetail]
-                          ,[CropYear]
-                          ,isnull([IsClosed],0) AS IsClosed
-                          ,[ClosedDate]
-                          ,[ClosedBy]
-                          ,[Remarks]
-                          ,isnull([IsReOpen],0) AS IsReOpen
-                          ,[ReOpenBy]
-                          ,[ReOpenDate]
-                          ,[ReOpenMainWORemarks]
-                          ,[IsActive]
-                          ,[CreatedBy]
-                          ,[CreationDate]
-                          ,[ModifiedBy]
-                          ,[ModificationDate]
-                          ,[PreviousModifiedBy]
-                          ,[PreviousModificationDate]
-                          ,[IsCropLogged]
-                          ,[DateCropLogged]
-                      FROM [GENESISr5].[dbo].[t_FarmActivityMainWorkOrder]
-                      WHERE ISACTIVE = 1
-                      AND (FIELDNO LIKE '%<%= search %>%')
-                    ORDER BY isnull([IsClosed],0) ASC, MAINWOID DESC
+                                 EXEC WORKORDER_LIST_MAINWORKORDER '<%= search %>'
                             </s>
         SelectQuery(sql)
         With dgMAINWO
@@ -79,22 +54,6 @@ Public Class FRMWORKORDERS
             .DataMember = "table"
             .Rows(0).Height = 50
             .AutoSizeCols()
-            '.Cols("SUBFIELDID").Visible = False
-            '.Cols("CROPCLASSDETAILID").Visible = False
-            '.Cols("SUBFIELDNO").Caption = "SUB FIELD"
-            '.Cols("SUBFIELDNO").Width = 300
-            '.Cols("WOCODE").Caption = "WORK ORDER CODE"
-            '.Cols("WOCODE").Width = 300
-            '.Cols("CROPCLASSDETAIL").Caption = "CROP CLASS"
-            '.Cols("CROPCLASSDETAIL").Width = 300
-            '.Cols("TRANSDATE").Caption = "TRANSACTION DATE"
-            '.Cols("TRANSDATE").Width = 200
-            '.Cols("SEASONID").Caption = "SEASON"
-            '.Cols("SEASONID").Width = 200
-            '.Cols("CLOSEDBY").Caption = "CLOSED BY"
-            '.Cols("CLOSEDBY").Width = 200
-            '.Cols("CLOSEDDATE").Caption = "CLOSING DATE"
-            '.Cols("CLOSEDDATE").Width = 200
 
             For x As Integer = 0 To .Cols.Count - 1
                 If .Cols(x).Caption.Contains("ID") Or .Cols(x).Caption.Contains("Id") Then
@@ -103,69 +62,14 @@ Public Class FRMWORKORDERS
                     .Cols(x).Visible = True
                 End If
             Next
-
+            .Cols("MAINWO").Visible = False
+            .Cols.Frozen = 4
         End With
+
     End Sub
     Sub POPULATEFIELDDETAILS(ByVal sf As String)
         Dim sql As String = <s>
-                                                                      SELECT DISTINCT
-                                    CC.CROPCLASS
-                                    ,CCD.CROPCLASSDETAIL
-                                    ,LO.LANDOWNER
-                                    ,FM.FARMMODEL
-                                    ,MF.MAINFIELDNO
-                                    ,MF.RECRUITEDAREA AS CONTRACTEDAREA
-                                    ,SF.CROPYEAR
-                                    ,SF.ARABLEAREA
-                                    ,SF.PLANTEDAREA
-                                    ,CASE WHEN SF.PLANTINGDATE = '1900-01-01' THEN '' ELSE CONVERT(VARCHAR,SF.PLANTINGDATE,0) END PLANTINGDATE
-                                    ,CASE 
-	                                    WHEN CONVERT(DATE,SF.PLANTINGDATE) = CONVERT(DATE,'1900-01-01') THEN
-			                                     'IDLE'                                                                                                     
-	                                    ELSE 
-			                                    CONVERT(VARCHAR,CASE WHEN DATEPART (DAY,SF.PLANTINGDATE) > DATEPART (DAY,GETDATE()) THEN 
-					                                    DATEDIFF(MONTH,SF.PLANTINGDATE,GETDATE()) - 1 
-	                                    ELSE DATEDIFF(MONTH,SF.PLANTINGDATE,GETDATE()) END) 
-	                                    END [AGEOFCANEMONTH]
-                                    ,FBS.FARMCLUSTER
-                                    ,FBS.FARMADDRESS
-                                    ,CASE WHEN SF.ISNURSERY=0 THEN 'Full Term' ELSE 'Nursery' END [FARMINGCLASSIFICATION]   
-                                    ,(SELECT TOP 1 MILLINGSEASON FROM M_FARMCROPYEAR ORDER BY CROPYEARID DESC) [MILLINGSEASON]  
-                                    ,CI.FAS
-                                    ,FBS.LAAS
-                                    ,(SELECT Employee FROM vwEmployee X WHERE X.EmployeeID = FMS.FARMMANID) AS FARMMANAGER
-                                    FROM 
-                                    T_SUBFIELDNO SF
-                                    INNER JOIN 
-                                    M_FARMCROPCLASSDETAIL CCD ON CCD.CROPCLASSDETAILID = SF.CROPCLASSDETAILID
-                                    INNER JOIN 
-                                    M_FARMCROPCLASS CC ON CC.CROPCLASSID = CCD.CROPCLASSID
-                                    INNER JOIN
-                                    T_CONTRACTFIELDINFORMATION CFI ON CFI.CONTRACTEDFIELDID = SF.CONTRACTEDFIELDID 
-                                    LEFT JOIN 
-                                    T_CONTRACTINFORMATION CI ON CI.CONTRACTID = CFI.CONTRACTID 
-                                    INNER JOIN 
-                                    M_LANDOWNERINFORMATION LO ON LO.LANDOWNERID = CI.LANDOWNERID
-                                    INNER JOIN 
-                                    M_FARMMODEL FM ON FM.FARMMODELID = CI.FARMMODELID 
-                                    INNER JOIN 
-                                    M_LANDMAINFIELDNO  MF ON MF.MAINFIELDID =  CFI.MAINFIELDID
-                                    INNER JOIN 
-                                    VWFARMBARANGAYSETUP FBS ON FBS.FARMBARANGAYID = CI.FARMBARANGAYID
-                                    LEFT JOIN 
-                                    M_FM_SUBFIELD FMS ON FMS.SUBFIELDID = SF.SUBFIELDID AND FMS.TAG = 1 AND FMS.ISACTIVE = 1
-                                    LEFT JOIN 
-                                    M_FA_SUBFIELD FAS ON FAS.SUBFIELDID = SF.SUBFIELDID AND FAS.TAG = 1 AND FAS.ISACTIVE = 1
-                                    WHERE SF.ISACTIVE = 1 
-                                    AND CFI.ISACTIVE = 1 AND CFI.ISACCEPTED = 1
-                                    AND CI.ISACTIVE = 1 AND ISNULL( CI.ISFORRENEWAL,0) = 0
-                                    AND FM.ISACTIVE = 1
-                                    AND LO.ISACTIVE = 1
-                                    AND MF.ISACTIVE = 1 
-       
-                                    
-                                    AND SUBFIELDNO ='<%= sf %>'
-
+                                EXEC WORKORDER_LIST_FIELDDETAILS '<%= sf %>'
                             </s>
         ExeReader(sql)
         With dr
@@ -194,56 +98,10 @@ Public Class FRMWORKORDERS
         dr.Close()
         Conn.Close()
     End Sub
+
     Sub POPULATEWOHEADER(ByVal MWOID As Integer)
-        Dim sql As String = <s>
-                                SELECT [WORKORDERID]
-                                      ,[MAINWOID]
-                                      ,[WORKORDERCODE]
-                                      ,[LANDOWNERID]
-                                      ,[LANDOWNER]
-                                      ,[FARMMODELID]
-                                      ,[FARMMODEL]
-                                      ,[SUBFIELDID]
-                                      ,[SUBFIELDNO]
-                                        
-                                      ,[MAJORACTIVITY]
-                                      ,[MINORACTIVITY]
-
-                                      ,[ACTIVITYDATE]
-                                      ,[WEEKENDING]
-                                      ,[ARABLEAREA]
-                                      ,[PLANTEDAREA]
-                                      ,[AREAOFACTIVITY]
-                                      ,[CROPYEAR]
-                                      ,[PLANTINGDATE]
-                                      ,[CROPCLASS]
-                                      ,[CROPCLASSDETAIL]
-                                      ,[VERSION]
-                                      ,[FARMACTIVITYCODE]
-
-                                      ,[FARMMANAGERID]
-                                      ,[FARMMANAGER]
-                                      ,[FARMASSISTANTID]
-                                      ,[FARMASSISTANT]
-                                      ,[FARMBARANGAYID]
-                                      ,[FARMADDRESS]
-                                      ,[ISCLOSE]
-                                      ,[CLOSEDATE]
-                                      ,[ISCANCELLED]
-                                      ,[CANCELLEDBY]
-                                      ,[CANCELDATE]
-                                      ,[CANCELLATIONREMARKS]
-                                      ,[DEACTIVATIONREMARKS]
-                                      ,[ISACTIVE]
-                                      ,[CREATEDBY]
-                                      ,[CREATIONDATE]
-                                      ,[MODIFIEDBY]
-                                      ,[MODIFICATIONDATE]
-                                      ,[PREVIOUSMODIFIEDBY]
-                                      ,[PREVIOUSMODIFICATIONDATE]
-                                  FROM [T_FARMACTIVITYWORKORDER]
-                                  WHERE MAINWOID = <%= MWOID %>
-                                  ORDER BY ACTIVITYDATE DESC
+        Dim sql As String = <s> 
+                              EXEC  WORKORDER_LIST_WORKORDERHEADER <%= MWOID %>
                             </s>
         SelectQuery(sql)
         With dgWOHeader
@@ -306,27 +164,7 @@ Public Class FRMWORKORDERS
 
     Sub POPULATEWODETAIL(ByVal WOID As Integer)
         Dim SQL As String = <s>
-                                SELECT [MethodOfActivity]
-                                      ,[Resource]
-                                      ,[Quantity]
-                                      ,[UnitPrice]
-                                      ,[CostPrice]
-                                      ,[UOMId]
-                                      ,[UOM]
-                                      ,[IsMainMethod]
-                                      ,[IsAlternative]
-                                      ,[IsAccumulatedAreaDone]
-                                      ,[DeactivationRemarks]
-                                      ,[IsActive]
-                                      ,[WorkOrderResourceId]
-                                      ,[WorkOrderResourceCode]
-                                      ,[WorkOrderId]
-                                      ,[WorkOrderCode]
-                                      ,[MethodOfActivityId]
-                                      ,[ResourceId]
-                                      ,[FarmActivityResourceId]
-                                  FROM [t_FarmActivityWorkOrderResources]
-                                  WHERE WorkOrderId = <%= WOID %>
+                            EXEC WORKORDER_LIST_WORKORDERDETAIL <%= WOID %>
                             </s>
         SelectQuery(SQL)
         With dgWORes
@@ -336,16 +174,19 @@ Public Class FRMWORKORDERS
             .Rows(0).Height = 50
 
             For i As Integer = 0 To .Cols.Count - 1
-                If .Cols(i).Caption.Contains("ID") Or .Cols(i).Caption.Contains("Id") Or .Cols(i).Caption.Contains("IsActive") Then
+                If .Cols(i).Caption.Contains("ID") Or .Cols(i).Caption = "ISACTIVE" Or .Cols(i).Caption.Contains("CODE") Then
                     .Cols(i).Visible = False
                 Else
                     .Cols(i).Visible = True
                 End If
             Next
+
+
             .Cols("METHODOFACTIVITY").Visible = False
             .Tree.Column = .Cols("RESOURCE").Index
             .Tree.Style = TreeStyleFlags.Complete
             .Subtotal(AggregateEnum.None, 0, .Cols("METHODOFACTIVITY").Index, .Cols("METHODOFACTIVITY").Index, "{0}")
+
             .Tree.Show(1)
             .AutoSizeCols()
 
@@ -355,30 +196,7 @@ Public Class FRMWORKORDERS
         End With
     End Sub
 #End Region
-
-    Private Sub FRMWORKORDERS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        PrepareUser()
-        BTNDASHBOARD.PerformClick()
-        'POPULATEWORKORDER()
-        BTNNOTIF.Text = x()
-    End Sub
-    Function x() As Integer
-        Dim sql As String = <s>
- SELECT COUNT(WORKORDERCODE) as Count
-FROM R_DAILYFIELDACTIVITYREPORT
-WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
-                            </s>
-        ExeReader(sql)
-        Dim find As Integer = 0
-        While dr.Read
-            find = dr.Item("count").ToString
-        End While
-
-        dr.Close()
-        Conn.Close()
-
-        Return find
-    End Function
+#Region "FORM CONTROL"
     Private Sub BTNDASHBOARD_Click(sender As Object, e As EventArgs) Handles BTNDASHBOARD.Click
         MAINTAB.TabPages.Remove(Overview)
         MAINTAB.TabPages.Remove(Details)
@@ -388,7 +206,6 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
 
         CURRENTTAB = 1
     End Sub
-
     Private Sub BTNWORKORDER_Click(sender As Object, e As EventArgs) Handles BTNWORKORDER.Click
         MAINTAB.TabPages.Remove(Dashboard)
         MAINTAB.TabPages.Remove(Overview)
@@ -401,12 +218,45 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
         CURRENTTAB = 2
     End Sub
 
+
+#End Region
+#Region "FILTER"
+    Private Sub BTSEARCHLINE_Click(sender As Object, e As EventArgs) Handles BTSEARCHLINE.Click
+        POPULATEMAINWORKORDER()
+    End Sub
+#End Region
+#Region "ACTION_MAIN"
     Private Sub BtAdd_Click(sender As Object, e As EventArgs) Handles btAdd.Click
         If CURRENTTAB = 2 Then
             FRMCREATIONWORKORDERS.ShowDialog()
         End If
     End Sub
+    Private Sub BtEdit_Click(sender As Object, e As EventArgs) Handles BtEdit.Click
+        With dgMAINWO
+            If .Rows.Count = 1 Then
+                Exit Sub
+            End If
 
+            Dim x As Integer = .RowSel
+
+            If x = 0 Then
+                Exit Sub
+            End If
+
+            xSUBFIELDNO.Text = .Item(x, "FIELDNO")
+            POPULATEFIELDDETAILS(.Item(x, "FIELDNO"))
+            POPULATEWOHEADER(.Item(x, "MAINWOID"))
+
+        End With
+
+        MAINTAB.SelectedTab = Details()
+        btAddHeader.Select()
+    End Sub
+    Private Sub dgMAINWO_DoubleClick(sender As Object, e As EventArgs) Handles dgMAINWO.DoubleClick
+        BtEdit.PerformClick()
+    End Sub
+#End Region
+#Region "ACTION_DETIAL"
     Private Sub btAddHeader_Click(sender As Object, e As EventArgs) Handles btAddHeader.Click
 
         If dgMAINWO.Rows.Count = 1 Then
@@ -436,33 +286,6 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
             .ShowDialog()
         End With
     End Sub
-
-    Private Sub BtEdit_Click(sender As Object, e As EventArgs) Handles BtEdit.Click
-        With dgMAINWO
-            If .Rows.Count = 1 Then
-                Exit Sub
-            End If
-
-            Dim x As Integer = .RowSel
-
-            If x = 0 Then
-                Exit Sub
-            End If
-
-            xSUBFIELDNO.Text = .Item(x, "FIELDNO")
-            POPULATEFIELDDETAILS(.Item(x, "FIELDNO"))
-            POPULATEWOHEADER(.Item(x, "MAINWOID"))
-
-        End With
-
-        MAINTAB.SelectedTab = Details()
-        btAddHeader.Select()
-    End Sub
-
-    Private Sub BTSEARCHLINE_Click(sender As Object, e As EventArgs) Handles BTSEARCHLINE.Click
-        POPULATEMAINWORKORDER()
-    End Sub
-
     Private Sub DgWOHeader_Click(sender As Object, e As EventArgs) Handles dgWOHeader.Click
         With dgWOHeader
             If .Rows.Count = 1 Then
@@ -479,12 +302,26 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
         End With
 
     End Sub
+#End Region
 
+
+    Private Sub FRMWORKORDERS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        PrepareUser()
+        BTNDASHBOARD.PerformClick()
+
+        If putchz_Count() = 0 Then
+            xLBLCOUNT.Visible = False
+        Else
+            xLBLCOUNT.Visible = True
+        End If
+        xLBLCOUNT.Text = putchz_Count()
+    End Sub
     Private Sub BTNNOTIF_Click(sender As Object, e As EventArgs) Handles BTNNOTIF.Click
         FRMWORKORDERDASHBOARD.ShowDialog()
     End Sub
-
     Private Sub BTNSETTING_Click(sender As Object, e As EventArgs) Handles BTNSETTING.Click
         FRMARCHIVE.ShowDialog()
     End Sub
+
+
 End Class
