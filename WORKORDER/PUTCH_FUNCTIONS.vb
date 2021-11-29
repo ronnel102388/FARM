@@ -1,5 +1,5 @@
-﻿Module PUTCHZ_FUNCTIONS
-    Function putchz_Count() As Integer
+﻿Module PUTCH_FUNCTIONS
+    Function putch_Count() As Integer
         Dim sql As String = <s>
                 SELECT COUNT(WORKORDERCODE) as COUNT
                 FROM R_DAILYFIELDACTIVITYREPORT

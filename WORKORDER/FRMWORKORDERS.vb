@@ -309,12 +309,12 @@ Public Class FRMWORKORDERS
         PrepareUser()
         BTNDASHBOARD.PerformClick()
 
-        If putchz_Count() = 0 Then
+        If putch_Count() = 0 Then
             xLBLCOUNT.Visible = False
         Else
             xLBLCOUNT.Visible = True
         End If
-        xLBLCOUNT.Text = putchz_Count()
+        xLBLCOUNT.Text = putch_Count()
     End Sub
     Private Sub BTNNOTIF_Click(sender As Object, e As EventArgs) Handles BTNNOTIF.Click
         FRMWORKORDERDASHBOARD.ShowDialog()
