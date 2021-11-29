@@ -67,21 +67,26 @@ Partial Class FRMCREATIONWORKORDERS
         Me.xWOCODE = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.xCBOSUBFIELDNO = New System.Windows.Forms.ComboBox()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Panel8 = New System.Windows.Forms.Panel()
         Me.xPLANTINGDATE = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.xAGE = New System.Windows.Forms.TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
-        Me.Panel11 = New System.Windows.Forms.Panel()
         Me.xCROPCLASS = New System.Windows.Forms.TextBox()
         Me.Label23 = New System.Windows.Forms.Label()
-        Me.xCBOSUBFIELDNO = New System.Windows.Forms.ComboBox()
         Me.xCROPYEAR = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.xFARMASSISTANT = New System.Windows.Forms.TextBox()
         Me.Label36 = New System.Windows.Forms.Label()
         Me.xFARMMANAGER = New System.Windows.Forms.TextBox()
         Me.Label35 = New System.Windows.Forms.Label()
-        Me.Label34 = New System.Windows.Forms.Label()
         Me.xCROPCLASSDETAIL = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.xLAAS = New System.Windows.Forms.TextBox()
@@ -108,12 +113,8 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Label13 = New System.Windows.Forms.Label()
         Me.xLANDOWNER = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Panel11 = New System.Windows.Forms.Panel()
         Me.PANELHEADER.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -124,14 +125,13 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel5.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel8.SuspendLayout()
+        Me.Panel14.SuspendLayout()
         Me.SuspendLayout()
         '
         'PANELHEADER
         '
         Me.PANELHEADER.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.PANELHEADER.Controls.Add(Me.BTEXPORT)
-        Me.PANELHEADER.Controls.Add(Me.btnclose)
-        Me.PANELHEADER.Controls.Add(Me.btnmax)
         Me.PANELHEADER.Controls.Add(Me.btAdd)
         Me.PANELHEADER.Controls.Add(Me.btnmin)
         Me.PANELHEADER.Controls.Add(Me.bTpRINT)
@@ -141,6 +141,8 @@ Partial Class FRMCREATIONWORKORDERS
         Me.PANELHEADER.Controls.Add(Me.Panel10)
         Me.PANELHEADER.Controls.Add(Me.BtDelete)
         Me.PANELHEADER.Controls.Add(Me.BtEdit)
+        Me.PANELHEADER.Controls.Add(Me.btnclose)
+        Me.PANELHEADER.Controls.Add(Me.btnmax)
         Me.PANELHEADER.Dock = System.Windows.Forms.DockStyle.Top
         Me.PANELHEADER.Location = New System.Drawing.Point(0, 31)
         Me.PANELHEADER.Name = "PANELHEADER"
@@ -206,7 +208,7 @@ Partial Class FRMCREATIONWORKORDERS
         Me.btnmin.FlatAppearance.BorderSize = 0
         Me.btnmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btnmin.Image = CType(resources.GetObject("btnmin.Image"), System.Drawing.Image)
-        Me.btnmin.Location = New System.Drawing.Point(1362, 0)
+        Me.btnmin.Location = New System.Drawing.Point(1336, 0)
         Me.btnmin.Name = "btnmin"
         Me.btnmin.Size = New System.Drawing.Size(28, 28)
         Me.btnmin.TabIndex = 123152
@@ -372,6 +374,7 @@ Partial Class FRMCREATIONWORKORDERS
         Me.TabPage1.Controls.Add(Me.dgWOres)
         Me.TabPage1.Controls.Add(Me.Panel7)
         Me.TabPage1.Controls.Add(Me.Panel2)
+        Me.TabPage1.Controls.Add(Me.Panel14)
         Me.TabPage1.Controls.Add(Me.Panel5)
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
@@ -391,12 +394,12 @@ Partial Class FRMCREATIONWORKORDERS
         Me.dgWOres.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgWOres.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.dgWOres.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
-        Me.dgWOres.Location = New System.Drawing.Point(507, 206)
+        Me.dgWOres.Location = New System.Drawing.Point(468, 203)
         Me.dgWOres.Margin = New System.Windows.Forms.Padding(4)
         Me.dgWOres.Name = "dgWOres"
         Me.dgWOres.Rows.DefaultSize = 21
         Me.dgWOres.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
-        Me.dgWOres.Size = New System.Drawing.Size(930, 452)
+        Me.dgWOres.Size = New System.Drawing.Size(969, 455)
         Me.dgWOres.StyleInfo = resources.GetString("dgWOres.StyleInfo")
         Me.dgWOres.TabIndex = 303
         Me.dgWOres.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
@@ -407,9 +410,9 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel7.Controls.Add(Me.Panel9)
         Me.Panel7.Controls.Add(Me.Label37)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel7.Location = New System.Drawing.Point(507, 165)
+        Me.Panel7.Location = New System.Drawing.Point(468, 165)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(930, 41)
+        Me.Panel7.Size = New System.Drawing.Size(969, 38)
         Me.Panel7.TabIndex = 4
         '
         'Panel1
@@ -419,7 +422,7 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Panel1.Location = New System.Drawing.Point(17, 68)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(897, 1)
+        Me.Panel1.Size = New System.Drawing.Size(925, 1)
         Me.Panel1.TabIndex = 30
         '
         'Panel9
@@ -427,15 +430,15 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel9.Location = New System.Drawing.Point(136, 21)
+        Me.Panel9.Location = New System.Drawing.Point(136, 19)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(776, 1)
+        Me.Panel9.Size = New System.Drawing.Size(804, 1)
         Me.Panel9.TabIndex = 25
         '
         'Label37
         '
         Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(14, 12)
+        Me.Label37.Location = New System.Drawing.Point(14, 10)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(119, 17)
         Me.Label37.TabIndex = 24
@@ -458,9 +461,9 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel2.Controls.Add(Me.xWOCODE)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(507, 3)
+        Me.Panel2.Location = New System.Drawing.Point(468, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(930, 162)
+        Me.Panel2.Size = New System.Drawing.Size(969, 162)
         Me.Panel2.TabIndex = 3
         '
         'xAREAOFACTIVITY
@@ -557,7 +560,7 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Panel4.Location = New System.Drawing.Point(147, 20)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(765, 1)
+        Me.Panel4.Size = New System.Drawing.Size(793, 1)
         Me.Panel4.TabIndex = 23
         '
         'Label2
@@ -593,17 +596,14 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel5.Controls.Add(Me.Label24)
         Me.Panel5.Controls.Add(Me.xAGE)
         Me.Panel5.Controls.Add(Me.Label16)
-        Me.Panel5.Controls.Add(Me.Panel11)
         Me.Panel5.Controls.Add(Me.xCROPCLASS)
         Me.Panel5.Controls.Add(Me.Label23)
-        Me.Panel5.Controls.Add(Me.xCBOSUBFIELDNO)
         Me.Panel5.Controls.Add(Me.xCROPYEAR)
         Me.Panel5.Controls.Add(Me.Label19)
         Me.Panel5.Controls.Add(Me.xFARMASSISTANT)
         Me.Panel5.Controls.Add(Me.Label36)
         Me.Panel5.Controls.Add(Me.xFARMMANAGER)
         Me.Panel5.Controls.Add(Me.Label35)
-        Me.Panel5.Controls.Add(Me.Label34)
         Me.Panel5.Controls.Add(Me.xCROPCLASSDETAIL)
         Me.Panel5.Controls.Add(Me.Label5)
         Me.Panel5.Controls.Add(Me.xLAAS)
@@ -630,77 +630,15 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel5.Controls.Add(Me.Label13)
         Me.Panel5.Controls.Add(Me.xLANDOWNER)
         Me.Panel5.Controls.Add(Me.Label14)
+        Me.Panel5.Controls.Add(Me.xCBOSUBFIELDNO)
+        Me.Panel5.Controls.Add(Me.Label34)
         Me.Panel5.Controls.Add(Me.Panel3)
         Me.Panel5.Controls.Add(Me.Label10)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel5.Location = New System.Drawing.Point(3, 3)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(504, 655)
+        Me.Panel5.Size = New System.Drawing.Size(454, 655)
         Me.Panel5.TabIndex = 2
-        '
-        'xPLANTINGDATE
-        '
-        Me.xPLANTINGDATE.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xPLANTINGDATE.Location = New System.Drawing.Point(198, 303)
-        Me.xPLANTINGDATE.Name = "xPLANTINGDATE"
-        Me.xPLANTINGDATE.ReadOnly = True
-        Me.xPLANTINGDATE.Size = New System.Drawing.Size(113, 22)
-        Me.xPLANTINGDATE.TabIndex = 100
-        '
-        'Label24
-        '
-        Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(32, 306)
-        Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(97, 17)
-        Me.Label24.TabIndex = 99
-        Me.Label24.Text = "Planting Date:"
-        '
-        'xAGE
-        '
-        Me.xAGE.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xAGE.Location = New System.Drawing.Point(198, 330)
-        Me.xAGE.Name = "xAGE"
-        Me.xAGE.ReadOnly = True
-        Me.xAGE.Size = New System.Drawing.Size(95, 22)
-        Me.xAGE.TabIndex = 98
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(32, 333)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(133, 17)
-        Me.Label16.TabIndex = 97
-        Me.Label16.Text = "Age of Cane Month:"
-        '
-        'Panel11
-        '
-        Me.Panel11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel11.Location = New System.Drawing.Point(496, -5)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(2, 663)
-        Me.Panel11.TabIndex = 96
-        '
-        'xCROPCLASS
-        '
-        Me.xCROPCLASS.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xCROPCLASS.Location = New System.Drawing.Point(198, 59)
-        Me.xCROPCLASS.Name = "xCROPCLASS"
-        Me.xCROPCLASS.ReadOnly = True
-        Me.xCROPCLASS.Size = New System.Drawing.Size(113, 22)
-        Me.xCROPCLASS.TabIndex = 95
-        '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(32, 62)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(80, 17)
-        Me.Label23.TabIndex = 94
-        Me.Label23.Text = "Crop Class:"
         '
         'xCBOSUBFIELDNO
         '
@@ -709,316 +647,27 @@ Partial Class FRMCREATIONWORKORDERS
         Me.xCBOSUBFIELDNO.DropDownHeight = 100
         Me.xCBOSUBFIELDNO.FormattingEnabled = True
         Me.xCBOSUBFIELDNO.IntegralHeight = False
-        Me.xCBOSUBFIELDNO.Location = New System.Drawing.Point(198, 30)
+        Me.xCBOSUBFIELDNO.Location = New System.Drawing.Point(200, 31)
         Me.xCBOSUBFIELDNO.Name = "xCBOSUBFIELDNO"
         Me.xCBOSUBFIELDNO.Size = New System.Drawing.Size(173, 24)
         Me.xCBOSUBFIELDNO.TabIndex = 39
         '
-        'xCROPYEAR
-        '
-        Me.xCROPYEAR.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xCROPYEAR.Location = New System.Drawing.Point(198, 222)
-        Me.xCROPYEAR.Name = "xCROPYEAR"
-        Me.xCROPYEAR.ReadOnly = True
-        Me.xCROPYEAR.Size = New System.Drawing.Size(95, 22)
-        Me.xCROPYEAR.TabIndex = 93
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(32, 225)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(76, 17)
-        Me.Label19.TabIndex = 92
-        Me.Label19.Text = "Crop Year:"
-        '
-        'xFARMASSISTANT
-        '
-        Me.xFARMASSISTANT.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xFARMASSISTANT.Location = New System.Drawing.Point(198, 583)
-        Me.xFARMASSISTANT.Name = "xFARMASSISTANT"
-        Me.xFARMASSISTANT.ReadOnly = True
-        Me.xFARMASSISTANT.Size = New System.Drawing.Size(224, 22)
-        Me.xFARMASSISTANT.TabIndex = 91
-        '
-        'Label36
-        '
-        Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(32, 586)
-        Me.Label36.Name = "Label36"
-        Me.Label36.Size = New System.Drawing.Size(105, 17)
-        Me.Label36.TabIndex = 90
-        Me.Label36.Text = "Farm Assistant:"
-        '
-        'xFARMMANAGER
-        '
-        Me.xFARMMANAGER.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xFARMMANAGER.Location = New System.Drawing.Point(198, 556)
-        Me.xFARMMANAGER.Name = "xFARMMANAGER"
-        Me.xFARMMANAGER.ReadOnly = True
-        Me.xFARMMANAGER.Size = New System.Drawing.Size(224, 22)
-        Me.xFARMMANAGER.TabIndex = 89
-        '
-        'Label35
-        '
-        Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(32, 559)
-        Me.Label35.Name = "Label35"
-        Me.Label35.Size = New System.Drawing.Size(104, 17)
-        Me.Label35.TabIndex = 88
-        Me.Label35.Text = "Farm Manager:"
-        '
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(32, 37)
+        Me.Label34.Location = New System.Drawing.Point(34, 38)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(93, 17)
         Me.Label34.TabIndex = 86
         Me.Label34.Text = "Sub Field No:"
         '
-        'xCROPCLASSDETAIL
-        '
-        Me.xCROPCLASSDETAIL.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xCROPCLASSDETAIL.Location = New System.Drawing.Point(198, 86)
-        Me.xCROPCLASSDETAIL.Name = "xCROPCLASSDETAIL"
-        Me.xCROPCLASSDETAIL.ReadOnly = True
-        Me.xCROPCLASSDETAIL.Size = New System.Drawing.Size(113, 22)
-        Me.xCROPCLASSDETAIL.TabIndex = 29
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(32, 89)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(120, 17)
-        Me.Label5.TabIndex = 28
-        Me.Label5.Text = "Crop Class Detail:"
-        '
-        'xLAAS
-        '
-        Me.xLAAS.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xLAAS.Location = New System.Drawing.Point(198, 528)
-        Me.xLAAS.Name = "xLAAS"
-        Me.xLAAS.ReadOnly = True
-        Me.xLAAS.Size = New System.Drawing.Size(224, 22)
-        Me.xLAAS.TabIndex = 85
-        '
-        'Label33
-        '
-        Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(32, 531)
-        Me.Label33.Name = "Label33"
-        Me.Label33.Size = New System.Drawing.Size(47, 17)
-        Me.Label33.TabIndex = 84
-        Me.Label33.Text = "LAAS:"
-        '
-        'xFAS
-        '
-        Me.xFAS.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xFAS.Location = New System.Drawing.Point(198, 501)
-        Me.xFAS.Name = "xFAS"
-        Me.xFAS.ReadOnly = True
-        Me.xFAS.Size = New System.Drawing.Size(224, 22)
-        Me.xFAS.TabIndex = 83
-        '
-        'Label32
-        '
-        Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(32, 503)
-        Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(38, 17)
-        Me.Label32.TabIndex = 82
-        Me.Label32.Text = "FAS:"
-        '
-        'xFARMCLUSTER
-        '
-        Me.xFARMCLUSTER.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xFARMCLUSTER.Location = New System.Drawing.Point(198, 357)
-        Me.xFARMCLUSTER.Name = "xFARMCLUSTER"
-        Me.xFARMCLUSTER.ReadOnly = True
-        Me.xFARMCLUSTER.Size = New System.Drawing.Size(113, 22)
-        Me.xFARMCLUSTER.TabIndex = 63
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(32, 360)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(92, 17)
-        Me.Label22.TabIndex = 62
-        Me.Label22.Text = "Farm Cluster:"
-        '
-        'xMILLINGSEASON
-        '
-        Me.xMILLINGSEASON.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xMILLINGSEASON.Location = New System.Drawing.Point(198, 473)
-        Me.xMILLINGSEASON.Name = "xMILLINGSEASON"
-        Me.xMILLINGSEASON.ReadOnly = True
-        Me.xMILLINGSEASON.Size = New System.Drawing.Size(129, 22)
-        Me.xMILLINGSEASON.TabIndex = 61
-        '
-        'Label21
-        '
-        Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(32, 476)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(103, 17)
-        Me.Label21.TabIndex = 60
-        Me.Label21.Text = "Milling Season:"
-        '
-        'xCONTRACTEDTAREA
-        '
-        Me.xCONTRACTEDTAREA.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xCONTRACTEDTAREA.Location = New System.Drawing.Point(198, 195)
-        Me.xCONTRACTEDTAREA.Name = "xCONTRACTEDTAREA"
-        Me.xCONTRACTEDTAREA.ReadOnly = True
-        Me.xCONTRACTEDTAREA.Size = New System.Drawing.Size(95, 22)
-        Me.xCONTRACTEDTAREA.TabIndex = 59
-        '
-        'Label20
-        '
-        Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(32, 198)
-        Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(115, 17)
-        Me.Label20.TabIndex = 58
-        Me.Label20.Text = "Contracted Area:"
-        '
-        'xFARMCLASSIFICATION
-        '
-        Me.xFARMCLASSIFICATION.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xFARMCLASSIFICATION.Location = New System.Drawing.Point(198, 446)
-        Me.xFARMCLASSIFICATION.Name = "xFARMCLASSIFICATION"
-        Me.xFARMCLASSIFICATION.ReadOnly = True
-        Me.xFARMCLASSIFICATION.Size = New System.Drawing.Size(113, 22)
-        Me.xFARMCLASSIFICATION.TabIndex = 55
-        '
-        'Label18
-        '
-        Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(32, 449)
-        Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(130, 17)
-        Me.Label18.TabIndex = 54
-        Me.Label18.Text = "Farm Classification:"
-        '
-        'xFARMADDRESS
-        '
-        Me.xFARMADDRESS.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xFARMADDRESS.Location = New System.Drawing.Point(198, 384)
-        Me.xFARMADDRESS.Multiline = True
-        Me.xFARMADDRESS.Name = "xFARMADDRESS"
-        Me.xFARMADDRESS.ReadOnly = True
-        Me.xFARMADDRESS.Size = New System.Drawing.Size(274, 57)
-        Me.xFARMADDRESS.TabIndex = 53
-        '
-        'Label17
-        '
-        Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(32, 387)
-        Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(100, 17)
-        Me.Label17.TabIndex = 52
-        Me.Label17.Text = "Farm Address:"
-        '
-        'xPLANTEDAREA
-        '
-        Me.xPLANTEDAREA.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xPLANTEDAREA.Location = New System.Drawing.Point(198, 276)
-        Me.xPLANTEDAREA.Name = "xPLANTEDAREA"
-        Me.xPLANTEDAREA.ReadOnly = True
-        Me.xPLANTEDAREA.Size = New System.Drawing.Size(95, 22)
-        Me.xPLANTEDAREA.TabIndex = 49
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(32, 279)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(94, 17)
-        Me.Label15.TabIndex = 48
-        Me.Label15.Text = "Planted Area:"
-        '
-        'xARABLEAREA
-        '
-        Me.xARABLEAREA.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xARABLEAREA.Location = New System.Drawing.Point(198, 249)
-        Me.xARABLEAREA.Name = "xARABLEAREA"
-        Me.xARABLEAREA.ReadOnly = True
-        Me.xARABLEAREA.Size = New System.Drawing.Size(95, 22)
-        Me.xARABLEAREA.TabIndex = 47
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(32, 252)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(87, 17)
-        Me.Label11.TabIndex = 46
-        Me.Label11.Text = "Arable Area:"
-        '
-        'xMAINFIELDNO
-        '
-        Me.xMAINFIELDNO.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xMAINFIELDNO.Location = New System.Drawing.Point(198, 168)
-        Me.xMAINFIELDNO.Name = "xMAINFIELDNO"
-        Me.xMAINFIELDNO.ReadOnly = True
-        Me.xMAINFIELDNO.Size = New System.Drawing.Size(173, 22)
-        Me.xMAINFIELDNO.TabIndex = 45
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(32, 171)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(98, 17)
-        Me.Label12.TabIndex = 44
-        Me.Label12.Text = "Main Field No:"
-        '
-        'xFARMMODEL
-        '
-        Me.xFARMMODEL.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xFARMMODEL.Location = New System.Drawing.Point(198, 141)
-        Me.xFARMMODEL.Name = "xFARMMODEL"
-        Me.xFARMMODEL.ReadOnly = True
-        Me.xFARMMODEL.Size = New System.Drawing.Size(239, 22)
-        Me.xFARMMODEL.TabIndex = 43
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(32, 144)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(86, 17)
-        Me.Label13.TabIndex = 42
-        Me.Label13.Text = "Farm Model:"
-        '
-        'xLANDOWNER
-        '
-        Me.xLANDOWNER.BackColor = System.Drawing.Color.WhiteSmoke
-        Me.xLANDOWNER.Location = New System.Drawing.Point(198, 114)
-        Me.xLANDOWNER.Name = "xLANDOWNER"
-        Me.xLANDOWNER.ReadOnly = True
-        Me.xLANDOWNER.Size = New System.Drawing.Size(239, 22)
-        Me.xLANDOWNER.TabIndex = 41
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(32, 117)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(89, 17)
-        Me.Label14.TabIndex = 40
-        Me.Label14.Text = "Land Owner:"
-        '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Panel3.Controls.Add(Me.Panel6)
-        Me.Panel3.Location = New System.Drawing.Point(109, 15)
+        Me.Panel3.Location = New System.Drawing.Point(110, 15)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(376, 1)
+        Me.Panel3.Size = New System.Drawing.Size(333, 1)
         Me.Panel3.TabIndex = 39
         '
         'Panel6
@@ -1069,6 +718,369 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel8.Size = New System.Drawing.Size(1448, 31)
         Me.Panel8.TabIndex = 304
         '
+        'xPLANTINGDATE
+        '
+        Me.xPLANTINGDATE.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xPLANTINGDATE.Location = New System.Drawing.Point(200, 319)
+        Me.xPLANTINGDATE.Name = "xPLANTINGDATE"
+        Me.xPLANTINGDATE.ReadOnly = True
+        Me.xPLANTINGDATE.Size = New System.Drawing.Size(113, 22)
+        Me.xPLANTINGDATE.TabIndex = 176
+        '
+        'Label24
+        '
+        Me.Label24.AutoSize = True
+        Me.Label24.Location = New System.Drawing.Point(36, 322)
+        Me.Label24.Name = "Label24"
+        Me.Label24.Size = New System.Drawing.Size(97, 17)
+        Me.Label24.TabIndex = 175
+        Me.Label24.Text = "Planting Date:"
+        '
+        'xAGE
+        '
+        Me.xAGE.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xAGE.Location = New System.Drawing.Point(200, 348)
+        Me.xAGE.Name = "xAGE"
+        Me.xAGE.ReadOnly = True
+        Me.xAGE.Size = New System.Drawing.Size(95, 22)
+        Me.xAGE.TabIndex = 174
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(36, 351)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(133, 17)
+        Me.Label16.TabIndex = 173
+        Me.Label16.Text = "Age of Cane Month:"
+        '
+        'xCROPCLASS
+        '
+        Me.xCROPCLASS.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xCROPCLASS.Location = New System.Drawing.Point(200, 60)
+        Me.xCROPCLASS.Name = "xCROPCLASS"
+        Me.xCROPCLASS.ReadOnly = True
+        Me.xCROPCLASS.Size = New System.Drawing.Size(113, 22)
+        Me.xCROPCLASS.TabIndex = 172
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.Location = New System.Drawing.Point(36, 63)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(80, 17)
+        Me.Label23.TabIndex = 171
+        Me.Label23.Text = "Crop Class:"
+        '
+        'xCROPYEAR
+        '
+        Me.xCROPYEAR.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xCROPYEAR.Location = New System.Drawing.Point(200, 232)
+        Me.xCROPYEAR.Name = "xCROPYEAR"
+        Me.xCROPYEAR.ReadOnly = True
+        Me.xCROPYEAR.Size = New System.Drawing.Size(95, 22)
+        Me.xCROPYEAR.TabIndex = 170
+        '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.Location = New System.Drawing.Point(36, 235)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(76, 17)
+        Me.Label19.TabIndex = 169
+        Me.Label19.Text = "Crop Year:"
+        '
+        'xFARMASSISTANT
+        '
+        Me.xFARMASSISTANT.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xFARMASSISTANT.Location = New System.Drawing.Point(200, 613)
+        Me.xFARMASSISTANT.Name = "xFARMASSISTANT"
+        Me.xFARMASSISTANT.ReadOnly = True
+        Me.xFARMASSISTANT.Size = New System.Drawing.Size(207, 22)
+        Me.xFARMASSISTANT.TabIndex = 168
+        '
+        'Label36
+        '
+        Me.Label36.AutoSize = True
+        Me.Label36.Location = New System.Drawing.Point(36, 616)
+        Me.Label36.Name = "Label36"
+        Me.Label36.Size = New System.Drawing.Size(105, 17)
+        Me.Label36.TabIndex = 167
+        Me.Label36.Text = "Farm Assistant:"
+        '
+        'xFARMMANAGER
+        '
+        Me.xFARMMANAGER.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xFARMMANAGER.Location = New System.Drawing.Point(200, 584)
+        Me.xFARMMANAGER.Name = "xFARMMANAGER"
+        Me.xFARMMANAGER.ReadOnly = True
+        Me.xFARMMANAGER.Size = New System.Drawing.Size(207, 22)
+        Me.xFARMMANAGER.TabIndex = 166
+        '
+        'Label35
+        '
+        Me.Label35.AutoSize = True
+        Me.Label35.Location = New System.Drawing.Point(36, 587)
+        Me.Label35.Name = "Label35"
+        Me.Label35.Size = New System.Drawing.Size(104, 17)
+        Me.Label35.TabIndex = 165
+        Me.Label35.Text = "Farm Manager:"
+        '
+        'xCROPCLASSDETAIL
+        '
+        Me.xCROPCLASSDETAIL.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xCROPCLASSDETAIL.Location = New System.Drawing.Point(200, 88)
+        Me.xCROPCLASSDETAIL.Name = "xCROPCLASSDETAIL"
+        Me.xCROPCLASSDETAIL.ReadOnly = True
+        Me.xCROPCLASSDETAIL.Size = New System.Drawing.Size(113, 22)
+        Me.xCROPCLASSDETAIL.TabIndex = 140
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(36, 91)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(120, 17)
+        Me.Label5.TabIndex = 139
+        Me.Label5.Text = "Crop Class Detail:"
+        '
+        'xLAAS
+        '
+        Me.xLAAS.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xLAAS.Location = New System.Drawing.Point(200, 554)
+        Me.xLAAS.Name = "xLAAS"
+        Me.xLAAS.ReadOnly = True
+        Me.xLAAS.Size = New System.Drawing.Size(207, 22)
+        Me.xLAAS.TabIndex = 164
+        '
+        'Label33
+        '
+        Me.Label33.AutoSize = True
+        Me.Label33.Location = New System.Drawing.Point(36, 555)
+        Me.Label33.Name = "Label33"
+        Me.Label33.Size = New System.Drawing.Size(47, 17)
+        Me.Label33.TabIndex = 163
+        Me.Label33.Text = "LAAS:"
+        '
+        'xFAS
+        '
+        Me.xFAS.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xFAS.Location = New System.Drawing.Point(200, 525)
+        Me.xFAS.Name = "xFAS"
+        Me.xFAS.ReadOnly = True
+        Me.xFAS.Size = New System.Drawing.Size(207, 22)
+        Me.xFAS.TabIndex = 162
+        '
+        'Label32
+        '
+        Me.Label32.AutoSize = True
+        Me.Label32.Location = New System.Drawing.Point(36, 519)
+        Me.Label32.Name = "Label32"
+        Me.Label32.Size = New System.Drawing.Size(38, 17)
+        Me.Label32.TabIndex = 161
+        Me.Label32.Text = "FAS:"
+        '
+        'xFARMCLUSTER
+        '
+        Me.xFARMCLUSTER.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xFARMCLUSTER.Location = New System.Drawing.Point(200, 377)
+        Me.xFARMCLUSTER.Name = "xFARMCLUSTER"
+        Me.xFARMCLUSTER.ReadOnly = True
+        Me.xFARMCLUSTER.Size = New System.Drawing.Size(113, 22)
+        Me.xFARMCLUSTER.TabIndex = 160
+        '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.Location = New System.Drawing.Point(36, 380)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(92, 17)
+        Me.Label22.TabIndex = 159
+        Me.Label22.Text = "Farm Cluster:"
+        '
+        'xMILLINGSEASON
+        '
+        Me.xMILLINGSEASON.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xMILLINGSEASON.Location = New System.Drawing.Point(200, 496)
+        Me.xMILLINGSEASON.Name = "xMILLINGSEASON"
+        Me.xMILLINGSEASON.ReadOnly = True
+        Me.xMILLINGSEASON.Size = New System.Drawing.Size(129, 22)
+        Me.xMILLINGSEASON.TabIndex = 158
+        '
+        'Label21
+        '
+        Me.Label21.AutoSize = True
+        Me.Label21.Location = New System.Drawing.Point(36, 499)
+        Me.Label21.Name = "Label21"
+        Me.Label21.Size = New System.Drawing.Size(103, 17)
+        Me.Label21.TabIndex = 157
+        Me.Label21.Text = "Milling Season:"
+        '
+        'xCONTRACTEDTAREA
+        '
+        Me.xCONTRACTEDTAREA.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xCONTRACTEDTAREA.Location = New System.Drawing.Point(200, 203)
+        Me.xCONTRACTEDTAREA.Name = "xCONTRACTEDTAREA"
+        Me.xCONTRACTEDTAREA.ReadOnly = True
+        Me.xCONTRACTEDTAREA.Size = New System.Drawing.Size(95, 22)
+        Me.xCONTRACTEDTAREA.TabIndex = 156
+        '
+        'Label20
+        '
+        Me.Label20.AutoSize = True
+        Me.Label20.Location = New System.Drawing.Point(36, 206)
+        Me.Label20.Name = "Label20"
+        Me.Label20.Size = New System.Drawing.Size(115, 17)
+        Me.Label20.TabIndex = 155
+        Me.Label20.Text = "Contracted Area:"
+        '
+        'xFARMCLASSIFICATION
+        '
+        Me.xFARMCLASSIFICATION.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xFARMCLASSIFICATION.Location = New System.Drawing.Point(200, 468)
+        Me.xFARMCLASSIFICATION.Name = "xFARMCLASSIFICATION"
+        Me.xFARMCLASSIFICATION.ReadOnly = True
+        Me.xFARMCLASSIFICATION.Size = New System.Drawing.Size(113, 22)
+        Me.xFARMCLASSIFICATION.TabIndex = 154
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.Location = New System.Drawing.Point(36, 471)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(130, 17)
+        Me.Label18.TabIndex = 153
+        Me.Label18.Text = "Farm Classification:"
+        '
+        'xFARMADDRESS
+        '
+        Me.xFARMADDRESS.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xFARMADDRESS.Location = New System.Drawing.Point(200, 405)
+        Me.xFARMADDRESS.Multiline = True
+        Me.xFARMADDRESS.Name = "xFARMADDRESS"
+        Me.xFARMADDRESS.ReadOnly = True
+        Me.xFARMADDRESS.Size = New System.Drawing.Size(217, 57)
+        Me.xFARMADDRESS.TabIndex = 152
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.Location = New System.Drawing.Point(36, 408)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(100, 17)
+        Me.Label17.TabIndex = 151
+        Me.Label17.Text = "Farm Address:"
+        '
+        'xPLANTEDAREA
+        '
+        Me.xPLANTEDAREA.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xPLANTEDAREA.Location = New System.Drawing.Point(200, 290)
+        Me.xPLANTEDAREA.Name = "xPLANTEDAREA"
+        Me.xPLANTEDAREA.ReadOnly = True
+        Me.xPLANTEDAREA.Size = New System.Drawing.Size(95, 22)
+        Me.xPLANTEDAREA.TabIndex = 150
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(36, 293)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(94, 17)
+        Me.Label15.TabIndex = 149
+        Me.Label15.Text = "Planted Area:"
+        '
+        'xARABLEAREA
+        '
+        Me.xARABLEAREA.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xARABLEAREA.Location = New System.Drawing.Point(200, 261)
+        Me.xARABLEAREA.Name = "xARABLEAREA"
+        Me.xARABLEAREA.ReadOnly = True
+        Me.xARABLEAREA.Size = New System.Drawing.Size(95, 22)
+        Me.xARABLEAREA.TabIndex = 148
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(36, 264)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(87, 17)
+        Me.Label11.TabIndex = 147
+        Me.Label11.Text = "Arable Area:"
+        '
+        'xMAINFIELDNO
+        '
+        Me.xMAINFIELDNO.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xMAINFIELDNO.Location = New System.Drawing.Point(200, 174)
+        Me.xMAINFIELDNO.Name = "xMAINFIELDNO"
+        Me.xMAINFIELDNO.ReadOnly = True
+        Me.xMAINFIELDNO.Size = New System.Drawing.Size(173, 22)
+        Me.xMAINFIELDNO.TabIndex = 146
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(36, 177)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(98, 17)
+        Me.Label12.TabIndex = 145
+        Me.Label12.Text = "Main Field No:"
+        '
+        'xFARMMODEL
+        '
+        Me.xFARMMODEL.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xFARMMODEL.Location = New System.Drawing.Point(200, 145)
+        Me.xFARMMODEL.Name = "xFARMMODEL"
+        Me.xFARMMODEL.ReadOnly = True
+        Me.xFARMMODEL.Size = New System.Drawing.Size(222, 22)
+        Me.xFARMMODEL.TabIndex = 144
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Location = New System.Drawing.Point(36, 148)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(86, 17)
+        Me.Label13.TabIndex = 143
+        Me.Label13.Text = "Farm Model:"
+        '
+        'xLANDOWNER
+        '
+        Me.xLANDOWNER.BackColor = System.Drawing.Color.WhiteSmoke
+        Me.xLANDOWNER.Location = New System.Drawing.Point(200, 116)
+        Me.xLANDOWNER.Name = "xLANDOWNER"
+        Me.xLANDOWNER.ReadOnly = True
+        Me.xLANDOWNER.Size = New System.Drawing.Size(222, 22)
+        Me.xLANDOWNER.TabIndex = 142
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Location = New System.Drawing.Point(36, 119)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(89, 17)
+        Me.Label14.TabIndex = 141
+        Me.Label14.Text = "Land Owner:"
+        '
+        'Panel14
+        '
+        Me.Panel14.BackColor = System.Drawing.Color.Transparent
+        Me.Panel14.Controls.Add(Me.Panel11)
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel14.Location = New System.Drawing.Point(457, 3)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(11, 655)
+        Me.Panel14.TabIndex = 304
+        '
+        'Panel11
+        '
+        Me.Panel11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel11.Location = New System.Drawing.Point(4, 0)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(3, 828)
+        Me.Panel11.TabIndex = 253
+        '
         'FRMCREATIONWORKORDERS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1099,6 +1111,7 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel3.ResumeLayout(False)
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
+        Me.Panel14.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1125,11 +1138,51 @@ Partial Class FRMCREATIONWORKORDERS
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
     Friend WithEvents Panel5 As Panel
+    Friend WithEvents Label34 As Label
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Label2 As Label
+    Friend WithEvents xWOCODE As TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Label37 As Label
+    Friend WithEvents dgWOres As C1.Win.C1FlexGrid.C1FlexGrid
+    Friend WithEvents xDTPWOACTIVITYDATE As DateTimePicker
+    Friend WithEvents xCBOMINORACTIVITY As ComboBox
+    Friend WithEvents xCBOMAJORACTIVITY As ComboBox
+    Friend WithEvents xVERSION As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents xCBOSUBFIELDNO As ComboBox
+    Friend WithEvents Panel6 As Panel
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents StatusStrip1 As StatusStrip
+    Friend WithEvents xAREAOFACTIVITY As TextBox
+    Friend WithEvents btnmax As Button
+    Friend WithEvents btnclose As Button
+    Friend WithEvents btnmin As Button
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents xPLANTINGDATE As TextBox
+    Friend WithEvents Label24 As Label
+    Friend WithEvents xAGE As TextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents xCROPCLASS As TextBox
+    Friend WithEvents Label23 As Label
+    Friend WithEvents xCROPYEAR As TextBox
+    Friend WithEvents Label19 As Label
     Friend WithEvents xFARMASSISTANT As TextBox
     Friend WithEvents Label36 As Label
     Friend WithEvents xFARMMANAGER As TextBox
     Friend WithEvents Label35 As Label
-    Friend WithEvents Label34 As Label
+    Friend WithEvents xCROPCLASSDETAIL As TextBox
+    Friend WithEvents Label5 As Label
     Friend WithEvents xLAAS As TextBox
     Friend WithEvents Label33 As Label
     Friend WithEvents xFAS As TextBox
@@ -1154,45 +1207,6 @@ Partial Class FRMCREATIONWORKORDERS
     Friend WithEvents Label13 As Label
     Friend WithEvents xLANDOWNER As TextBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label10 As Label
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label7 As Label
-    Friend WithEvents Label6 As Label
-    Friend WithEvents xCROPCLASSDETAIL As TextBox
-    Friend WithEvents Label5 As Label
-    Friend WithEvents Label4 As Label
-    Friend WithEvents Label3 As Label
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents xWOCODE As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Panel7 As Panel
-    Friend WithEvents Panel9 As Panel
-    Friend WithEvents Label37 As Label
-    Friend WithEvents dgWOres As C1.Win.C1FlexGrid.C1FlexGrid
-    Friend WithEvents xCROPYEAR As TextBox
-    Friend WithEvents Label19 As Label
-    Friend WithEvents xDTPWOACTIVITYDATE As DateTimePicker
-    Friend WithEvents xCBOMINORACTIVITY As ComboBox
-    Friend WithEvents xCBOMAJORACTIVITY As ComboBox
-    Friend WithEvents xVERSION As TextBox
-    Friend WithEvents Label8 As Label
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents xCBOSUBFIELDNO As ComboBox
-    Friend WithEvents xCROPCLASS As TextBox
-    Friend WithEvents Label23 As Label
+    Friend WithEvents Panel14 As Panel
     Friend WithEvents Panel11 As Panel
-    Friend WithEvents Panel6 As Panel
-    Friend WithEvents Panel12 As Panel
-    Friend WithEvents xAGE As TextBox
-    Friend WithEvents Label16 As Label
-    Friend WithEvents xPLANTINGDATE As TextBox
-    Friend WithEvents Label24 As Label
-    Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents xAREAOFACTIVITY As TextBox
-    Friend WithEvents btnmax As Button
-    Friend WithEvents btnclose As Button
-    Friend WithEvents btnmin As Button
-    Friend WithEvents Panel8 As Panel
 End Class

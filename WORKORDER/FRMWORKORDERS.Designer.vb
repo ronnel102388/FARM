@@ -75,6 +75,7 @@ Partial Class FRMWORKORDERS
         Me.ExportToExcelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PANELHEADER = New System.Windows.Forms.Panel()
+        Me.xLBLCOUNT = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.MAINTAB = New System.Windows.Forms.TabControl()
@@ -96,7 +97,6 @@ Partial Class FRMWORKORDERS
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.Panel14 = New System.Windows.Forms.Panel()
         Me.xPLANTINGDATE = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.xAGE = New System.Windows.Forms.TextBox()
@@ -139,7 +139,9 @@ Partial Class FRMWORKORDERS
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.xLBLCOUNT = New System.Windows.Forms.Label()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel16 = New System.Windows.Forms.Panel()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel19.SuspendLayout()
@@ -157,6 +159,7 @@ Partial Class FRMWORKORDERS
         Me.Panel11.SuspendLayout()
         Me.Panel13.SuspendLayout()
         Me.Panel5.SuspendLayout()
+        Me.Panel14.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -321,7 +324,7 @@ Partial Class FRMWORKORDERS
         Me.Button1.FlatAppearance.BorderSize = 0
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(127, 10)
+        Me.Button1.Location = New System.Drawing.Point(127, 8)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(38, 36)
         Me.Button1.TabIndex = 123166
@@ -334,7 +337,7 @@ Partial Class FRMWORKORDERS
         Me.Button2.FlatAppearance.BorderSize = 0
         Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(216, 10)
+        Me.Button2.Location = New System.Drawing.Point(216, 8)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(38, 36)
         Me.Button2.TabIndex = 123165
@@ -347,7 +350,7 @@ Partial Class FRMWORKORDERS
         Me.Button3.FlatAppearance.BorderSize = 0
         Me.Button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button3.Image = Global.WORKORDER.My.Resources.Resources.padlock
-        Me.Button3.Location = New System.Drawing.Point(173, 10)
+        Me.Button3.Location = New System.Drawing.Point(173, 8)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(38, 36)
         Me.Button3.TabIndex = 123164
@@ -360,7 +363,7 @@ Partial Class FRMWORKORDERS
         Me.btAddHeader.FlatAppearance.BorderSize = 0
         Me.btAddHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAddHeader.Image = CType(resources.GetObject("btAddHeader.Image"), System.Drawing.Image)
-        Me.btAddHeader.Location = New System.Drawing.Point(13, 10)
+        Me.btAddHeader.Location = New System.Drawing.Point(13, 8)
         Me.btAddHeader.Name = "btAddHeader"
         Me.btAddHeader.Size = New System.Drawing.Size(38, 36)
         Me.btAddHeader.TabIndex = 123158
@@ -373,7 +376,7 @@ Partial Class FRMWORKORDERS
         Me.btEditHeader.FlatAppearance.BorderSize = 0
         Me.btEditHeader.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btEditHeader.Image = CType(resources.GetObject("btEditHeader.Image"), System.Drawing.Image)
-        Me.btEditHeader.Location = New System.Drawing.Point(59, 10)
+        Me.btEditHeader.Location = New System.Drawing.Point(59, 8)
         Me.btEditHeader.Name = "btEditHeader"
         Me.btEditHeader.Size = New System.Drawing.Size(38, 36)
         Me.btEditHeader.TabIndex = 123154
@@ -537,7 +540,7 @@ Partial Class FRMWORKORDERS
         Me.Panel19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.Panel19.Controls.Add(Me.xsearchHeader)
         Me.Panel19.Controls.Add(Me.Button4)
-        Me.Panel19.Location = New System.Drawing.Point(685, 9)
+        Me.Panel19.Location = New System.Drawing.Point(724, 6)
         Me.Panel19.Name = "Panel19"
         Me.Panel19.Size = New System.Drawing.Size(367, 43)
         Me.Panel19.TabIndex = 123169
@@ -547,7 +550,7 @@ Partial Class FRMWORKORDERS
         '
         Me.xsearchHeader.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.xsearchHeader.Font = New System.Drawing.Font("Century Gothic", 11.89565!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.xsearchHeader.Location = New System.Drawing.Point(6, 10)
+        Me.xsearchHeader.Location = New System.Drawing.Point(6, 9)
         Me.xsearchHeader.Name = "xsearchHeader"
         Me.xsearchHeader.Size = New System.Drawing.Size(317, 25)
         Me.xsearchHeader.TabIndex = 123147
@@ -662,6 +665,19 @@ Partial Class FRMWORKORDERS
         Me.PANELHEADER.Size = New System.Drawing.Size(1566, 73)
         Me.PANELHEADER.TabIndex = 249
         '
+        'xLBLCOUNT
+        '
+        Me.xLBLCOUNT.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.xLBLCOUNT.AutoSize = True
+        Me.xLBLCOUNT.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.xLBLCOUNT.ForeColor = System.Drawing.SystemColors.Control
+        Me.xLBLCOUNT.Location = New System.Drawing.Point(1158, 19)
+        Me.xLBLCOUNT.Name = "xLBLCOUNT"
+        Me.xLBLCOUNT.Size = New System.Drawing.Size(16, 17)
+        Me.xLBLCOUNT.TabIndex = 123157
+        Me.xLBLCOUNT.Text = "0"
+        Me.xLBLCOUNT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'Panel10
         '
         Me.Panel10.BackColor = System.Drawing.Color.Gainsboro
@@ -744,6 +760,7 @@ Partial Class FRMWORKORDERS
         Me.Details.Controls.Add(Me.dgWOHeader)
         Me.Details.Controls.Add(Me.Panel11)
         Me.Details.Controls.Add(Me.Panel13)
+        Me.Details.Controls.Add(Me.Panel14)
         Me.Details.Controls.Add(Me.Panel5)
         Me.Details.Location = New System.Drawing.Point(4, 25)
         Me.Details.Name = "Details"
@@ -758,9 +775,9 @@ Partial Class FRMWORKORDERS
         Me.Panel6.Controls.Add(Me.dgWORes)
         Me.Panel6.Controls.Add(Me.Panel7)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel6.Location = New System.Drawing.Point(498, 326)
+        Me.Panel6.Location = New System.Drawing.Point(459, 293)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1060, 502)
+        Me.Panel6.Size = New System.Drawing.Size(1099, 535)
         Me.Panel6.TabIndex = 2
         '
         'dgWORes
@@ -774,12 +791,12 @@ Partial Class FRMWORKORDERS
         Me.dgWORes.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgWORes.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.dgWORes.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
-        Me.dgWORes.Location = New System.Drawing.Point(0, 45)
+        Me.dgWORes.Location = New System.Drawing.Point(0, 38)
         Me.dgWORes.Margin = New System.Windows.Forms.Padding(4)
         Me.dgWORes.Name = "dgWORes"
         Me.dgWORes.Rows.DefaultSize = 21
         Me.dgWORes.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
-        Me.dgWORes.Size = New System.Drawing.Size(1060, 457)
+        Me.dgWORes.Size = New System.Drawing.Size(1099, 497)
         Me.dgWORes.StyleInfo = resources.GetString("dgWORes.StyleInfo")
         Me.dgWORes.TabIndex = 302
         Me.dgWORes.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
@@ -791,7 +808,7 @@ Partial Class FRMWORKORDERS
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1060, 45)
+        Me.Panel7.Size = New System.Drawing.Size(1099, 38)
         Me.Panel7.TabIndex = 0
         '
         'Panel9
@@ -799,15 +816,15 @@ Partial Class FRMWORKORDERS
         Me.Panel9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel9.Location = New System.Drawing.Point(218, 23)
+        Me.Panel9.Location = New System.Drawing.Point(218, 20)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(832, 1)
+        Me.Panel9.Size = New System.Drawing.Size(871, 1)
         Me.Panel9.TabIndex = 25
         '
         'Label37
         '
         Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(14, 12)
+        Me.Label37.Location = New System.Drawing.Point(14, 9)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(198, 17)
         Me.Label37.TabIndex = 24
@@ -824,12 +841,12 @@ Partial Class FRMWORKORDERS
         Me.dgWOHeader.Dock = System.Windows.Forms.DockStyle.Top
         Me.dgWOHeader.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.dgWOHeader.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
-        Me.dgWOHeader.Location = New System.Drawing.Point(498, 104)
+        Me.dgWOHeader.Location = New System.Drawing.Point(459, 94)
         Me.dgWOHeader.Margin = New System.Windows.Forms.Padding(4)
         Me.dgWOHeader.Name = "dgWOHeader"
         Me.dgWOHeader.Rows.DefaultSize = 21
         Me.dgWOHeader.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
-        Me.dgWOHeader.Size = New System.Drawing.Size(1060, 222)
+        Me.dgWOHeader.Size = New System.Drawing.Size(1099, 199)
         Me.dgWOHeader.StyleInfo = resources.GetString("dgWOHeader.StyleInfo")
         Me.dgWOHeader.TabIndex = 304
         Me.dgWOHeader.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
@@ -839,9 +856,9 @@ Partial Class FRMWORKORDERS
         Me.Panel11.Controls.Add(Me.Panel12)
         Me.Panel11.Controls.Add(Me.Label38)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel11.Location = New System.Drawing.Point(498, 59)
+        Me.Panel11.Location = New System.Drawing.Point(459, 56)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(1060, 45)
+        Me.Panel11.Size = New System.Drawing.Size(1099, 38)
         Me.Panel11.TabIndex = 303
         '
         'Panel12
@@ -849,15 +866,15 @@ Partial Class FRMWORKORDERS
         Me.Panel12.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel12.Location = New System.Drawing.Point(174, 23)
+        Me.Panel12.Location = New System.Drawing.Point(174, 19)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(874, 1)
+        Me.Panel12.Size = New System.Drawing.Size(913, 1)
         Me.Panel12.TabIndex = 25
         '
         'Label38
         '
         Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(14, 14)
+        Me.Label38.Location = New System.Drawing.Point(14, 9)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(157, 17)
         Me.Label38.TabIndex = 24
@@ -876,16 +893,16 @@ Partial Class FRMWORKORDERS
         Me.Panel13.Controls.Add(Me.Button3)
         Me.Panel13.Controls.Add(Me.btEditHeader)
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel13.Location = New System.Drawing.Point(498, 0)
+        Me.Panel13.Location = New System.Drawing.Point(459, 0)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(1060, 59)
+        Me.Panel13.Size = New System.Drawing.Size(1099, 56)
         Me.Panel13.TabIndex = 38
         '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel2.Enabled = False
-        Me.Panel2.Location = New System.Drawing.Point(110, 14)
+        Me.Panel2.Location = New System.Drawing.Point(110, 12)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(2, 32)
         Me.Panel2.TabIndex = 123169
@@ -894,7 +911,7 @@ Partial Class FRMWORKORDERS
         '
         Me.Panel18.BackColor = System.Drawing.Color.Gainsboro
         Me.Panel18.Enabled = False
-        Me.Panel18.Location = New System.Drawing.Point(270, 12)
+        Me.Panel18.Location = New System.Drawing.Point(270, 10)
         Me.Panel18.Name = "Panel18"
         Me.Panel18.Size = New System.Drawing.Size(2, 32)
         Me.Panel18.TabIndex = 123168
@@ -903,15 +920,14 @@ Partial Class FRMWORKORDERS
         '
         Me.Panel15.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel15.Location = New System.Drawing.Point(0, 58)
+        Me.Panel15.Location = New System.Drawing.Point(0, 55)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(1060, 1)
+        Me.Panel15.Size = New System.Drawing.Size(1099, 1)
         Me.Panel15.TabIndex = 123159
         '
         'Panel5
         '
         Me.Panel5.AutoScroll = True
-        Me.Panel5.Controls.Add(Me.Panel14)
         Me.Panel5.Controls.Add(Me.xPLANTINGDATE)
         Me.Panel5.Controls.Add(Me.Label24)
         Me.Panel5.Controls.Add(Me.xAGE)
@@ -957,18 +973,8 @@ Partial Class FRMWORKORDERS
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(498, 828)
+        Me.Panel5.Size = New System.Drawing.Size(448, 828)
         Me.Panel5.TabIndex = 1
-        '
-        'Panel14
-        '
-        Me.Panel14.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Panel14.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel14.Location = New System.Drawing.Point(490, 0)
-        Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(2, 832)
-        Me.Panel14.TabIndex = 139
         '
         'xPLANTINGDATE
         '
@@ -1336,7 +1342,7 @@ Partial Class FRMWORKORDERS
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.Panel3.Location = New System.Drawing.Point(109, 15)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(374, 1)
+        Me.Panel3.Size = New System.Drawing.Size(318, 1)
         Me.Panel3.TabIndex = 39
         '
         'Label10
@@ -1348,24 +1354,39 @@ Partial Class FRMWORKORDERS
         Me.Label10.TabIndex = 38
         Me.Label10.Text = "Field Details"
         '
-        'xLBLCOUNT
+        'Panel14
         '
-        Me.xLBLCOUNT.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.xLBLCOUNT.AutoSize = True
-        Me.xLBLCOUNT.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.xLBLCOUNT.ForeColor = System.Drawing.SystemColors.Control
-        Me.xLBLCOUNT.Location = New System.Drawing.Point(1158, 19)
-        Me.xLBLCOUNT.Name = "xLBLCOUNT"
-        Me.xLBLCOUNT.Size = New System.Drawing.Size(16, 17)
-        Me.xLBLCOUNT.TabIndex = 123157
-        Me.xLBLCOUNT.Text = "0"
-        Me.xLBLCOUNT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Panel14.BackColor = System.Drawing.Color.Transparent
+        Me.Panel14.Controls.Add(Me.Panel4)
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel14.Location = New System.Drawing.Point(448, 0)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(11, 828)
+        Me.Panel14.TabIndex = 252
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel4.Location = New System.Drawing.Point(4, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(3, 828)
+        Me.Panel4.TabIndex = 253
+        '
+        'Panel16
+        '
+        Me.Panel16.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel16.Location = New System.Drawing.Point(0, 1029)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Size = New System.Drawing.Size(1566, 2)
+        Me.Panel16.TabIndex = 255
         '
         'FRMWORKORDERS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1566, 1055)
+        Me.Controls.Add(Me.Panel16)
         Me.Controls.Add(Me.MAINTAB)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.PANELHEADER)
@@ -1401,6 +1422,7 @@ Partial Class FRMWORKORDERS
         Me.Panel13.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        Me.Panel14.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1507,7 +1529,6 @@ Partial Class FRMWORKORDERS
     Friend WithEvents Label13 As Label
     Friend WithEvents xLANDOWNER As TextBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents Panel14 As Panel
     Friend WithEvents Panel15 As Panel
     Friend WithEvents Panel11 As Panel
     Friend WithEvents Panel18 As Panel
@@ -1522,4 +1543,7 @@ Partial Class FRMWORKORDERS
     Friend WithEvents Panel2 As Panel
     Friend WithEvents BTNSETTING As Button
     Friend WithEvents xLBLCOUNT As Label
+    Friend WithEvents Panel14 As Panel
+    Friend WithEvents Panel4 As Panel
+    Friend WithEvents Panel16 As Panel
 End Class
