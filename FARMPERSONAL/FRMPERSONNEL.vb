@@ -203,10 +203,10 @@ Public Class FRMPERSONNEL
         'MsgBox(ExistinFm & "--" & ExistinFa)
 
         ' Exit Sub
-        If ExistSubfieldFM > 0 Then
-            MsgBox("Sub field Exist in other Farm Managers!", vbCritical, "Error")
-            Exit Sub
-        End If
+        'If ExistSubfieldFM > 0 Then
+        '    MsgBox("Sub field Exist in other Farm Managers!", vbCritical, "Error")
+        '    Exit Sub
+        'End If
 
         'If ExistSubfieldFA > 0 Then
         '    MsgBox("Sub field Exist in other Farm Assistant!", vbCritical, "Error")
