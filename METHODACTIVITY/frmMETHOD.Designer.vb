@@ -178,6 +178,9 @@ Partial Class frmMETHOD
         '
         'TabControl1
         '
+        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Location = New System.Drawing.Point(-3, 65)
         Me.TabControl1.Name = "TabControl1"
@@ -239,6 +242,9 @@ Partial Class frmMETHOD
         Me.grid1.AllowEditing = False
         Me.grid1.AllowFiltering = True
         Me.grid1.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.None
+        Me.grid1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grid1.BackColor = System.Drawing.Color.White
         Me.grid1.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle
         Me.grid1.ColumnInfo = "0,0,0,0,0,105,Columns:"
@@ -410,6 +416,7 @@ Partial Class frmMETHOD
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.PanelHeader)
         Me.Controls.Add(Me.StatusStrip1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmMETHOD"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "METHOD ACTIVITY"

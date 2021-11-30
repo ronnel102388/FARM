@@ -207,10 +207,11 @@ Partial Class frmMAJOR
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Location = New System.Drawing.Point(0, 65)
+        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TabControl1.Location = New System.Drawing.Point(0, 64)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(800, 560)
+        Me.TabControl1.Size = New System.Drawing.Size(800, 586)
         Me.TabControl1.TabIndex = 123224
         '
         'TabPage1
@@ -223,7 +224,7 @@ Partial Class frmMAJOR
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(792, 531)
+        Me.TabPage1.Size = New System.Drawing.Size(792, 557)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Identification"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -267,17 +268,20 @@ Partial Class frmMAJOR
         Me.grid1.AllowEditing = False
         Me.grid1.AllowFiltering = True
         Me.grid1.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.None
+        Me.grid1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grid1.BackColor = System.Drawing.Color.White
         Me.grid1.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle
         Me.grid1.ColumnInfo = "0,0,0,0,0,105,Columns:"
         Me.grid1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.grid1.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
-        Me.grid1.Location = New System.Drawing.Point(4, 90)
+        Me.grid1.Location = New System.Drawing.Point(4, 92)
         Me.grid1.Margin = New System.Windows.Forms.Padding(4)
         Me.grid1.Name = "grid1"
         Me.grid1.Rows.DefaultSize = 21
         Me.grid1.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
-        Me.grid1.Size = New System.Drawing.Size(784, 434)
+        Me.grid1.Size = New System.Drawing.Size(784, 462)
         Me.grid1.StyleInfo = resources.GetString("grid1.StyleInfo")
         Me.grid1.TabIndex = 123235
         Me.grid1.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
@@ -410,6 +414,7 @@ Partial Class frmMAJOR
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.PanelHeader)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "frmMAJOR"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MAJOR ACTIVITY"
