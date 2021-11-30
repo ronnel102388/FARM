@@ -99,7 +99,7 @@ Public Class frmDetailsPOT
         LBLFARMMANAGER.Text = FM.ToUpper
 
         xLBLACTUALCOST.Text = Format(vACTUAL, "n0")
-        xLBLLABORHAUL.Text = Format(vLABORHAUL, "0")
+        xLBLLABORHAUL.Text = Format(vLABORHAUL, "n0")
         XGRANDTOTAL.Text = Format(Val(vACTUAL) + Val(vLABORHAUL), "n0")
 
         'POPULATEDETAILS()

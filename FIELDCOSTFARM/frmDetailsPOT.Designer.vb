@@ -82,17 +82,17 @@ Partial Class frmDetailsPOT
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.X = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.XGRANDTOTAL = New System.Windows.Forms.Label()
+        Me.xLBLLABORHAUL = New System.Windows.Forms.Label()
+        Me.xLBLACTUALCOST = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dgFIELDCOST = New C1.Win.C1FlexGrid.C1FlexGrid()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.XGRANDTOTAL = New System.Windows.Forms.Label()
-        Me.xLBLLABORHAUL = New System.Windows.Forms.Label()
-        Me.xLBLACTUALCOST = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelHeader.SuspendLayout()
         Me.Panel13.SuspendLayout()
@@ -100,11 +100,11 @@ Partial Class frmDetailsPOT
         CType(Me.dgFieldInfo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
         Me.Panel6.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgFIELDCOST, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -741,6 +741,88 @@ Partial Class frmDetailsPOT
         Me.Panel6.Size = New System.Drawing.Size(375, 598)
         Me.Panel6.TabIndex = 123208
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.XGRANDTOTAL)
+        Me.GroupBox3.Controls.Add(Me.xLBLLABORHAUL)
+        Me.GroupBox3.Controls.Add(Me.xLBLACTUALCOST)
+        Me.GroupBox3.Controls.Add(Me.Label5)
+        Me.GroupBox3.Controls.Add(Me.Label3)
+        Me.GroupBox3.Controls.Add(Me.Label2)
+        Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.GroupBox3.Location = New System.Drawing.Point(0, 396)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(375, 202)
+        Me.GroupBox3.TabIndex = 1
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "LABOR HAUL"
+        '
+        'XGRANDTOTAL
+        '
+        Me.XGRANDTOTAL.AutoSize = True
+        Me.XGRANDTOTAL.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XGRANDTOTAL.Location = New System.Drawing.Point(162, 74)
+        Me.XGRANDTOTAL.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.XGRANDTOTAL.Name = "XGRANDTOTAL"
+        Me.XGRANDTOTAL.Size = New System.Drawing.Size(124, 17)
+        Me.XGRANDTOTAL.TabIndex = 123178
+        Me.XGRANDTOTAL.Text = "GRAND TOTAL:"
+        '
+        'xLBLLABORHAUL
+        '
+        Me.xLBLLABORHAUL.AutoSize = True
+        Me.xLBLLABORHAUL.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.xLBLLABORHAUL.Location = New System.Drawing.Point(162, 50)
+        Me.xLBLLABORHAUL.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.xLBLLABORHAUL.Name = "xLBLLABORHAUL"
+        Me.xLBLLABORHAUL.Size = New System.Drawing.Size(111, 17)
+        Me.xLBLLABORHAUL.TabIndex = 123177
+        Me.xLBLLABORHAUL.Text = "LABOR HAUL:"
+        '
+        'xLBLACTUALCOST
+        '
+        Me.xLBLACTUALCOST.AutoSize = True
+        Me.xLBLACTUALCOST.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.xLBLACTUALCOST.Location = New System.Drawing.Point(162, 27)
+        Me.xLBLACTUALCOST.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.xLBLACTUALCOST.Name = "xLBLACTUALCOST"
+        Me.xLBLACTUALCOST.Size = New System.Drawing.Size(120, 17)
+        Me.xLBLACTUALCOST.TabIndex = 123176
+        Me.xLBLACTUALCOST.Text = "ACTUAL COST:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(28, 74)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(124, 17)
+        Me.Label5.TabIndex = 123175
+        Me.Label5.Text = "GRAND TOTAL:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(28, 50)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(111, 17)
+        Me.Label3.TabIndex = 123174
+        Me.Label3.Text = "LABOR HAUL:"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(28, 26)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(120, 17)
+        Me.Label2.TabIndex = 123173
+        Me.Label2.Text = "ACTUAL COST:"
+        '
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.dgFieldInfo)
@@ -794,82 +876,6 @@ Partial Class frmDetailsPOT
         Me.dgFIELDCOST.TabIndex = 300
         Me.dgFIELDCOST.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
         '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.XGRANDTOTAL)
-        Me.GroupBox3.Controls.Add(Me.xLBLLABORHAUL)
-        Me.GroupBox3.Controls.Add(Me.xLBLACTUALCOST)
-        Me.GroupBox3.Controls.Add(Me.Label5)
-        Me.GroupBox3.Controls.Add(Me.Label3)
-        Me.GroupBox3.Controls.Add(Me.Label2)
-        Me.GroupBox3.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.GroupBox3.Location = New System.Drawing.Point(0, 396)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(375, 202)
-        Me.GroupBox3.TabIndex = 1
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "LABOR HAUL"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(28, 26)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(108, 17)
-        Me.Label2.TabIndex = 123173
-        Me.Label2.Text = "ACTUAL COST:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(28, 50)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(100, 17)
-        Me.Label3.TabIndex = 123174
-        Me.Label3.Text = "LABOR HAUL:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(28, 74)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(112, 17)
-        Me.Label5.TabIndex = 123175
-        Me.Label5.Text = "GRAND TOTAL:"
-        '
-        'XGRANDTOTAL
-        '
-        Me.XGRANDTOTAL.AutoSize = True
-        Me.XGRANDTOTAL.Location = New System.Drawing.Point(162, 74)
-        Me.XGRANDTOTAL.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.XGRANDTOTAL.Name = "XGRANDTOTAL"
-        Me.XGRANDTOTAL.Size = New System.Drawing.Size(112, 17)
-        Me.XGRANDTOTAL.TabIndex = 123178
-        Me.XGRANDTOTAL.Text = "GRAND TOTAL:"
-        '
-        'xLBLLABORHAUL
-        '
-        Me.xLBLLABORHAUL.AutoSize = True
-        Me.xLBLLABORHAUL.Location = New System.Drawing.Point(162, 50)
-        Me.xLBLLABORHAUL.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.xLBLLABORHAUL.Name = "xLBLLABORHAUL"
-        Me.xLBLLABORHAUL.Size = New System.Drawing.Size(100, 17)
-        Me.xLBLLABORHAUL.TabIndex = 123177
-        Me.xLBLLABORHAUL.Text = "LABOR HAUL:"
-        '
-        'xLBLACTUALCOST
-        '
-        Me.xLBLACTUALCOST.AutoSize = True
-        Me.xLBLACTUALCOST.Location = New System.Drawing.Point(162, 27)
-        Me.xLBLACTUALCOST.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.xLBLACTUALCOST.Name = "xLBLACTUALCOST"
-        Me.xLBLACTUALCOST.Size = New System.Drawing.Size(108, 17)
-        Me.xLBLACTUALCOST.TabIndex = 123176
-        Me.xLBLACTUALCOST.Text = "ACTUAL COST:"
-        '
         'frmDetailsPOT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -896,12 +902,12 @@ Partial Class frmDetailsPOT
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         Me.Panel6.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         CType(Me.dgFIELDCOST, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox3.ResumeLayout(False)
-        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

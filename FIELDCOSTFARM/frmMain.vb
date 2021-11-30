@@ -53,7 +53,7 @@ Public Class frmMain
                         INNER JOIN M_FM_SUBFIELD FM
                         ON EMP.EmployeeID = FM.FARMMANID
                         WHERE FM.ISACTIVE = 1 
-                        AND EMP.IsActive = 1
+                        AND EMP.IsActive = 1 
                             </s>
 
         ExeReader(sql)
