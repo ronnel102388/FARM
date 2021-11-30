@@ -128,6 +128,10 @@ Public Class FRMCREATIONWORKORDERS
     Private Sub btnmin_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnmin.Click
         Me.WindowState = FormWindowState.Minimized
     End Sub
+
+    Private Sub DgWOres_Click(sender As Object, e As EventArgs) Handles dgWOres.Click
+
+    End Sub
 #End Region
 #Region "FORM CONTROL EVENTS"
     Private Sub XCBOMAJORACTIVITY_SelectedIndexChanged(sender As Object, e As EventArgs) Handles xCBOMAJORACTIVITY.SelectedIndexChanged
@@ -369,6 +373,7 @@ Public Class FRMCREATIONWORKORDERS
 
     End Sub
 
+    Private Sub dgWOres_AfterEdit(sender As Object, e As RowColEventArgs) Handles dgWOres.AfterEdit
 
-
+    End Sub
 End Class

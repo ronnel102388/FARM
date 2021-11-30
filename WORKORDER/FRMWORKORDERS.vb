@@ -270,7 +270,7 @@ Public Class FRMWORKORDERS
 
         With dgMAINWO
             If .Item(x, "MAINWOID") <> 0 And .Item(x, "ISCLOSED") = 0 Then
-                If MsgBox("Do you want to add Work Order Activities in this SubField No. " & .Item(x, "FIELDNO") & " ?", vbQuestion + vbYesNo + vbDefaultButton2) = vbNo Then
+                If MsgBox("Do you want to add Work Order Activities?", vbQuestion + vbYesNo + vbDefaultButton2) = vbNo Then
                     Exit Sub
                 End If
             Else
