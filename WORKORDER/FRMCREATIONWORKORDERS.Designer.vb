@@ -25,8 +25,6 @@ Partial Class FRMCREATIONWORKORDERS
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRMCREATIONWORKORDERS))
         Me.PANELHEADER = New System.Windows.Forms.Panel()
         Me.BTEXPORT = New System.Windows.Forms.Button()
-        Me.btnclose = New System.Windows.Forms.Button()
-        Me.btnmax = New System.Windows.Forms.Button()
         Me.btAdd = New System.Windows.Forms.Button()
         Me.btnmin = New System.Windows.Forms.Button()
         Me.bTpRINT = New System.Windows.Forms.Button()
@@ -36,6 +34,8 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.BtDelete = New System.Windows.Forms.Button()
         Me.BtEdit = New System.Windows.Forms.Button()
+        Me.btnclose = New System.Windows.Forms.Button()
+        Me.btnmax = New System.Windows.Forms.Button()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -50,7 +50,6 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.Label37 = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.xAREAOFACTIVITY = New System.Windows.Forms.TextBox()
         Me.xDTPWOACTIVITYDATE = New System.Windows.Forms.DateTimePicker()
@@ -66,15 +65,9 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Label2 = New System.Windows.Forms.Label()
         Me.xWOCODE = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.xCBOSUBFIELDNO = New System.Windows.Forms.ComboBox()
-        Me.Label34 = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Panel6 = New System.Windows.Forms.Panel()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.Panel8 = New System.Windows.Forms.Panel()
         Me.xPLANTINGDATE = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.xAGE = New System.Windows.Forms.TextBox()
@@ -113,8 +106,15 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Label13 = New System.Windows.Forms.Label()
         Me.xLANDOWNER = New System.Windows.Forms.TextBox()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.xCBOSUBFIELDNO = New System.Windows.Forms.ComboBox()
+        Me.Label34 = New System.Windows.Forms.Label()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Label37 = New System.Windows.Forms.Label()
         Me.PANELHEADER.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -122,10 +122,10 @@ Partial Class FRMCREATIONWORKORDERS
         CType(Me.dgWOres, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
         Me.Panel2.SuspendLayout()
+        Me.Panel14.SuspendLayout()
         Me.Panel5.SuspendLayout()
         Me.Panel3.SuspendLayout()
         Me.Panel8.SuspendLayout()
-        Me.Panel14.SuspendLayout()
         Me.SuspendLayout()
         '
         'PANELHEADER
@@ -161,32 +161,6 @@ Partial Class FRMCREATIONWORKORDERS
         Me.BTEXPORT.Size = New System.Drawing.Size(38, 36)
         Me.BTEXPORT.TabIndex = 123154
         Me.BTEXPORT.UseVisualStyleBackColor = False
-        '
-        'btnclose
-        '
-        Me.btnclose.BackColor = System.Drawing.Color.Transparent
-        Me.btnclose.FlatAppearance.BorderSize = 0
-        Me.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnclose.Image = CType(resources.GetObject("btnclose.Image"), System.Drawing.Image)
-        Me.btnclose.Location = New System.Drawing.Point(1399, 0)
-        Me.btnclose.Name = "btnclose"
-        Me.btnclose.Size = New System.Drawing.Size(28, 28)
-        Me.btnclose.TabIndex = 123153
-        Me.btnclose.UseVisualStyleBackColor = False
-        Me.btnclose.Visible = False
-        '
-        'btnmax
-        '
-        Me.btnmax.BackColor = System.Drawing.Color.Transparent
-        Me.btnmax.FlatAppearance.BorderSize = 0
-        Me.btnmax.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnmax.Image = CType(resources.GetObject("btnmax.Image"), System.Drawing.Image)
-        Me.btnmax.Location = New System.Drawing.Point(1370, 0)
-        Me.btnmax.Name = "btnmax"
-        Me.btnmax.Size = New System.Drawing.Size(28, 28)
-        Me.btnmax.TabIndex = 123154
-        Me.btnmax.UseVisualStyleBackColor = False
-        Me.btnmax.Visible = False
         '
         'btAdd
         '
@@ -300,6 +274,32 @@ Partial Class FRMCREATIONWORKORDERS
         Me.BtEdit.TabIndex = 123146
         Me.BtEdit.UseVisualStyleBackColor = False
         '
+        'btnclose
+        '
+        Me.btnclose.BackColor = System.Drawing.Color.Transparent
+        Me.btnclose.FlatAppearance.BorderSize = 0
+        Me.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnclose.Image = CType(resources.GetObject("btnclose.Image"), System.Drawing.Image)
+        Me.btnclose.Location = New System.Drawing.Point(1399, 0)
+        Me.btnclose.Name = "btnclose"
+        Me.btnclose.Size = New System.Drawing.Size(28, 28)
+        Me.btnclose.TabIndex = 123153
+        Me.btnclose.UseVisualStyleBackColor = False
+        Me.btnclose.Visible = False
+        '
+        'btnmax
+        '
+        Me.btnmax.BackColor = System.Drawing.Color.Transparent
+        Me.btnmax.FlatAppearance.BorderSize = 0
+        Me.btnmax.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnmax.Image = CType(resources.GetObject("btnmax.Image"), System.Drawing.Image)
+        Me.btnmax.Location = New System.Drawing.Point(1370, 0)
+        Me.btnmax.Name = "btnmax"
+        Me.btnmax.Size = New System.Drawing.Size(28, 28)
+        Me.btnmax.TabIndex = 123154
+        Me.btnmax.UseVisualStyleBackColor = False
+        Me.btnmax.Visible = False
+        '
         'MenuStrip1
         '
         Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ControlLight
@@ -406,9 +406,9 @@ Partial Class FRMCREATIONWORKORDERS
         '
         'Panel7
         '
+        Me.Panel7.Controls.Add(Me.Label37)
         Me.Panel7.Controls.Add(Me.Panel1)
         Me.Panel7.Controls.Add(Me.Panel9)
-        Me.Panel7.Controls.Add(Me.Label37)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel7.Location = New System.Drawing.Point(468, 165)
         Me.Panel7.Name = "Panel7"
@@ -430,19 +430,10 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel9.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel9.Location = New System.Drawing.Point(136, 19)
+        Me.Panel9.Location = New System.Drawing.Point(207, 22)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(804, 1)
+        Me.Panel9.Size = New System.Drawing.Size(737, 1)
         Me.Panel9.TabIndex = 25
-        '
-        'Label37
-        '
-        Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(14, 10)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(119, 17)
-        Me.Label37.TabIndex = 24
-        Me.Label37.Text = "Method of Activity"
         '
         'Panel2
         '
@@ -590,6 +581,26 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Label1.TabIndex = 20
         Me.Label1.Text = "Work Order Code:"
         '
+        'Panel14
+        '
+        Me.Panel14.BackColor = System.Drawing.Color.Transparent
+        Me.Panel14.Controls.Add(Me.Panel11)
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel14.Location = New System.Drawing.Point(457, 3)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(11, 655)
+        Me.Panel14.TabIndex = 304
+        '
+        'Panel11
+        '
+        Me.Panel11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel11.Location = New System.Drawing.Point(4, 0)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(3, 828)
+        Me.Panel11.TabIndex = 253
+        '
         'Panel5
         '
         Me.Panel5.Controls.Add(Me.xPLANTINGDATE)
@@ -639,84 +650,6 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(454, 655)
         Me.Panel5.TabIndex = 2
-        '
-        'xCBOSUBFIELDNO
-        '
-        Me.xCBOSUBFIELDNO.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
-        Me.xCBOSUBFIELDNO.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.xCBOSUBFIELDNO.DropDownHeight = 100
-        Me.xCBOSUBFIELDNO.FormattingEnabled = True
-        Me.xCBOSUBFIELDNO.IntegralHeight = False
-        Me.xCBOSUBFIELDNO.Location = New System.Drawing.Point(200, 31)
-        Me.xCBOSUBFIELDNO.Name = "xCBOSUBFIELDNO"
-        Me.xCBOSUBFIELDNO.Size = New System.Drawing.Size(173, 24)
-        Me.xCBOSUBFIELDNO.TabIndex = 39
-        '
-        'Label34
-        '
-        Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(34, 38)
-        Me.Label34.Name = "Label34"
-        Me.Label34.Size = New System.Drawing.Size(93, 17)
-        Me.Label34.TabIndex = 86
-        Me.Label34.Text = "Sub Field No:"
-        '
-        'Panel3
-        '
-        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel3.Controls.Add(Me.Panel6)
-        Me.Panel3.Location = New System.Drawing.Point(110, 15)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(333, 1)
-        Me.Panel3.TabIndex = 39
-        '
-        'Panel6
-        '
-        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel6.Location = New System.Drawing.Point(0, 0)
-        Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(380, 1)
-        Me.Panel6.TabIndex = 40
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(14, 6)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(85, 17)
-        Me.Label10.TabIndex = 38
-        Me.Label10.Text = "Field Details"
-        '
-        'Panel12
-        '
-        Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel12.Location = New System.Drawing.Point(0, 794)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(1448, 2)
-        Me.Panel12.TabIndex = 254
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.Gainsboro
-        Me.StatusStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(19, 19)
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 796)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(1448, 22)
-        Me.StatusStrip1.TabIndex = 253
-        Me.StatusStrip1.Tag = "XC"
-        Me.StatusStrip1.Text = "PROGEN 1.2.x as of DateTime"
-        '
-        'Panel8
-        '
-        Me.Panel8.Controls.Add(Me.MenuStrip1)
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel8.Location = New System.Drawing.Point(0, 0)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(1448, 31)
-        Me.Panel8.TabIndex = 304
         '
         'xPLANTINGDATE
         '
@@ -1061,25 +994,92 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Label14.TabIndex = 141
         Me.Label14.Text = "Land Owner:"
         '
-        'Panel14
+        'xCBOSUBFIELDNO
         '
-        Me.Panel14.BackColor = System.Drawing.Color.Transparent
-        Me.Panel14.Controls.Add(Me.Panel11)
-        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel14.Location = New System.Drawing.Point(457, 3)
-        Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(11, 655)
-        Me.Panel14.TabIndex = 304
+        Me.xCBOSUBFIELDNO.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest
+        Me.xCBOSUBFIELDNO.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.xCBOSUBFIELDNO.DropDownHeight = 100
+        Me.xCBOSUBFIELDNO.FormattingEnabled = True
+        Me.xCBOSUBFIELDNO.IntegralHeight = False
+        Me.xCBOSUBFIELDNO.Location = New System.Drawing.Point(200, 31)
+        Me.xCBOSUBFIELDNO.Name = "xCBOSUBFIELDNO"
+        Me.xCBOSUBFIELDNO.Size = New System.Drawing.Size(173, 24)
+        Me.xCBOSUBFIELDNO.TabIndex = 39
         '
-        'Panel11
+        'Label34
         '
-        Me.Panel11.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Panel11.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel11.Location = New System.Drawing.Point(4, 0)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(3, 828)
-        Me.Panel11.TabIndex = 253
+        Me.Label34.AutoSize = True
+        Me.Label34.Location = New System.Drawing.Point(34, 38)
+        Me.Label34.Name = "Label34"
+        Me.Label34.Size = New System.Drawing.Size(93, 17)
+        Me.Label34.TabIndex = 86
+        Me.Label34.Text = "Sub Field No:"
+        '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.Panel6)
+        Me.Panel3.Location = New System.Drawing.Point(110, 15)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(333, 1)
+        Me.Panel3.TabIndex = 39
+        '
+        'Panel6
+        '
+        Me.Panel6.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel6.Location = New System.Drawing.Point(0, 0)
+        Me.Panel6.Name = "Panel6"
+        Me.Panel6.Size = New System.Drawing.Size(380, 1)
+        Me.Panel6.TabIndex = 40
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(14, 6)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(85, 17)
+        Me.Label10.TabIndex = 38
+        Me.Label10.Text = "Field Details"
+        '
+        'Panel12
+        '
+        Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel12.Location = New System.Drawing.Point(0, 794)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(1448, 2)
+        Me.Panel12.TabIndex = 254
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.Gainsboro
+        Me.StatusStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(19, 19)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 796)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1448, 22)
+        Me.StatusStrip1.TabIndex = 253
+        Me.StatusStrip1.Tag = "XC"
+        Me.StatusStrip1.Text = "PROGEN 1.2.x as of DateTime"
+        '
+        'Panel8
+        '
+        Me.Panel8.Controls.Add(Me.MenuStrip1)
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel8.Location = New System.Drawing.Point(0, 0)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(1448, 31)
+        Me.Panel8.TabIndex = 304
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(6, 12)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(198, 17)
+        Me.Label37.TabIndex = 25
+        Me.Label37.Text = "Method of Activity | Resources"
         '
         'FRMCREATIONWORKORDERS
         '
@@ -1106,12 +1106,12 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel7.PerformLayout()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        Me.Panel14.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
-        Me.Panel14.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1152,7 +1152,6 @@ Partial Class FRMCREATIONWORKORDERS
     Friend WithEvents Label1 As Label
     Friend WithEvents Panel7 As Panel
     Friend WithEvents Panel9 As Panel
-    Friend WithEvents Label37 As Label
     Friend WithEvents dgWOres As C1.Win.C1FlexGrid.C1FlexGrid
     Friend WithEvents xDTPWOACTIVITYDATE As DateTimePicker
     Friend WithEvents xCBOMINORACTIVITY As ComboBox
@@ -1209,4 +1208,5 @@ Partial Class FRMCREATIONWORKORDERS
     Friend WithEvents Label14 As Label
     Friend WithEvents Panel14 As Panel
     Friend WithEvents Panel11 As Panel
+    Friend WithEvents Label37 As Label
 End Class

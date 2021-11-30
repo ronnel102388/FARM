@@ -56,13 +56,12 @@ Public Class FRMWORKORDERS
             .AutoSizeCols()
 
             For x As Integer = 0 To .Cols.Count - 1
-                If .Cols(x).Caption.Contains("ID") Or .Cols(x).Caption.Contains("Id") Then
+                If .Cols(x).Caption.Contains("ID") Or .Cols(x).Caption.Contains("MAINWO") Then
                     .Cols(x).Visible = False
                 Else
                     .Cols(x).Visible = True
                 End If
             Next
-            .Cols("MAINWO").Visible = False
             .Cols.Frozen = 4
         End With
 

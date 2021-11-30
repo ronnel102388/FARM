@@ -198,9 +198,11 @@ Public Class FRMCREATIONWORKORDERS
 
         With dgWOres
             For x As Integer = 1 To .Rows.Count - 1
-                If .Item(x, "TAG").ToString = False Then
-                    MsgBox("Please select MethodActivity / Resource.", vbInformation, "VALIDATION")
-                    Exit Sub
+                If .Rows(x).IsNode = False Then
+                    If .Item(x, "TAG").ToString = False Then
+                        MsgBox("Please select MethodActivity / Resource.", vbInformation, "VALIDATION")
+                        Exit Sub
+                    End If
                 End If
             Next
         End With
@@ -214,9 +216,10 @@ Public Class FRMCREATIONWORKORDERS
             Dim vMAINWOCODE As String = drl_GenerateCodeMAINWO()
 
             Dim sql As String = <s>
-                                    EXEC MAIN_WORKORDER_ACTION 
+                                    EXEC WORKORDER_MAIN_ACTION 
                                     0
-                                    '<%= vMAINWOCODE %>' --MAINWOCODE
+                                    ,'<%= vMAINWOCODE %>' --MAINWOCODE
+                                    ,'<%= xCBOSUBFIELDNO.Text %>' --SUBFIELDNO
                                     ,'<%= xCROPCLASSDETAIL.Text %>' --CROPCLASSDETAIL
                                     ,'<%= xCROPYEAR.Text %>' --CROPYEAR
                                     ,0  -- ISCLOSED
@@ -238,7 +241,7 @@ Public Class FRMCREATIONWORKORDERS
             xWOCODE.Text = drl_GenerateCodeWORKORDER()
             Dim sql As String = <s>
                                     EXEC WORKORDER_HEADER_ACTION
-                                        ,0 --WORKORDERID
+                                        0 --WORKORDERID
 
                                         ,<%= vMAINWOID %> -- MAINWOID
                                         ,'<%= xCBOSUBFIELDNO.Text %>' -- SUBFIELDNO
@@ -270,8 +273,14 @@ Public Class FRMCREATIONWORKORDERS
                                         ,'' -- CANCELLATIONREMARKS
                                         ,'' -- REOPENWOREMARKS
                                         ,'' -- UPDATEJUSTIFICATION
+
+                                        ,1 -- ISACTIVE
+                                        ,'' -- DEACTIVATIONREMARKS
+                                        ,'<%= FRMWORKORDERS.RbnUser.Text %>'
+
                                         ,0 -- FURROWDISTANCE 
                                         ,0 -- TOTALSTALKWEIGHT
+                                        ,0 --EQUIVALENTTONS
                                         ,0 -- YIELD
                                         ,0 -- ISMANUAL
                                         ,'' -- CROPLOGREMARKS
@@ -285,10 +294,11 @@ Public Class FRMCREATIONWORKORDERS
 
             With dgWOres
                 For x As Integer = 1 To .Rows.Count - 1
-                    If .Item(x, "TAG").ToString = True Then
-                        Dim vWORESCODE As String = drl_GenerateCodeWORESOURCE()
+                    If .Rows(x).IsNode = False Then
+                        If .Item(x, "TAG").ToString = True Then
+                            Dim vWORESCODE As String = drl_GenerateCodeWORESOURCE()
 
-                        Dim sqlx As String = <s>
+                            Dim sqlx As String = <s>
                                                 EXEC WORKORDER_DETAIL_ACTION
                                                  0   
                                                 ,<%= vWORESCODE %> -- WORKORDERRESOURCECODE
@@ -300,7 +310,8 @@ Public Class FRMCREATIONWORKORDERS
                                                 ,'<%= .Item(x, "DEACTIVATIONREMARKS") %>' -- DEACTIVATIONREMARKS
                                                 ,'<%= FRMWORKORDERS.RbnUser.Text %>' -- CREATEDBY
                                              </s>
-                        ExeQuery(sqlx)
+                            ExeQuery(sqlx)
+                        End If
                     End If
                 Next
             End With
