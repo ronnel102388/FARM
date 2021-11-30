@@ -380,10 +380,12 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.grid1.AllowEditing = False
         Me.grid1.AllowFiltering = True
         Me.grid1.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.None
+        Me.grid1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.grid1.BackColor = System.Drawing.Color.White
         Me.grid1.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle
         Me.grid1.ColumnInfo = "0,0,0,0,0,105,Columns:"
-        Me.grid1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.grid1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
         Me.grid1.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
         Me.grid1.Location = New System.Drawing.Point(3, 64)
@@ -424,8 +426,10 @@ Partial Class FRMWORKORDERDASHBOARD
         '
         'TabControl1
         '
+        Me.TabControl1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 92)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
@@ -445,8 +449,6 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.Controls.Add(Me.StatusStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MaximizeBox = False
-        Me.MinimizeBox = False
         Me.Name = "FRMWORKORDERDASHBOARD"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "NO WORKORDER DASHBOARD"
