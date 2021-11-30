@@ -24,25 +24,6 @@ Partial Class FRMWORKORDERS
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRMWORKORDERS))
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.RbnBuildNo = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel7 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.RbnExeCode = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel11 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.RbnDev = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel13 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.RbnStatus = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel15 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.RbnUser = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel16 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.RbnConnName = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel17 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.RbnCN = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel18 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.RbnIP = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolStripStatusLabel19 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.RbnCompany = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.XSEARCH = New System.Windows.Forms.TextBox()
         Me.BTSEARCHLINE = New System.Windows.Forms.Button()
@@ -143,7 +124,25 @@ Partial Class FRMWORKORDERS
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.StatusStrip1.SuspendLayout()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.RbnBuildNo = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel7 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.RbnExeCode = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel11 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.RbnDev = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel13 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.RbnStatus = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel15 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.RbnUser = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel16 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.RbnConnName = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel17 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.RbnCN = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel18 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.RbnIP = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.ToolStripStatusLabel19 = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.RbnCompany = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel8.SuspendLayout()
         Me.Panel19.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
@@ -161,127 +160,8 @@ Partial Class FRMWORKORDERS
         Me.Panel13.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Panel5.SuspendLayout()
+        Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'StatusStrip1
-        '
-        Me.StatusStrip1.BackColor = System.Drawing.Color.Gainsboro
-        Me.StatusStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(19, 19)
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RbnBuildNo, Me.ToolStripStatusLabel7, Me.RbnExeCode, Me.ToolStripStatusLabel11, Me.RbnDev, Me.ToolStripStatusLabel13, Me.RbnStatus, Me.ToolStripStatusLabel15, Me.RbnUser, Me.ToolStripStatusLabel16, Me.RbnConnName, Me.ToolStripStatusLabel17, Me.RbnCN, Me.ToolStripStatusLabel18, Me.RbnIP, Me.ToolStripStatusLabel19, Me.RbnCompany})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 1031)
-        Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(1566, 24)
-        Me.StatusStrip1.TabIndex = 245
-        Me.StatusStrip1.Tag = "XC"
-        Me.StatusStrip1.Text = "PROGEN 1.2.x as of DateTime"
-        '
-        'RbnBuildNo
-        '
-        Me.RbnBuildNo.Image = CType(resources.GetObject("RbnBuildNo.Image"), System.Drawing.Image)
-        Me.RbnBuildNo.Name = "RbnBuildNo"
-        Me.RbnBuildNo.Size = New System.Drawing.Size(211, 19)
-        Me.RbnBuildNo.Text = "PROGEN 5.0 as of DateTime"
-        '
-        'ToolStripStatusLabel7
-        '
-        Me.ToolStripStatusLabel7.Name = "ToolStripStatusLabel7"
-        Me.ToolStripStatusLabel7.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel7.Text = "|"
-        '
-        'RbnExeCode
-        '
-        Me.RbnExeCode.Name = "RbnExeCode"
-        Me.RbnExeCode.Size = New System.Drawing.Size(112, 19)
-        Me.RbnExeCode.Text = "SubModuleCode"
-        '
-        'ToolStripStatusLabel11
-        '
-        Me.ToolStripStatusLabel11.Name = "ToolStripStatusLabel11"
-        Me.ToolStripStatusLabel11.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel11.Text = "|"
-        '
-        'RbnDev
-        '
-        Me.RbnDev.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.RbnDev.ForeColor = System.Drawing.Color.Black
-        Me.RbnDev.Name = "RbnDev"
-        Me.RbnDev.Size = New System.Drawing.Size(73, 19)
-        Me.RbnDev.Text = "DevCode"
-        '
-        'ToolStripStatusLabel13
-        '
-        Me.ToolStripStatusLabel13.Name = "ToolStripStatusLabel13"
-        Me.ToolStripStatusLabel13.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel13.Text = "|"
-        '
-        'RbnStatus
-        '
-        Me.RbnStatus.Name = "RbnStatus"
-        Me.RbnStatus.Size = New System.Drawing.Size(840, 19)
-        Me.RbnStatus.Spring = True
-        Me.RbnStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'ToolStripStatusLabel15
-        '
-        Me.ToolStripStatusLabel15.Name = "ToolStripStatusLabel15"
-        Me.ToolStripStatusLabel15.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel15.Text = "|"
-        '
-        'RbnUser
-        '
-        Me.RbnUser.Name = "RbnUser"
-        Me.RbnUser.Size = New System.Drawing.Size(47, 19)
-        Me.RbnUser.Text = "Admin"
-        '
-        'ToolStripStatusLabel16
-        '
-        Me.ToolStripStatusLabel16.Name = "ToolStripStatusLabel16"
-        Me.ToolStripStatusLabel16.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel16.Text = "|"
-        '
-        'RbnConnName
-        '
-        Me.RbnConnName.Name = "RbnConnName"
-        Me.RbnConnName.Size = New System.Drawing.Size(35, 19)
-        Me.RbnConnName.Text = "CoN"
-        '
-        'ToolStripStatusLabel17
-        '
-        Me.ToolStripStatusLabel17.Name = "ToolStripStatusLabel17"
-        Me.ToolStripStatusLabel17.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel17.Text = "|"
-        '
-        'RbnCN
-        '
-        Me.RbnCN.Name = "RbnCN"
-        Me.RbnCN.Size = New System.Drawing.Size(27, 19)
-        Me.RbnCN.Text = "CN"
-        '
-        'ToolStripStatusLabel18
-        '
-        Me.ToolStripStatusLabel18.Name = "ToolStripStatusLabel18"
-        Me.ToolStripStatusLabel18.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel18.Text = "|"
-        '
-        'RbnIP
-        '
-        Me.RbnIP.Name = "RbnIP"
-        Me.RbnIP.Size = New System.Drawing.Size(20, 19)
-        Me.RbnIP.Text = "IP"
-        '
-        'ToolStripStatusLabel19
-        '
-        Me.ToolStripStatusLabel19.Name = "ToolStripStatusLabel19"
-        Me.ToolStripStatusLabel19.Size = New System.Drawing.Size(11, 19)
-        Me.ToolStripStatusLabel19.Text = "|"
-        '
-        'RbnCompany
-        '
-        Me.RbnCompany.Name = "RbnCompany"
-        Me.RbnCompany.Size = New System.Drawing.Size(93, 19)
-        Me.RbnCompany.Text = "RbnCompany"
         '
         'Panel8
         '
@@ -293,7 +173,6 @@ Partial Class FRMWORKORDERS
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(367, 43)
         Me.Panel8.TabIndex = 123155
-        Me.ToolTip1.SetToolTip(Me.Panel8, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
         '
         'XSEARCH
         '
@@ -303,7 +182,6 @@ Partial Class FRMWORKORDERS
         Me.XSEARCH.Name = "XSEARCH"
         Me.XSEARCH.Size = New System.Drawing.Size(317, 24)
         Me.XSEARCH.TabIndex = 123147
-        Me.ToolTip1.SetToolTip(Me.XSEARCH, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
         '
         'BTSEARCHLINE
         '
@@ -316,7 +194,6 @@ Partial Class FRMWORKORDERS
         Me.BTSEARCHLINE.Name = "BTSEARCHLINE"
         Me.BTSEARCHLINE.Size = New System.Drawing.Size(38, 36)
         Me.BTSEARCHLINE.TabIndex = 123146
-        Me.ToolTip1.SetToolTip(Me.BTSEARCHLINE, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
         Me.BTSEARCHLINE.UseVisualStyleBackColor = False
         '
         'Button1
@@ -329,7 +206,6 @@ Partial Class FRMWORKORDERS
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(38, 36)
         Me.Button1.TabIndex = 123166
-        Me.ToolTip1.SetToolTip(Me.Button1, "Print")
         Me.Button1.UseVisualStyleBackColor = False
         '
         'Button2
@@ -342,7 +218,6 @@ Partial Class FRMWORKORDERS
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(38, 36)
         Me.Button2.TabIndex = 123165
-        Me.ToolTip1.SetToolTip(Me.Button2, "Cancelled")
         Me.Button2.UseVisualStyleBackColor = False
         '
         'Button3
@@ -355,7 +230,6 @@ Partial Class FRMWORKORDERS
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(38, 36)
         Me.Button3.TabIndex = 123164
-        Me.ToolTip1.SetToolTip(Me.Button3, "Close")
         Me.Button3.UseVisualStyleBackColor = False
         '
         'btAddHeader
@@ -368,7 +242,6 @@ Partial Class FRMWORKORDERS
         Me.btAddHeader.Name = "btAddHeader"
         Me.btAddHeader.Size = New System.Drawing.Size(38, 36)
         Me.btAddHeader.TabIndex = 123158
-        Me.ToolTip1.SetToolTip(Me.btAddHeader, "Add")
         Me.btAddHeader.UseVisualStyleBackColor = False
         '
         'btEditHeader
@@ -381,7 +254,6 @@ Partial Class FRMWORKORDERS
         Me.btEditHeader.Name = "btEditHeader"
         Me.btEditHeader.Size = New System.Drawing.Size(38, 36)
         Me.btEditHeader.TabIndex = 123154
-        Me.ToolTip1.SetToolTip(Me.btEditHeader, "Edit")
         Me.btEditHeader.UseVisualStyleBackColor = False
         '
         'BTNWORKORDER
@@ -397,7 +269,6 @@ Partial Class FRMWORKORDERS
         Me.BTNWORKORDER.TabIndex = 123154
         Me.BTNWORKORDER.Text = "   Work Orders"
         Me.BTNWORKORDER.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.BTNWORKORDER, "Work Order")
         Me.BTNWORKORDER.UseVisualStyleBackColor = False
         '
         'BTNDASHBOARD
@@ -413,7 +284,6 @@ Partial Class FRMWORKORDERS
         Me.BTNDASHBOARD.TabIndex = 123153
         Me.BTNDASHBOARD.Text = "   Dashboard"
         Me.BTNDASHBOARD.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.BTNDASHBOARD, "Dashboard")
         Me.BTNDASHBOARD.UseVisualStyleBackColor = False
         '
         'BTNNOTIF
@@ -427,7 +297,6 @@ Partial Class FRMWORKORDERS
         Me.BTNNOTIF.Name = "BTNNOTIF"
         Me.BTNNOTIF.Size = New System.Drawing.Size(38, 36)
         Me.BTNNOTIF.TabIndex = 123156
-        Me.ToolTip1.SetToolTip(Me.BTNNOTIF, "Notification")
         Me.BTNNOTIF.UseVisualStyleBackColor = False
         '
         'BTEXPORT
@@ -440,7 +309,6 @@ Partial Class FRMWORKORDERS
         Me.BTEXPORT.Name = "BTEXPORT"
         Me.BTEXPORT.Size = New System.Drawing.Size(38, 36)
         Me.BTEXPORT.TabIndex = 123154
-        Me.ToolTip1.SetToolTip(Me.BTEXPORT, "Export to Excel")
         Me.BTEXPORT.UseVisualStyleBackColor = False
         '
         'btAdd
@@ -453,7 +321,6 @@ Partial Class FRMWORKORDERS
         Me.btAdd.Name = "btAdd"
         Me.btAdd.Size = New System.Drawing.Size(38, 36)
         Me.btAdd.TabIndex = 123153
-        Me.ToolTip1.SetToolTip(Me.btAdd, "Add")
         Me.btAdd.UseVisualStyleBackColor = False
         '
         'bTpRINT
@@ -466,7 +333,6 @@ Partial Class FRMWORKORDERS
         Me.bTpRINT.Name = "bTpRINT"
         Me.bTpRINT.Size = New System.Drawing.Size(38, 36)
         Me.bTpRINT.TabIndex = 123152
-        Me.ToolTip1.SetToolTip(Me.bTpRINT, "Print")
         Me.bTpRINT.UseVisualStyleBackColor = False
         '
         'btCancelUpdate
@@ -479,7 +345,6 @@ Partial Class FRMWORKORDERS
         Me.btCancelUpdate.Name = "btCancelUpdate"
         Me.btCancelUpdate.Size = New System.Drawing.Size(38, 36)
         Me.btCancelUpdate.TabIndex = 123151
-        Me.ToolTip1.SetToolTip(Me.btCancelUpdate, "Cancel")
         Me.btCancelUpdate.UseVisualStyleBackColor = False
         '
         'BtSave
@@ -492,7 +357,6 @@ Partial Class FRMWORKORDERS
         Me.BtSave.Name = "BtSave"
         Me.BtSave.Size = New System.Drawing.Size(38, 36)
         Me.BtSave.TabIndex = 123150
-        Me.ToolTip1.SetToolTip(Me.BtSave, "Save")
         Me.BtSave.UseVisualStyleBackColor = False
         '
         'BtRefresh
@@ -505,7 +369,6 @@ Partial Class FRMWORKORDERS
         Me.BtRefresh.Name = "BtRefresh"
         Me.BtRefresh.Size = New System.Drawing.Size(38, 36)
         Me.BtRefresh.TabIndex = 123149
-        Me.ToolTip1.SetToolTip(Me.BtRefresh, "Refresh")
         Me.BtRefresh.UseVisualStyleBackColor = False
         '
         'BtDelete
@@ -518,7 +381,6 @@ Partial Class FRMWORKORDERS
         Me.BtDelete.Name = "BtDelete"
         Me.BtDelete.Size = New System.Drawing.Size(38, 36)
         Me.BtDelete.TabIndex = 123147
-        Me.ToolTip1.SetToolTip(Me.BtDelete, "Delete")
         Me.BtDelete.UseVisualStyleBackColor = False
         '
         'BtEdit
@@ -531,7 +393,6 @@ Partial Class FRMWORKORDERS
         Me.BtEdit.Name = "BtEdit"
         Me.BtEdit.Size = New System.Drawing.Size(38, 36)
         Me.BtEdit.TabIndex = 123146
-        Me.ToolTip1.SetToolTip(Me.BtEdit, "Edit")
         Me.BtEdit.UseVisualStyleBackColor = False
         '
         'Panel19
@@ -545,7 +406,6 @@ Partial Class FRMWORKORDERS
         Me.Panel19.Name = "Panel19"
         Me.Panel19.Size = New System.Drawing.Size(367, 43)
         Me.Panel19.TabIndex = 123169
-        Me.ToolTip1.SetToolTip(Me.Panel19, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
         '
         'xsearchHeader
         '
@@ -555,7 +415,6 @@ Partial Class FRMWORKORDERS
         Me.xsearchHeader.Name = "xsearchHeader"
         Me.xsearchHeader.Size = New System.Drawing.Size(317, 24)
         Me.xsearchHeader.TabIndex = 123147
-        Me.ToolTip1.SetToolTip(Me.xsearchHeader, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
         '
         'Button4
         '
@@ -568,7 +427,6 @@ Partial Class FRMWORKORDERS
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(38, 36)
         Me.Button4.TabIndex = 123146
-        Me.ToolTip1.SetToolTip(Me.Button4, "Search " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Sub Field," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Cluster," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Province," & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Municipality and" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Barangay Here...")
         Me.Button4.UseVisualStyleBackColor = False
         '
         'BTNSETTING
@@ -584,7 +442,6 @@ Partial Class FRMWORKORDERS
         Me.BTNSETTING.TabIndex = 123155
         Me.BTNSETTING.Text = "   Archive Setting"
         Me.BTNSETTING.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip1.SetToolTip(Me.BTNSETTING, "Work Order")
         Me.BTNSETTING.UseVisualStyleBackColor = False
         '
         'MenuStrip1
@@ -1386,6 +1243,126 @@ Partial Class FRMWORKORDERS
         '
         Me.Timer1.Interval = 1000
         '
+        'RbnBuildNo
+        '
+        Me.RbnBuildNo.Image = CType(resources.GetObject("RbnBuildNo.Image"), System.Drawing.Image)
+        Me.RbnBuildNo.Name = "RbnBuildNo"
+        Me.RbnBuildNo.Size = New System.Drawing.Size(211, 19)
+        Me.RbnBuildNo.Text = "PROGEN 5.0 as of DateTime"
+        '
+        'ToolStripStatusLabel7
+        '
+        Me.ToolStripStatusLabel7.Name = "ToolStripStatusLabel7"
+        Me.ToolStripStatusLabel7.Size = New System.Drawing.Size(11, 19)
+        Me.ToolStripStatusLabel7.Text = "|"
+        '
+        'RbnExeCode
+        '
+        Me.RbnExeCode.Name = "RbnExeCode"
+        Me.RbnExeCode.Size = New System.Drawing.Size(112, 19)
+        Me.RbnExeCode.Text = "SubModuleCode"
+        '
+        'ToolStripStatusLabel11
+        '
+        Me.ToolStripStatusLabel11.Name = "ToolStripStatusLabel11"
+        Me.ToolStripStatusLabel11.Size = New System.Drawing.Size(11, 19)
+        Me.ToolStripStatusLabel11.Text = "|"
+        '
+        'RbnDev
+        '
+        Me.RbnDev.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.RbnDev.ForeColor = System.Drawing.Color.Black
+        Me.RbnDev.Name = "RbnDev"
+        Me.RbnDev.Size = New System.Drawing.Size(73, 19)
+        Me.RbnDev.Text = "DevCode"
+        '
+        'ToolStripStatusLabel13
+        '
+        Me.ToolStripStatusLabel13.Name = "ToolStripStatusLabel13"
+        Me.ToolStripStatusLabel13.Size = New System.Drawing.Size(11, 19)
+        Me.ToolStripStatusLabel13.Text = "|"
+        '
+        'RbnStatus
+        '
+        Me.RbnStatus.Name = "RbnStatus"
+        Me.RbnStatus.Size = New System.Drawing.Size(803, 19)
+        Me.RbnStatus.Spring = True
+        Me.RbnStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'ToolStripStatusLabel15
+        '
+        Me.ToolStripStatusLabel15.Name = "ToolStripStatusLabel15"
+        Me.ToolStripStatusLabel15.Size = New System.Drawing.Size(11, 19)
+        Me.ToolStripStatusLabel15.Text = "|"
+        '
+        'RbnUser
+        '
+        Me.RbnUser.Name = "RbnUser"
+        Me.RbnUser.Size = New System.Drawing.Size(47, 19)
+        Me.RbnUser.Text = "Admin"
+        '
+        'ToolStripStatusLabel16
+        '
+        Me.ToolStripStatusLabel16.Name = "ToolStripStatusLabel16"
+        Me.ToolStripStatusLabel16.Size = New System.Drawing.Size(11, 19)
+        Me.ToolStripStatusLabel16.Text = "|"
+        '
+        'RbnConnName
+        '
+        Me.RbnConnName.Name = "RbnConnName"
+        Me.RbnConnName.Size = New System.Drawing.Size(35, 19)
+        Me.RbnConnName.Text = "CoN"
+        '
+        'ToolStripStatusLabel17
+        '
+        Me.ToolStripStatusLabel17.Name = "ToolStripStatusLabel17"
+        Me.ToolStripStatusLabel17.Size = New System.Drawing.Size(11, 19)
+        Me.ToolStripStatusLabel17.Text = "|"
+        '
+        'RbnCN
+        '
+        Me.RbnCN.Name = "RbnCN"
+        Me.RbnCN.Size = New System.Drawing.Size(27, 19)
+        Me.RbnCN.Text = "CN"
+        '
+        'ToolStripStatusLabel18
+        '
+        Me.ToolStripStatusLabel18.Name = "ToolStripStatusLabel18"
+        Me.ToolStripStatusLabel18.Size = New System.Drawing.Size(11, 19)
+        Me.ToolStripStatusLabel18.Text = "|"
+        '
+        'RbnIP
+        '
+        Me.RbnIP.Name = "RbnIP"
+        Me.RbnIP.Size = New System.Drawing.Size(20, 19)
+        Me.RbnIP.Text = "IP"
+        '
+        'ToolStripStatusLabel19
+        '
+        Me.ToolStripStatusLabel19.Name = "ToolStripStatusLabel19"
+        Me.ToolStripStatusLabel19.Size = New System.Drawing.Size(11, 19)
+        Me.ToolStripStatusLabel19.Text = "|"
+        '
+        'RbnCompany
+        '
+        Me.RbnCompany.Name = "RbnCompany"
+        Me.RbnCompany.Size = New System.Drawing.Size(93, 19)
+        Me.RbnCompany.Text = "RbnCompany"
+        '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.BackColor = System.Drawing.Color.Gainsboro
+        Me.StatusStrip1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.StatusStrip1.ImageScalingSize = New System.Drawing.Size(19, 19)
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RbnBuildNo, Me.ToolStripStatusLabel7, Me.RbnExeCode, Me.ToolStripStatusLabel11, Me.RbnDev, Me.ToolStripStatusLabel13, Me.RbnStatus, Me.ToolStripStatusLabel15, Me.RbnUser, Me.ToolStripStatusLabel16, Me.RbnConnName, Me.ToolStripStatusLabel17, Me.RbnCN, Me.ToolStripStatusLabel18, Me.RbnIP, Me.ToolStripStatusLabel19, Me.RbnCompany})
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 1031)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
+        Me.StatusStrip1.Size = New System.Drawing.Size(1566, 24)
+        Me.StatusStrip1.TabIndex = 245
+        Me.StatusStrip1.Tag = "XC"
+        Me.StatusStrip1.Text = "PROGEN 1.2.x as of DateTime"
+        '
         'FRMWORKORDERS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -1402,8 +1379,6 @@ Partial Class FRMWORKORDERS
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Work Order"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
-        Me.StatusStrip1.ResumeLayout(False)
-        Me.StatusStrip1.PerformLayout()
         Me.Panel8.ResumeLayout(False)
         Me.Panel8.PerformLayout()
         Me.Panel19.ResumeLayout(False)
@@ -1428,30 +1403,12 @@ Partial Class FRMWORKORDERS
         Me.Panel14.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
+        Me.StatusStrip1.ResumeLayout(False)
+        Me.StatusStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents StatusStrip1 As StatusStrip
-    Friend WithEvents RbnBuildNo As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel7 As ToolStripStatusLabel
-    Friend WithEvents RbnExeCode As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel11 As ToolStripStatusLabel
-    Friend WithEvents RbnDev As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel13 As ToolStripStatusLabel
-    Friend WithEvents RbnStatus As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel15 As ToolStripStatusLabel
-    Friend WithEvents RbnUser As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel16 As ToolStripStatusLabel
-    Friend WithEvents RbnConnName As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel17 As ToolStripStatusLabel
-    Friend WithEvents RbnCN As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel18 As ToolStripStatusLabel
-    Friend WithEvents RbnIP As ToolStripStatusLabel
-    Friend WithEvents ToolStripStatusLabel19 As ToolStripStatusLabel
-    Friend WithEvents RbnCompany As ToolStripStatusLabel
-    Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
@@ -1552,4 +1509,23 @@ Partial Class FRMWORKORDERS
     Friend WithEvents Panel16 As Panel
     Friend WithEvents BTNNOTIF As Button
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents RbnBuildNo As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel7 As ToolStripStatusLabel
+    Friend WithEvents RbnExeCode As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel11 As ToolStripStatusLabel
+    Friend WithEvents RbnDev As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel13 As ToolStripStatusLabel
+    Friend WithEvents RbnStatus As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel15 As ToolStripStatusLabel
+    Friend WithEvents RbnUser As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel16 As ToolStripStatusLabel
+    Friend WithEvents RbnConnName As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel17 As ToolStripStatusLabel
+    Friend WithEvents RbnCN As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel18 As ToolStripStatusLabel
+    Friend WithEvents RbnIP As ToolStripStatusLabel
+    Friend WithEvents ToolStripStatusLabel19 As ToolStripStatusLabel
+    Friend WithEvents RbnCompany As ToolStripStatusLabel
+    Friend WithEvents StatusStrip1 As StatusStrip
 End Class
