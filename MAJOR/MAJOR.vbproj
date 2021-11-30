@@ -4,14 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{129B8617-E68E-484E-BB31-824A86F30831}</ProjectGuid>
+    <ProjectGuid>{E7E85367-839C-4265-80CF-95F3D241A758}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>WORKORDER.My.MyApplication</StartupObject>
-    <RootNamespace>WORKORDER</RootNamespace>
-    <AssemblyName>WORKORDER</AssemblyName>
+    <StartupObject>MAJOR.My.MyApplication</StartupObject>
+    <RootNamespace>MAJOR</RootNamespace>
+    <AssemblyName>MAJOR</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -21,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>WORKORDER.xml</DocumentationFile>
+    <DocumentationFile>MAJOR.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -31,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>WORKORDER.xml</DocumentationFile>
+    <DocumentationFile>MAJOR.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -46,22 +47,11 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="C1.Win.C1FlexGrid.2, Version=2.0.20201.416, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
-    <Reference Include="Configuration, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\Configuration.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
-    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Drawing.Design" />
-    <Reference Include="System.Management" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -83,48 +73,11 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DBConnect.vb" />
-    <Compile Include="FRMARCHIVE.Designer.vb">
-      <DependentUpon>FRMARCHIVE.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FRMARCHIVE.vb">
+    <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRMCHECKACTIVITYDATE.Designer.vb">
-      <DependentUpon>FRMCHECKACTIVITYDATE.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FRMCHECKACTIVITYDATE.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRMCREATIONWORKORDERS.Designer.vb">
-      <DependentUpon>FRMCREATIONWORKORDERS.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FRMCREATIONWORKORDERS.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRM_CREATION_NO_WORKORDERS.Designer.vb">
-      <DependentUpon>FRM_CREATION_NO_WORKORDERS.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FRM_CREATION_NO_WORKORDERS.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRMNOWORKORDER.Designer.vb">
-      <DependentUpon>FRMNOWORKORDER.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FRMNOWORKORDER.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRMWORKORDERDASHBOARD.Designer.vb">
-      <DependentUpon>FRMWORKORDERDASHBOARD.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FRMWORKORDERDASHBOARD.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRMWORKORDERS.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRMWORKORDERS.Designer.vb">
-      <DependentUpon>FRMWORKORDERS.vb</DependentUpon>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -142,33 +95,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="DRL_FUNCTIONS.vb" />
-    <Compile Include="PUTCH_FUNCTIONS.vb" />
-    <Compile Include="VBFUNCTIONS.vb" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="FRMARCHIVE.resx">
-      <DependentUpon>FRMARCHIVE.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FRMCHECKACTIVITYDATE.resx">
-      <DependentUpon>FRMCHECKACTIVITYDATE.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FRMCREATIONWORKORDERS.resx">
-      <DependentUpon>FRMCREATIONWORKORDERS.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FRM_CREATION_NO_WORKORDERS.resx">
-      <DependentUpon>FRM_CREATION_NO_WORKORDERS.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FRMNOWORKORDER.resx">
-      <DependentUpon>FRMNOWORKORDER.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FRMWORKORDERDASHBOARD.resx">
-      <DependentUpon>FRMWORKORDERDASHBOARD.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FRMWORKORDERS.resx">
-      <DependentUpon>FRMWORKORDERS.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -177,7 +105,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -188,15 +115,6 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\bell.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\open_padlock.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\padlock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

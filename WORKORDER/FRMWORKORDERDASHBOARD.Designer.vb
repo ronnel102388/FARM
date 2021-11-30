@@ -449,7 +449,7 @@ Partial Class FRMWORKORDERDASHBOARD
         Me.MinimizeBox = False
         Me.Name = "FRMWORKORDERDASHBOARD"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "NO WORK ORDER DASHBOARD"
+        Me.Text = "NO WORKORDER DASHBOARD"
         Me.PanelHeader.ResumeLayout(False)
         Me.Panel6.ResumeLayout(False)
         Me.Panel6.PerformLayout()
