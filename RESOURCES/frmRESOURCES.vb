@@ -109,6 +109,7 @@ Public Class frmRESOURCES
 
         MsgBox("Success.", MsgBoxStyle.Information, "Information")
         BtRefresh.PerformClick()
+
     End Sub
 
 
