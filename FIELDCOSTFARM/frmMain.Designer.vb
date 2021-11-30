@@ -150,6 +150,12 @@ Partial Class frmMain
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.C1Report1 = New C1.C1Report.C1Report()
+        Me.Panel27 = New System.Windows.Forms.Panel()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.XNPLABORHAUL = New System.Windows.Forms.Label()
+        Me.Panel28 = New System.Windows.Forms.Panel()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.XRNLABORHAUL = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -1089,6 +1095,9 @@ Partial Class frmMain
         '
         Me.Panel22.BackColor = System.Drawing.Color.FromArgb(CType(CType(36, Byte), Integer), CType(CType(191, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.Panel22.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel22.Controls.Add(Me.Panel28)
+        Me.Panel22.Controls.Add(Me.Label16)
+        Me.Panel22.Controls.Add(Me.XRNLABORHAUL)
         Me.Panel22.Controls.Add(Me.Panel23)
         Me.Panel22.Controls.Add(Me.Panel24)
         Me.Panel22.Controls.Add(Me.Label12)
@@ -1102,7 +1111,7 @@ Partial Class frmMain
         Me.Panel22.Controls.Add(Me.XRNTOTALBUDGET)
         Me.Panel22.Location = New System.Drawing.Point(645, 326)
         Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(622, 300)
+        Me.Panel22.Size = New System.Drawing.Size(818, 300)
         Me.Panel22.TabIndex = 257
         '
         'Panel23
@@ -1153,7 +1162,7 @@ Partial Class frmMain
         Me.Panel25.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel25.Location = New System.Drawing.Point(0, 0)
         Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(618, 52)
+        Me.Panel25.Size = New System.Drawing.Size(814, 52)
         Me.Panel25.TabIndex = 249
         '
         'Label14
@@ -1222,7 +1231,7 @@ Partial Class frmMain
         Me.Label26.AutoSize = True
         Me.Label26.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.ForeColor = System.Drawing.Color.White
-        Me.Label26.Location = New System.Drawing.Point(210, 70)
+        Me.Label26.Location = New System.Drawing.Point(305, 70)
         Me.Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(196, 37)
@@ -1233,7 +1242,7 @@ Partial Class frmMain
         '
         Me.XRNTOTALBUDGET.Font = New System.Drawing.Font("Century Gothic", 22.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XRNTOTALBUDGET.ForeColor = System.Drawing.Color.White
-        Me.XRNTOTALBUDGET.Location = New System.Drawing.Point(110, 114)
+        Me.XRNTOTALBUDGET.Location = New System.Drawing.Point(205, 114)
         Me.XRNTOTALBUDGET.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.XRNTOTALBUDGET.Name = "XRNTOTALBUDGET"
         Me.XRNTOTALBUDGET.Size = New System.Drawing.Size(390, 44)
@@ -1245,7 +1254,10 @@ Partial Class frmMain
         '
         Me.Panel9.BackColor = System.Drawing.Color.FromArgb(CType(CType(237, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.Panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel9.Controls.Add(Me.Panel27)
+        Me.Panel9.Controls.Add(Me.Label3)
         Me.Panel9.Controls.Add(Me.Panel10)
+        Me.Panel9.Controls.Add(Me.XNPLABORHAUL)
         Me.Panel9.Controls.Add(Me.Panel11)
         Me.Panel9.Controls.Add(Me.Label2)
         Me.Panel9.Controls.Add(Me.XNPREMAINING)
@@ -1258,7 +1270,7 @@ Partial Class frmMain
         Me.Panel9.Controls.Add(Me.XNPTOTALBUDGET)
         Me.Panel9.Location = New System.Drawing.Point(646, 13)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(622, 300)
+        Me.Panel9.Size = New System.Drawing.Size(817, 300)
         Me.Panel9.TabIndex = 256
         '
         'Panel10
@@ -1309,7 +1321,7 @@ Partial Class frmMain
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel17.Location = New System.Drawing.Point(0, 0)
         Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(618, 52)
+        Me.Panel17.Size = New System.Drawing.Size(813, 52)
         Me.Panel17.TabIndex = 249
         '
         'Label19
@@ -1378,7 +1390,7 @@ Partial Class frmMain
         Me.Label24.AutoSize = True
         Me.Label24.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.ForeColor = System.Drawing.Color.White
-        Me.Label24.Location = New System.Drawing.Point(210, 72)
+        Me.Label24.Location = New System.Drawing.Point(304, 72)
         Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(196, 37)
@@ -1389,7 +1401,7 @@ Partial Class frmMain
         '
         Me.XNPTOTALBUDGET.Font = New System.Drawing.Font("Century Gothic", 22.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XNPTOTALBUDGET.ForeColor = System.Drawing.Color.White
-        Me.XNPTOTALBUDGET.Location = New System.Drawing.Point(110, 114)
+        Me.XNPTOTALBUDGET.Location = New System.Drawing.Point(204, 114)
         Me.XNPTOTALBUDGET.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.XNPTOTALBUDGET.Name = "XNPTOTALBUDGET"
         Me.XNPTOTALBUDGET.Size = New System.Drawing.Size(390, 44)
@@ -1560,6 +1572,72 @@ Partial Class frmMain
         '
         Me.C1Report1.ReportDefinition = resources.GetString("C1Report1.ReportDefinition")
         Me.C1Report1.ReportName = "C1Report1"
+        '
+        'Panel27
+        '
+        Me.Panel27.BackColor = System.Drawing.Color.Silver
+        Me.Panel27.Location = New System.Drawing.Point(621, 179)
+        Me.Panel27.Name = "Panel27"
+        Me.Panel27.Size = New System.Drawing.Size(1, 100)
+        Me.Panel27.TabIndex = 123172
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(663, 229)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(109, 23)
+        Me.Label3.TabIndex = 123171
+        Me.Label3.Text = "Labor Haul"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'XNPLABORHAUL
+        '
+        Me.XNPLABORHAUL.Font = New System.Drawing.Font("Century Gothic", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XNPLABORHAUL.ForeColor = System.Drawing.Color.White
+        Me.XNPLABORHAUL.Location = New System.Drawing.Point(625, 188)
+        Me.XNPLABORHAUL.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.XNPLABORHAUL.Name = "XNPLABORHAUL"
+        Me.XNPLABORHAUL.Size = New System.Drawing.Size(177, 34)
+        Me.XNPLABORHAUL.TabIndex = 123170
+        Me.XNPLABORHAUL.Text = "0.00"
+        Me.XNPLABORHAUL.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Panel28
+        '
+        Me.Panel28.BackColor = System.Drawing.Color.Silver
+        Me.Panel28.Location = New System.Drawing.Point(622, 186)
+        Me.Panel28.Name = "Panel28"
+        Me.Panel28.Size = New System.Drawing.Size(1, 100)
+        Me.Panel28.TabIndex = 123175
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Font = New System.Drawing.Font("Century Gothic", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.White
+        Me.Label16.Location = New System.Drawing.Point(663, 227)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(109, 23)
+        Me.Label16.TabIndex = 123174
+        Me.Label16.Text = "Labor Haul"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'XRNLABORHAUL
+        '
+        Me.XRNLABORHAUL.Font = New System.Drawing.Font("Century Gothic", 13.8!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XRNLABORHAUL.ForeColor = System.Drawing.Color.White
+        Me.XRNLABORHAUL.Location = New System.Drawing.Point(626, 186)
+        Me.XRNLABORHAUL.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.XRNLABORHAUL.Name = "XRNLABORHAUL"
+        Me.XRNLABORHAUL.Size = New System.Drawing.Size(177, 34)
+        Me.XRNLABORHAUL.TabIndex = 123173
+        Me.XRNLABORHAUL.Text = "0.00"
+        Me.XRNLABORHAUL.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'frmMain
         '
@@ -1750,4 +1828,10 @@ Partial Class frmMain
     Friend WithEvents Label7 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents XNPTOTALFIELDS As Label
+    Friend WithEvents Panel28 As Panel
+    Friend WithEvents Label16 As Label
+    Friend WithEvents XRNLABORHAUL As Label
+    Friend WithEvents Panel27 As Panel
+    Friend WithEvents Label3 As Label
+    Friend WithEvents XNPLABORHAUL As Label
 End Class

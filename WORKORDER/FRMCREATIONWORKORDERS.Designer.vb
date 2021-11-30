@@ -48,6 +48,7 @@ Partial Class FRMCREATIONWORKORDERS
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.dgWOres = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label37 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -114,7 +115,6 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Label37 = New System.Windows.Forms.Label()
         Me.PANELHEADER.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.TabControl1.SuspendLayout()
@@ -414,6 +414,15 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(969, 38)
         Me.Panel7.TabIndex = 4
+        '
+        'Label37
+        '
+        Me.Label37.AutoSize = True
+        Me.Label37.Location = New System.Drawing.Point(6, 12)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(198, 17)
+        Me.Label37.TabIndex = 25
+        Me.Label37.Text = "Method of Activity | Resources"
         '
         'Panel1
         '
@@ -1071,15 +1080,6 @@ Partial Class FRMCREATIONWORKORDERS
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(1448, 31)
         Me.Panel8.TabIndex = 304
-        '
-        'Label37
-        '
-        Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(6, 12)
-        Me.Label37.Name = "Label37"
-        Me.Label37.Size = New System.Drawing.Size(198, 17)
-        Me.Label37.TabIndex = 25
-        Me.Label37.Text = "Method of Activity | Resources"
         '
         'FRMCREATIONWORKORDERS
         '

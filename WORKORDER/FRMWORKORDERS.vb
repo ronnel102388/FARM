@@ -322,5 +322,34 @@ Public Class FRMWORKORDERS
         FRMARCHIVE.ShowDialog()
     End Sub
 
+    Private Sub BtEditHeader_Click(sender As Object, e As EventArgs) Handles btEditHeader.Click
+        If dgMAINWO.Rows.Count = 1 Then
+            Exit Sub
+        End If
 
+        Dim x As Integer = dgMAINWO.RowSel
+
+        If x = 0 Then
+            Exit Sub
+        End If
+
+        With dgMAINWO
+            If .Item(x, "MAINWOID") <> 0 And .Item(x, "ISCLOSED") = 0 Then
+                If MsgBox("Do you want to edit Work Order Activities?", vbQuestion + vbYesNo + vbDefaultButton2) = vbNo Then
+                    Exit Sub
+                End If
+            Else
+                MsgBox("Cannot create or add Work Order Activities in this Subfield No. " & .Item(x, "FIELDNO") & " because the Main Work Order is already closed." & vbNewLine & "Please select other transaction.", vbExclamation, "VALIDATION")
+                Exit Sub
+            End If
+        End With
+
+        With FRMCREATIONWORKORDERS
+            .vMAINWOID = dgMAINWO.Item(x, "MAINWOID")
+            .vSUBFIELDNO = dgMAINWO.Item(x, "FIELDNO").ToString
+            .vMAJOR = dgWOHeader.Item(x, "MAJORACTIVITY").ToString
+            .vMINOR = dgWOHeader.Item(x, "MINORACTIVITY").ToString
+            .ShowDialog()
+        End With
+    End Sub
 End Class

@@ -4,6 +4,7 @@ Public Class frmDetailsPOT
     Public FM, CY, CC, SF, TP As String
     Public AREA As Double
     Public isCB, TMPID As Integer
+    Public vACTUAL, vLABORHAUL As Double
     Dim dtINFO As DataTable
     Public checkstate = IniCon.ReadString("CheckState", "UnderDevelopment")
 
@@ -96,6 +97,10 @@ Public Class frmDetailsPOT
     Private Sub frmDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         POPULATECROPCLASS(SF)
         LBLFARMMANAGER.Text = FM.ToUpper
+
+        xLBLACTUALCOST.Text = Format(vACTUAL, "n0")
+        xLBLLABORHAUL.Text = Format(vLABORHAUL, "0")
+        XGRANDTOTAL.Text = Format(Val(vACTUAL) + Val(vLABORHAUL), "n0")
 
         'POPULATEDETAILS()
     End Sub

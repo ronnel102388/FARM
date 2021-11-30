@@ -96,6 +96,8 @@ Partial Class FRMWORKORDERS
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel18 = New System.Windows.Forms.Panel()
         Me.Panel15 = New System.Windows.Forms.Panel()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.xPLANTINGDATE = New System.Windows.Forms.TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
@@ -139,8 +141,6 @@ Partial Class FRMWORKORDERS
         Me.Label34 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.StatusStrip1.SuspendLayout()
         Me.Panel8.SuspendLayout()
@@ -158,8 +158,8 @@ Partial Class FRMWORKORDERS
         CType(Me.dgWOHeader, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel11.SuspendLayout()
         Me.Panel13.SuspendLayout()
-        Me.Panel5.SuspendLayout()
         Me.Panel14.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
@@ -925,6 +925,24 @@ Partial Class FRMWORKORDERS
         Me.Panel15.Size = New System.Drawing.Size(1099, 1)
         Me.Panel15.TabIndex = 123159
         '
+        'Panel14
+        '
+        Me.Panel14.BackColor = System.Drawing.Color.Transparent
+        Me.Panel14.Controls.Add(Me.Panel4)
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel14.Location = New System.Drawing.Point(448, 0)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(11, 828)
+        Me.Panel14.TabIndex = 252
+        '
+        'Panel4
+        '
+        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel4.Location = New System.Drawing.Point(4, 0)
+        Me.Panel4.Name = "Panel4"
+        Me.Panel4.Size = New System.Drawing.Size(3, 828)
+        Me.Panel4.TabIndex = 253
+        '
         'Panel5
         '
         Me.Panel5.AutoScroll = True
@@ -1354,24 +1372,6 @@ Partial Class FRMWORKORDERS
         Me.Label10.TabIndex = 38
         Me.Label10.Text = "Field Details"
         '
-        'Panel14
-        '
-        Me.Panel14.BackColor = System.Drawing.Color.Transparent
-        Me.Panel14.Controls.Add(Me.Panel4)
-        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel14.Location = New System.Drawing.Point(448, 0)
-        Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(11, 828)
-        Me.Panel14.TabIndex = 252
-        '
-        'Panel4
-        '
-        Me.Panel4.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Panel4.Location = New System.Drawing.Point(4, 0)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(3, 828)
-        Me.Panel4.TabIndex = 253
-        '
         'Panel16
         '
         Me.Panel16.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
@@ -1420,9 +1420,9 @@ Partial Class FRMWORKORDERS
         Me.Panel11.ResumeLayout(False)
         Me.Panel11.PerformLayout()
         Me.Panel13.ResumeLayout(False)
+        Me.Panel14.ResumeLayout(False)
         Me.Panel5.ResumeLayout(False)
         Me.Panel5.PerformLayout()
-        Me.Panel14.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 

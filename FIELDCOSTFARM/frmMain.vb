@@ -128,6 +128,8 @@ and Employee = '<%= FM %>'
         XNPBUDGET.Text = ""
         XNPACTUAL.Text = ""
         XNPREMAINING.Text = ""
+        XNPLABORHAUL.Text = ""
+
         XRNAREA.Text = ""
         XRNTOTALFIELDS.Text = ""
         XRNFIELDWIN.Text = ""
@@ -136,6 +138,7 @@ and Employee = '<%= FM %>'
         XRNBUDGET.Text = ""
         XRNACTUAL.Text = ""
         XRNREMAINING.Text = ""
+        XRNLABORHAUL.Text = ""
 
 
 
@@ -161,6 +164,7 @@ and Employee = '<%= FM %>'
             XNPBUDGET.Text = Format(dr.Item("NPASOFBUDGET"), "n0")
             XNPACTUAL.Text = Format(dr.Item("NPTOTALCOST"), "n0")
             XNPREMAINING.Text = Format(dr.Item("NPVARIANCE"), "n0")
+            XNPLABORHAUL.Text = Format(dr.Item("NPLABORHAUL"), "n0")
             'RATOON
             XRNTOTALFIELDS.Text = Val(dr.Item("RNTOTALFIELDS").ToString) & " FIELD(S)"
             XRNAREA.Text = Format(dr.Item("RNTOTALAREA"), "n2") & " Ha.(s)"
@@ -171,6 +175,7 @@ and Employee = '<%= FM %>'
             XRNBUDGET.Text = Format(dr.Item("RNASOFBUDGET"), "n0")
             XRNACTUAL.Text = Format(dr.Item("RNTOTALCOST"), "n0")
             XRNREMAINING.Text = Format(dr.Item("RNVARIANCE"), "n0")
+            XRNLABORHAUL.Text = Format(dr.Item("RNLABORHAUL"), "n0")
         End While
 
         dr.Close()
@@ -234,6 +239,9 @@ and Employee = '<%= FM %>'
             .Cols("actualcost").Format = "n0"
             .Cols("actualcost").Width = 150
 
+            .Cols("LABORHAUL").Format = "n0"
+            .Cols("LABORHAUL").Width = 150
+
             .Cols("VARIANCE").Format = "n0"
 
             .Cols("VARIANCE").Width = 150
@@ -253,6 +261,7 @@ and Employee = '<%= FM %>'
             .Tree.Column = 0
             .Subtotal(AggregateEnum.None, -1, -1, -1, "TOTAL")
             .Subtotal(AggregateEnum.Sum, -1, -1, -1, .Cols("ACTUALCOST").Index, "{0}")
+            .Subtotal(AggregateEnum.Sum, -1, -1, -1, .Cols("LABORHAUL").Index, "{0}")
             .Subtotal(AggregateEnum.Sum, -1, -1, -1, .Cols("BUDGETCOST").Index, "{0}")
             .Subtotal(AggregateEnum.Sum, -1, -1, -1, .Cols("ASOFBUDGET").Index, "{0}")
             .Subtotal(AggregateEnum.Sum, -1, -1, -1, .Cols("VARIANCE").Index, "{0}")
@@ -309,6 +318,8 @@ and Employee = '<%= FM %>'
             .AREA = DGCOSTPERFIELD.Item(i, "PRODUCTIVEAREA").ToString
             .TP = TYPE
             .isCB = Convert.ToInt32(XCUTBACK.Checked)
+            .vACTUAL = DGCOSTPERFIELD.Item(i, "ACTUALCOST").ToString
+            .vLABORHAUL = DGCOSTPERFIELD.Item(i, "LABORHAUL").ToString
             .ShowDialog()
 
         End With
