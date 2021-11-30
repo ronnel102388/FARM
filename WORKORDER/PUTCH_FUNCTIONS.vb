@@ -16,4 +16,21 @@
 
         Return Find
     End Function
+    Function FindActivity(ByVal ToFind As String, ByVal ColtoFind As String, ByVal ValToFind As String) As String
+        Dim sql As String = <s>
+                                 
+                                SELECT <%= ToFind %>
+                                      FROM [vwFindWorkOrder] WHERE <%= ColtoFind %>='<%= ValToFind %>'
+                            </s>
+        'MsgBox(sql)
+        ExeReader(sql)
+        Dim Find As String = ""
+        While dr.Read
+            Find = dr.Item(ToFind)
+        End While
+        dr.Close()
+        Conn.Close()
+
+        Return Find
+    End Function
 End Module

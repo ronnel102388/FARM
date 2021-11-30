@@ -23,13 +23,25 @@ Partial Class fmrDASHBOARD
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Panel5 = New System.Windows.Forms.Panel()
-        Me.XTOTALFIELDS = New System.Windows.Forms.Label()
+        Me.Panel14 = New System.Windows.Forms.Panel()
+        Me.Panel13 = New System.Windows.Forms.Panel()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label26 = New System.Windows.Forms.Label()
+        Me.Label39 = New System.Windows.Forms.Label()
+        Me.Label40 = New System.Windows.Forms.Label()
+        Me.Label41 = New System.Windows.Forms.Label()
+        Me.Label42 = New System.Windows.Forms.Label()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.XTOTALFIELDS = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -38,9 +50,9 @@ Partial Class fmrDASHBOARD
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.Panel15 = New System.Windows.Forms.Panel()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -52,28 +64,16 @@ Partial Class fmrDASHBOARD
         Me.Label24 = New System.Windows.Forms.Label()
         Me.Label25 = New System.Windows.Forms.Label()
         Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label44 = New System.Windows.Forms.Label()
         Me.Panel10 = New System.Windows.Forms.Panel()
         Me.Label45 = New System.Windows.Forms.Label()
         Me.Label49 = New System.Windows.Forms.Label()
         Me.Label50 = New System.Windows.Forms.Label()
         Me.Label51 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label39 = New System.Windows.Forms.Label()
-        Me.Label40 = New System.Windows.Forms.Label()
-        Me.Label41 = New System.Windows.Forms.Label()
-        Me.Label42 = New System.Windows.Forms.Label()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label26 = New System.Windows.Forms.Label()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.Panel8 = New System.Windows.Forms.Panel()
-        Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.Panel13 = New System.Windows.Forms.Panel()
-        Me.Panel14 = New System.Windows.Forms.Panel()
-        Me.Panel15 = New System.Windows.Forms.Panel()
-        Me.Panel16 = New System.Windows.Forms.Panel()
         Me.Panel5.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -104,17 +104,104 @@ Partial Class fmrDASHBOARD
         Me.Panel5.Size = New System.Drawing.Size(727, 306)
         Me.Panel5.TabIndex = 248
         '
-        'XTOTALFIELDS
+        'Panel14
         '
-        Me.XTOTALFIELDS.AutoSize = True
-        Me.XTOTALFIELDS.Font = New System.Drawing.Font("Century Gothic", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.XTOTALFIELDS.ForeColor = System.Drawing.Color.White
-        Me.XTOTALFIELDS.Location = New System.Drawing.Point(259, 111)
-        Me.XTOTALFIELDS.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.XTOTALFIELDS.Name = "XTOTALFIELDS"
-        Me.XTOTALFIELDS.Size = New System.Drawing.Size(201, 47)
-        Me.XTOTALFIELDS.TabIndex = 123159
-        Me.XTOTALFIELDS.Text = "0 FIELD(S)"
+        Me.Panel14.BackColor = System.Drawing.Color.Silver
+        Me.Panel14.Location = New System.Drawing.Point(496, 188)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(1, 100)
+        Me.Panel14.TabIndex = 123173
+        '
+        'Panel13
+        '
+        Me.Panel13.BackColor = System.Drawing.Color.Silver
+        Me.Panel13.Location = New System.Drawing.Point(232, 188)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(1, 100)
+        Me.Panel13.TabIndex = 123172
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(69, 229)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(108, 23)
+        Me.Label6.TabIndex = 123171
+        Me.Label6.Text = "Total Area"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label26
+        '
+        Me.Label26.AutoSize = True
+        Me.Label26.Font = New System.Drawing.Font("Century Gothic", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label26.ForeColor = System.Drawing.Color.White
+        Me.Label26.Location = New System.Drawing.Point(43, 188)
+        Me.Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label26.Name = "Label26"
+        Me.Label26.Size = New System.Drawing.Size(145, 30)
+        Me.Label26.TabIndex = 123170
+        Me.Label26.Text = "0.00 Ha.(s)"
+        '
+        'Label39
+        '
+        Me.Label39.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label39.ForeColor = System.Drawing.Color.White
+        Me.Label39.Location = New System.Drawing.Point(522, 229)
+        Me.Label39.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label39.Name = "Label39"
+        Me.Label39.Size = New System.Drawing.Size(172, 49)
+        Me.Label39.TabIndex = 123169
+        Me.Label39.Text = "No of fields over the budget"
+        Me.Label39.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label40
+        '
+        Me.Label40.AutoSize = True
+        Me.Label40.Font = New System.Drawing.Font("Century Gothic", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label40.ForeColor = System.Drawing.Color.White
+        Me.Label40.Location = New System.Drawing.Point(532, 188)
+        Me.Label40.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label40.Name = "Label40"
+        Me.Label40.Size = New System.Drawing.Size(131, 30)
+        Me.Label40.TabIndex = 123168
+        Me.Label40.Text = "0 FIELD(S)"
+        '
+        'Label41
+        '
+        Me.Label41.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label41.ForeColor = System.Drawing.Color.White
+        Me.Label41.Location = New System.Drawing.Point(261, 229)
+        Me.Label41.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label41.Name = "Label41"
+        Me.Label41.Size = New System.Drawing.Size(217, 49)
+        Me.Label41.TabIndex = 123167
+        Me.Label41.Text = "No. of fields w/in the budget"
+        Me.Label41.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label42
+        '
+        Me.Label42.AutoSize = True
+        Me.Label42.Font = New System.Drawing.Font("Century Gothic", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label42.ForeColor = System.Drawing.Color.White
+        Me.Label42.Location = New System.Drawing.Point(279, 188)
+        Me.Label42.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label42.Name = "Label42"
+        Me.Label42.Size = New System.Drawing.Size(131, 30)
+        Me.Label42.TabIndex = 123166
+        Me.Label42.Text = "0 FIELD(S)"
+        '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(73, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.Label7)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(723, 57)
+        Me.Panel1.TabIndex = 249
         '
         'Label7
         '
@@ -124,7 +211,7 @@ Partial Class fmrDASHBOARD
         Me.Label7.Location = New System.Drawing.Point(1, 6)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(347, 44)
+        Me.Label7.Size = New System.Drawing.Size(328, 43)
         Me.Label7.TabIndex = 123158
         Me.Label7.Text = "NEW PLANT FIELDS"
         '
@@ -136,9 +223,21 @@ Partial Class fmrDASHBOARD
         Me.Label1.Location = New System.Drawing.Point(276, 70)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(173, 37)
+        Me.Label1.Size = New System.Drawing.Size(168, 36)
         Me.Label1.TabIndex = 123160
         Me.Label1.Text = "Total Fields"
+        '
+        'XTOTALFIELDS
+        '
+        Me.XTOTALFIELDS.AutoSize = True
+        Me.XTOTALFIELDS.Font = New System.Drawing.Font("Century Gothic", 24.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XTOTALFIELDS.ForeColor = System.Drawing.Color.White
+        Me.XTOTALFIELDS.Location = New System.Drawing.Point(259, 111)
+        Me.XTOTALFIELDS.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.XTOTALFIELDS.Name = "XTOTALFIELDS"
+        Me.XTOTALFIELDS.Size = New System.Drawing.Size(197, 45)
+        Me.XTOTALFIELDS.TabIndex = 123159
+        Me.XTOTALFIELDS.Text = "0 FIELD(S)"
         '
         'Label2
         '
@@ -160,19 +259,9 @@ Partial Class fmrDASHBOARD
         Me.Label3.Location = New System.Drawing.Point(281, 186)
         Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(144, 34)
+        Me.Label3.Size = New System.Drawing.Size(131, 30)
         Me.Label3.TabIndex = 123161
         Me.Label3.Text = "0 FIELD(S)"
-        '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(171, Byte), Integer), CType(CType(73, Byte), Integer), CType(CType(73, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(723, 57)
-        Me.Panel1.TabIndex = 249
         '
         'Panel2
         '
@@ -194,6 +283,47 @@ Partial Class fmrDASHBOARD
         Me.Panel2.Size = New System.Drawing.Size(711, 306)
         Me.Panel2.TabIndex = 249
         '
+        'Panel8
+        '
+        Me.Panel8.BackColor = System.Drawing.Color.Silver
+        Me.Panel8.Location = New System.Drawing.Point(483, 186)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(1, 100)
+        Me.Panel8.TabIndex = 123168
+        '
+        'Panel7
+        '
+        Me.Panel7.BackColor = System.Drawing.Color.Silver
+        Me.Panel7.Location = New System.Drawing.Point(227, 186)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(1, 100)
+        Me.Panel7.TabIndex = 123167
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.ForeColor = System.Drawing.Color.White
+        Me.Label8.Location = New System.Drawing.Point(493, 226)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(189, 23)
+        Me.Label8.TabIndex = 123166
+        Me.Label8.Text = "Remaining Budget"
+        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
+        'Label16
+        '
+        Me.Label16.Font = New System.Drawing.Font("Century Gothic", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label16.ForeColor = System.Drawing.Color.White
+        Me.Label16.Location = New System.Drawing.Point(491, 186)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(177, 34)
+        Me.Label16.TabIndex = 123165
+        Me.Label16.Text = "0.00"
+        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(44, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(125, Byte), Integer))
@@ -212,7 +342,7 @@ Partial Class fmrDASHBOARD
         Me.Label9.Location = New System.Drawing.Point(1, 6)
         Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(375, 44)
+        Me.Label9.Size = New System.Drawing.Size(355, 43)
         Me.Label9.TabIndex = 123158
         Me.Label9.Text = "RATOON FORECAST"
         '
@@ -273,7 +403,7 @@ Partial Class fmrDASHBOARD
         Me.Label14.Location = New System.Drawing.Point(258, 70)
         Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(196, 37)
+        Me.Label14.Size = New System.Drawing.Size(189, 36)
         Me.Label14.TabIndex = 123160
         Me.Label14.Text = "Total Budget"
         '
@@ -288,31 +418,6 @@ Partial Class fmrDASHBOARD
         Me.Label15.TabIndex = 123159
         Me.Label15.Text = "0.00"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(493, 226)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(189, 23)
-        Me.Label8.TabIndex = 123166
-        Me.Label8.Text = "Remaining Budget"
-        Me.Label8.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label16
-        '
-        Me.Label16.Font = New System.Drawing.Font("Century Gothic", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.ForeColor = System.Drawing.Color.White
-        Me.Label16.Location = New System.Drawing.Point(491, 186)
-        Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(177, 34)
-        Me.Label16.TabIndex = 123165
-        Me.Label16.Text = "0.00"
-        Me.Label16.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Panel4
         '
@@ -333,6 +438,22 @@ Partial Class fmrDASHBOARD
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(711, 306)
         Me.Panel4.TabIndex = 250
+        '
+        'Panel16
+        '
+        Me.Panel16.BackColor = System.Drawing.Color.Silver
+        Me.Panel16.Location = New System.Drawing.Point(483, 188)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Size = New System.Drawing.Size(1, 100)
+        Me.Panel16.TabIndex = 123169
+        '
+        'Panel15
+        '
+        Me.Panel15.BackColor = System.Drawing.Color.Silver
+        Me.Panel15.Location = New System.Drawing.Point(227, 188)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(1, 100)
+        Me.Panel15.TabIndex = 123168
         '
         'Label17
         '
@@ -377,7 +498,7 @@ Partial Class fmrDASHBOARD
         Me.Label19.Location = New System.Drawing.Point(1, 6)
         Me.Label19.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(420, 44)
+        Me.Label19.Size = New System.Drawing.Size(398, 43)
         Me.Label19.TabIndex = 123158
         Me.Label19.Text = "NEW PLANT FORECAST"
         '
@@ -438,7 +559,7 @@ Partial Class fmrDASHBOARD
         Me.Label24.Location = New System.Drawing.Point(258, 70)
         Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(196, 37)
+        Me.Label24.Size = New System.Drawing.Size(189, 36)
         Me.Label24.TabIndex = 123160
         Me.Label24.Text = "Total Budget"
         '
@@ -474,6 +595,46 @@ Partial Class fmrDASHBOARD
         Me.Panel9.Size = New System.Drawing.Size(727, 306)
         Me.Panel9.TabIndex = 252
         '
+        'Panel12
+        '
+        Me.Panel12.BackColor = System.Drawing.Color.Silver
+        Me.Panel12.Location = New System.Drawing.Point(234, 186)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(1, 100)
+        Me.Panel12.TabIndex = 123169
+        '
+        'Panel11
+        '
+        Me.Panel11.BackColor = System.Drawing.Color.Silver
+        Me.Panel11.Location = New System.Drawing.Point(498, 186)
+        Me.Panel11.Name = "Panel11"
+        Me.Panel11.Size = New System.Drawing.Size(1, 100)
+        Me.Panel11.TabIndex = 123168
+        '
+        'Label4
+        '
+        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(524, 227)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(172, 49)
+        Me.Label4.TabIndex = 123164
+        Me.Label4.Text = "No of fields over the budget"
+        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(536, 186)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(131, 30)
+        Me.Label5.TabIndex = 123163
+        Me.Label5.Text = "0 FIELD(S)"
+        '
         'Label44
         '
         Me.Label44.AutoSize = True
@@ -505,7 +666,7 @@ Partial Class fmrDASHBOARD
         Me.Label45.Location = New System.Drawing.Point(1, 6)
         Me.Label45.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label45.Name = "Label45"
-        Me.Label45.Size = New System.Drawing.Size(302, 44)
+        Me.Label45.Size = New System.Drawing.Size(285, 43)
         Me.Label45.TabIndex = 123158
         Me.Label45.Text = "RATOON FIELDS"
         '
@@ -517,7 +678,7 @@ Partial Class fmrDASHBOARD
         Me.Label49.Location = New System.Drawing.Point(45, 186)
         Me.Label49.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label49.Name = "Label49"
-        Me.Label49.Size = New System.Drawing.Size(158, 34)
+        Me.Label49.Size = New System.Drawing.Size(145, 30)
         Me.Label49.TabIndex = 123161
         Me.Label49.Text = "0.00 Ha.(s)"
         '
@@ -529,7 +690,7 @@ Partial Class fmrDASHBOARD
         Me.Label50.Location = New System.Drawing.Point(268, 69)
         Me.Label50.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(173, 37)
+        Me.Label50.Size = New System.Drawing.Size(168, 36)
         Me.Label50.TabIndex = 123160
         Me.Label50.Text = "Total Fields"
         '
@@ -541,170 +702,9 @@ Partial Class fmrDASHBOARD
         Me.Label51.Location = New System.Drawing.Point(260, 106)
         Me.Label51.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label51.Name = "Label51"
-        Me.Label51.Size = New System.Drawing.Size(201, 47)
+        Me.Label51.Size = New System.Drawing.Size(197, 45)
         Me.Label51.TabIndex = 123159
         Me.Label51.Text = "0 FIELD(S)"
-        '
-        'Label4
-        '
-        Me.Label4.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(524, 227)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(172, 49)
-        Me.Label4.TabIndex = 123164
-        Me.Label4.Text = "No of fields over the budget"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Century Gothic", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(536, 186)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(144, 34)
-        Me.Label5.TabIndex = 123163
-        Me.Label5.Text = "0 FIELD(S)"
-        '
-        'Label39
-        '
-        Me.Label39.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label39.ForeColor = System.Drawing.Color.White
-        Me.Label39.Location = New System.Drawing.Point(522, 229)
-        Me.Label39.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label39.Name = "Label39"
-        Me.Label39.Size = New System.Drawing.Size(172, 49)
-        Me.Label39.TabIndex = 123169
-        Me.Label39.Text = "No of fields over the budget"
-        Me.Label39.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label40
-        '
-        Me.Label40.AutoSize = True
-        Me.Label40.Font = New System.Drawing.Font("Century Gothic", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.ForeColor = System.Drawing.Color.White
-        Me.Label40.Location = New System.Drawing.Point(532, 188)
-        Me.Label40.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(144, 34)
-        Me.Label40.TabIndex = 123168
-        Me.Label40.Text = "0 FIELD(S)"
-        '
-        'Label41
-        '
-        Me.Label41.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label41.ForeColor = System.Drawing.Color.White
-        Me.Label41.Location = New System.Drawing.Point(261, 229)
-        Me.Label41.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label41.Name = "Label41"
-        Me.Label41.Size = New System.Drawing.Size(217, 49)
-        Me.Label41.TabIndex = 123167
-        Me.Label41.Text = "No. of fields w/in the budget"
-        Me.Label41.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label42
-        '
-        Me.Label42.AutoSize = True
-        Me.Label42.Font = New System.Drawing.Font("Century Gothic", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label42.ForeColor = System.Drawing.Color.White
-        Me.Label42.Location = New System.Drawing.Point(279, 188)
-        Me.Label42.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label42.Name = "Label42"
-        Me.Label42.Size = New System.Drawing.Size(144, 34)
-        Me.Label42.TabIndex = 123166
-        Me.Label42.Text = "0 FIELD(S)"
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(69, 229)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(108, 23)
-        Me.Label6.TabIndex = 123171
-        Me.Label6.Text = "Total Area"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        '
-        'Label26
-        '
-        Me.Label26.AutoSize = True
-        Me.Label26.Font = New System.Drawing.Font("Century Gothic", 16.2!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label26.ForeColor = System.Drawing.Color.White
-        Me.Label26.Location = New System.Drawing.Point(43, 188)
-        Me.Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(158, 34)
-        Me.Label26.TabIndex = 123170
-        Me.Label26.Text = "0.00 Ha.(s)"
-        '
-        'Panel7
-        '
-        Me.Panel7.BackColor = System.Drawing.Color.Silver
-        Me.Panel7.Location = New System.Drawing.Point(227, 186)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1, 100)
-        Me.Panel7.TabIndex = 123167
-        '
-        'Panel8
-        '
-        Me.Panel8.BackColor = System.Drawing.Color.Silver
-        Me.Panel8.Location = New System.Drawing.Point(483, 186)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(1, 100)
-        Me.Panel8.TabIndex = 123168
-        '
-        'Panel11
-        '
-        Me.Panel11.BackColor = System.Drawing.Color.Silver
-        Me.Panel11.Location = New System.Drawing.Point(498, 186)
-        Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(1, 100)
-        Me.Panel11.TabIndex = 123168
-        '
-        'Panel12
-        '
-        Me.Panel12.BackColor = System.Drawing.Color.Silver
-        Me.Panel12.Location = New System.Drawing.Point(234, 186)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(1, 100)
-        Me.Panel12.TabIndex = 123169
-        '
-        'Panel13
-        '
-        Me.Panel13.BackColor = System.Drawing.Color.Silver
-        Me.Panel13.Location = New System.Drawing.Point(232, 188)
-        Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(1, 100)
-        Me.Panel13.TabIndex = 123172
-        '
-        'Panel14
-        '
-        Me.Panel14.BackColor = System.Drawing.Color.Silver
-        Me.Panel14.Location = New System.Drawing.Point(496, 188)
-        Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(1, 100)
-        Me.Panel14.TabIndex = 123173
-        '
-        'Panel15
-        '
-        Me.Panel15.BackColor = System.Drawing.Color.Silver
-        Me.Panel15.Location = New System.Drawing.Point(227, 188)
-        Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(1, 100)
-        Me.Panel15.TabIndex = 123168
-        '
-        'Panel16
-        '
-        Me.Panel16.BackColor = System.Drawing.Color.Silver
-        Me.Panel16.Location = New System.Drawing.Point(483, 188)
-        Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(1, 100)
-        Me.Panel16.TabIndex = 123169
         '
         'fmrDASHBOARD
         '

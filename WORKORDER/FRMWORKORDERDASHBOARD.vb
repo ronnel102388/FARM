@@ -172,8 +172,8 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
 
 
     Private Sub grid1_DoubleClick(sender As Object, e As EventArgs) Handles grid1.DoubleClick
-        FRMCREATION_NO_WORKORDER.Show()
-        FRMCREATION_NO_WORKORDER.xCBOSUBFIELDNO.Enabled = False
+        FRM_CREATION_NO_WORKORDERS.Show()
+        FRM_CREATION_NO_WORKORDERS.xCBOSUBFIELDNO.Enabled = False
         If grid1.Rows.Count = 1 Then
             Exit Sub
         End If
@@ -185,11 +185,11 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
             MinorActivity.Text = grid1.Item(i, "MinorActivity").ToString
         End If
 
-        FRMCREATION_NO_WORKORDER.xCBOSUBFIELDNO.Text = SubFieldNum.Text
-        FRMCREATION_NO_WORKORDER.Button1.PerformClick()
+        FRM_CREATION_NO_WORKORDERS.xCBOSUBFIELDNO.Text = SubFieldNum.Text
+        FRM_CREATION_NO_WORKORDERS.BTNGENERATEDETAILS.PerformClick()
 
-        FRMCREATION_NO_WORKORDER.xCBOMAJORACTIVITY.Text = MajorActivity.Text
-        FRMCREATION_NO_WORKORDER.xCBOMINORACTIVITY.Text = MinorActivity.Text
+        FRM_CREATION_NO_WORKORDERS.xCBOMAJORACTIVITY.Text = MajorActivity.Text
+        FRM_CREATION_NO_WORKORDERS.xCBOMINORACTIVITY.Text = MinorActivity.Text
 
 
 

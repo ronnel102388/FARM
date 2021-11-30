@@ -226,24 +226,7 @@ Module DBConnect
         Return strValue
     End Function
 
-    '--putch
-    Function FindActivity(ByVal ToFind As String, ByVal ColtoFind As String, ByVal ValToFind As String) As String
-        Dim sql As String = <s>
-                                 
-                                SELECT <%= ToFind %>
-                                      FROM [vwFindWorkOrder] WHERE <%= ColtoFind %>='<%= ValToFind %>'
-                            </s>
-        'MsgBox(sql)
-        ExeReader(sql)
-        Dim Find As String = ""
-        While dr.Read
-            Find = dr.Item(ToFind)
-        End While
-        dr.Close()
-        Conn.Close()
 
-        Return Find
-    End Function
     Function FindID(ByVal Number As String, ByVal Table As String, ByVal ToFind As String) As Integer
         Dim Sql As String = <s>
         SELECT RECID FROM <%= Table %> WHERE <%= ToFind %> = '<%= Number %>' AND COID = '<%= Comp %>'                        
