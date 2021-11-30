@@ -2,7 +2,7 @@
 Public Class FRMCREATIONWORKORDERS
     Dim vMAJAID, vMINAID, vVERSIONID, vWOID, vWORESID As Integer
     Public vMAINWOID As Integer
-    Public vSUBFIELDNO As String
+    Public vSUBFIELDNO, vMAJOR, vMINOR As String
 
 #Region "ROUTINE"
     Sub Clear()
@@ -93,6 +93,7 @@ Public Class FRMCREATIONWORKORDERS
             .Cols("UNITPRICE").Visible = False
             .Cols("COSTPRICE").Visible = False
             .Cols("RESOURCEGROUP").Visible = False
+            .Cols("POTID").Visible = False
             .Tree.Column = .Cols("RESOURCE").Index
             .Tree.Style = TreeStyleFlags.Complete
             .Subtotal(AggregateEnum.None, 0, .Cols("METHODOFACTIVITY").Index, .Cols("METHODOFACTIVITY").Index, "{0}")
@@ -287,7 +288,7 @@ Public Class FRMCREATIONWORKORDERS
                                 </s>
             ExeReader(sql)
             While dr.Read
-                vWORESID = dr.Item("ID").ToString
+                vWOID = dr.Item("ID").ToString
             End While
             dr.Close()
             Conn.Close()
@@ -301,11 +302,13 @@ Public Class FRMCREATIONWORKORDERS
                             Dim sqlx As String = <s>
                                                 EXEC WORKORDER_DETAIL_ACTION
                                                  0   
-                                                ,<%= vWORESCODE %> -- WORKORDERRESOURCECODE
-                                                ,<%= vWOID %> -- WORKORDERID
+                                                ,'<%= vWORESCODE %>' -- WORKORDERRESOURCECODE
+                                                ,<%= vWOID %>-- WORKORDERID
                                                 ,'<%= xWOCODE.Text %>' -- WORKORDERCODE
                                                 ,<%= .Item(x, "PLANQTY") %> -- PLANQTY
-                                                ,<%= .Item(x, "RECID") %> -- POTID
+                                                ,<%= .Item(x, "POTID") %> -- POTID
+                                                ,'<%= .Item(x, "UNITPRICE") %>' -- UNITPRICE
+                                                ,'<%= .Item(x, "COSTPRICE") %>' -- COSTPRICE
                                                 ,'<%= .Item(x, "JUSTIFICATION") %>' -- JUSTIFICATION
                                                 ,'<%= .Item(x, "DEACTIVATIONREMARKS") %>' -- DEACTIVATIONREMARKS
                                                 ,'<%= FRMWORKORDERS.RbnUser.Text %>' -- CREATEDBY
@@ -319,15 +322,15 @@ Public Class FRMCREATIONWORKORDERS
         End If
 
         MsgBox("WorkOrder SuccessFully Saved", vbInformation, "VALIDATION")
-        Clear()
 
         With FRMWORKORDERS
             .xSUBFIELDNO.Text = xCBOSUBFIELDNO.Text
             .POPULATEFIELDDETAILS(xCBOSUBFIELDNO.Text)
             .POPULATEMAINWORKORDER()
-            .POPULATEWODETAIL(vMAINWOID)
+            .POPULATEWOHEADER(vMAINWOID)
         End With
 
+        Clear()
         Me.Dispose()
     End Sub
 #End Region
@@ -345,8 +348,24 @@ Public Class FRMCREATIONWORKORDERS
             xCBOSUBFIELDNO.Enabled = False
         End If
 
+
+        '==================================ACTIVITY
+        If vMAJOR <> "" Then
+            xCBOMAJORACTIVITY.Text = vMAJOR
+            XCBOMAJORACTIVITY_SelectedIndexChanged(sender, e)
+        End If
+
+        If vMINOR <> "" Then
+            xCBOMINORACTIVITY.Text = vMINOR
+            XCBOMINORACTIVITY_SelectedIndexChanged(sender, e)
+        Else
+            POPULATE_METHODOFACTIVITY_RESOURCE(vVERSIONID, 0, 0, "", Date.Now, 0)
+        End If
+
+
+
         '=================================METHOD AND RESOURCE
-        POPULATE_METHODOFACTIVITY_RESOURCE(vVERSIONID, 0, 0, "", Date.Now, 0)
+
 
     End Sub
 

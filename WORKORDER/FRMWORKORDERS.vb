@@ -1,9 +1,7 @@
 ﻿Imports C1.Win.C1FlexGrid
-
 Public Class FRMWORKORDERS
     Dim CURRENTTAB As Integer
     Public checkstate = IniCon.ReadString("CheckState", "UnderDevelopment")
-
 
 #Region "ROUTINE"
     Function FindEmID(ByVal Username As String) As Integer
@@ -316,8 +314,6 @@ Public Class FRMWORKORDERS
             xLBLCOUNT.Visible = True
         End If
         xLBLCOUNT.Text = putch_Count()
-
-        Timer1.Start()
     End Sub
     Private Sub BTNNOTIF_Click(sender As Object, e As EventArgs) Handles BTNNOTIF.Click
         FRMWORKORDERDASHBOARD.ShowDialog()
@@ -326,16 +322,34 @@ Public Class FRMWORKORDERS
         FRMARCHIVE.ShowDialog()
     End Sub
 
-    Private Sub TmrCountDown_Tick(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        If putch_Count() = 0 Then
-            xLBLCOUNT.Visible = False
-        Else
-            xLBLCOUNT.Visible = True
+    Private Sub BtEditHeader_Click(sender As Object, e As EventArgs) Handles btEditHeader.Click
+        If dgMAINWO.Rows.Count = 1 Then
+            Exit Sub
         End If
-        xLBLCOUNT.Text = putch_Count()
+
+        Dim x As Integer = dgMAINWO.RowSel
+
+        If x = 0 Then
+            Exit Sub
+        End If
+
+        With dgMAINWO
+            If .Item(x, "MAINWOID") <> 0 And .Item(x, "ISCLOSED") = 0 Then
+                If MsgBox("Do you want to edit Work Order Activities?", vbQuestion + vbYesNo + vbDefaultButton2) = vbNo Then
+                    Exit Sub
+                End If
+            Else
+                MsgBox("Cannot create or add Work Order Activities in this Subfield No. " & .Item(x, "FIELDNO") & " because the Main Work Order is already closed." & vbNewLine & "Please select other transaction.", vbExclamation, "VALIDATION")
+                Exit Sub
+            End If
+        End With
+
+        With FRMCREATIONWORKORDERS
+            .vMAINWOID = dgMAINWO.Item(x, "MAINWOID")
+            .vSUBFIELDNO = dgMAINWO.Item(x, "FIELDNO").ToString
+            .vMAJOR = dgWOHeader.Item(x, "MAJORACTIVITY").ToString
+            .vMINOR = dgWOHeader.Item(x, "MINORACTIVITY").ToString
+            .ShowDialog()
+        End With
     End Sub
 End Class
