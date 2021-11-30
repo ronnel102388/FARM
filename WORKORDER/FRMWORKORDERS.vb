@@ -27,12 +27,12 @@ Public Class FRMWORKORDERS
         RbnBuildNo.Text = "PROGEN 5.0 as of " & System.IO.File.GetLastWriteTime(Application.ExecutablePath)
 
         Username = RbnUser.Text
-        'If QueryCompanyCode(Username) = "" Then
-        '    RbnCompany.Text = "1REI"
-        'Else
-        '    RbnCompany.Text = QueryCompanyCode(Username)
-        'End If
-        RbnCompany.Text = "1REI"
+        If QueryCompanyCode(Username) = "" Then
+            RbnCompany.Text = "1REI"
+        Else
+            RbnCompany.Text = QueryCompanyCode(Username)
+        End If
+        'RbnCompany.Text = "1REI"
 
         Comp = RbnCompany.Text
 
