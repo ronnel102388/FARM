@@ -14,31 +14,28 @@ Public Class frmDetailsPOT
                                 SELECT MAINWOID, CROPLCLASSDETAIL +' | '+ CROPYEAR AS LIST FROM T_FARMACTIVITYMAINWORKORDER WHERE FIELDNO = '<%= SF %>' AND ISACTIVE = 1 ORDER BY MAINWOID DESC
                             </s>
             ExeReader(sql)
-            xCROPCLASS.Items.Clear()
-            While dr.Read
-                xCROPCLASS.Items.Add(dr.Item("LIST"))
-            End While
-            dr.Close()
-            Conn.Close()
+        xCROPCLASS.Items.Clear()
+        While dr.Read
+            xCROPCLASS.Items.Add(dr.Item("LIST"))
+        End While
+        dr.Close()
+        Conn.Close()
 
-            xCROPCLASS.SelectedIndex = 0
+        xCROPCLASS.SelectedIndex = 0
         Catch ex As Exception
-            MsgBox("No Data Input.", MsgBoxStyle.Exclamation, "Error")
+        MsgBox("No Data Input.", MsgBoxStyle.Exclamation, "Error")
         End Try
 
     End Sub
-
     Sub FIELDINFO(ByVal fm As String, sf As String, ByVal iscb As Integer, ByVal type As String, ByVal index As Integer)
-        Dim sql = <S>
-
-                          FM_LIST_POT_DETAIL '<%= fm %>', '<%= sf %>', <%= iscb %>, '<%= type %>', <%= index %>
-                  </S>
+        Dim sql As String = <S>
+                                FM_LIST_POT_DETAIL '<%= fm %>', '<%= sf %>', <%= iscb %>, '<%= type %>', <%= index %>
+                            </S>
         dtINFO = ConTools.DataReader(SConn, sql)
     End Sub
     Sub POPULATEDETAILS(ByVal fmd As String, ByVal ccd As String, ByVal iscbd As String, ByVal tpd As String, ByVal sfd As String, ByVal aread As Double, ByVal mwoid As Integer)
-
         Dim SQL As String = <s>
-          EXEC FM_SF_LIST_POT '<%= fmd %>','<%= ccd %>', <%= iscbd %>, '<%= tpd %>','<%= sfd %>','<%= aread %>',<%= mwoid %>
+                                     EXEC FM_SF_LIST_POT '<%= fmd %>','<%= ccd %>', <%= iscbd %>, '<%= tpd %>','<%= sfd %>','<%= aread %>',<%= mwoid %>
                             </s>
         SelectQuery(SQL)
         With dgFIELDCOST
@@ -53,7 +50,7 @@ Public Class frmDetailsPOT
             .Cols("BUDGETCOST").Format = "N0"
             .Cols("ACTUALCOST").Format = "N0"
             '.Cols("METHOD").Visible = True
-            .Cols("RESOURCES").Width = 400
+            .Cols("RESOURCE").Width = 400
             .Cols("BUDGETCOST").Width = 250
             .Cols("ACTUALCOST").Width = 250
             .Cols("DFARSERIES").TextAlign = TextAlignEnum.CenterCenter
@@ -81,9 +78,9 @@ Public Class frmDetailsPOT
             .Cols(4).Visible = False
             .Tree.Column = 5
             .Subtotal(AggregateEnum.None, 0, .Cols("CROPCLASS").Index, .Cols("CROPCLASS").Index, "{0}")
-            .Subtotal(AggregateEnum.None, 1, .Cols("MAJOR").Index, .Cols("MAJOR").Index, "{0}")
-            .Subtotal(AggregateEnum.None, 2, .Cols("MINOR").Index, .Cols("MINOR").Index, "{0}")
-            .Subtotal(AggregateEnum.None, 3, .Cols("METHOD").Index, .Cols("METHOD").Index, "{0}")
+            .Subtotal(AggregateEnum.None, 1, .Cols("MAJORACTIVITY").Index, .Cols("MAJORACTIVITY").Index, "{0}")
+            .Subtotal(AggregateEnum.None, 2, .Cols("MINORACTIVITY").Index, .Cols("MINORACTIVITY").Index, "{0}")
+            .Subtotal(AggregateEnum.None, 3, .Cols("METHODOFACTIVITY").Index, .Cols("METHODOFACTIVITY").Index, "{0}")
             .Subtotal(AggregateEnum.None, -1, -1, -1, "TOTAL")
 
 
@@ -225,7 +222,7 @@ Public Class frmDetailsPOT
             POPULATEDETAILS(FM, dtINFO(0)("CROPCLASS").ToString, isCB, TP, SF, dtINFO(0)("AREA"), dtINFO(0)("MAINWOID"))
         Catch ex As Exception
             POPULATEDETAILS(FM, "", isCB, TP, SF, 0, 0)
-            'MsgBox(ex.Message)
+            MsgBox(ex.Message)
         End Try
 
     End Sub

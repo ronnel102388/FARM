@@ -1,6 +1,7 @@
 ﻿Imports C1.Win.C1FlexGrid
 Public Class FRMWORKORDERS
     Dim CURRENTTAB As Integer
+    Dim vMAINWOID As Integer
     Public checkstate = IniCon.ReadString("CheckState", "UnderDevelopment")
 
 #Region "ROUTINE"
@@ -245,7 +246,7 @@ Public Class FRMWORKORDERS
             xSUBFIELDNO.Text = .Item(x, "FIELDNO")
             POPULATEFIELDDETAILS(.Item(x, "FIELDNO"))
             POPULATEWOHEADER(.Item(x, "MAINWOID"))
-
+            vMAINWOID = .Item(x, "MAINWOID")
         End With
 
         MAINTAB.SelectedTab = Details()
@@ -327,7 +328,7 @@ Public Class FRMWORKORDERS
             Exit Sub
         End If
 
-        Dim x As Integer = dgMAINWO.RowSel
+        Dim x As Integer = dgWOHeader.RowSel
 
         If x = 0 Then
             Exit Sub
@@ -345,8 +346,8 @@ Public Class FRMWORKORDERS
         End With
 
         With FRMCREATIONWORKORDERS
-            .vMAINWOID = dgMAINWO.Item(x, "MAINWOID")
-            .vSUBFIELDNO = dgMAINWO.Item(x, "FIELDNO").ToString
+            .vMAINWOID = vMAINWOID
+            .vSUBFIELDNO = xSUBFIELDNO.Text
             .vMAJOR = dgWOHeader.Item(x, "MAJORACTIVITY").ToString
             .vMINOR = dgWOHeader.Item(x, "MINORACTIVITY").ToString
             .ShowDialog()

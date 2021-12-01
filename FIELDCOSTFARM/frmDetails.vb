@@ -1,4 +1,5 @@
 ﻿Imports C1.Win.C1FlexGrid
+Imports Configuration
 Public Class frmDetails
     Public CC, TP, ACT As String
     Public isCB, MWOID, TEMPID As Integer

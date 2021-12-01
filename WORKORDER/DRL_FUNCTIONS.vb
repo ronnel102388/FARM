@@ -1,6 +1,4 @@
 ﻿Module DRL_FUNCTIONS
-
-
     Function drl_GenerateCodeMAINWO() As String
         Dim sql As String = <s>
                                     declare @code as varchar(100) = (
@@ -24,7 +22,6 @@
 
         Return Code
     End Function
-
     Function drl_GenerateCodeWORKORDER() As String
         Dim sql As String = <s>
                                     declare @code as varchar(100) = (
@@ -48,7 +45,6 @@
 
         Return Code
     End Function
-
     Function drl_GenerateCodeWORESOURCE() As String
         Dim sql As String = <s>
                                         declare @code as varchar(100) = (

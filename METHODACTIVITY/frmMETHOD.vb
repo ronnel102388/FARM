@@ -42,7 +42,7 @@ Public Class frmMETHOD
         ' Dim search As String = xsearch.Text.Replace(" ", "")
 
         sql = <s>
-                  select * from M_POT_METHOD where isactive=1
+                  select * from M_POT_METHODOFACTIVITY where isactive=1
 
               </s>
 
@@ -77,7 +77,7 @@ Public Class frmMETHOD
 
 
     Private Sub BtAdd_Click(sender As Object, e As EventArgs) Handles btAdd.Click
-        If FindIfExist("METHODACTIVITY", "M_POT_METHOD", "METHODACTIVITY", METHODACTIVITY.Text) <> METHODACTIVITY.Text Then
+        If FindIfExist("METHODACTIVITY", "M_POT_METHODOFACTIVITY", "METHODACTIVITY", METHODACTIVITY.Text) <> METHODACTIVITY.Text Then
             MsgBox("item is existed or deactivated.", MsgBoxStyle.Exclamation, "ERROR")
             Exit Sub
         End If
@@ -86,7 +86,7 @@ Public Class frmMETHOD
 
         Dim sql As String = ""
         sql = <s>
-                         INSERT INTO [M_POT_METHOD]
+                         INSERT INTO [M_POT_METHODOFACTIVITY]
            ([METHODACTIVITY]
       ,[COID]
       ,[ISACTIVE]
@@ -125,14 +125,14 @@ Public Class frmMETHOD
     End Sub
 
     Private Sub BtSave_Click(sender As Object, e As EventArgs) Handles BtSave.Click
-        If FindIfExist("METHODACTIVITY", "M_POT_METHOD", "METHODACTIVITY", METHODACTIVITY.Text) <> METHODACTIVITY.Text Then
+        If FindIfExist("METHODACTIVITY", "M_POT_METHODOFACTIVITY", "METHODACTIVITY", METHODACTIVITY.Text) <> METHODACTIVITY.Text Then
             MsgBox("item is existed or deactivated.", MsgBoxStyle.Exclamation, "ERROR")
             Exit Sub
         End If
 
 
         Dim Sql As String = <s>
-                          UPDATE M_POT_METHOD
+                          UPDATE M_POT_METHODOFACTIVITY
                                SET [METHODACTIVITY] =  '<%= METHODACTIVITY.Text %>'
                                 ,[COID]='<%= RbnCompany.Text %>'
                                ,[MODIFIEDBY]='<%= RbnUser.Text %>'
@@ -172,7 +172,7 @@ Public Class frmMETHOD
 
 
         Dim Sql As String = <s>
-                          UPDATE M_POT_METHOD
+                          UPDATE M_POT_METHODOFACTIVITY
                                SET [ISACTIVE] = '0'
                              WHERE RECID = <%= RECID.Text %>
                             </s>

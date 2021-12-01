@@ -42,7 +42,7 @@ Public Class frmMinor
         ' Dim search As String = xsearch.Text.Replace(" ", "")
 
         sql = <s>
-                  select * from M_POT_MINOR where isactive=1
+                  select * from M_POT_MINORACTIVITY where isactive=1
 
               </s>
 
@@ -77,7 +77,7 @@ Public Class frmMinor
 
 
     Private Sub BtAdd_Click(sender As Object, e As EventArgs) Handles btAdd.Click
-        If FindIfExist("MINORACTIVITY", "M_POT_MINOR", "MINORACTIVITY", MINORACTIVITY.Text) = MINORACTIVITY.Text Then
+        If FindIfExist("MINORACTIVITY", "M_POT_MINORACTIVITY", "MINORACTIVITY", MINORACTIVITY.Text) = MINORACTIVITY.Text Then
             MsgBox("item  is existed or deactivated.", MsgBoxStyle.Exclamation, "ERROR")
             Exit Sub
         End If
@@ -87,7 +87,7 @@ Public Class frmMinor
 
         Dim sql As String = ""
         sql = <s>
-                         INSERT INTO [M_POT_MINOR]
+                         INSERT INTO [M_POT_MINORACTIVITY]
            ([MINORACTIVITY]
       ,[COID]
       ,[ISACTIVE]
@@ -126,14 +126,14 @@ Public Class frmMinor
     End Sub
 
     Private Sub BtSave_Click(sender As Object, e As EventArgs) Handles BtSave.Click
-        If FindIfExist("MINORACTIVITY", "M_POT_MINOR", "MINORACTIVITY", MINORACTIVITY.Text) = MINORACTIVITY.Text Then
+        If FindIfExist("MINORACTIVITY", "M_POT_MINORACTIVITY", "MINORACTIVITY", MINORACTIVITY.Text) = MINORACTIVITY.Text Then
             MsgBox("item  is existed or deactivated.", MsgBoxStyle.Exclamation, "ERROR")
             Exit Sub
         End If
 
 
         Dim Sql As String = <s>
-                          UPDATE M_POT_MINOR
+                          UPDATE M_POT_MINORACTIVITY
                                SET [MINORACTIVITY] =  '<%= MINORACTIVITY.Text %>'
                                 ,[COID]='<%= RbnCompany.Text %>'
                                ,[MODIFIEDBY]='<%= RbnUser.Text %>'
@@ -173,7 +173,7 @@ Public Class frmMinor
 
 
         Dim Sql As String = <s>
-                          UPDATE M_POT_MINOR
+                          UPDATE M_POT_MINORACTIVITY
                                SET [ISACTIVE] = '0'
                              WHERE RECID = <%= RECID.Text %>
                             </s>

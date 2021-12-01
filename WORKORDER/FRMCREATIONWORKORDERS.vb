@@ -375,5 +375,47 @@ Public Class FRMCREATIONWORKORDERS
 
     Private Sub dgWOres_AfterEdit(sender As Object, e As RowColEventArgs) Handles dgWOres.AfterEdit
 
+        With dgWOres
+
+            Dim x As Integer = .RowSel
+
+            If .Item(x, "TAG").ToString = True Then
+                If drl_VALIDATECHANGED(vWOID, .Item(x, "POTID")) = 0 Then
+                    .Item(x, "STATUS") = "---"
+                Else
+                    .Item(x, "STATUS") = "CHANGED"
+                End If
+            Else
+                If drl_VALIDATECHANGED(vWOID, .Item(x, "POTID")) = 0 Then
+                    .Item(x, "STATUS") = "CHANGED"
+                Else
+                    .Item(x, "STATUS") = "---"
+                End If
+            End If
+            .Cols("STATUS").Width = 150
+
+        End With
     End Sub
+
+    Function drl_VALIDATECHANGED(ByVal WOID As String, ByVal POTID As Integer) As Integer
+        Dim sql As String = <s>
+                                SELECT
+                                COUNT(WorkOrderResourceId) AS COUNT
+                                FROM
+                                T_FARMACTIVITYWORKORDERRESOURCES 
+                                WHERE 
+                                WORKORDERID  = <%= WOID %>
+                                AND POTID = <%= POTID %>
+                                AND ISACTIVE = 1
+                            </s>
+        ExeReader(sql)
+        Dim Find As Integer = 0
+        While dr.Read
+            Find = dr.Item("COUNT").ToString
+        End While
+        dr.Close()
+        Conn.Close()
+
+        Return Find
+    End Function
 End Class
