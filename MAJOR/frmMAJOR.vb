@@ -1,6 +1,8 @@
 ﻿Imports C1.Win.C1FlexGrid
 Public Class frmMAJOR
     Public checkstate = IniCon.ReadString("CheckState", "UnderDevelopment")
+
+#Region "ROUTINE"
     Function FindEmID(ByVal Username As String) As Integer
         Dim sql As String = <s>
          SELECT EmployeeID FROM a_Employee where UserName = '<%= Username %>'                       
@@ -37,161 +39,241 @@ Public Class frmMAJOR
         'DeptId = 1
         'EmpID = FindEmID(Username)
     End Sub
-    Sub populate()
+
+    Sub ControlsEvent(ByVal Bool)
+        BtSave.Enabled = Not Bool
+        btCancelUpdate.Enabled = Not Bool
+        panelentry.Enabled = Not Bool
+
+        btAdd.Enabled = Bool
+        BtEdit.Enabled = Bool
+        BtDelete.Enabled = Bool
+    End Sub
+#End Region
+
+
+#Region "POPULATE"
+    Sub PopulateMajor()
         Dim sql As String = ""
-        ' Dim search As String = xsearch.Text.Replace(" ", "")
+        Dim search As String = XSEARCH.Text.Replace("'", "")
 
         sql = <s>
-                  select * from M_POT_MAJOR where isactive=1
-
+                  SELECT [RECID]
+                      ,[MAJORACTIVITY]
+                      ,[COID]
+                      ,[ISACTIVE]
+                      ,[CREATEDBY]
+                      ,convert(varchar,[CREATIONDATE],0) CREATIONDATE
+                      ,[MODIFIEDBY]
+                      ,convert(varchar,[MODIFICATIONDATE],0) MODIFICATIONDATE
+                  FROM [M_POT_MAJORACTIVITY]
+                  WHERE MAJORACTIVITY LIKE '%<%= search %>%'
+                  ORDER BY RECID DESC
               </s>
 
         SelectQuery(sql)
-        With grid1
+        With dgMajor
             .DataSource = ds
             .DataMember = "table"
             .Rows(0).Height = 50
             .Cols.Fixed = 0
             .Cols("RECID").Caption = "ID"
             .AutoSizeCols()
-
         End With
         'xrecordcount.Text = grid1.Rows.Count
-
     End Sub
-
+#End Region
     Private Sub BtRefresh_Click(sender As Object, e As EventArgs) Handles BtRefresh.Click
-        RECID.Text = ""
-        MAJORACTIVITY.Text = ""
-        btAdd.Enabled = False
-        BtSave.Enabled = False
+        xRECID.Text = ""
+        xMAJORACTIVITY.Text = ""
 
-        populate()
+        PopulateMajor()
     End Sub
-
     Private Sub FrmMAJOR_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PrepareUser()
-        populate()
-    End Sub
 
-    Private Sub MAJORACTIVITY_TextChanged(sender As Object, e As EventArgs) Handles MAJORACTIVITY.TextChanged
-        If Not RECID.Text = "" Then
-            Exit Sub
-        End If
+        '================CLEAR
+        xRECID.Text = ""
+        xMAJORACTIVITY.Text = ""
 
-        If Not MAJORACTIVITY.Text = "" Then
-            btAdd.Enabled = True
-        Else
-            btAdd.Enabled = False
-        End If
+        '================CONTROL
+        ControlsEvent(True)
+
+        '================POPULATE
+        PopulateMajor()
     End Sub
 
     Private Sub BtAdd_Click(sender As Object, e As EventArgs) Handles btAdd.Click
-        If FindIfExist("MAJORACTIVITY", "M_POT_MAJOR", "MAJORACTIVITY", MAJORACTIVITY.Text) = MAJORACTIVITY.Text Then
-            MsgBox("item  is existed or deactivated.", MsgBoxStyle.Exclamation, "ERROR")
+        If checkstate <> "True" Then
+            If ConTools.CheckAccess(RbnUser.Text, RbnExeCode.Text, "IsAdd") = False Then
+                MsgBox("You have no access to Add in this facility", MsgBoxStyle.Information, "Contact System Administrator")
+                Exit Sub
+            End If
+        End If
+        '================CLEAR
+        xRECID.Text = ""
+        xMAJORACTIVITY.Text = ""
+
+        '================CONTROL
+        ControlsEvent(False)
+
+    End Sub
+    Private Sub BtEdit_Click(sender As Object, e As EventArgs) Handles BtEdit.Click
+        If checkstate <> "True" Then
+            If ConTools.CheckAccess(RbnUser.Text, RbnExeCode.Text, "IsEdit") = False Then
+                MsgBox("You have no access to Edit in this facility", MsgBoxStyle.Information, "Contact System Administrator")
+                Exit Sub
+            End If
+        End If
+        If xRECID.Text = "" Or Val(xRECID.Text) = 0 Then
+            MsgBox("Please select transaction first.", vbExclamation, "VALIDATION")
+            Exit Sub
+        End If
+        ControlsEvent(False)
+    End Sub
+
+    Private Sub dgMajor_Click(sender As Object, e As EventArgs) Handles dgMajor.Click
+        If dgMajor.Rows.Count = 1 Then
             Exit Sub
         End If
 
-
-
-
-        Dim sql As String = ""
-        sql = <s>
-                         INSERT INTO [M_POT_MAJOR]
-           ([MAJORACTIVITY]
-      ,[COID]
-      ,[ISACTIVE]
-      ,[CREATEDBY]
-      ,[CREATIONDATE]
-        )
-     VALUES
-           ('<%= MAJORACTIVITY.Text %>'
-            ,'<%= RbnCompany.Text %>'
-           ,1
-            ,'<%= RbnUser.Text %>'
-            ,getdate()
-                  )
-
-
-                      </s>
-        ExeQuery(sql)
-
-        MsgBox("Success.", MsgBoxStyle.Information, "Information")
-        BtRefresh.PerformClick()
-    End Sub
-
-    Private Sub Grid1_Click(sender As Object, e As EventArgs) Handles grid1.Click
-
-    End Sub
-
-    Private Sub grid1_DoubleClick(sender As Object, e As EventArgs) Handles grid1.DoubleClick
-        If grid1.Rows.Count = 1 Then
+        If BtSave.Enabled = True Then
             Exit Sub
         End If
-        Dim i As Integer = grid1.RowSel
 
-        If grid1.Rows.Count - 1 > 0 Then
-            RECID.Text = grid1.Item(i, "RECID").ToString
-            MAJORACTIVITY.Text = grid1.Item(i, "MAJORACTIVITY").ToString
+        Dim i As Integer = dgMajor.RowSel
+
+        If dgMajor.Rows.Count - 1 > 0 Then
+            xRECID.Text = dgMajor.Item(i, "RECID").ToString
+            xMAJORACTIVITY.Text = dgMajor.Item(i, "MAJORACTIVITY").ToString
         End If
+    End Sub
 
-        BtSave.Enabled = True
+    Private Sub dgMajor_DoubleClick(sender As Object, e As EventArgs) Handles dgMajor.DoubleClick
+        BtEdit.PerformClick()
     End Sub
 
     Private Sub BtSave_Click(sender As Object, e As EventArgs) Handles BtSave.Click
-        If FindIfExist("MAJORACTIVITY", "M_POT_MAJOR", "MAJORACTIVITY", MAJORACTIVITY.Text) = MAJORACTIVITY.Text Then
-            MsgBox("item  is existed or deactivated.", MsgBoxStyle.Exclamation, "ERROR")
+        If xMAJORACTIVITY.Text = "" Then
+            MsgBox("Please Add Major Activity", vbExclamation, "VALIDATION")
             Exit Sub
         End If
 
-
-        Dim Sql As String = <s>
-                          UPDATE M_POT_MAJOR
-                               SET [MAJORACTIVITY] =  '<%= MAJORACTIVITY.Text %>'
-                                ,[COID]='<%= RbnCompany.Text %>'
-                               ,[MODIFIEDBY]='<%= RbnUser.Text %>'
-                                ,[MODIFICATIONDATE]=getdate()
-                             WHERE RECID = <%= RECID.Text %>
-                            </s>
-        ExeQuery(Sql)
-        MsgBox("Success.", MsgBoxStyle.Information, "Information")
-        BtRefresh.PerformClick()
-    End Sub
-
-    Private Sub BtEdit_Click(sender As Object, e As EventArgs) Handles BtEdit.Click
-        If grid1.Rows.Count = 1 Then
+        If FindIfExist("MAJORACTIVITY", "M_POT_MAJORACTIVITY", "MAJORACTIVITY", xMAJORACTIVITY.Text) >= 1 Then
+            MsgBox("Major Activity is already exist.", MsgBoxStyle.Exclamation, "ERROR")
             Exit Sub
         End If
-        Dim i As Integer = grid1.RowSel
 
-        If grid1.Rows.Count - 1 > 0 Then
-            RECID.Text = grid1.Item(i, "RECID").ToString
-            MAJORACTIVITY.Text = grid1.Item(i, "MAJORACTIVITY").ToString
+        If MsgBox("Are your sure you want to saved the transaction?", vbQuestion + vbYesNo + vbDefaultButton2, "VALIDATION") = vbNo Then
+            Exit Sub
         End If
 
-        BtSave.Enabled = True
-        btAdd.Enabled = False
+        Dim sql As String = ""
+
+        If xRECID.Text = "" Or Val(xRECID.Text) = 0 Then
+            sql = <s>
+                         INSERT INTO [M_POT_MAJORACTIVITY]
+                        ([MAJORACTIVITY]
+                        ,[COID]
+                        ,[ISACTIVE]
+                        ,[CREATEDBY]
+                        ,[CREATIONDATE])
+                        VALUES
+                        ('<%= xMAJORACTIVITY.Text %>'
+                        ,'<%= RbnCompany.Text %>'
+                        ,1
+                        ,'<%= RbnUser.Text %>'
+                        ,getdate())
+                      </s>
+        Else
+            sql = <s>
+                    UPDATE M_POT_MAJOR
+                        SET [MAJORACTIVITY] = '<%= xMAJORACTIVITY.Text %>'
+                        ,[COID] = '<%= RbnCompany.Text %>'
+                        ,[ISACTIVE] = 1
+                        ,[MODIFIEDBY] = '<%= RbnUser.Text %>'
+                        ,[MODIFICATIONDATE] = getdate()
+                    WHERE RECID = <%= xRECID.Text %>
+                  </s>
+        End If
+        ExeQuery(sql)
+        MsgBox("Transaction successfully saved", MsgBoxStyle.Information, "Information")
+
+        xRECID.Text = ""
+        xMAJORACTIVITY.Text = ""
+        ControlsEvent(True)
+        PopulateMajor()
+
     End Sub
 
     Private Sub BtDelete_Click(sender As Object, e As EventArgs) Handles BtDelete.Click
-        If grid1.Rows.Count = 1 Then
+        If checkstate <> "True" Then
+            If ConTools.CheckAccess(RbnUser.Text, RbnExeCode.Text, "IsAdd") = False Then
+                MsgBox("You have no access to delete in this facility", MsgBoxStyle.Information, "Contact System Administrator")
+                Exit Sub
+            End If
+        End If
+
+        If dgMajor.Rows.Count = 1 Then
             Exit Sub
         End If
-        Dim i As Integer = grid1.RowSel
 
-        If grid1.Rows.Count - 1 > 0 Then
-            RECID.Text = grid1.Item(i, "RECID").ToString
+        Dim i As Integer = dgMajor.RowSel
+
+        If i = 0 Then
+            MsgBox("Please select transaction first.", vbExclamation, "VALIDATION")
+            Exit Sub
         End If
 
-
+        If MsgBox("Are you sure you want to delete this transaction?", vbQuestion + vbYesNo + vbDefaultButton2, "VALIDATION") = vbNo Then
+            Exit Sub
+        End If
 
         Dim Sql As String = <s>
-                          UPDATE M_POT_MAJOR
-                               SET [ISACTIVE] = '0'
-                             WHERE RECID = <%= RECID.Text %>
+                            UPDATE M_POT_MAJORACTIVITY
+                               SET [ISACTIVE] = 0
+                             WHERE RECID = <%= dgMajor.Item(i, "RECID") %>
                             </s>
         ExeQuery(Sql)
-        MsgBox("Transaction is successfully deactivated.", MsgBoxStyle.Information, "Validation")
-        BtRefresh.PerformClick()
+        MsgBox("Transaction is successfully deactivated.", MsgBoxStyle.Information, "VALIDATION")
+        PopulateMajor()
+    End Sub
+
+    Private Sub BtCancelUpdate_Click(sender As Object, e As EventArgs) Handles btCancelUpdate.Click
+
+        xRECID.Text = ""
+        xMAJORACTIVITY.Text = ""
+        ControlsEvent(True)
+
+        PopulateMajor()
+    End Sub
+
+    Private Sub BTSEARCHLINE_Click(sender As Object, e As EventArgs) Handles BTSEARCHLINE.Click
+        PopulateMajor()
+    End Sub
+
+    Private Sub BTEXPORT_Click(sender As Object, e As EventArgs) Handles BTEXPORT.Click
+        If checkstate <> "True" Then
+            If ConTools.CheckAccess(RbnUser.Text, RbnExeCode.Text, "IsExport") = False Then
+                MsgBox("You have no access to Export into MSExcel in this facility", MsgBoxStyle.Information, "Contact System Administrator")
+                Exit Sub
+            End If
+        End If
+
+        Dim sfd As New SaveFileDialog
+        Me.Cursor = Cursors.WaitCursor
+        With sfd
+            .Filter = "Excel 97-2003 Workbook|*.xls|Excel Workbook|*.xlsx|All Files|*.*"
+            .FileName = "FARM POT MAJOR ACTIVITY LIST -" & Format(Now, "MMddyyyy")
+            If .ShowDialog = Windows.Forms.DialogResult.OK Then
+                dgMajor.SaveExcel(.FileName, "", FileFlags.IncludeFixedCells + FileFlags.IncludeMergedRanges + FileFlags.AsDisplayed)
+                MessageBox.Show("File was Successfully Exported.", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Me.Cursor = Cursors.Default
+                Exit Sub
+            Else
+                Me.Cursor = Cursors.Default
+                Exit Sub
+            End If
+        End With
     End Sub
 End Class

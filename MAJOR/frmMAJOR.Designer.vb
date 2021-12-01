@@ -24,6 +24,9 @@ Partial Class frmMAJOR
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMAJOR))
         Me.PanelHeader = New System.Windows.Forms.Panel()
+        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.XSEARCH = New System.Windows.Forms.TextBox()
+        Me.BTSEARCHLINE = New System.Windows.Forms.Button()
         Me.BTEXPORT = New System.Windows.Forms.Button()
         Me.btAdd = New System.Windows.Forms.Button()
         Me.bTpRINT = New System.Windows.Forms.Button()
@@ -36,11 +39,14 @@ Partial Class frmMAJOR
         Me.Panel7 = New System.Windows.Forms.Panel()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
+        Me.dgMajor = New C1.Win.C1FlexGrid.C1FlexGrid()
+        Me.panelentry = New System.Windows.Forms.Panel()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.Label38 = New System.Windows.Forms.Label()
+        Me.xMAJORACTIVITY = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.MAJORACTIVITY = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.RECID = New System.Windows.Forms.TextBox()
-        Me.grid1 = New C1.Win.C1FlexGrid.C1FlexGrid()
+        Me.xRECID = New System.Windows.Forms.TextBox()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.RbnBuildNo = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel7 = New System.Windows.Forms.ToolStripStatusLabel()
@@ -59,16 +65,29 @@ Partial Class frmMAJOR
         Me.RbnIP = New System.Windows.Forms.ToolStripStatusLabel()
         Me.ToolStripStatusLabel19 = New System.Windows.Forms.ToolStripStatusLabel()
         Me.RbnCompany = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CancelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExportToExcelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PanelHeader.SuspendLayout()
+        Me.Panel8.SuspendLayout()
         Me.TabControl1.SuspendLayout()
         Me.TabPage1.SuspendLayout()
-        CType(Me.grid1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgMajor, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.panelentry.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
+        Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'PanelHeader
         '
         Me.PanelHeader.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.PanelHeader.Controls.Add(Me.Panel8)
         Me.PanelHeader.Controls.Add(Me.BTEXPORT)
         Me.PanelHeader.Controls.Add(Me.btAdd)
         Me.PanelHeader.Controls.Add(Me.bTpRINT)
@@ -80,15 +99,47 @@ Partial Class frmMAJOR
         Me.PanelHeader.Controls.Add(Me.BtEdit)
         Me.PanelHeader.Controls.Add(Me.Panel7)
         Me.PanelHeader.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelHeader.Location = New System.Drawing.Point(0, 0)
+        Me.PanelHeader.Location = New System.Drawing.Point(0, 28)
         Me.PanelHeader.Name = "PanelHeader"
-        Me.PanelHeader.Size = New System.Drawing.Size(800, 64)
+        Me.PanelHeader.Size = New System.Drawing.Size(933, 64)
         Me.PanelHeader.TabIndex = 123221
+        '
+        'Panel8
+        '
+        Me.Panel8.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel8.BackColor = System.Drawing.Color.White
+        Me.Panel8.Controls.Add(Me.XSEARCH)
+        Me.Panel8.Controls.Add(Me.BTSEARCHLINE)
+        Me.Panel8.Location = New System.Drawing.Point(629, 12)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(296, 43)
+        Me.Panel8.TabIndex = 123156
+        '
+        'XSEARCH
+        '
+        Me.XSEARCH.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.XSEARCH.Font = New System.Drawing.Font("Century Gothic", 11.89565!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.XSEARCH.Location = New System.Drawing.Point(6, 10)
+        Me.XSEARCH.Name = "XSEARCH"
+        Me.XSEARCH.Size = New System.Drawing.Size(236, 25)
+        Me.XSEARCH.TabIndex = 123147
+        '
+        'BTSEARCHLINE
+        '
+        Me.BTSEARCHLINE.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BTSEARCHLINE.BackColor = System.Drawing.Color.White
+        Me.BTSEARCHLINE.FlatAppearance.BorderSize = 0
+        Me.BTSEARCHLINE.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BTSEARCHLINE.Image = CType(resources.GetObject("BTSEARCHLINE.Image"), System.Drawing.Image)
+        Me.BTSEARCHLINE.Location = New System.Drawing.Point(255, 3)
+        Me.BTSEARCHLINE.Name = "BTSEARCHLINE"
+        Me.BTSEARCHLINE.Size = New System.Drawing.Size(38, 36)
+        Me.BTSEARCHLINE.TabIndex = 123146
+        Me.BTSEARCHLINE.UseVisualStyleBackColor = False
         '
         'BTEXPORT
         '
         Me.BTEXPORT.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BTEXPORT.Enabled = False
         Me.BTEXPORT.FlatAppearance.BorderSize = 0
         Me.BTEXPORT.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BTEXPORT.Image = CType(resources.GetObject("BTEXPORT.Image"), System.Drawing.Image)
@@ -201,90 +252,120 @@ Partial Class frmMAJOR
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel7.Location = New System.Drawing.Point(0, 62)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(800, 2)
+        Me.Panel7.Size = New System.Drawing.Size(933, 2)
         Me.Panel7.TabIndex = 8
         '
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl1.Location = New System.Drawing.Point(0, 64)
+        Me.TabControl1.Location = New System.Drawing.Point(0, 92)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(800, 586)
+        Me.TabControl1.Size = New System.Drawing.Size(933, 532)
         Me.TabControl1.TabIndex = 123224
         '
         'TabPage1
         '
-        Me.TabPage1.Controls.Add(Me.Label2)
-        Me.TabPage1.Controls.Add(Me.MAJORACTIVITY)
-        Me.TabPage1.Controls.Add(Me.Label1)
-        Me.TabPage1.Controls.Add(Me.RECID)
-        Me.TabPage1.Controls.Add(Me.grid1)
+        Me.TabPage1.Controls.Add(Me.dgMajor)
+        Me.TabPage1.Controls.Add(Me.panelentry)
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(792, 557)
+        Me.TabPage1.Size = New System.Drawing.Size(925, 503)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "Identification"
+        Me.TabPage1.Text = "General"
         Me.TabPage1.UseVisualStyleBackColor = True
+        '
+        'dgMajor
+        '
+        Me.dgMajor.AllowDragging = C1.Win.C1FlexGrid.AllowDraggingEnum.None
+        Me.dgMajor.AllowEditing = False
+        Me.dgMajor.AllowFiltering = True
+        Me.dgMajor.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.None
+        Me.dgMajor.BackColor = System.Drawing.Color.White
+        Me.dgMajor.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle
+        Me.dgMajor.ColumnInfo = "0,0,0,0,0,105,Columns:"
+        Me.dgMajor.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgMajor.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.dgMajor.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
+        Me.dgMajor.Location = New System.Drawing.Point(3, 90)
+        Me.dgMajor.Margin = New System.Windows.Forms.Padding(4)
+        Me.dgMajor.Name = "dgMajor"
+        Me.dgMajor.Rows.DefaultSize = 21
+        Me.dgMajor.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
+        Me.dgMajor.Size = New System.Drawing.Size(919, 410)
+        Me.dgMajor.StyleInfo = resources.GetString("dgMajor.StyleInfo")
+        Me.dgMajor.TabIndex = 123235
+        Me.dgMajor.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
+        '
+        'panelentry
+        '
+        Me.panelentry.Controls.Add(Me.Panel2)
+        Me.panelentry.Controls.Add(Me.Panel12)
+        Me.panelentry.Controls.Add(Me.Label38)
+        Me.panelentry.Controls.Add(Me.xMAJORACTIVITY)
+        Me.panelentry.Controls.Add(Me.Label2)
+        Me.panelentry.Controls.Add(Me.xRECID)
+        Me.panelentry.Dock = System.Windows.Forms.DockStyle.Top
+        Me.panelentry.Location = New System.Drawing.Point(3, 3)
+        Me.panelentry.Name = "panelentry"
+        Me.panelentry.Size = New System.Drawing.Size(919, 87)
+        Me.panelentry.TabIndex = 123242
+        '
+        'Panel2
+        '
+        Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel2.Location = New System.Drawing.Point(13, 80)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(894, 2)
+        Me.Panel2.TabIndex = 123244
+        '
+        'Panel12
+        '
+        Me.Panel12.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Panel12.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel12.Location = New System.Drawing.Point(107, 19)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(384, 1)
+        Me.Panel12.TabIndex = 123243
+        '
+        'Label38
+        '
+        Me.Label38.AutoSize = True
+        Me.Label38.Location = New System.Drawing.Point(16, 8)
+        Me.Label38.Name = "Label38"
+        Me.Label38.Size = New System.Drawing.Size(87, 17)
+        Me.Label38.TabIndex = 123242
+        Me.Label38.Text = "Identification"
+        '
+        'xMAJORACTIVITY
+        '
+        Me.xMAJORACTIVITY.Location = New System.Drawing.Point(191, 39)
+        Me.xMAJORACTIVITY.Name = "xMAJORACTIVITY"
+        Me.xMAJORACTIVITY.Size = New System.Drawing.Size(262, 22)
+        Me.xMAJORACTIVITY.TabIndex = 2
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(17, 48)
+        Me.Label2.Location = New System.Drawing.Point(70, 39)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(95, 17)
         Me.Label2.TabIndex = 123241
         Me.Label2.Text = "Major Activity:"
         '
-        'MAJORACTIVITY
+        'xRECID
         '
-        Me.MAJORACTIVITY.Location = New System.Drawing.Point(118, 48)
-        Me.MAJORACTIVITY.Name = "MAJORACTIVITY"
-        Me.MAJORACTIVITY.Size = New System.Drawing.Size(262, 22)
-        Me.MAJORACTIVITY.TabIndex = 2
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(17, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(54, 17)
-        Me.Label1.TabIndex = 123239
-        Me.Label1.Text = "Rec ID:"
-        '
-        'RECID
-        '
-        Me.RECID.Enabled = False
-        Me.RECID.Location = New System.Drawing.Point(118, 20)
-        Me.RECID.Name = "RECID"
-        Me.RECID.Size = New System.Drawing.Size(106, 22)
-        Me.RECID.TabIndex = 1
-        '
-        'grid1
-        '
-        Me.grid1.AllowDragging = C1.Win.C1FlexGrid.AllowDraggingEnum.None
-        Me.grid1.AllowEditing = False
-        Me.grid1.AllowFiltering = True
-        Me.grid1.AllowSorting = C1.Win.C1FlexGrid.AllowSortingEnum.None
-        Me.grid1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.grid1.BackColor = System.Drawing.Color.White
-        Me.grid1.BorderStyle = C1.Win.C1FlexGrid.Util.BaseControls.BorderStyleEnum.FixedSingle
-        Me.grid1.ColumnInfo = "0,0,0,0,0,105,Columns:"
-        Me.grid1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
-        Me.grid1.HighLight = C1.Win.C1FlexGrid.HighLightEnum.WithFocus
-        Me.grid1.Location = New System.Drawing.Point(4, 92)
-        Me.grid1.Margin = New System.Windows.Forms.Padding(4)
-        Me.grid1.Name = "grid1"
-        Me.grid1.Rows.DefaultSize = 21
-        Me.grid1.SelectionMode = C1.Win.C1FlexGrid.SelectionModeEnum.RowRange
-        Me.grid1.Size = New System.Drawing.Size(784, 462)
-        Me.grid1.StyleInfo = resources.GetString("grid1.StyleInfo")
-        Me.grid1.TabIndex = 123235
-        Me.grid1.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
+        Me.xRECID.Enabled = False
+        Me.xRECID.Location = New System.Drawing.Point(459, 39)
+        Me.xRECID.Name = "xRECID"
+        Me.xRECID.Size = New System.Drawing.Size(55, 22)
+        Me.xRECID.TabIndex = 1
+        Me.xRECID.Visible = False
         '
         'StatusStrip1
         '
@@ -295,7 +376,7 @@ Partial Class frmMAJOR
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 626)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Padding = New System.Windows.Forms.Padding(1, 0, 19, 0)
-        Me.StatusStrip1.Size = New System.Drawing.Size(800, 24)
+        Me.StatusStrip1.Size = New System.Drawing.Size(933, 24)
         Me.StatusStrip1.TabIndex = 123225
         Me.StatusStrip1.Tag = "XC"
         Me.StatusStrip1.Text = "PROGEN 1.2.x as of DateTime"
@@ -342,7 +423,7 @@ Partial Class frmMAJOR
         'RbnStatus
         '
         Me.RbnStatus.Name = "RbnStatus"
-        Me.RbnStatus.Size = New System.Drawing.Size(74, 19)
+        Me.RbnStatus.Size = New System.Drawing.Size(207, 19)
         Me.RbnStatus.Spring = True
         Me.RbnStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -406,25 +487,100 @@ Partial Class frmMAJOR
         Me.RbnCompany.Size = New System.Drawing.Size(93, 19)
         Me.RbnCompany.Text = "RbnCompany"
         '
+        'Panel3
+        '
+        Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel3.Location = New System.Drawing.Point(0, 624)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(933, 2)
+        Me.Panel3.TabIndex = 123245
+        '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(19, 19)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(933, 28)
+        Me.MenuStrip1.TabIndex = 123246
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
+        'FileToolStripMenuItem
+        '
+        Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem, Me.SaveToolStripMenuItem, Me.CancelToolStripMenuItem, Me.PrintToolStripMenuItem, Me.ExportToExcelToolStripMenuItem, Me.ExitToolStripMenuItem})
+        Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
+        Me.FileToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Alt Or System.Windows.Forms.Keys.F4), System.Windows.Forms.Keys)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(44, 24)
+        Me.FileToolStripMenuItem.Text = "File"
+        '
+        'EditToolStripMenuItem
+        '
+        Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
+        Me.EditToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.EditToolStripMenuItem.Text = "Edit"
+        '
+        'SaveToolStripMenuItem
+        '
+        Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
+        Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.SaveToolStripMenuItem.Text = "Save"
+        '
+        'CancelToolStripMenuItem
+        '
+        Me.CancelToolStripMenuItem.Name = "CancelToolStripMenuItem"
+        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.CancelToolStripMenuItem.Text = "Cancel"
+        '
+        'PrintToolStripMenuItem
+        '
+        Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
+        Me.PrintToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.PrintToolStripMenuItem.Text = "Print"
+        '
+        'ExportToExcelToolStripMenuItem
+        '
+        Me.ExportToExcelToolStripMenuItem.Name = "ExportToExcelToolStripMenuItem"
+        Me.ExportToExcelToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
+        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.ExportToExcelToolStripMenuItem.Text = "Export to Excel"
+        '
+        'ExitToolStripMenuItem
+        '
+        Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.ExitToolStripMenuItem.Text = "Exit"
+        '
         'frmMAJOR
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 650)
-        Me.Controls.Add(Me.StatusStrip1)
+        Me.ClientSize = New System.Drawing.Size(933, 650)
         Me.Controls.Add(Me.TabControl1)
         Me.Controls.Add(Me.PanelHeader)
+        Me.Controls.Add(Me.MenuStrip1)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmMAJOR"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "MAJOR ACTIVITY"
         Me.PanelHeader.ResumeLayout(False)
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel8.PerformLayout()
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
-        Me.TabPage1.PerformLayout()
-        CType(Me.grid1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgMajor, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.panelentry.ResumeLayout(False)
+        Me.panelentry.PerformLayout()
         Me.StatusStrip1.ResumeLayout(False)
         Me.StatusStrip1.PerformLayout()
+        Me.MenuStrip1.ResumeLayout(False)
+        Me.MenuStrip1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -442,11 +598,10 @@ Partial Class frmMAJOR
     Friend WithEvents Panel7 As Panel
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents grid1 As C1.Win.C1FlexGrid.C1FlexGrid
+    Friend WithEvents dgMajor As C1.Win.C1FlexGrid.C1FlexGrid
     Friend WithEvents Label2 As Label
-    Friend WithEvents MAJORACTIVITY As TextBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents RECID As TextBox
+    Friend WithEvents xMAJORACTIVITY As TextBox
+    Friend WithEvents xRECID As TextBox
     Friend WithEvents StatusStrip1 As StatusStrip
     Friend WithEvents RbnBuildNo As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel7 As ToolStripStatusLabel
@@ -465,4 +620,20 @@ Partial Class frmMAJOR
     Friend WithEvents RbnIP As ToolStripStatusLabel
     Friend WithEvents ToolStripStatusLabel19 As ToolStripStatusLabel
     Friend WithEvents RbnCompany As ToolStripStatusLabel
+    Friend WithEvents Panel8 As Panel
+    Friend WithEvents XSEARCH As TextBox
+    Friend WithEvents BTSEARCHLINE As Button
+    Friend WithEvents panelentry As Panel
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents Label38 As Label
+    Friend WithEvents Panel2 As Panel
+    Friend WithEvents Panel3 As Panel
+    Friend WithEvents MenuStrip1 As MenuStrip
+    Friend WithEvents FileToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents SaveToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CancelToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PrintToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExportToExcelToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
 End Class

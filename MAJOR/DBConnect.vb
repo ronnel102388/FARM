@@ -33,7 +33,6 @@ Module DBConnect
         Conn.Close()
         Return CompanCode
     End Function
-
     Public Sub ConnecttoDb()
         '  MsgBox(SConn)
         Conn = New SqlConnection(SConn)
@@ -84,13 +83,13 @@ Module DBConnect
         Return ReciD
     End Function
     '--putch
-    Function FindIfExist(ByVal ToFind As String, ByVal Table As String, ByVal ColToFind As String, ByVal ValtoFind As String) As String
+    Function FindIfExist(ByVal ToFind As String, ByVal Table As String, ByVal ColToFind As String, ByVal ValtoFind As String) As Integer
         Dim sql As String = <s>
-                                SELECT <%= ToFind %> FROM <%= Table %> WHERE <%= ColToFind %> = '<%= ValtoFind %>'  
+                                SELECT COUNT(<%= ToFind %>) AS <%= ToFind %>  FROM <%= Table %> WHERE <%= ColToFind %> = '<%= ValtoFind %>'  
                             </s>
 
         ExeReader(sql)
-        Dim Find As String = ""
+        Dim Find As Integer = 0
         While dr.Read
             Find = dr.Item(ToFind)
         End While
