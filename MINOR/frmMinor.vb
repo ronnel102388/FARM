@@ -191,7 +191,7 @@ Public Class frmMinor
 
 
         If MINORACTIVITY.Text = "" Then
-            MsgBox("Please Add Major Activity", vbExclamation, "VALIDATION")
+            MsgBox("Please Add Minor Activity", vbExclamation, "VALIDATION")
             Exit Sub
         End If
 

@@ -164,12 +164,12 @@ Public Class frmMETHOD
 
 
         If METHODACTIVITY.Text = "" Then
-            MsgBox("Please Add Major Activity", vbExclamation, "VALIDATION")
+            MsgBox("Please Add Method of Activity", vbExclamation, "VALIDATION")
             Exit Sub
         End If
 
         If FindIfExist("METHODACTIVITY", "M_POT_METHODOFACTIVITY", "METHODACTIVITY", METHODACTIVITY.Text) = METHODACTIVITY.Text Then
-            MsgBox("Major Activity is already exist.", MsgBoxStyle.Exclamation, "ERROR")
+            MsgBox("Method of Activity is already exist.", MsgBoxStyle.Exclamation, "ERROR")
             Exit Sub
         End If
 

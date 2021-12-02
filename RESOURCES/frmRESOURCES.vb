@@ -195,12 +195,12 @@ Public Class frmRESOURCES
 
 
         If txtResources.Text = "" Then
-            MsgBox("Please Add Major Activity", vbExclamation, "VALIDATION")
+            MsgBox("Please Add Resources", vbExclamation, "VALIDATION")
             Exit Sub
         End If
 
         If FindIfExist("RESOURCES", "M_POT_RESOURCES", "RESOURCES", txtResources.Text) = txtResources.Text Then
-            MsgBox("Major Activity is already exist.", MsgBoxStyle.Exclamation, "ERROR")
+            MsgBox("Resources is already exist.", MsgBoxStyle.Exclamation, "ERROR")
             Exit Sub
         End If
 
