@@ -266,4 +266,9 @@ Public Class frmDetailsPOT
             .ShowDialog()
         End With
     End Sub
+
+    Private Sub frmDetailsPOT_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Me.Dispose()
+    End Sub
+
 End Class

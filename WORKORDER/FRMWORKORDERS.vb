@@ -1,7 +1,7 @@
 ﻿Imports C1.Win.C1FlexGrid
 Public Class FRMWORKORDERS
     Dim CURRENTTAB As Integer
-    Dim vMAINWOID As Integer
+    Dim vMAINWOID, vWOID As Integer
     Public checkstate = IniCon.ReadString("CheckState", "UnderDevelopment")
 
 #Region "ROUTINE"
@@ -228,7 +228,7 @@ Public Class FRMWORKORDERS
 #Region "ACTION_MAIN"
     Private Sub BtAdd_Click(sender As Object, e As EventArgs) Handles btAdd.Click
         If CURRENTTAB = 2 Then
-            FRMCREATIONWORKORDERS.ShowDialog()
+            FRM_CREATION_WORKORDERS.ShowDialog()
         End If
     End Sub
     Private Sub BtEdit_Click(sender As Object, e As EventArgs) Handles BtEdit.Click
@@ -280,7 +280,7 @@ Public Class FRMWORKORDERS
             End If
         End With
 
-        With FRMCREATIONWORKORDERS
+        With FRM_CREATION_WORKORDERS
             .vMAINWOID = dgMAINWO.Item(x, "MAINWOID")
             .vSUBFIELDNO = dgMAINWO.Item(x, "FIELDNO").ToString
             .ShowDialog()
@@ -345,14 +345,90 @@ Public Class FRMWORKORDERS
             End If
         End With
 
-        With FRMCREATIONWORKORDERS
+        With FRM_UPDATE_WORKORDERS
             .vMAINWOID = vMAINWOID
             .vSUBFIELDNO = xSUBFIELDNO.Text
+            .vWOID = dgWOHeader.Item(x, "WORKORDERID").ToString
+            .vWOCODE = dgWOHeader.Item(x, "WORKORDERCODE").ToString
             .vMAJOR = dgWOHeader.Item(x, "MAJORACTIVITY").ToString
             .vMINOR = dgWOHeader.Item(x, "MINORACTIVITY").ToString
+            .vACTDATE = dgWOHeader.Item(x, "ACTIVITYDATE").ToString
             .ShowDialog()
         End With
     End Sub
 
+    Private Sub BtCancelled_Click(sender As Object, e As EventArgs) Handles btCancelledHeader.Click
+        If dgWOHeader.Rows.Count = 1 Then
+            Exit Sub
+        End If
 
+        Dim x As Integer = dgWOHeader.RowSel
+
+        vWOID = dgWOHeader.Item(x, "WORKORDERID")
+
+        If vWOID = 0 Then
+            Exit Sub
+        End If
+
+        Dim vremarkInput As String = ""
+
+        If MsgBox("Are you sure you want to cancel this this transaction?", vbQuestion + vbYesNo + vbDefaultButton2, "VALIDATION") = vbNo Then
+            Exit Sub
+        End If
+
+        vremarkInput = InputBox("Enter your remarks:", "REMARKS", "")
+        If vremarkInput = "" Then
+            MsgBox("Please input remarks.", MsgBoxStyle.Exclamation, "ERROR")
+            Exit Sub
+        End If
+
+        Dim sql As String = <s>
+                                                       EXEC WORKORDER_HEADER_ACTION
+                                        <%= dgWOHeader.Item(x, "WORKORDERID") %>
+                                        ,0-- MAINWOID
+                                        ,'' -- SUBFIELDNO
+                                        ,'' -- WORKORDERCODE
+                                        ,'' -- LANDOWNER
+                                        ,'' -- FARMMODEL
+
+                                        ,' ' -- WEEKENDING
+                                        ,'' -- ARABLEAREA
+                                        ,'' -- PLANTEDAREA
+
+                                        ,'' -- CROPYEAR
+                                        ,'' -- PLANTINGDATE
+                                        ,'' -- CROPCLASS
+                                        ,'' -- CROPCLASSDETAIL
+
+                                        ,'' -- FARMMANAGER
+                                        ,'' -- FARMASSISTANT
+                                        ,'' -- FARMADDRESS
+
+                                        ,'' -- WORK ORDER ACTIVITY DATE
+                                        ,'' -- AREAOFACTIVITY
+                                        ,'' -- MAJORACTIVITY
+                                        ,'' -- MINORACTIVITY
+                                        ,'' -- VERSION
+                                        
+                                        ,'<%= vremarkInput %>' -- CANCELLATIONREMARKS
+                                        ,'' -- REOPENWOREMARKS
+                                        ,'' -- UPDATEJUSTIFICATION
+
+                                        ,'' -- DEACTIVATIONREMARKS
+                                        ,'<%= RbnUser.Text %>'
+
+                                        ,0 -- FURROWDISTANCE 
+                                        ,0 -- TOTALSTALKWEIGHT
+                                        ,0 --EQUIVALENTTONS
+                                        ,0 -- YIELD
+                                        ,0 -- ISMANUAL
+                                        ,'' -- CROPLOGREMARKS
+                                        ,'CANCEL'
+                            </s>
+        ExeQuery(sql)
+        MsgBox("Successfully cancelled transaction.", vbInformation, "VALIDATION")
+        POPULATEWOHEADER(vMAINWOID)
+        POPULATEWODETAIL(vWOID)
+        vWOID = 0
+    End Sub
 End Class

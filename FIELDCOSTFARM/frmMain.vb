@@ -320,6 +320,7 @@ and Employee = '<%= FM %>'
             .isCB = Convert.ToInt32(XCUTBACK.Checked)
             .vACTUAL = DGCOSTPERFIELD.Item(i, "ACTUALCOST").ToString
             .vLABORHAUL = DGCOSTPERFIELD.Item(i, "LABORHAUL").ToString
+
             .ShowDialog()
 
         End With

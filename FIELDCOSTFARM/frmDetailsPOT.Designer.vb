@@ -93,6 +93,7 @@ Partial Class frmDetailsPOT
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dgFIELDCOST = New C1.Win.C1FlexGrid.C1FlexGrid()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelHeader.SuspendLayout()
         Me.Panel13.SuspendLayout()
@@ -702,6 +703,7 @@ Partial Class frmDetailsPOT
         '
         'Panel3
         '
+        Me.Panel3.Controls.Add(Me.TextBox1)
         Me.Panel3.Controls.Add(Me.Panel5)
         Me.Panel3.Controls.Add(Me.X)
         Me.Panel3.Controls.Add(Me.xCROPCLASS)
@@ -876,6 +878,13 @@ Partial Class frmDetailsPOT
         Me.dgFIELDCOST.TabIndex = 300
         Me.dgFIELDCOST.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(1215, 12)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox1.TabIndex = 123173
+        '
         'frmDetailsPOT
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -982,4 +991,5 @@ Partial Class frmDetailsPOT
     Friend WithEvents Label5 As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
+    Friend WithEvents TextBox1 As TextBox
 End Class

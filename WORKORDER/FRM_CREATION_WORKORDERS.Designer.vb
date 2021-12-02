@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class FRMCREATIONWORKORDERS
+Partial Class FRM_CREATION_WORKORDERS
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,7 +22,7 @@ Partial Class FRMCREATIONWORKORDERS
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRMCREATIONWORKORDERS))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FRM_CREATION_WORKORDERS))
         Me.PANELHEADER = New System.Windows.Forms.Panel()
         Me.BTEXPORT = New System.Windows.Forms.Button()
         Me.btAdd = New System.Windows.Forms.Button()

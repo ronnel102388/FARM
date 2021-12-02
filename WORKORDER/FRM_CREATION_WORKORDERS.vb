@@ -1,5 +1,5 @@
 ﻿Imports C1.Win.C1FlexGrid
-Public Class FRMCREATIONWORKORDERS
+Public Class FRM_CREATION_WORKORDERS
     Dim vMAJAID, vMINAID, vVERSIONID, vWOID, vWORESID As Integer
     Public vMAINWOID As Integer
     Public vSUBFIELDNO, vMAJOR, vMINOR As String
@@ -94,6 +94,7 @@ Public Class FRMCREATIONWORKORDERS
             .Cols("COSTPRICE").Visible = False
             .Cols("RESOURCEGROUP").Visible = False
             .Cols("POTID").Visible = False
+            .Cols("WORKORDERRESOURCEID").Visible = False
             .Tree.Column = .Cols("RESOURCE").Index
             .Tree.Style = TreeStyleFlags.Complete
             .Subtotal(AggregateEnum.None, 0, .Cols("METHODOFACTIVITY").Index, .Cols("METHODOFACTIVITY").Index, "{0}")
@@ -144,7 +145,7 @@ Public Class FRMCREATIONWORKORDERS
             xCBOMINORACTIVITY.Text = ""
             xCBOMINORACTIVITY.SelectedIndex = -1
         End If
-        drl_FillCombo("MINORACTIVITY", xCBOMINORACTIVITY, "M_FARM_POT_VERSION_DETAIL", "MAJORACTIVITYID = '" & vMAJAID & "' AND VERSIONID = " & vVERSIONID & " AND COID = '" & Comp & "'")
+        drl_FillCombo("MINORACTIVITY", xCBOMINORACTIVITY, "M_FARM_POT_VERSION_DETAIL", "MAJORACTIVITYID = '" & vMAJAID & "' AND VERSIONID = " & vVERSIONID & " AND COID = '" & Comp & "' AND MINORACTIVITY not in  (SELECT MINORACTIVITY FROM T_FARMACTIVITYWORKORDER WHERE MAINWOID = " & vMAINWOID & ")")
     End Sub
     Private Sub BtCancelUpdate_Click(sender As Object, e As EventArgs) Handles btCancelUpdate.Click
         If xCBOMAJORACTIVITY.Text <> "" Then
@@ -205,8 +206,10 @@ Public Class FRMCREATIONWORKORDERS
             For x As Integer = 1 To .Rows.Count - 1
                 If .Rows(x).IsNode = False Then
                     If .Item(x, "TAG").ToString = False Then
-                        MsgBox("Please select MethodActivity / Resource.", vbInformation, "VALIDATION")
-                        Exit Sub
+                        If .Rows.Count = 0 Then
+                            MsgBox("Please select MethodActivity / Resource.", vbInformation, "VALIDATION")
+                            Exit Sub
+                        End If
                     End If
                 End If
             Next
@@ -233,6 +236,7 @@ Public Class FRMCREATIONWORKORDERS
                                     ,'' -- REOPENRMAINWOREMARKS
                                     ,'<%= FRMWORKORDERS.RbnUser.Text %>' -- CREATEDBY
                                     ,0  --ISCROPLOGGED
+                                    ,'INSERT'
                                 </s>
             ExeReader(sql)
             While dr.Read
@@ -273,13 +277,10 @@ Public Class FRMCREATIONWORKORDERS
                                         ,'<%= xCBOMINORACTIVITY.Text %>' -- MINORACTIVITY
                                         ,'<%= xVERSION.Text %>' -- VERSION
                                         
-                                        ,0 -- ISCLOSED
-                                        ,0 -- ISCANCELLED
                                         ,'' -- CANCELLATIONREMARKS
                                         ,'' -- REOPENWOREMARKS
                                         ,'' -- UPDATEJUSTIFICATION
 
-                                        ,1 -- ISACTIVE
                                         ,'' -- DEACTIVATIONREMARKS
                                         ,'<%= FRMWORKORDERS.RbnUser.Text %>'
 
@@ -289,6 +290,7 @@ Public Class FRMCREATIONWORKORDERS
                                         ,0 -- YIELD
                                         ,0 -- ISMANUAL
                                         ,'' -- CROPLOGREMARKS
+                                        ,'INSERT'
                                 </s>
             ExeReader(sql)
             While dr.Read
@@ -300,7 +302,7 @@ Public Class FRMCREATIONWORKORDERS
             With dgWOres
                 For x As Integer = 1 To .Rows.Count - 1
                     If .Rows(x).IsNode = False Then
-                        If .Item(x, "TAG").ToString = True Then
+                        If .Item(x, "STATUS") = "INSERT" Then
                             Dim vWORESCODE As String = drl_GenerateCodeWORESOURCE()
 
                             Dim sqlx As String = <s>
@@ -316,6 +318,8 @@ Public Class FRMCREATIONWORKORDERS
                                                 ,'<%= .Item(x, "JUSTIFICATION") %>' -- JUSTIFICATION
                                                 ,'<%= .Item(x, "DEACTIVATIONREMARKS") %>' -- DEACTIVATIONREMARKS
                                                 ,'<%= FRMWORKORDERS.RbnUser.Text %>' -- CREATEDBY
+                                                ,1  --ISACTIVE
+                                                ,'INSERT'
                                              </s>
                             ExeQuery(sqlx)
                         End If
@@ -332,11 +336,24 @@ Public Class FRMCREATIONWORKORDERS
             .POPULATEFIELDDETAILS(xCBOSUBFIELDNO.Text)
             .POPULATEMAINWORKORDER()
             .POPULATEWOHEADER(vMAINWOID)
+            .POPULATEWODETAIL(vWOID)
         End With
 
         Clear()
         Me.Dispose()
     End Sub
+    Private Sub dgWOres_AfterEdit(sender As Object, e As RowColEventArgs) Handles dgWOres.AfterEdit
+        With dgWOres
+            Dim x As Integer = .RowSel
+            If .Item(x, "TAG").ToString = True Then
+                .Item(x, "STATUS") = "INSERT"
+            Else
+                .Item(x, "STATUS") = "---"
+            End If
+            .AutoSizeCols()
+        End With
+    End Sub
+
 #End Region
     Private Sub FRMCREATEWORKORDERS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Clear()
@@ -351,71 +368,10 @@ Public Class FRMCREATIONWORKORDERS
         If vSUBFIELDNO <> "" Then
             xCBOSUBFIELDNO.Enabled = False
         End If
-
-
-        '==================================ACTIVITY
-        If vMAJOR <> "" Then
-            xCBOMAJORACTIVITY.Text = vMAJOR
-            XCBOMAJORACTIVITY_SelectedIndexChanged(sender, e)
-        End If
-
-        If vMINOR <> "" Then
-            xCBOMINORACTIVITY.Text = vMINOR
-            XCBOMINORACTIVITY_SelectedIndexChanged(sender, e)
-        Else
-            POPULATE_METHODOFACTIVITY_RESOURCE(vVERSIONID, 0, 0, "", Date.Now, 0)
-        End If
-
-
-
-        '=================================METHOD AND RESOURCE
-
-
     End Sub
 
-    Private Sub dgWOres_AfterEdit(sender As Object, e As RowColEventArgs) Handles dgWOres.AfterEdit
 
-        With dgWOres
-
-            Dim x As Integer = .RowSel
-
-            If .Item(x, "TAG").ToString = True Then
-                If drl_VALIDATECHANGED(vWOID, .Item(x, "POTID")) = 0 Then
-                    .Item(x, "STATUS") = "---"
-                Else
-                    .Item(x, "STATUS") = "CHANGED"
-                End If
-            Else
-                If drl_VALIDATECHANGED(vWOID, .Item(x, "POTID")) = 0 Then
-                    .Item(x, "STATUS") = "CHANGED"
-                Else
-                    .Item(x, "STATUS") = "---"
-                End If
-            End If
-            .Cols("STATUS").Width = 150
-
-        End With
+    Private Sub FRM_CREATION_WORKORDERS_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
+        Me.Dispose()
     End Sub
-
-    Function drl_VALIDATECHANGED(ByVal WOID As String, ByVal POTID As Integer) As Integer
-        Dim sql As String = <s>
-                                SELECT
-                                COUNT(WorkOrderResourceId) AS COUNT
-                                FROM
-                                T_FARMACTIVITYWORKORDERRESOURCES 
-                                WHERE 
-                                WORKORDERID  = <%= WOID %>
-                                AND POTID = <%= POTID %>
-                                AND ISACTIVE = 1
-                            </s>
-        ExeReader(sql)
-        Dim Find As Integer = 0
-        While dr.Read
-            Find = dr.Item("COUNT").ToString
-        End While
-        dr.Close()
-        Conn.Close()
-
-        Return Find
-    End Function
 End Class

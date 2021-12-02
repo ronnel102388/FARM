@@ -96,10 +96,10 @@
     <Compile Include="FRMCHECKACTIVITYDATE.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FRMCREATIONWORKORDERS.Designer.vb">
-      <DependentUpon>FRMCREATIONWORKORDERS.vb</DependentUpon>
+    <Compile Include="FRM_CREATION_WORKORDERS.Designer.vb">
+      <DependentUpon>FRM_CREATION_WORKORDERS.vb</DependentUpon>
     </Compile>
-    <Compile Include="FRMCREATIONWORKORDERS.vb">
+    <Compile Include="FRM_CREATION_WORKORDERS.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FRM_CREATION_NO_WORKORDERS.Designer.vb">
@@ -125,6 +125,12 @@
     </Compile>
     <Compile Include="FRMWORKORDERS.Designer.vb">
       <DependentUpon>FRMWORKORDERS.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRM_UPDATE_WORKORDERS.Designer.vb">
+      <DependentUpon>FRM_UPDATE_WORKORDERS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FRM_UPDATE_WORKORDERS.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -153,8 +159,8 @@
     <EmbeddedResource Include="FRMCHECKACTIVITYDATE.resx">
       <DependentUpon>FRMCHECKACTIVITYDATE.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FRMCREATIONWORKORDERS.resx">
-      <DependentUpon>FRMCREATIONWORKORDERS.vb</DependentUpon>
+    <EmbeddedResource Include="FRM_CREATION_WORKORDERS.resx">
+      <DependentUpon>FRM_CREATION_WORKORDERS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRM_CREATION_NO_WORKORDERS.resx">
       <DependentUpon>FRM_CREATION_NO_WORKORDERS.vb</DependentUpon>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMWORKORDERS.resx">
       <DependentUpon>FRMWORKORDERS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRM_UPDATE_WORKORDERS.resx">
+      <DependentUpon>FRM_UPDATE_WORKORDERS.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\licenses.licx" />
     <EmbeddedResource Include="My Project\Resources.resx">

@@ -77,7 +77,28 @@
 
         Return dt
     End Function
+    Function drl_VALIDATECHANGED(ByVal WOID As String, ByVal POTID As Integer, ByVal Tag As Integer) As Integer
+        Dim sql As String = <s>
+                                SELECT
+                                COUNT(WorkOrderResourceId) AS COUNT
+                                FROM
+                                T_FARMACTIVITYWORKORDERRESOURCES 
+                                WHERE 
+                                WORKORDERID  = <%= WOID %>
+                                AND POTID = <%= POTID %>
+                                AND ISACTIVE = <%= Tag %>
+                            </s>
 
+        ExeReader(sql)
+        Dim Find As Integer = 0
+        While dr.Read
+            Find = dr.Item("COUNT").ToString
+        End While
+        dr.Close()
+        Conn.Close()
+
+        Return Find
+    End Function
     Function drl_FINDDefault() As Integer
         Dim sql As String = <s>
                                  SELECT RECID FROM  M_FARM_POT_VERSION WHERE ISACTIVE =  1 AND ISDEFAULT = 1 AND ISPOSTED = 1 
