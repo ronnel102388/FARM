@@ -84,7 +84,7 @@ Public Class frmMAJOR
     End Sub
 #End Region
     Private Sub BtRefresh_Click(sender As Object, e As EventArgs) Handles BtRefresh.Click
-        xRECID.Text = ""
+        'xRECID.Text = ""
         xMAJORACTIVITY.Text = ""
 
         PopulateMajor()
@@ -111,11 +111,11 @@ Public Class frmMAJOR
             End If
         End If
         '================CLEAR
-        xRECID.Text = ""
-        xMAJORACTIVITY.Text = ""
-
+        'xRECID.Text = ""
+        'xMAJORACTIVITY.Text = ""
+        frmMAJORADD.ShowDialog()
         '================CONTROL
-        ControlsEvent(False)
+        'ControlsEvent(False)
 
     End Sub
     Private Sub BtEdit_Click(sender As Object, e As EventArgs) Handles BtEdit.Click
@@ -146,7 +146,11 @@ Public Class frmMAJOR
         If dgMajor.Rows.Count - 1 > 0 Then
             xRECID.Text = dgMajor.Item(i, "RECID").ToString
             xMAJORACTIVITY.Text = dgMajor.Item(i, "MAJORACTIVITY").ToString
+            isActive.Text = dgMajor.Item(i, "isActive").ToString
         End If
+
+
+
     End Sub
 
     Private Sub dgMajor_DoubleClick(sender As Object, e As EventArgs) Handles dgMajor.DoubleClick
@@ -154,6 +158,16 @@ Public Class frmMAJOR
     End Sub
 
     Private Sub BtSave_Click(sender As Object, e As EventArgs) Handles BtSave.Click
+        If isActive.Text = "False" Then
+            MsgBox("Can't proceed item is not active." & vbCrLf & "Please contact administrator.", vbExclamation, "VALIDATION")
+            Exit Sub
+        End If
+
+
+
+
+
+
         If xMAJORACTIVITY.Text = "" Then
             MsgBox("Please Add Major Activity", vbExclamation, "VALIDATION")
             Exit Sub
@@ -170,24 +184,10 @@ Public Class frmMAJOR
 
         Dim sql As String = ""
 
-        If xRECID.Text = "" Or Val(xRECID.Text) = 0 Then
-            sql = <s>
-                         INSERT INTO [M_POT_MAJORACTIVITY]
-                        ([MAJORACTIVITY]
-                        ,[COID]
-                        ,[ISACTIVE]
-                        ,[CREATEDBY]
-                        ,[CREATIONDATE])
-                        VALUES
-                        ('<%= xMAJORACTIVITY.Text %>'
-                        ,'<%= RbnCompany.Text %>'
-                        ,1
-                        ,'<%= RbnUser.Text %>'
-                        ,getdate())
-                      </s>
-        Else
-            sql = <s>
-                    UPDATE M_POT_MAJOR
+
+
+        sql = <s>
+                    UPDATE M_POT_MAJORACTIVITY
                         SET [MAJORACTIVITY] = '<%= xMAJORACTIVITY.Text %>'
                         ,[COID] = '<%= RbnCompany.Text %>'
                         ,[ISACTIVE] = 1
@@ -195,7 +195,7 @@ Public Class frmMAJOR
                         ,[MODIFICATIONDATE] = getdate()
                     WHERE RECID = <%= xRECID.Text %>
                   </s>
-        End If
+
         ExeQuery(sql)
         MsgBox("Transaction successfully saved", MsgBoxStyle.Information, "Information")
 
@@ -213,6 +213,15 @@ Public Class frmMAJOR
                 Exit Sub
             End If
         End If
+
+
+        If isActive.Text = "False" Then
+            MsgBox("Item Already deactivated.", vbExclamation, "VALIDATION")
+            Exit Sub
+        End If
+
+
+
 
         If dgMajor.Rows.Count = 1 Then
             Exit Sub
@@ -237,6 +246,8 @@ Public Class frmMAJOR
         ExeQuery(Sql)
         MsgBox("Transaction is successfully deactivated.", MsgBoxStyle.Information, "VALIDATION")
         PopulateMajor()
+        xRECID.Text = ""
+        xMAJORACTIVITY.Text = ""
     End Sub
 
     Private Sub BtCancelUpdate_Click(sender As Object, e As EventArgs) Handles btCancelUpdate.Click
@@ -244,7 +255,7 @@ Public Class frmMAJOR
         xRECID.Text = ""
         xMAJORACTIVITY.Text = ""
         ControlsEvent(True)
-
+        isActive.Text = ""
         PopulateMajor()
     End Sub
 

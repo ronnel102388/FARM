@@ -41,6 +41,7 @@ Partial Class frmMAJOR
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.dgMajor = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.panelentry = New System.Windows.Forms.Panel()
+        Me.isActive = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Label38 = New System.Windows.Forms.Label()
@@ -121,7 +122,7 @@ Partial Class frmMAJOR
         Me.XSEARCH.Font = New System.Drawing.Font("Century Gothic", 11.89565!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XSEARCH.Location = New System.Drawing.Point(6, 10)
         Me.XSEARCH.Name = "XSEARCH"
-        Me.XSEARCH.Size = New System.Drawing.Size(236, 25)
+        Me.XSEARCH.Size = New System.Drawing.Size(236, 24)
         Me.XSEARCH.TabIndex = 123147
         '
         'BTSEARCHLINE
@@ -152,7 +153,6 @@ Partial Class frmMAJOR
         'btAdd
         '
         Me.btAdd.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.btAdd.Enabled = False
         Me.btAdd.FlatAppearance.BorderSize = 0
         Me.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btAdd.Image = CType(resources.GetObject("btAdd.Image"), System.Drawing.Image)
@@ -301,6 +301,7 @@ Partial Class frmMAJOR
         '
         'panelentry
         '
+        Me.panelentry.Controls.Add(Me.isActive)
         Me.panelentry.Controls.Add(Me.Panel2)
         Me.panelentry.Controls.Add(Me.Panel12)
         Me.panelentry.Controls.Add(Me.Label38)
@@ -312,6 +313,14 @@ Partial Class frmMAJOR
         Me.panelentry.Name = "panelentry"
         Me.panelentry.Size = New System.Drawing.Size(919, 87)
         Me.panelentry.TabIndex = 123242
+        '
+        'isActive
+        '
+        Me.isActive.Location = New System.Drawing.Point(520, 39)
+        Me.isActive.Name = "isActive"
+        Me.isActive.Size = New System.Drawing.Size(55, 22)
+        Me.isActive.TabIndex = 123245
+        Me.isActive.Visible = False
         '
         'Panel2
         '
@@ -518,40 +527,40 @@ Partial Class frmMAJOR
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
         Me.EditToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'SaveToolStripMenuItem
         '
         Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
         Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.SaveToolStripMenuItem.Text = "Save"
         '
         'CancelToolStripMenuItem
         '
         Me.CancelToolStripMenuItem.Name = "CancelToolStripMenuItem"
-        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.CancelToolStripMenuItem.Text = "Cancel"
         '
         'PrintToolStripMenuItem
         '
         Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
         Me.PrintToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.PrintToolStripMenuItem.Text = "Print"
         '
         'ExportToExcelToolStripMenuItem
         '
         Me.ExportToExcelToolStripMenuItem.Name = "ExportToExcelToolStripMenuItem"
         Me.ExportToExcelToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.ExportToExcelToolStripMenuItem.Text = "Export to Excel"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'frmMAJOR
@@ -636,4 +645,5 @@ Partial Class frmMAJOR
     Friend WithEvents PrintToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExportToExcelToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents isActive As TextBox
 End Class
