@@ -315,6 +315,8 @@ Public Class FRMWORKORDERS
             xLBLCOUNT.Visible = True
         End If
         xLBLCOUNT.Text = putch_Count()
+
+        Timer1.Start()
     End Sub
     Private Sub BTNNOTIF_Click(sender As Object, e As EventArgs) Handles BTNNOTIF.Click
         FRMWORKORDERDASHBOARD.ShowDialog()
@@ -355,6 +357,15 @@ Public Class FRMWORKORDERS
             .vACTDATE = dgWOHeader.Item(x, "ACTIVITYDATE").ToString
             .ShowDialog()
         End With
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        If putch_Count() = 0 Then
+            xLBLCOUNT.Visible = False
+        Else
+            xLBLCOUNT.Visible = True
+        End If
+        xLBLCOUNT.Text = putch_Count()
     End Sub
 
     Private Sub BtCancelled_Click(sender As Object, e As EventArgs) Handles btCancelledHeader.Click
