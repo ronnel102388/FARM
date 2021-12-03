@@ -241,7 +241,6 @@ Partial Class FRMWORKORDERDASHBOARD
         'BtEdit
         '
         Me.BtEdit.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.BtEdit.Enabled = False
         Me.BtEdit.FlatAppearance.BorderSize = 0
         Me.BtEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtEdit.Image = CType(resources.GetObject("BtEdit.Image"), System.Drawing.Image)

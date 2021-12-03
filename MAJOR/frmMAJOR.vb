@@ -102,7 +102,12 @@ Public Class frmMAJOR
         '================POPULATE
         PopulateMajor()
     End Sub
-
+    Private Sub frmProgramma_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        If MessageBox.Show("Are you sure to close this application?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        Else
+            e.Cancel = True
+        End If
+    End Sub
     Private Sub BtAdd_Click(sender As Object, e As EventArgs) Handles btAdd.Click
         If checkstate <> "True" Then
             If ConTools.CheckAccess(RbnUser.Text, RbnExeCode.Text, "IsAdd") = False Then
