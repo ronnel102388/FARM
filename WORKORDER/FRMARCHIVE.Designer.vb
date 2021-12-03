@@ -231,26 +231,26 @@ Partial Class FRMARCHIVE
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(643, 331)
         Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "IDENTIFICATION"
+        Me.TabPage1.Text = "Identification"
         Me.TabPage1.UseVisualStyleBackColor = True
         '
         'EFFECTIVITYDATE
         '
-        Me.EFFECTIVITYDATE.Location = New System.Drawing.Point(219, 88)
+        Me.EFFECTIVITYDATE.Location = New System.Drawing.Point(173, 93)
         Me.EFFECTIVITYDATE.Name = "EFFECTIVITYDATE"
         Me.EFFECTIVITYDATE.Size = New System.Drawing.Size(200, 22)
         Me.EFFECTIVITYDATE.TabIndex = 123243
         '
         'INTERVALDAYSTOARCHIVE
         '
-        Me.INTERVALDAYSTOARCHIVE.Location = New System.Drawing.Point(219, 60)
+        Me.INTERVALDAYSTOARCHIVE.Location = New System.Drawing.Point(173, 65)
         Me.INTERVALDAYSTOARCHIVE.Name = "INTERVALDAYSTOARCHIVE"
         Me.INTERVALDAYSTOARCHIVE.Size = New System.Drawing.Size(77, 22)
         Me.INTERVALDAYSTOARCHIVE.TabIndex = 123242
         '
         'DAYSTOARCHIVE
         '
-        Me.DAYSTOARCHIVE.Location = New System.Drawing.Point(219, 32)
+        Me.DAYSTOARCHIVE.Location = New System.Drawing.Point(173, 37)
         Me.DAYSTOARCHIVE.Name = "DAYSTOARCHIVE"
         Me.DAYSTOARCHIVE.Size = New System.Drawing.Size(77, 22)
         Me.DAYSTOARCHIVE.TabIndex = 123241
@@ -258,43 +258,43 @@ Partial Class FRMARCHIVE
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(75, 91)
+        Me.Label4.Location = New System.Drawing.Point(56, 93)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(138, 17)
+        Me.Label4.Size = New System.Drawing.Size(106, 17)
         Me.Label4.TabIndex = 123240
-        Me.Label4.Text = "EFFECTIVITY DATE:"
+        Me.Label4.Text = "Effectivity Date:"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(6, 60)
+        Me.Label3.Location = New System.Drawing.Point(6, 67)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(207, 17)
+        Me.Label3.Size = New System.Drawing.Size(161, 17)
         Me.Label3.TabIndex = 123239
-        Me.Label3.Text = "INTERVAL DAYS TO ARCHIVE:"
+        Me.Label3.Text = "Interval Days to Archive:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(77, 32)
+        Me.Label2.Location = New System.Drawing.Point(56, 37)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(136, 17)
+        Me.Label2.Size = New System.Drawing.Size(111, 17)
         Me.Label2.TabIndex = 123238
-        Me.Label2.Text = "DAYS TO ARCHIVE:"
+        Me.Label2.Text = "Days to Archive:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(160, 4)
+        Me.Label1.Location = New System.Drawing.Point(114, 9)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(53, 17)
+        Me.Label1.Size = New System.Drawing.Size(54, 17)
         Me.Label1.TabIndex = 123237
-        Me.Label1.Text = "RECID:"
+        Me.Label1.Text = "Rec ID:"
         '
         'RECID
         '
         Me.RECID.Enabled = False
-        Me.RECID.Location = New System.Drawing.Point(219, 4)
+        Me.RECID.Location = New System.Drawing.Point(173, 9)
         Me.RECID.Name = "RECID"
         Me.RECID.Size = New System.Drawing.Size(77, 22)
         Me.RECID.TabIndex = 123236
