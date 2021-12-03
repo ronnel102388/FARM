@@ -258,7 +258,7 @@ Partial Class FRMARCHIVE
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(56, 93)
+        Me.Label4.Location = New System.Drawing.Point(62, 93)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(106, 17)
         Me.Label4.TabIndex = 123240
