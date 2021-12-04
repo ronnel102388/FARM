@@ -96,6 +96,7 @@ Partial Class FRM_CREATION_NO_WORKORDERS
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EditToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -103,7 +104,6 @@ Partial Class FRM_CREATION_NO_WORKORDERS
         Me.PrintToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExportToExcelToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.btnmax = New System.Windows.Forms.Button()
         Me.btnclose = New System.Windows.Forms.Button()
         Me.BtEdit = New System.Windows.Forms.Button()
@@ -256,7 +256,7 @@ Partial Class FRM_CREATION_NO_WORKORDERS
         '
         'BTNGENERATEDETAILS
         '
-        Me.BTNGENERATEDETAILS.Location = New System.Drawing.Point(856, 83)
+        Me.BTNGENERATEDETAILS.Location = New System.Drawing.Point(872, 85)
         Me.BTNGENERATEDETAILS.Name = "BTNGENERATEDETAILS"
         Me.BTNGENERATEDETAILS.Size = New System.Drawing.Size(1, 1)
         Me.BTNGENERATEDETAILS.TabIndex = 123155
@@ -875,6 +875,17 @@ Partial Class FRM_CREATION_NO_WORKORDERS
         Me.Panel8.Size = New System.Drawing.Size(1448, 31)
         Me.Panel8.TabIndex = 309
         '
+        'MenuStrip1
+        '
+        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(19, 19)
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
+        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.MenuStrip1.Name = "MenuStrip1"
+        Me.MenuStrip1.Size = New System.Drawing.Size(1448, 28)
+        Me.MenuStrip1.TabIndex = 251
+        Me.MenuStrip1.Text = "MenuStrip1"
+        '
         'FileToolStripMenuItem
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.EditToolStripMenuItem, Me.SaveToolStripMenuItem, Me.CancelToolStripMenuItem, Me.PrintToolStripMenuItem, Me.ExportToExcelToolStripMenuItem, Me.ExitToolStripMenuItem})
@@ -922,17 +933,6 @@ Partial Class FRM_CREATION_NO_WORKORDERS
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
-        '
-        'MenuStrip1
-        '
-        Me.MenuStrip1.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.MenuStrip1.ImageScalingSize = New System.Drawing.Size(19, 19)
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem})
-        Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1448, 28)
-        Me.MenuStrip1.TabIndex = 251
-        Me.MenuStrip1.Text = "MenuStrip1"
         '
         'btnmax
         '

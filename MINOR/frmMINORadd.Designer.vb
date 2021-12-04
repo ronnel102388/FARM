@@ -101,7 +101,7 @@ Partial Class frmMINORadd
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(95, 17)
         Me.Label2.TabIndex = 123250
-        Me.Label2.Text = "Major Activity:"
+        Me.Label2.Text = "Minor Activity:"
         '
         'TabControl1
         '
