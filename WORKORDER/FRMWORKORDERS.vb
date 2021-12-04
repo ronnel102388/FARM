@@ -303,8 +303,6 @@ Public Class FRMWORKORDERS
 
     End Sub
 #End Region
-
-
     Private Sub FRMWORKORDERS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         PrepareUser()
         BTNDASHBOARD.PerformClick()
@@ -322,7 +320,6 @@ Public Class FRMWORKORDERS
     Private Sub BTNSETTING_Click(sender As Object, e As EventArgs) Handles BTNSETTING.Click
         FRMARCHIVE.ShowDialog()
     End Sub
-
     Private Sub BtEditHeader_Click(sender As Object, e As EventArgs) Handles btEditHeader.Click
         If dgMAINWO.Rows.Count = 1 Then
             Exit Sub
@@ -356,7 +353,6 @@ Public Class FRMWORKORDERS
             .ShowDialog()
         End With
     End Sub
-
     Private Sub BtCancelled_Click(sender As Object, e As EventArgs) Handles btCancelledHeader.Click
         If dgWOHeader.Rows.Count = 1 Then
             Exit Sub

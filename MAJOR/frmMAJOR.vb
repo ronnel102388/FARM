@@ -163,11 +163,6 @@ Public Class frmMAJOR
             Exit Sub
         End If
 
-
-
-
-
-
         If xMAJORACTIVITY.Text = "" Then
             MsgBox("Please Add Major Activity", vbExclamation, "VALIDATION")
             Exit Sub
