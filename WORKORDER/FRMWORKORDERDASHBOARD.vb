@@ -232,9 +232,7 @@ WHERE STATUS='NO WORKORDER' and ISACTIVE ='true'
 
     End Sub
 
-    Private Sub Grid1_Click(sender As Object, e As EventArgs) Handles grid1.Click
 
-    End Sub
 
     Private Sub BtEdit_Click(sender As Object, e As EventArgs) Handles BtEdit.Click
         FRM_CREATION_NO_WORKORDERS.Show()

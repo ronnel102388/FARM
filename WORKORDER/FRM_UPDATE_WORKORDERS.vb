@@ -125,9 +125,6 @@ Public Class FRM_UPDATE_WORKORDERS
         drl_FillCombo("MINORACTIVITY", xCBOMINORACTIVITY, "M_FARM_POT_VERSION_DETAIL", "MAJORACTIVITYID = '" & vMAJAID & "' AND VERSIONID = " & vVERSIONID & " AND COID = '" & Comp &
                       "' AND (MINORACTIVITY not in  (SELECT MINORACTIVITY FROM T_FARMACTIVITYWORKORDER WHERE MAINWOID = " & vMAINWOID & ") OR MINORACTIVITY = '" & vMINOR & "')")
     End Sub
-
-
-
     Private Sub BtCancelUpdate_Click(sender As Object, e As EventArgs) Handles btCancelUpdate.Click
         If xCBOMAJORACTIVITY.Text <> "" Then
             If MsgBox("Are you sure you want to cancel the transaction?", vbQuestion + vbYesNo + vbDefaultButton2, "VALIDATION") = vbNo Then
@@ -279,10 +276,10 @@ Public Class FRM_UPDATE_WORKORDERS
 
             Dim sqly As String = ""
             With dgWOres
-                    For x As Integer = 1 To .Rows.Count - 1
-                        If .Rows(x).IsNode = False Then
-                            If .Item(x, "STATUS") = "INSERT" Then
-                                Dim vWORESCODE As String = drl_GenerateCodeWORESOURCE()
+                For x As Integer = 1 To .Rows.Count - 1
+                    If .Rows(x).IsNode = False Then
+                        If .Item(x, "STATUS") = "INSERT" Then
+                            Dim vWORESCODE As String = drl_GenerateCodeWORESOURCE()
                             sqly = <s>
                                                 EXEC WORKORDER_DETAIL_ACTION
                                                  0  
@@ -319,14 +316,10 @@ Public Class FRM_UPDATE_WORKORDERS
                                        </s>
                             ExeQuery(sqly)
                         End If
-                        End If
-                    Next
-                End With
-
-
-
-
-            End If
+                    End If
+                Next
+            End With
+        End If
 
         MsgBox("WorkOrder SuccessFully Saved", vbInformation, "VALIDATION")
 
