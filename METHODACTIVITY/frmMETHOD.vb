@@ -74,7 +74,12 @@ Public Class frmMETHOD
         PrepareUser()
         populate()
     End Sub
-
+    Private Sub frmProgramma_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        If MessageBox.Show("Are you sure to close this application?", "Close", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = Windows.Forms.DialogResult.Yes Then
+        Else
+            e.Cancel = True
+        End If
+    End Sub
 
 
 
@@ -164,12 +169,12 @@ Public Class frmMETHOD
 
 
         If METHODACTIVITY.Text = "" Then
-            MsgBox("Please Add Major Activity", vbExclamation, "VALIDATION")
+            MsgBox("Please Add Method of Activity", vbExclamation, "VALIDATION")
             Exit Sub
         End If
 
         If FindIfExist("METHODACTIVITY", "M_POT_METHODOFACTIVITY", "METHODACTIVITY", METHODACTIVITY.Text) = METHODACTIVITY.Text Then
-            MsgBox("Major Activity is already exist.", MsgBoxStyle.Exclamation, "ERROR")
+            MsgBox("Method of Activity is already exist.", MsgBoxStyle.Exclamation, "ERROR")
             Exit Sub
         End If
 

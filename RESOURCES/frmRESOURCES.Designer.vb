@@ -67,13 +67,13 @@ Partial Class frmRESOURCES
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.dgResources = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.panelentry = New System.Windows.Forms.Panel()
+        Me.isActive = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel12 = New System.Windows.Forms.Panel()
         Me.Label38 = New System.Windows.Forms.Label()
         Me.txtResources = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.RECID = New System.Windows.Forms.TextBox()
-        Me.isActive = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.StatusStrip1.SuspendLayout()
         Me.PanelHeader.SuspendLayout()
@@ -490,6 +490,15 @@ Partial Class frmRESOURCES
         Me.panelentry.Size = New System.Drawing.Size(919, 87)
         Me.panelentry.TabIndex = 123242
         '
+        'isActive
+        '
+        Me.isActive.Enabled = False
+        Me.isActive.Location = New System.Drawing.Point(520, 39)
+        Me.isActive.Name = "isActive"
+        Me.isActive.Size = New System.Drawing.Size(55, 22)
+        Me.isActive.TabIndex = 123245
+        Me.isActive.Visible = False
+        '
         'Panel2
         '
         Me.Panel2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -532,9 +541,9 @@ Partial Class frmRESOURCES
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(70, 39)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(95, 17)
+        Me.Label2.Size = New System.Drawing.Size(80, 17)
         Me.Label2.TabIndex = 123241
-        Me.Label2.Text = "Major Activity:"
+        Me.Label2.Text = "Resources:"
         '
         'RECID
         '
@@ -544,15 +553,6 @@ Partial Class frmRESOURCES
         Me.RECID.Size = New System.Drawing.Size(55, 22)
         Me.RECID.TabIndex = 1
         Me.RECID.Visible = False
-        '
-        'isActive
-        '
-        Me.isActive.Enabled = False
-        Me.isActive.Location = New System.Drawing.Point(520, 39)
-        Me.isActive.Name = "isActive"
-        Me.isActive.Size = New System.Drawing.Size(55, 22)
-        Me.isActive.TabIndex = 123245
-        Me.isActive.Visible = False
         '
         'frmRESOURCES
         '
@@ -564,6 +564,7 @@ Partial Class frmRESOURCES
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.StatusStrip1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frmRESOURCES"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "RESOURCES"

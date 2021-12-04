@@ -156,6 +156,11 @@ Public Class FRM_CREATION_WORKORDERS
         Clear()
         Me.Dispose()
     End Sub
+
+    Private Sub XCBOSUBFIELDNO_SelectedIndexChanged(sender As Object, e As EventArgs) Handles xCBOSUBFIELDNO.SelectedIndexChanged
+
+    End Sub
+
     Private Sub XCBOMINORACTIVITY_SelectedIndexChanged(sender As Object, e As EventArgs) Handles xCBOMINORACTIVITY.SelectedIndexChanged
         If xCBOMINORACTIVITY.SelectedIndex = -1 Or xCBOMINORACTIVITY.Text = "" Then
             vMINAID = 0

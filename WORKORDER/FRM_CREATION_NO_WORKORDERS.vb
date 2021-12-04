@@ -106,10 +106,10 @@ Public Class FRM_CREATION_NO_WORKORDERS
     End Sub
 #End Region
 #Region "CONTROL EVENTS TOP "
-    Private Sub btnclose_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnclose.MouseEnter, btnmax.MouseEnter, btnmin.MouseEnter
+    Private Sub btnclose_MouseEnter(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnmin.MouseEnter, btnmax.MouseEnter, btnclose.MouseEnter
         sender.backcolor = Color.Gainsboro
     End Sub
-    Private Sub btnclose_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnclose.MouseLeave, btnmax.MouseLeave, btnmin.MouseLeave
+    Private Sub btnclose_MouseLeave(ByVal sender As Object, ByVal e As System.EventArgs) Handles btnmin.MouseLeave, btnmax.MouseLeave, btnclose.MouseLeave
         sender.backcolor = Color.FromArgb(224, 224, 224)
     End Sub
     Private Sub btnclose_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnclose.Click
@@ -168,6 +168,22 @@ Public Class FRM_CREATION_NO_WORKORDERS
             xAREAOFACTIVITY.Text = xARABLEAREA.Text
         End If
         drl_FillCombo("MAJORACTIVITY", xCBOMAJORACTIVITY, "M_FARM_POT_VERSION_DETAIL", "CROPCLASS = '" & xCROPCLASS.Text & "' AND VERSIONID = " & vVERSIONID & " AND COID = '" & Comp & "'")
+
+    End Sub
+
+    Private Sub btSearch_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub BtRefresh_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub BtEdit_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub XCBOSUBFIELDNO_SelectedIndexChanged(sender As Object, e As EventArgs) Handles xCBOSUBFIELDNO.SelectedIndexChanged
 
     End Sub
 

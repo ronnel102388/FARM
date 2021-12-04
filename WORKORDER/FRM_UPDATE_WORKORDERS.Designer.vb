@@ -367,40 +367,40 @@ Partial Class FRM_UPDATE_WORKORDERS
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
         Me.EditToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'SaveToolStripMenuItem
         '
         Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
         Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.SaveToolStripMenuItem.Text = "Save"
         '
         'CancelToolStripMenuItem
         '
         Me.CancelToolStripMenuItem.Name = "CancelToolStripMenuItem"
-        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.CancelToolStripMenuItem.Text = "Cancel"
         '
         'PrintToolStripMenuItem
         '
         Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
         Me.PrintToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.PrintToolStripMenuItem.Text = "Print"
         '
         'ExportToExcelToolStripMenuItem
         '
         Me.ExportToExcelToolStripMenuItem.Name = "ExportToExcelToolStripMenuItem"
         Me.ExportToExcelToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.ExportToExcelToolStripMenuItem.Text = "Export to Excel"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'Panel12
@@ -647,7 +647,6 @@ Partial Class FRM_UPDATE_WORKORDERS
         Me.btnmin.BackColor = System.Drawing.Color.Transparent
         Me.btnmin.FlatAppearance.BorderSize = 0
         Me.btnmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnmin.Image = CType(resources.GetObject("btnmin.Image"), System.Drawing.Image)
         Me.btnmin.Location = New System.Drawing.Point(1336, 0)
         Me.btnmin.Name = "btnmin"
         Me.btnmin.Size = New System.Drawing.Size(28, 28)
@@ -745,7 +744,6 @@ Partial Class FRM_UPDATE_WORKORDERS
         Me.btnclose.BackColor = System.Drawing.Color.Transparent
         Me.btnclose.FlatAppearance.BorderSize = 0
         Me.btnclose.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnclose.Image = CType(resources.GetObject("btnclose.Image"), System.Drawing.Image)
         Me.btnclose.Location = New System.Drawing.Point(1399, 0)
         Me.btnclose.Name = "btnclose"
         Me.btnclose.Size = New System.Drawing.Size(28, 28)
@@ -758,7 +756,6 @@ Partial Class FRM_UPDATE_WORKORDERS
         Me.btnmax.BackColor = System.Drawing.Color.Transparent
         Me.btnmax.FlatAppearance.BorderSize = 0
         Me.btnmax.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnmax.Image = CType(resources.GetObject("btnmax.Image"), System.Drawing.Image)
         Me.btnmax.Location = New System.Drawing.Point(1370, 0)
         Me.btnmax.Name = "btnmax"
         Me.btnmax.Size = New System.Drawing.Size(28, 28)

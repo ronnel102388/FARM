@@ -276,10 +276,10 @@ Public Class FRM_UPDATE_WORKORDERS
 
             Dim sqly As String = ""
             With dgWOres
-                    For x As Integer = 1 To .Rows.Count - 1
-                        If .Rows(x).IsNode = False Then
-                            If .Item(x, "STATUS") = "INSERT" Then
-                                Dim vWORESCODE As String = drl_GenerateCodeWORESOURCE()
+                For x As Integer = 1 To .Rows.Count - 1
+                    If .Rows(x).IsNode = False Then
+                        If .Item(x, "STATUS") = "INSERT" Then
+                            Dim vWORESCODE As String = drl_GenerateCodeWORESOURCE()
                             sqly = <s>
                                                 EXEC WORKORDER_DETAIL_ACTION
                                                  0  
@@ -316,14 +316,10 @@ Public Class FRM_UPDATE_WORKORDERS
                                        </s>
                             ExeQuery(sqly)
                         End If
-                        End If
-                    Next
-                End With
-
-
-
-
-            End If
+                    End If
+                Next
+            End With
+        End If
 
         MsgBox("WorkOrder SuccessFully Saved", vbInformation, "VALIDATION")
 
