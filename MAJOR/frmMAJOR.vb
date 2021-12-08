@@ -163,6 +163,7 @@ Public Class frmMAJOR
     End Sub
 
     Private Sub BtSave_Click(sender As Object, e As EventArgs) Handles BtSave.Click
+
         If isActive.Text = "False" Then
             MsgBox("Can't proceed item is not active." & vbCrLf & "Please contact administrator.", vbExclamation, "VALIDATION")
             Exit Sub
@@ -183,9 +184,6 @@ Public Class frmMAJOR
         End If
 
         Dim sql As String = ""
-
-
-
         sql = <s>
                     UPDATE M_POT_MAJORACTIVITY
                         SET [MAJORACTIVITY] = '<%= xMAJORACTIVITY.Text %>'
@@ -194,7 +192,7 @@ Public Class frmMAJOR
                         ,[MODIFIEDBY] = '<%= RbnUser.Text %>'
                         ,[MODIFICATIONDATE] = getdate()
                     WHERE RECID = <%= xRECID.Text %>
-                  </s>
+              </s>
 
         ExeQuery(sql)
         MsgBox("Transaction successfully saved", MsgBoxStyle.Information, "Information")

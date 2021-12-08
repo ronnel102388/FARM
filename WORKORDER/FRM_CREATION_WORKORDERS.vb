@@ -187,6 +187,7 @@ Public Class FRM_CREATION_WORKORDERS
         End If
         drl_FillCombo("MAJORACTIVITY", xCBOMAJORACTIVITY, "M_FARM_POT_VERSION_DETAIL", "CROPCLASS = '" & xCROPCLASS.Text & "' AND VERSIONID = " & vVERSIONID & " AND COID = '" & Comp & "'")
     End Sub
+
     Private Sub BtSave_Click(sender As Object, e As EventArgs) Handles BtSave.Click
         If xCBOMAJORACTIVITY.Text = "" And xCBOMAJORACTIVITY.SelectedIndex = -1 Then
             MsgBox("Please Add Major Activity", vbInformation, "VALIDATION")
@@ -207,6 +208,12 @@ Public Class FRM_CREATION_WORKORDERS
             Exit Sub
         End If
 
+        If Val(xAREAOFACTIVITY.Text) = 0 Then
+            MsgBox("Invalid Area of Activity.", vbInformation, "VALIDATION")
+            Exit Sub
+        End If
+
+
         With dgWOres
             For x As Integer = 1 To .Rows.Count - 1
                 If .Rows(x).IsNode = False Then
@@ -219,6 +226,7 @@ Public Class FRM_CREATION_WORKORDERS
                 End If
             Next
         End With
+
 
         If MsgBox("Do you want to save the transaction?", vbQuestion + vbYesNo + vbDefaultButton2, "VALIDATION") = vbNo Then
             Exit Sub

@@ -11,8 +11,48 @@ Public Class frmDetailsPOT
     Sub POPULATECROPCLASS(ByVal SF As String)
         Try
             Dim sql As String = <s>
-                                SELECT MAINWOID, CROPLCLASSDETAIL +' | '+ CROPYEAR AS LIST FROM T_FARMACTIVITYMAINWORKORDER WHERE FIELDNO = '<%= SF %>' AND ISACTIVE = 1 ORDER BY MAINWOID DESC
-                            </s>
+                              
+                                    /*------------------------MWO-----------------------------------*/
+                                    SELECT distinct CROPLCLASSDETAIL +' | '+ 
+                                    CASE 
+                                    WHEN ISNULL(Cropyear,'') = '' THEN 
+                                    (SELECT CropYear FROM t_SubFieldNo SF WHERE SF.SubFieldNo = x.FIELDNO AND IsActive =1 )
+                                    ELSE
+                                    CropYear
+                                    END
+                                    AS LIST
+                                    ,FieldNo
+                                    ,CroplClassDetail
+                                    ,CropYear
+                                    INTO #TEMP_MWO
+                                    FROM T_FARMACTIVITYMAINWORKORDER  X
+
+                                    /*------------------------WO-----------------------------------*/
+                                    SELECT MainWOID 
+                                    ,SUBFIELDNO
+                                    ,CropClassDetail
+                                    ,CASE 
+                                    WHEN ISNULL(Cropyear,'') = '' THEN 
+                                    (SELECT CropYear FROM t_SubFieldNo SF WHERE SF.SubFieldNo = x.SubFieldNo AND IsActive =1 )
+                                    ELSE
+                                    CropYear
+                                    END
+                                    AS CropYear
+                                    ,ActivityDate
+                                    INTO #TEMP_WO
+                                    FROM T_FARMACTIVITYWORKORDER  X
+
+
+                                    select * 
+                                    ,(SELECT TOP 1 ACTIVITYDATE FROM #TEMP_WO x WHERE x.SubFieldNo = a.FieldNo AND x.CropClassDetail = a.CroplClassDetail  
+                                    AND X.CropYear = A.CropYear    ORDER BY ACTIVITYDATE DESC) AS ACTIVITYDATE
+                                    from #TEMP_MWO a
+                                    where
+                                    FieldNo = '<%= SF %>'
+                                    order by ACTIVITYDATE desc
+
+                                    drop table #TEMP_MWO,#TEMP_WO
+                                </s>
             ExeReader(sql)
         xCROPCLASS.Items.Clear()
         While dr.Read
@@ -27,15 +67,16 @@ Public Class frmDetailsPOT
         End Try
 
     End Sub
-    Sub FIELDINFO(ByVal fm As String, sf As String, ByVal iscb As Integer, ByVal type As String, ByVal index As Integer)
+    Sub FIELDINFO(ByVal fm As String, sf As String, ByVal iscb As Integer, ByVal type As String, ByVal cc As String)
         Dim sql As String = <S>
-                                FM_LIST_POT_DETAIL '<%= fm %>', '<%= sf %>', <%= iscb %>, '<%= type %>', <%= index %>
+                              EXEC FM_LIST_POT_DETAIL '<%= fm %>','<%= cc %>', '<%= sf %>', <%= iscb %>, '<%= type %>'
                             </S>
+
         dtINFO = ConTools.DataReader(SConn, sql)
     End Sub
-    Sub POPULATEDETAILS(ByVal fmd As String, ByVal ccd As String, ByVal iscbd As String, ByVal tpd As String, ByVal sfd As String, ByVal aread As Double, ByVal mwoid As Integer)
+    Sub POPULATEDETAILS(ByVal fmd As String, ByVal ccd As String, ByVal iscbd As String, ByVal tpd As String, ByVal sfd As String, ByVal aread As Double)
         Dim SQL As String = <s>
-                                     EXEC FM_SF_LIST_POT '<%= fmd %>','<%= ccd %>', <%= iscbd %>, '<%= tpd %>','<%= sfd %>','<%= aread %>',<%= mwoid %>
+                                     EXEC FM_SF_LIST_POT '<%= fmd %>','<%= ccd %>', <%= iscbd %>, '<%= tpd %>','<%= sfd %>','<%= aread %>'
                             </s>
         SelectQuery(SQL)
         With dgFIELDCOST
@@ -44,27 +85,26 @@ Public Class frmDetailsPOT
             .Rows(0).Height = 50
             .AutoSizeCols()
             .Cols("BUDGETQTY").Format = "N2"
+            .Cols("BUDGETQTY").TextAlign = TextAlignEnum.CenterCenter
             .Cols("ACTUALQTY").Format = "N2"
-            '.Cols("ACCOMPLISHMENTDONE").Format = "N2"
+            .Cols("ACTUALQTY").TextAlign = TextAlignEnum.CenterCenter
+
             .Cols("ACCOMPLISHMENTDONE").Visible = False
             .Cols("BUDGETCOST").Format = "N0"
+            .Cols("BUDGETCOST").TextAlign = TextAlignEnum.CenterCenter
             .Cols("ACTUALCOST").Format = "N0"
-            '.Cols("METHOD").Visible = True
+            .Cols("ACTUALCOST").TextAlign = TextAlignEnum.CenterCenter
+
             .Cols("RESOURCE").Width = 400
-            .Cols("BUDGETCOST").Width = 250
-            .Cols("ACTUALCOST").Width = 250
-            .Cols("DFARSERIES").TextAlign = TextAlignEnum.CenterCenter
-            .Cols("DFARSERIES").Format = FontStyle.Bold
             .Cols("DFARSERIES").Visible = False
+
             .Cols("POT_ORDER").Visible = False
             .Cols("SUBFIELDNO").Visible = False
+
+            .Cols("ACTIVITYDATE").TextAlign = TextAlignEnum.CenterCenter
         End With
 
         setgrid()
-
-    End Sub
-
-    Private Sub DgFIELDCOST_Click(sender As Object, e As EventArgs) Handles dgFIELDCOST.Click
 
     End Sub
 
@@ -91,6 +131,11 @@ Public Class frmDetailsPOT
 
         End With
     End Sub
+
+    Private Sub DgFIELDCOST_Click(sender As Object, e As EventArgs) Handles dgFIELDCOST.Click
+
+    End Sub
+
     Private Sub frmDetails_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         POPULATECROPCLASS(SF)
         LBLFARMMANAGER.Text = FM.ToUpper
@@ -143,7 +188,7 @@ Public Class frmDetailsPOT
             CROPCLASS = CC
         End If
         Dim sql As String = <s>
-                         EXEC FM_SF_LIST_POT '<%= FM %>','<%= dtINFO(0)("CROPCLASS").ToString %>', <%= isCB %>, '<%= TP %>','<%= SF %>','<%= dtINFO(0)("AREA") %>' , <%= dtINFO(0)("MAINWOID") %>
+                         EXEC FM_SF_LIST_POT '<%= FM %>','<%= dtINFO(0)("CROPCLASS").ToString %>', <%= isCB %>, '<%= TP %>','<%= SF %>','<%= dtINFO(0)("AREA") %>'
                             </s>
         Dim dtPrint As DataTable = ConTools.DataReader(SConn, sql)
         Dim sFileName As String = My.Application.Info.DirectoryPath & "\FMREPORTS.xml"
@@ -187,31 +232,32 @@ Public Class frmDetailsPOT
         End Try
     End Sub
     Private Sub xCROPCLASS_SelectedIndexChanged(sender As Object, e As EventArgs) Handles xCROPCLASS.SelectedIndexChanged
-        Try
+        'Try
 
-
-            FIELDINFO(FM, SF, isCB, TP, xCROPCLASS.SelectedIndex)
-            With dgFieldInfo
+        FIELDINFO(FM, SF, isCB, TP, xCROPCLASS.Text)
+        With dgFieldInfo
                 .Rows.Count = 0
                 For x As Integer = 0 To dtINFO.Rows.Count - 1
 
 
                     For i As Integer = 0 To dtINFO.Columns.Count - 1
                         If xCROPCLASS.SelectedIndex <> 0 Then
-                            If dtINFO.Columns(i).Caption = "MAINWOID" Or dtINFO.Columns(i).Caption = "WORKORDERID" Or dtINFO.Columns(i).Caption = "AGEOFCANEMONTH" Then
+                        If dtINFO.Columns(i).Caption = "MAINWOID" Or dtINFO.Columns(i).Caption = "WORKORDERID" Or dtINFO.Columns(i).Caption = "AGEOFCANEMONTH" Or
+                            dtINFO.Columns(i).Caption.Contains("COST") Or dtINFO.Columns(i).Caption = "VARIANCE" Or dtINFO.Columns(i).Caption = "REMARKS" Then
 
-                            Else
-                                .Rows.Add()
-                                .Item(.Rows.Count - 1, 0) = dtINFO.Columns(i).Caption
-                                .Item(.Rows.Count - 1, 1) = ":" & IIf(dtINFO.Columns(i).Caption.Contains("COST") Or dtINFO.Columns(i).Caption = "VARIANCE", Format(dtINFO(x)(i), "N0"), dtINFO(x)(i).ToString)
-                            End If
                         Else
-                            If dtINFO.Columns(i).Caption = "MAINWOID" Or dtINFO.Columns(i).Caption = "WORKORDERID" Then
-
-                            Else
-                                .Rows.Add()
+                            .Rows.Add()
                                 .Item(.Rows.Count - 1, 0) = dtINFO.Columns(i).Caption
-                                .Item(.Rows.Count - 1, 1) = ":" & IIf(dtINFO.Columns(i).Caption.Contains("COST") Or dtINFO.Columns(i).Caption = "VARIANCE", Format(dtINFO(x)(i), "N0"), dtINFO(x)(i).ToString)
+                            .Item(.Rows.Count - 1, 1) = ":" & dtINFO(x)(i).ToString
+                        End If
+                        Else
+                        If dtINFO.Columns(i).Caption = "MAINWOID" Or dtINFO.Columns(i).Caption = "WORKORDERID" Or
+                                    dtINFO.Columns(i).Caption.Contains("COST") Or dtINFO.Columns(i).Caption = "VARIANCE" Or dtINFO.Columns(i).Caption = "REMARKS" Then
+
+                        Else
+                            .Rows.Add()
+                                .Item(.Rows.Count - 1, 0) = dtINFO.Columns(i).Caption
+                                .Item(.Rows.Count - 1, 1) = ":" & dtINFO(x)(i).ToString
                             End If
                         End If
                     Next
@@ -219,11 +265,11 @@ Public Class frmDetailsPOT
                 .AutoSizeCols()
                 .ExtendLastCol = True
             End With
-            POPULATEDETAILS(FM, dtINFO(0)("CROPCLASS").ToString, isCB, TP, SF, dtINFO(0)("AREA"), dtINFO(0)("MAINWOID"))
-        Catch ex As Exception
-            POPULATEDETAILS(FM, "", isCB, TP, SF, 0, 0)
-            MsgBox(ex.Message)
-        End Try
+            POPULATEDETAILS(FM, dtINFO(0)("CROPCLASS").ToString, isCB, TP, SF, dtINFO(0)("AREA"))
+        'Catch ex As Exception
+        '    POPULATEDETAILS(FM, "", isCB, TP, SF, 0)
+        '    MsgBox(ex.Message)
+        'End Try
 
     End Sub
 
@@ -232,39 +278,42 @@ Public Class frmDetailsPOT
             MsgBox("Nothing to select!", vbCritical, "Error")
             Exit Sub
         End If
+
         Dim i As Integer = dgFIELDCOST.RowSel
-        If i = 1 Then
+
+        If dgFIELDCOST.Rows(i).IsNode = True Then
             Exit Sub
+        Else
+            If i = 1 Then
+                Exit Sub
+            End If
+
+            With frmDetails
+                .CC = dtINFO(0)("CROPCLASS").ToString
+                .TP = TP
+                .isCB = isCB
+                '.MWOID = dtINFO(0)("MAINWOID").ToString
+                .TEMPID = dgFIELDCOST.Item(i, "RECID").ToString
+                .ACT = dgFIELDCOST.Item(i, "MINORACTIVITY").ToString
+
+                .landowner = dtINFO(0)("LANDOWNER").ToString
+                .subfield = dtINFO(0)("SUBFIELDNO").ToString
+
+                .cropclass = dtINFO(0)("CROPCLASS").ToString
+
+                .fmanager = dtINFO(0)("FARMMANAGER").ToString
+                .faddress = dtINFO(0)("FARMADDRESS").ToString
+
+                .plantingdate = dtINFO(0)("PLANTINGDATE").ToString
+                .age = IIf(xCROPCLASS.SelectedIndex = 0, dtINFO(0)("AGEOFCANEMONTH").ToString, 0)
+
+                .gap = dtINFO(0)("AREA").ToString
+                .fmodel = dtINFO(0)("FARMMODEL").ToString
+
+                .ShowDialog()
+            End With
         End If
 
-        If dgFIELDCOST.Item(i, "RECID").ToString = 0 Then
-            Exit Sub
-        End If
-
-        With frmDetails
-            .CC = dtINFO(0)("CROPCLASS").ToString
-            .TP = TP
-            .isCB = isCB
-            .MWOID = dtINFO(0)("MAINWOID").ToString
-            .TEMPID = dgFIELDCOST.Item(i, "RECID").ToString
-            .ACT = dgFIELDCOST.Item(i, "MINOR").ToString
-
-            .landowner = dtINFO(0)("LANDOWNER").ToString
-            .subfield = dtINFO(0)("SUBFIELDNO").ToString
-
-            .cropclass = dtINFO(0)("CROPCLASS").ToString
-
-            .fmanager = dtINFO(0)("FARMMANAGER").ToString
-            .faddress = dtINFO(0)("FARMADDRESS").ToString
-
-            .plantingdate = dtINFO(0)("PLANTINGDATE").ToString
-            .age = IIf(xCROPCLASS.SelectedIndex = 0, dtINFO(0)("AGEOFCANEMONTH").ToString, 0)
-
-            .gap = dtINFO(0)("AREA").ToString
-            .fmodel = dtINFO(0)("FARMMODEL").ToString
-
-            .ShowDialog()
-        End With
     End Sub
 
     Private Sub frmDetailsPOT_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
