@@ -493,40 +493,40 @@ Public Class FRMWORKORDERS
             MsgBox("Please input remarks.", MsgBoxStyle.Exclamation, "ERROR")
             Exit Sub
         End If
-        drl_HEADER_EXECUTE(vWOID _
-                            , vMAINWOID _ 'MAINWOID
-                            ,"" _'SUBFIELDNO
-                               ,"" _  'WORKORDECODE
-                               ,"" _  'LANDOWNER
-                               ,"" _  'FARMMODEL
-                               ,"" _  'WEEKENDING
-                               ,"" _  'ARABLEAREA
-                               ,"" _  'PLANTEDAREA
-                               ,"" _  'CROPYEAR
-                               ,"" _  'PLANTINGDATE
-                               ,"" _  'CROPCLASS
-                               ,"" _  'CROPCLASSDETAIL
-                               ,"" _  'FARMMANAGER
-                               ,"" _  'FARMASSISTANT
-                               ,"" _  'FARMADDRESS
-                               ,"" _  'WORK ORDER ACTIVITY DATE
-                               ,"" _  'AREAOFACTIVITY
-                               ,"" _  'MAJORACTIVITY
-                               ,"" _  'MINORACTIVITY
-                            ,"" _  'VERSION
-                            ,"" _  'CANCELLATIONREMARKS
-                            ,"" _  'REOPENREMARKS
-                            ,"" _  'UPDATEJUSTIFICATION
-                            ,"" _  'DEACTIVATIONREMARKS
-                            ,"" _  'USERNAME
-                            ,"" _  'FURROWDISTANCE
-                            ,"" _  'TOTALSTALKWEIGHT
-                            ,"" _  'EQUIVALENTTONS
-                            ,"" _  'YIELD
-                            ,"" _  'ISMANUAL
-                            ,"" _  'CROPLOGREMARKS
-                            ,""  ) 'TRANS
-                                 
+        drl_HEADER_EXECUTE(vWOID,
+                             vMAINWOID, 'MAINWOID
+                            "", 'SUBFIELDNO
+                            "",  'WORKORDECODE
+                            "",  'LANDOWNER
+                            "",  'FARMMODEL
+                            "",  'WEEKENDING
+                            "",  'ARABLEAREA
+                            "",  'PLANTEDAREA
+                            "",  'CROPYEAR
+                            "",  'PLANTINGDATE
+                            "",  'CROPCLASS
+                            "",  'CROPCLASSDETAIL
+                            "",  'FARMMANAGER
+                            "",  'FARMASSISTANT
+                            "",  'FARMADDRESS
+                            "",  'WORK ORDER ACTIVITY DATE
+                            "",  'AREAOFACTIVITY
+                            "",  'MAJORACTIVITY
+                            "",  'MINORACTIVITY
+                            "",  'VERSION
+                            "",  'CANCELLATIONREMARKS
+                            "",  'REOPENREMARKS
+                            "",  'UPDATEJUSTIFICATION
+                            "",  'DEACTIVATIONREMARKS
+                            "",  'USERNAME
+                            "",  'FURROWDISTANCE
+                            "",  'TOTALSTALKWEIGHT
+                            "",  'EQUIVALENTTONS
+                            "",  'YIELD
+                            "",  'ISMANUAL
+                            "",  'CROPLOGREMARKS
+                            "") 'TRANS
+
 
 
 
