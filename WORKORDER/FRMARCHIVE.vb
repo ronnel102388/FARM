@@ -49,13 +49,44 @@ ORDER BY CREATIONDATE DESC
 
     Private Sub DAYSTOARCHIVE_ValueChanged(sender As Object, e As EventArgs) Handles DAYSTOARCHIVE.ValueChanged
         If Not DAYSTOARCHIVE.Value = 0 Then
-            btAdd.Enabled = True
+            BtSave.Enabled = True
         Else
-            btAdd.Enabled = False
+            BtSave.Enabled = False
         End If
     End Sub
 
-    Private Sub BtAdd_Click(sender As Object, e As EventArgs) Handles btAdd.Click
+
+
+    Private Sub BtDelete_Click(sender As Object, e As EventArgs) Handles BtDelete.Click
+        If MsgBox("Are you sure you want to delete this transaction?", vbQuestion + vbYesNo + vbDefaultButton2, "VALIDATION") = vbNo Then
+            Exit Sub
+        End If
+
+        Dim i As Integer = grid1.RowSel
+        If grid1.Rows.Count - 1 > 0 Then
+            RECID.Text = grid1.Item(i, "RECID").ToString
+        End If
+
+        If RECID.Text = "" Then
+            Exit Sub
+        End If
+
+
+
+
+
+
+        Dim Sql As String = <s>
+                          UPDATE M_WORKORDER_ARCHIVE_SETTINGS
+                               SET [ISACTIVE] = '0'
+                             WHERE RECID = <%= RECID.Text %>
+                            </s>
+        ExeQuery(Sql)
+        MsgBox("Transaction is successfully deactivated.", MsgBoxStyle.Information, "Validation")
+        BtRefresh.PerformClick()
+    End Sub
+
+    Private Sub BtSave_Click(sender As Object, e As EventArgs) Handles BtSave.Click
         Dim sql As String = ""
         sql = <s>
                          INSERT INTO [M_WORKORDER_ARCHIVE_SETTINGS]
@@ -83,31 +114,6 @@ ORDER BY CREATIONDATE DESC
         ExeQuery(sql)
 
         MsgBox("Success.", MsgBoxStyle.Information, "Information")
-        BtRefresh.PerformClick()
-    End Sub
-
-    Private Sub BtDelete_Click(sender As Object, e As EventArgs) Handles BtDelete.Click
-        Dim i As Integer = grid1.RowSel
-        If grid1.Rows.Count - 1 > 0 Then
-            RECID.Text = grid1.Item(i, "RECID").ToString
-        End If
-
-        If RECID.Text = "" Then
-            Exit Sub
-        End If
-
-
-
-
-
-
-        Dim Sql As String = <s>
-                          UPDATE M_WORKORDER_ARCHIVE_SETTINGS
-                               SET [ISACTIVE] = '0'
-                             WHERE RECID = <%= RECID.Text %>
-                            </s>
-        ExeQuery(Sql)
-        MsgBox("Transaction is successfully deactivated.", MsgBoxStyle.Information, "Validation")
         BtRefresh.PerformClick()
     End Sub
 End Class
