@@ -64,7 +64,7 @@ Partial Class FRMCHECKACTIVITYDATE
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(448, 15)
+        Me.TextBox1.Location = New System.Drawing.Point(12, 12)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(100, 22)
         Me.TextBox1.TabIndex = 123190

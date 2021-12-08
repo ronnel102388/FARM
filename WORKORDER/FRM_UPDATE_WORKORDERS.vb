@@ -126,6 +126,9 @@ Public Class FRM_UPDATE_WORKORDERS
         drl_FillCombo("MINORACTIVITY", xCBOMINORACTIVITY, "M_FARM_POT_VERSION_DETAIL", "MAJORACTIVITYID = '" & vMAJAID & "' AND VERSIONID = " & vVERSIONID & " AND COID = '" & Comp &
                       "' AND (MINORACTIVITY not in  (SELECT MINORACTIVITY FROM T_FARMACTIVITYWORKORDER WHERE MAINWOID = " & vMAINWOID & ") OR MINORACTIVITY = '" & vMINOR & "')")
     End Sub
+
+
+
     Private Sub BtCancelUpdate_Click(sender As Object, e As EventArgs) Handles btCancelUpdate.Click
         If xCBOMAJORACTIVITY.Text <> "" Then
             If MsgBox("Are you sure you want to cancel the transaction?", vbQuestion + vbYesNo + vbDefaultButton2, "VALIDATION") = vbNo Then
