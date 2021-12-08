@@ -4,6 +4,7 @@ Public Class FRM_UPDATE_WORKORDERS
     Public vMAINWOID, vWOID As Integer
     Public vSUBFIELDNO, vMAJOR, vMINOR, vWOCODE As String
     Public vACTDATE As Date
+    Public vWITHDFAR As Boolean
 
 #Region "ROUTINE"
     Sub Clear()
@@ -196,18 +197,33 @@ Public Class FRM_UPDATE_WORKORDERS
             Next
         End With
 
+        '======================UPDATE ADDITIONAL VALIDATION
+
+        Dim vJUSTIFIATION As String = ""
+        If vWITHDFAR = True Then
+            vJUSTIFIATION = InputBox("JUSTIFICATION", "UPDATE", "")
+
+            If vJUSTIFIATION = "" Then
+                MsgBox("Please input justification.", vbInformation, "")
+                Exit Sub
+            End If
+        End If
+
+        'Dim vremarkInput As String = ""
+        'If vMINOR <> xCBOMINORACTIVITY.Text Then
+        '    vremarkInput = InputBox("Enter your justification:", "JUSTIFICATION", "")
+        '    If vremarkInput = "" Then
+        '        MsgBox("Please input justification", MsgBoxStyle.Exclamation, "ERROR")
+        '        Exit Sub
+        '    End If
+        'End If
+
+
         If MsgBox("Do you want to save the transaction?", vbQuestion + vbYesNo + vbDefaultButton2, "VALIDATION") = vbNo Then
             Exit Sub
         End If
 
-        Dim vremarkInput As String = ""
-        If vMINOR <> xCBOMINORACTIVITY.Text Then
-            vremarkInput = InputBox("Enter your justification:", "JUSTIFICATION", "")
-            If vremarkInput = "" Then
-                MsgBox("Please input justification", MsgBoxStyle.Exclamation, "ERROR")
-                Exit Sub
-            End If
-        End If
+
 
         If vWOID <> 0 Then
             Dim sql As String = <s>
@@ -240,7 +256,7 @@ Public Class FRM_UPDATE_WORKORDERS
                                         
                                         ,'' -- CANCELLATIONREMARKS
                                         ,'' -- REOPENWOREMARKS
-                                        ,'<%= vremarkInput %>' -- UPDATEJUSTIFICATION
+                                        ,'<%= vJUSTIFIATION %>' -- UPDATEJUSTIFICATION
 
                                         ,'' -- DEACTIVATIONREMARKS
                                         ,'<%= FRMWORKORDERS.RbnUser.Text %>'

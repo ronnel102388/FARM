@@ -14,7 +14,7 @@ Public Class frmDetails
             End If
         End If
         Dim sql As String = <s>
-                                 EXEC FM_SF_LIST_DETAIL '<%= CC %>','<%= isCB %>','<%= TP %>',<%= MWOID %>,<%= TEMPID %>
+                                 EXEC FM_SF_LIST_DETAIL '<%= subfield %>','<%= CC %>','<%= isCB %>','<%= TP %>',<%= MWOID %>,<%= TEMPID %>
                             </s>
         Dim dtPrint As DataTable = ConTools.DataReader(SConn, sql)
         Dim sFileName As String = My.Application.Info.DirectoryPath & "\FMREPORTS.xml"
@@ -50,7 +50,7 @@ Public Class frmDetails
 
     Sub POPULATEDETAILS()
         Dim SQL As String = <s>
-        EXEC FM_SF_LIST_DETAIL '<%= CC %>','<%= isCB %>','<%= TP %>',<%= MWOID %>,<%= TEMPID %>
+        EXEC FM_SF_LIST_DETAIL '<%= subfield %>','<%= CC %>','<%= isCB %>','<%= TP %>',<%= MWOID %>,<%= TEMPID %>
                             </s>
 
         SelectQuery(SQL)
@@ -65,6 +65,7 @@ Public Class frmDetails
             .Cols("AccomplishmentDone").Caption = "ACCOMP. DONE"
             .Cols("AccomplishmentDone").Format = "N2"
             .Cols("Quantity").Format = "N2"
+            .Cols("UNITPRICE").Format = "N0"
             .Cols("COSTINPUTS").Format = "N0"
             .Cols("COSTTRACTOR").Format = "N0"
             .Cols("COSTLABOR").Format = "N0"

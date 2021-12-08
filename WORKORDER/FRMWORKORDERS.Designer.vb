@@ -185,7 +185,7 @@ Partial Class FRMWORKORDERS
         Me.XSEARCH.Font = New System.Drawing.Font("Century Gothic", 11.89565!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.XSEARCH.Location = New System.Drawing.Point(6, 10)
         Me.XSEARCH.Name = "XSEARCH"
-        Me.XSEARCH.Size = New System.Drawing.Size(317, 24)
+        Me.XSEARCH.Size = New System.Drawing.Size(317, 25)
         Me.XSEARCH.TabIndex = 123147
         '
         'BTSEARCHLINE
@@ -382,7 +382,7 @@ Partial Class FRMWORKORDERS
         Me.xsearchHeader.Font = New System.Drawing.Font("Century Gothic", 11.89565!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.xsearchHeader.Location = New System.Drawing.Point(6, 9)
         Me.xsearchHeader.Name = "xsearchHeader"
-        Me.xsearchHeader.Size = New System.Drawing.Size(317, 24)
+        Me.xsearchHeader.Size = New System.Drawing.Size(317, 25)
         Me.xsearchHeader.TabIndex = 123147
         '
         'Button4
@@ -435,40 +435,40 @@ Partial Class FRMWORKORDERS
         '
         Me.EditToolStripMenuItem.Name = "EditToolStripMenuItem"
         Me.EditToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.E), System.Windows.Forms.Keys)
-        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.EditToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.EditToolStripMenuItem.Text = "Edit"
         '
         'SaveToolStripMenuItem
         '
         Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
         Me.SaveToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.S), System.Windows.Forms.Keys)
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.SaveToolStripMenuItem.Text = "Save"
         '
         'CancelToolStripMenuItem
         '
         Me.CancelToolStripMenuItem.Name = "CancelToolStripMenuItem"
-        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.CancelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.CancelToolStripMenuItem.Text = "Cancel"
         '
         'PrintToolStripMenuItem
         '
         Me.PrintToolStripMenuItem.Name = "PrintToolStripMenuItem"
         Me.PrintToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.P), System.Windows.Forms.Keys)
-        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.PrintToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.PrintToolStripMenuItem.Text = "Print"
         '
         'ExportToExcelToolStripMenuItem
         '
         Me.ExportToExcelToolStripMenuItem.Name = "ExportToExcelToolStripMenuItem"
         Me.ExportToExcelToolStripMenuItem.ShortcutKeys = CType((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.X), System.Windows.Forms.Keys)
-        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.ExportToExcelToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.ExportToExcelToolStripMenuItem.Text = "Export to Excel"
         '
         'ExitToolStripMenuItem
         '
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(233, 26)
+        Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(234, 26)
         Me.ExitToolStripMenuItem.Text = "Exit"
         '
         'PANELHEADER

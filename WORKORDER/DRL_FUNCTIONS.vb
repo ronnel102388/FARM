@@ -1,4 +1,91 @@
 ﻿Module DRL_FUNCTIONS
+
+#Region "VALIDATE"
+    Function drl_FindMinorActivity_Parameter(ByVal MinorActivity As String) As String
+        Dim sql As String = <s>
+
+                            </s>
+        ExeReader(sql)
+        Dim Find As String = ""
+        While dr.Read
+            Find = dr.Item("")
+        End While
+        dr.Close()
+        Conn.Close()
+
+        Return Find
+    End Function
+#End Region
+#Region "SUB"
+    Public Sub drl_HEADER_EXECUTE(ByVal WOID As Integer, ByVal MAINWOID As String, ByVal SUBFIELDNO As String,
+                       ByVal WOCODE As String, ByVal LANDOWNER As String, ByVal FARMMODEL As String,
+                       ByVal WEEKENDING As Date, ByVal ARABLEAREA As Double, ByVal PLANTEDAREA As Double,
+                       ByVal CROPYEAR As String, ByVal PLANTINGDATE As String, ByVal CROPCLASS As String,
+                       ByVal CROPCLASSDETAIL As String, ByVal FARMMANAGER As String, ByVal FARMASSISTANT As String,
+                       ByVal FARMADDRESS As String, ByVal WOACTIVITYDATE As Date, ByVal AREAOFACTIIVTY As Double,
+                       ByVal MAJORACTIVITY As String, ByVal MINORACTIVITY As String, ByVal VERSION As String,
+                       ByVal CANCELLATIONREMARKS As String, ByVal REOPENREMARKS As String, ByVal UPDATEJUSTIFICATION As String,
+                       ByVal DEACTIVATIONREMARKS As String, ByVal USERNAME As String, ByVal FURROWDISTANCE As Double,
+                       ByVal TOTALSTALKWEIGHT As Double, ByVal EQUIVALENTTONS As Double, ByVal YIELD As Double,
+                       ByVal ISMANUAL As Integer, ByVal CROPCLOGREMARKS As String, ByVal TRANS As String)
+
+        Dim sql As String = <s>
+                                                                                       EXEC WORKORDER_HEADER_ACTION
+                                        <%= WOID %> -- WORKORDERID
+                                        ,<%= MAINWOID %>-- MAINWOID
+                                        ,'<%= SUBFIELDNO %>' -- SUBFIELDNO
+                                        ,'<%= WOCODE %>' -- WORKORDERCODE
+                                        ,'<%= LANDOWNER %>' -- LANDOWNER
+                                        ,'<%= FARMMODEL %>' -- FARMMODEL
+                                        ,'<%= WEEKENDING %>' -- WEEKENDING
+                                        ,'<%= ARABLEAREA %>' -- ARABLEAREA
+                                        ,'<%= PLANTEDAREA %>' -- PLANTEDAREA
+                                        ,'<%= CROPYEAR %>' -- CROPYEAR
+                                        ,'<%= PLANTINGDATE %>' -- PLANTINGDATE
+                                        ,'<%= CROPCLASS %>' -- CROPCLASS
+                                        ,'<%= CROPCLASSDETAIL %>' -- CROPCLASSDETAIL
+                                        ,'<%= FARMMANAGER %>' -- FARMMANAGER
+                                        ,'<%= FARMASSISTANT %>' -- FARMASSISTANT
+                                        ,'<%= FARMADDRESS %>' -- FARMADDRESS
+                                        ,'<%= WOACTIVITYDATE %>' -- WORK ORDER ACTIVITY DATE
+                                        ,'<%= AREAOFACTIIVTY %>' -- AREAOFACTIVITY
+                                        ,'<%= MAJORACTIVITY %>' -- MAJORACTIVITY
+                                        ,'<%= MINORACTIVITY %>' -- MINORACTIVITY
+                                        ,'<%= VERSION %>' -- VERSION
+                                        ,'<%= CANCELLATIONREMARKS %>' -- CANCELLATIONREMARKS
+                                        ,'<%= REOPENREMARKS %>' -- REOPENWOREMARKS
+                                        ,'<%= UPDATEJUSTIFICATION %>' -- UPDATEJUSTIFICATION
+                                        ,'<%= DEACTIVATIONREMARKS %>' -- DEACTIVATIONREMARKS
+                                        ,'<%= USERNAME %>'
+                                        ,'<%= FURROWDISTANCE %>' -- FURROWDISTANCE 
+                                        ,'<%= TOTALSTALKWEIGHT %>' -- TOTALSTALKWEIGHT
+                                        ,'<%= EQUIVALENTTONS %>' --EQUIVALENTTONS
+                                        ,'<%= YIELD %>' -- YIELD
+                                        ,'<%= ISMANUAL %>' -- ISMANUAL
+                                        ,'<%= CROPCLOGREMARKS %>' -- CROPLOGREMARKS
+                                        ,'<%= TRANS %>'
+                            </s>
+        ExeQuery(sql)
+    End Sub
+#End Region
+
+
+    Function drl_CountDFAR(ByVal WOcode As String) As Integer
+        Dim sql As String = <s>
+                                SELECT COUNT(DFARNO) AS COUNT FROM R_DAILYFIELDACTIVITYREPORT
+                                WHERE ISACTIVE = 1
+                                AND WORKORDERCODE  = '<%= WOcode %>'
+                            </s>
+        ExeReader(sql)
+        Dim Find As Integer = 0
+        While dr.Read
+            Find = dr.Item("COUNT").ToString
+        End While
+        dr.Close()
+        Conn.Close()
+
+        Return Find
+    End Function
     Function drl_GenerateCodeMAINWO() As String
         Dim sql As String = <s>
                                     declare @code as varchar(100) = (

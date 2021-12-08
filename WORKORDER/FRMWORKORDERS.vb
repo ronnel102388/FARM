@@ -2,6 +2,7 @@
 Public Class FRMWORKORDERS
     Dim CURRENTTAB As Integer
     Dim vMAINWOID, vWOID As Integer
+
     Public checkstate = IniCon.ReadString("CheckState", "UnderDevelopment")
 
 #Region "ROUTINE"
@@ -298,6 +299,12 @@ Public Class FRMWORKORDERS
                 Exit Sub
             End If
 
+            If dgWOHeader.Item(x, "ISCLOSE").ToString = "True" Then
+                btCloseHeader.Image = My.Resources.open_padlock
+            Else
+                btCloseHeader.Image = My.Resources.padlock
+            End If
+
             POPULATEWODETAIL(.Item(x, "WORKORDERID"))
         End With
 
@@ -321,6 +328,8 @@ Public Class FRMWORKORDERS
         FRMARCHIVE.ShowDialog()
     End Sub
     Private Sub BtEditHeader_Click(sender As Object, e As EventArgs) Handles btEditHeader.Click
+        Dim vWithDFAR As Boolean
+
         If dgMAINWO.Rows.Count = 1 Then
             Exit Sub
         End If
@@ -329,6 +338,17 @@ Public Class FRMWORKORDERS
 
         If x = 0 Then
             Exit Sub
+        End If
+
+        If drl_CountDFAR(dgWOHeader.Item(x, "WORKORDEDCODE")) > 0 Then
+            If ConTools.CheckAccess(RbnUser.Text, RbnExeCode.Text, "Approval1") = False Then
+                MsgBox("This activity has DFAR.", vbInformation, "VALIDATION")
+                vWithDFAR = True
+            Else
+                MsgBox("This activity has DFAR. You have no access to edit the work order.", vbInformation, "VALIDATION")
+                vWithDFAR = False
+                Exit Sub
+            End If
         End If
 
         With dgMAINWO
@@ -350,9 +370,105 @@ Public Class FRMWORKORDERS
             .vMAJOR = dgWOHeader.Item(x, "MAJORACTIVITY").ToString
             .vMINOR = dgWOHeader.Item(x, "MINORACTIVITY").ToString
             .vACTDATE = dgWOHeader.Item(x, "ACTIVITYDATE").ToString
+            .vWITHDFAR = vWithDFAR
             .ShowDialog()
         End With
     End Sub
+
+    Private Sub BtCloseHeader_Click(sender As Object, e As EventArgs) Handles btCloseHeader.Click
+        If dgWOHeader.Rows.Count = 1 Then
+            Exit Sub
+        End If
+
+        Dim x As Integer = dgWOHeader.RowSel
+
+        With dgWOHeader
+
+            If .Item(x, "ISCANCELLED") = True Then
+                MsgBox("Workorder activity is already cancelled.", vbExclamation, "VALIDATION")
+                Exit Sub
+            End If
+
+            If .Item(x, "ISCLOSE") = True Then
+                If ConTools.CheckAccess(RbnUser.Text, RbnExeCode.Text, "Approval1") = False Then
+                    MsgBox("You have no access to open work order in this facility", MsgBoxStyle.Information, "Contact System Administrator")
+                    Exit Sub
+                End If
+
+                If dgMAINWO.Item(dgMAINWO.RowSel, "MAINWOID") <> 0 And dgMAINWO.Item(dgMAINWO.RowSel, "ISCLOSED") = 0 Then
+                    If MsgBox("Are You Sure you Want to Open this Work Order?", vbQuestion + vbYesNo + vbDefaultButton2) = vbNo Then
+                        Exit Sub
+                    End If
+                Else
+                    MsgBox("Main Workorder is alreader closed. You cant open this Work Order", vbExclamation, "VALIDATION")
+                    Exit Sub
+                End If
+
+                Dim vREOPENREMARKS As String = ""
+
+                vREOPENREMARKS = InputBox("Remarks", "Re-open Work Order", "")
+
+                If vREOPENREMARKS.Replace(" ", "") = "" Then
+                    MsgBox("Please input remarks.", MsgBoxStyle.Information, "")
+                    Exit Sub
+                End If
+
+                Dim sql As String = <s>
+                                                                            EXEC WORKORDER_HEADER_ACTION
+                                        <%= vWOID %>
+                                        ,<%= vMAINWOID %> -- MAINWOID
+                                        ,'<%= xCBOSUBFIELDNO.Text %>' -- SUBFIELDNO
+                                        ,'<%= xWOCODE.Text %>' -- WORKORDERCODE
+                                        ,'<%= xLANDOWNER.Text %>' -- LANDOWNER
+                                        ,'<%= xFARMMODEL.Text %>' -- FARMMODEL
+
+                                        ,'<%= drl_GetLastDayOfWeek(xDTPWOACTIVITYDATE.Value) %>' -- WEEKENDING
+                                        ,'<%= Val(xARABLEAREA.Text) %>' -- ARABLEAREA
+                                        ,'<%= Val(xPLANTEDAREA.Text) %>' -- PLANTEDAREA
+
+                                        ,'<%= xCROPYEAR.Text %>' -- CROPYEAR
+                                        ,'<%= xPLANTINGDATE.Text %>' -- PLANTINGDATE
+                                        ,'<%= xCROPCLASS.Text %>' -- CROPCLASS
+                                        ,'<%= xCROPCLASSDETAIL.Text %>' -- CROPCLASSDETAIL
+
+                                        ,'<%= xFARMMANAGER.Text %>' -- FARMMANAGER
+                                        ,'<%= xFARMASSISTANT.Text %>' -- FARMASSISTANT
+                                        ,'<%= xFARMADDRESS.Text %>' -- FARMADDRESS
+
+                                        ,'<%= xDTPWOACTIVITYDATE.Value.ToShortDateString %>' -- WORK ORDER ACTIVITY DATE
+                                        ,'<%= Val(xAREAOFACTIVITY.Text) %>' -- AREAOFACTIVITY
+                                        ,'<%= xCBOMAJORACTIVITY.Text %>' -- MAJORACTIVITY
+                                        ,'<%= xCBOMINORACTIVITY.Text %>' -- MINORACTIVITY
+                                        ,'<%= xVERSION.Text %>' -- VERSION
+                                        
+                                        ,'' -- CANCELLATIONREMARKS
+                                        ,'' -- REOPENWOREMARKS
+                                        ,'<%= vJUSTIFIATION %>' -- UPDATEJUSTIFICATION
+
+                                        ,'' -- DEACTIVATIONREMARKS
+                                        ,'<%= FRMWORKORDERS.RbnUser.Text %>'
+
+                                        ,0 -- FURROWDISTANCE 
+                                        ,0 -- TOTALSTALKWEIGHT
+                                        ,0 --EQUIVALENTTONS
+                                        ,0 -- YIELD
+                                        ,0 -- ISMANUAL
+                                        ,'' -- CROPLOGREMARKS
+                                        ,'UPDATE'
+
+                                    </s>
+
+
+            End If
+        End With
+
+
+    End Sub
+
+
+
+
+
     Private Sub BtCancelled_Click(sender As Object, e As EventArgs) Handles btCancelledHeader.Click
         If dgWOHeader.Rows.Count = 1 Then
             Exit Sub
@@ -377,51 +493,43 @@ Public Class FRMWORKORDERS
             MsgBox("Please input remarks.", MsgBoxStyle.Exclamation, "ERROR")
             Exit Sub
         End If
+        drl_HEADER_EXECUTE(vWOID _
+                            , vMAINWOID _ 'MAINWOID
+                            ,"" _'SUBFIELDNO
+                               ,"" _  'WORKORDECODE
+                               ,"" _  'LANDOWNER
+                               ,"" _  'FARMMODEL
+                               ,"" _  'WEEKENDING
+                               ,"" _  'ARABLEAREA
+                               ,"" _  'PLANTEDAREA
+                               ,"" _  'CROPYEAR
+                               ,"" _  'PLANTINGDATE
+                               ,"" _  'CROPCLASS
+                               ,"" _  'CROPCLASSDETAIL
+                               ,"" _  'FARMMANAGER
+                               ,"" _  'FARMASSISTANT
+                               ,"" _  'FARMADDRESS
+                               ,"" _  'WORK ORDER ACTIVITY DATE
+                               ,"" _  'AREAOFACTIVITY
+                               ,"" _  'MAJORACTIVITY
+                               ,"" _  'MINORACTIVITY
+                            ,"" _  'VERSION
+                            ,"" _  'CANCELLATIONREMARKS
+                            ,"" _  'REOPENREMARKS
+                            ,"" _  'UPDATEJUSTIFICATION
+                            ,"" _  'DEACTIVATIONREMARKS
+                            ,"" _  'USERNAME
+                            ,"" _  'FURROWDISTANCE
+                            ,"" _  'TOTALSTALKWEIGHT
+                            ,"" _  'EQUIVALENTTONS
+                            ,"" _  'YIELD
+                            ,"" _  'ISMANUAL
+                            ,"" _  'CROPLOGREMARKS
+                            ,""  ) 'TRANS
+                                 
 
-        Dim sql As String = <s>
-                                                       EXEC WORKORDER_HEADER_ACTION
-                                        <%= dgWOHeader.Item(x, "WORKORDERID") %>
-                                        ,0-- MAINWOID
-                                        ,'' -- SUBFIELDNO
-                                        ,'' -- WORKORDERCODE
-                                        ,'' -- LANDOWNER
-                                        ,'' -- FARMMODEL
 
-                                        ,' ' -- WEEKENDING
-                                        ,'' -- ARABLEAREA
-                                        ,'' -- PLANTEDAREA
 
-                                        ,'' -- CROPYEAR
-                                        ,'' -- PLANTINGDATE
-                                        ,'' -- CROPCLASS
-                                        ,'' -- CROPCLASSDETAIL
-
-                                        ,'' -- FARMMANAGER
-                                        ,'' -- FARMASSISTANT
-                                        ,'' -- FARMADDRESS
-
-                                        ,'' -- WORK ORDER ACTIVITY DATE
-                                        ,'' -- AREAOFACTIVITY
-                                        ,'' -- MAJORACTIVITY
-                                        ,'' -- MINORACTIVITY
-                                        ,'' -- VERSION
-                                        
-                                        ,'<%= vremarkInput %>' -- CANCELLATIONREMARKS
-                                        ,'' -- REOPENWOREMARKS
-                                        ,'' -- UPDATEJUSTIFICATION
-
-                                        ,'' -- DEACTIVATIONREMARKS
-                                        ,'<%= RbnUser.Text %>'
-
-                                        ,0 -- FURROWDISTANCE 
-                                        ,0 -- TOTALSTALKWEIGHT
-                                        ,0 --EQUIVALENTTONS
-                                        ,0 -- YIELD
-                                        ,0 -- ISMANUAL
-                                        ,'' -- CROPLOGREMARKS
-                                        ,'CANCEL'
-                            </s>
-        ExeQuery(sql)
         MsgBox("Successfully cancelled transaction.", vbInformation, "VALIDATION")
         POPULATEWOHEADER(vMAINWOID)
         POPULATEWODETAIL(vWOID)

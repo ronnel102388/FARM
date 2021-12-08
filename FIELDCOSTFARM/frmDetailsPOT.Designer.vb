@@ -79,6 +79,7 @@ Partial Class frmDetailsPOT
         Me.dgFieldInfo = New C1.Win.C1FlexGrid.C1FlexGrid()
         Me.xCROPCLASS = New System.Windows.Forms.ComboBox()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.X = New System.Windows.Forms.Label()
         Me.Panel6 = New System.Windows.Forms.Panel()
@@ -93,7 +94,6 @@ Partial Class frmDetailsPOT
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.dgFIELDCOST = New C1.Win.C1FlexGrid.C1FlexGrid()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.PanelHeader.SuspendLayout()
         Me.Panel13.SuspendLayout()
@@ -713,6 +713,14 @@ Partial Class frmDetailsPOT
         Me.Panel3.Size = New System.Drawing.Size(1340, 50)
         Me.Panel3.TabIndex = 123206
         '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(1215, 12)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox1.TabIndex = 123173
+        Me.TextBox1.Visible = False
+        '
         'Panel5
         '
         Me.Panel5.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -877,13 +885,6 @@ Partial Class frmDetailsPOT
         Me.dgFIELDCOST.StyleInfo = resources.GetString("dgFIELDCOST.StyleInfo")
         Me.dgFIELDCOST.TabIndex = 300
         Me.dgFIELDCOST.VisualStyle = C1.Win.C1FlexGrid.VisualStyle.System
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(1215, 12)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox1.TabIndex = 123173
         '
         'frmDetailsPOT
         '
