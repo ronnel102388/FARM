@@ -235,106 +235,72 @@ Public Class FRM_CREATION_WORKORDERS
 
         If vMAINWOID = 0 Then
             Dim vMAINWOCODE As String = drl_GenerateCodeMAINWO()
-
-            Dim sql As String = <s>
-                                    EXEC WORKORDER_MAIN_ACTION 
-                                    0
-                                    ,'<%= vMAINWOCODE %>' --MAINWOCODE
-                                    ,'<%= xCBOSUBFIELDNO.Text %>' --SUBFIELDNO
-                                    ,'<%= xCROPCLASSDETAIL.Text %>' --CROPCLASSDETAIL
-                                    ,'<%= xCROPYEAR.Text %>' --CROPYEAR
-                                    ,0  -- ISCLOSED
-                                    ,'' -- REMARKS
-                                    ,'' -- ISREOPEN
-                                    ,'' -- REOPENRMAINWOREMARKS
-                                    ,'<%= FRMWORKORDERS.RbnUser.Text %>' -- CREATEDBY
-                                    ,0  --ISCROPLOGGED
-                                    ,'INSERT'
-                                </s>
-            ExeReader(sql)
-            While dr.Read
-                vMAINWOID = dr.Item("ID")
-            End While
-            dr.Close()
-            Conn.Close()
+            vMAINWOID = drl_MAIN_EXECUTE_INSERT(0, 'MAINWOID
+                                     vMAINWOCODE, 'MAINWOCODE
+                                     xCBOSUBFIELDNO.Text, 'SUBFIELDNO
+                                     xCROPCLASSDETAIL.Text, 'CROPCLASSDETAIL
+                                     xCROPYEAR.Text, 'CROPYEAR
+                                     "", 'REMARKS
+                                     "", 'REOPENREMARKS
+                                     FRMWORKORDERS.RbnUser.Text, 'USERNAME
+                                     "INSERT" 'TRANS
+                                     )
         End If
 
         If vWOID = 0 Then
             xWOCODE.Text = drl_GenerateCodeWORKORDER()
-            Dim sql As String = <s>
-                                    EXEC WORKORDER_HEADER_ACTION
-                                        0 --WORKORDERID
-
-                                        ,<%= vMAINWOID %> -- MAINWOID
-                                        ,'<%= xCBOSUBFIELDNO.Text %>' -- SUBFIELDNO
-                                        ,'<%= xWOCODE.Text %>' -- WORKORDERCODE
-                                        ,'<%= xLANDOWNER.Text %>' -- LANDOWNER
-                                        ,'<%= xFARMMODEL.Text %>' -- FARMMODEL
-
-                                        ,'<%= drl_GetLastDayOfWeek(xDTPWOACTIVITYDATE.Value) %>' -- WEEKENDING
-                                        ,'<%= Val(xARABLEAREA.Text) %>' -- ARABLEAREA
-                                        ,'<%= Val(xPLANTEDAREA.Text) %>' -- PLANTEDAREA
-
-                                        ,'<%= xCROPYEAR.Text %>' -- CROPYEAR
-                                        ,'<%= xPLANTINGDATE.Text %>' -- PLANTINGDATE
-                                        ,'<%= xCROPCLASS.Text %>' -- CROPCLASS
-                                        ,'<%= xCROPCLASSDETAIL.Text %>' -- CROPCLASSDETAIL
-
-                                        ,'<%= xFARMMANAGER.Text %>' -- FARMMANAGER
-                                        ,'<%= xFARMASSISTANT.Text %>' -- FARMASSISTANT
-                                        ,'<%= xFARMADDRESS.Text %>' -- FARMADDRESS
-
-                                        ,'<%= xDTPWOACTIVITYDATE.Value.ToShortDateString %>' -- WORK ORDER ACTIVITY DATE
-                                        ,'<%= Val(xAREAOFACTIVITY.Text) %>' -- AREAOFACTIVITY
-                                        ,'<%= xCBOMAJORACTIVITY.Text %>' -- MAJORACTIVITY
-                                        ,'<%= xCBOMINORACTIVITY.Text %>' -- MINORACTIVITY
-                                        ,'<%= xVERSION.Text %>' -- VERSION
-                                        
-                                        ,'' -- CANCELLATIONREMARKS
-                                        ,'' -- REOPENWOREMARKS
-                                        ,'' -- UPDATEJUSTIFICATION
-
-                                        ,'' -- DEACTIVATIONREMARKS
-                                        ,'<%= FRMWORKORDERS.RbnUser.Text %>'
-
-                                        ,0 -- FURROWDISTANCE 
-                                        ,0 -- TOTALSTALKWEIGHT
-                                        ,0 --EQUIVALENTTONS
-                                        ,0 -- YIELD
-                                        ,0 -- ISMANUAL
-                                        ,'' -- CROPLOGREMARKS
-                                        ,'INSERT'
-                                </s>
-            ExeReader(sql)
-            While dr.Read
-                vWOID = dr.Item("ID").ToString
-            End While
-            dr.Close()
-            Conn.Close()
-
+            vWOID = drl_HEADER_EXECUTE_INSERT(vWOID, 'WOID
+                            vMAINWOID, 'MAINWOID
+                           xCBOSUBFIELDNO.Text, 'SUBFIELDNO
+                           xWOCODE.Text,  'WORKORDECODE
+                           xLANDOWNER.Text,  'LANDOWNER
+                           xFARMMODEL.Text,  'FARMMODEL
+                           drl_GetLastDayOfWeek(xDTPWOACTIVITYDATE.Value),  'WEEKENDING
+                           xARABLEAREA.Text,  'ARABLEAREA
+                           xPLANTEDAREA.Text,  'PLANTEDAREA
+                           xCROPYEAR.Text,  'CROPYEAR
+                           xPLANTINGDATE.Text,  'PLANTINGDATE
+                           xCROPCLASS.Text,  'CROPCLASS
+                           xCROPCLASSDETAIL.Text,  'CROPCLASSDETAIL
+                           xFARMMANAGER.Text,  'FARMMANAGER
+                           xFARMASSISTANT.Text,  'FARMASSISTANT
+                           xFARMADDRESS.Text,  'FARMADDRESS
+                           xDTPWOACTIVITYDATE.Value.ToShortDateString,  'WORK ORDER ACTIVITY DATE
+                           xAREAOFACTIVITY.Text,  'AREAOFACTIVITY
+                           xCBOMAJORACTIVITY.Text,  'MAJORACTIVITY
+                           xCBOMINORACTIVITY.Text,  'MINORACTIVITY
+                           xVERSION.Text,  'VERSION
+                           "",  'CANCELLATIONREMARKS
+                           "",  'REOPENREMARKS
+                           "",  'UPDATEJUSTIFICATION
+                           "",  'DEACTIVATIONREMARKS
+                           FRMWORKORDERS.RbnUser.Text,  'USERNAME
+                           "",  'FURROWDISTANCE
+                           "",  'TOTALSTALKWEIGHT
+                           "",  'EQUIVALENTTONS
+                           "",  'YIELD
+                           "",  'ISMANUAL
+                           "",  'CROPLOGREMARKS
+                           "INSERT") 'TRANS
             With dgWOres
                 For x As Integer = 1 To .Rows.Count - 1
                     If .Rows(x).IsNode = False Then
                         If .Item(x, "STATUS") = "INSERT" Then
                             Dim vWORESCODE As String = drl_GenerateCodeWORESOURCE()
-
-                            Dim sqlx As String = <s>
-                                                EXEC WORKORDER_DETAIL_ACTION
-                                                 0   
-                                                ,'<%= vWORESCODE %>' -- WORKORDERRESOURCECODE
-                                                ,<%= vWOID %>-- WORKORDERID
-                                                ,'<%= xWOCODE.Text %>' -- WORKORDERCODE
-                                                ,<%= .Item(x, "PLANQTY") %> -- PLANQTY
-                                                ,<%= .Item(x, "POTID") %> -- POTID
-                                                ,'<%= .Item(x, "UNITPRICE") %>' -- UNITPRICE
-                                                ,'<%= .Item(x, "COSTPRICE") %>' -- COSTPRICE
-                                                ,'<%= .Item(x, "JUSTIFICATION") %>' -- JUSTIFICATION
-                                                ,'<%= .Item(x, "DEACTIVATIONREMARKS") %>' -- DEACTIVATIONREMARKS
-                                                ,'<%= FRMWORKORDERS.RbnUser.Text %>' -- CREATEDBY
-                                                ,1  --ISACTIVE
-                                                ,'INSERT'
-                                             </s>
-                            ExeQuery(sqlx)
+                            drl_DETAIL_EXECUTE_INSERT(0,
+                                                 vWORESCODE, 'WORKORDERRESOURCECODE
+                                                 vWOID, 'WORKORDERID
+                                                 xWOCODE.Text, 'WORKORDERCODE
+                                                 .Item(x, "PLANQTY"), 'PLANQTY
+                                                 .Item(x, "POTID"), 'POTID
+                                                 .Item(x, "UNITPRICE"), 'UNITPRICE
+                                                 .Item(x, "COSTPRICE"), 'COSTPRICE
+                                                 .Item(x, "JUSTIFICATION"), 'JUSTIFICATION
+                                                 .Item(x, "DEACTIVATIONREMARKS"), 'DEACTIVATIONREMARKS
+                                                 FRMWORKORDERS.RbnUser.Text, 'CREATEDBY
+                                                 1, 'ISACTIVE
+                                                "INSERT" 'TRANS             
+                                                     )
                         End If
                     End If
                 Next

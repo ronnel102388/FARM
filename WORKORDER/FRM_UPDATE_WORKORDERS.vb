@@ -223,122 +223,97 @@ Public Class FRM_UPDATE_WORKORDERS
             Exit Sub
         End If
 
+        drl_HEADER_EXECUTE_UCCR(vWOID, 'WOID
+                                 vMAINWOID, 'MAINWOID
+                                xCBOSUBFIELDNO.Text, 'SUBFIELDNO
+                                xWOCODE.Text,  'WORKORDECODE
+                                xLANDOWNER.Text,  'LANDOWNER
+                                xFARMMODEL.Text,  'FARMMODEL
+                                drl_GetLastDayOfWeek(xDTPWOACTIVITYDATE.Value),  'WEEKENDING
+                                xARABLEAREA.Text,  'ARABLEAREA
+                                xPLANTEDAREA.Text,  'PLANTEDAREA
+                                xCROPYEAR.Text,  'CROPYEAR
+                                xPLANTINGDATE.Text,  'PLANTINGDATE
+                                xCROPCLASS.Text,  'CROPCLASS
+                                xCROPCLASSDETAIL.Text,  'CROPCLASSDETAIL
+                                xFARMMANAGER.Text,  'FARMMANAGER
+                                xFARMASSISTANT.Text,  'FARMASSISTANT
+                                xFARMADDRESS.Text,  'FARMADDRESS
+                                xDTPWOACTIVITYDATE.Value.ToShortDateString,  'WORK ORDER ACTIVITY DATE
+                                xAREAOFACTIVITY.Text,  'AREAOFACTIVITY
+                                xCBOMAJORACTIVITY.Text,  'MAJORACTIVITY
+                                xCBOMINORACTIVITY.Text,  'MINORACTIVITY
+                                xVERSION.Text,  'VERSION
+                                "",  'CANCELLATIONREMARKS
+                                "",  'REOPENREMARKS
+                                "",  'UPDATEJUSTIFICATION
+                                "",  'DEACTIVATIONREMARKS
+                                FRMWORKORDERS.RbnUser.Text,  'USERNAME
+                                "",  'FURROWDISTANCE
+                                "",  'TOTALSTALKWEIGHT
+                                "",  'EQUIVALENTTONS
+                                "",  'YIELD
+                                "",  'ISMANUAL
+                                "",  'CROPLOGREMARKS
+                                "UPDATE") 'TRANS
 
+        If vMINOR <> xCBOMINORACTIVITY.Text Then
 
-        If vWOID <> 0 Then
-            Dim sql As String = <s>
-                                    EXEC WORKORDER_HEADER_ACTION
-                                        <%= vWOID %>
-                                        ,<%= vMAINWOID %> -- MAINWOID
-                                        ,'<%= xCBOSUBFIELDNO.Text %>' -- SUBFIELDNO
-                                        ,'<%= xWOCODE.Text %>' -- WORKORDERCODE
-                                        ,'<%= xLANDOWNER.Text %>' -- LANDOWNER
-                                        ,'<%= xFARMMODEL.Text %>' -- FARMMODEL
-
-                                        ,'<%= drl_GetLastDayOfWeek(xDTPWOACTIVITYDATE.Value) %>' -- WEEKENDING
-                                        ,'<%= Val(xARABLEAREA.Text) %>' -- ARABLEAREA
-                                        ,'<%= Val(xPLANTEDAREA.Text) %>' -- PLANTEDAREA
-
-                                        ,'<%= xCROPYEAR.Text %>' -- CROPYEAR
-                                        ,'<%= xPLANTINGDATE.Text %>' -- PLANTINGDATE
-                                        ,'<%= xCROPCLASS.Text %>' -- CROPCLASS
-                                        ,'<%= xCROPCLASSDETAIL.Text %>' -- CROPCLASSDETAIL
-
-                                        ,'<%= xFARMMANAGER.Text %>' -- FARMMANAGER
-                                        ,'<%= xFARMASSISTANT.Text %>' -- FARMASSISTANT
-                                        ,'<%= xFARMADDRESS.Text %>' -- FARMADDRESS
-
-                                        ,'<%= xDTPWOACTIVITYDATE.Value.ToShortDateString %>' -- WORK ORDER ACTIVITY DATE
-                                        ,'<%= Val(xAREAOFACTIVITY.Text) %>' -- AREAOFACTIVITY
-                                        ,'<%= xCBOMAJORACTIVITY.Text %>' -- MAJORACTIVITY
-                                        ,'<%= xCBOMINORACTIVITY.Text %>' -- MINORACTIVITY
-                                        ,'<%= xVERSION.Text %>' -- VERSION
-                                        
-                                        ,'' -- CANCELLATIONREMARKS
-                                        ,'' -- REOPENWOREMARKS
-                                        ,'<%= vJUSTIFIATION %>' -- UPDATEJUSTIFICATION
-
-                                        ,'' -- DEACTIVATIONREMARKS
-                                        ,'<%= FRMWORKORDERS.RbnUser.Text %>'
-
-                                        ,0 -- FURROWDISTANCE 
-                                        ,0 -- TOTALSTALKWEIGHT
-                                        ,0 --EQUIVALENTTONS
-                                        ,0 -- YIELD
-                                        ,0 -- ISMANUAL
-                                        ,'' -- CROPLOGREMARKS
-                                        ,'UPDATE'
-                                </s>
-            ExeQuery(sql)
-
-
-            If vMINOR <> xCBOMINORACTIVITY.Text Then
-                Dim sqlx As String = <s>
-                                        EXEC WORKORDER_DETAIL_ACTION
-                                         0
-                                        ,'' -- WORKORDERRESOURCECODE
-                                        ,<%= vWOID %> -- WORKORDERID
-                                        ,'' -- WORKORDERCODE
-                                        ,0 -- PLANQTY
-                                        ,0 -- POTID
-                                        ,0 -- UNITPRICE
-                                        ,0 -- COSTPRICE
-                                        ,'' -- JUSTIFICATION
-                                        ,'' -- DEACTIVATIONREMARKS
-                                        ,'<%= FRMWORKORDERS.RbnUser.Text %>' -- CREATEDBY
-                                        ,0 -- ISACTIVE
-                                        ,'UPDATE'
-                                     </s>
-                ExeQuery(sqlx)
-            End If
-
-
-            Dim sqly As String = ""
-            With dgWOres
-                For x As Integer = 1 To .Rows.Count - 1
-                    If .Rows(x).IsNode = False Then
-                        If .Item(x, "STATUS") = "INSERT" Then
-                            Dim vWORESCODE As String = drl_GenerateCodeWORESOURCE()
-                            sqly = <s>
-                                                EXEC WORKORDER_DETAIL_ACTION
-                                                 0  
-                                                ,'<%= vWORESCODE %>' -- WORKORDERRESOURCECODE
-                                                ,<%= vWOID %>-- WORKORDERID
-                                                ,'<%= xWOCODE.Text %>' -- WORKORDERCODE
-                                                ,<%= .Item(x, "PLANQTY") %> -- PLANQTY
-                                                ,<%= .Item(x, "POTID") %> -- POTID
-                                                ,'<%= .Item(x, "UNITPRICE") %>' -- UNITPRICE
-                                                ,'<%= .Item(x, "COSTPRICE") %>' -- COSTPRICE
-                                                ,'<%= .Item(x, "JUSTIFICATION") %>' -- JUSTIFICATION
-                                                ,'<%= .Item(x, "DEACTIVATIONREMARKS") %>' -- DEACTIVATIONREMARKS
-                                                ,'<%= FRMWORKORDERS.RbnUser.Text %>' -- CREATEDBY
-                                                ,1
-                                                ,'INSERT'
-                                             </s>
-                            ExeQuery(sqly)
-                        ElseIf .Item(x, "STATUS") = "CHANGED" Then
-                            sqly = <s>
-                                                EXEC WORKORDER_DETAIL_ACTION
-                                                 <%= .Item(x, "WORKORDERRESOURCEID") %> -- WORKORDERRESOURCEID
-                                                ,'<%= .Item(x, "WORKORDERRESOURCECODE") %>' -- WORKORDERRESOURCECODE
-                                                ,<%= vWOID %>-- WORKORDERID
-                                                ,'<%= xWOCODE.Text %>' -- WORKORDERCODE
-                                                ,<%= .Item(x, "PLANQTY") %> -- PLANQTY
-                                                ,<%= .Item(x, "POTID") %> -- POTID
-                                                ,'<%= .Item(x, "UNITPRICE") %>' -- UNITPRICE
-                                                ,'<%= .Item(x, "COSTPRICE") %>' -- COSTPRICE
-                                                ,'<%= .Item(x, "JUSTIFICATION") %>' -- JUSTIFICATION
-                                                ,'<%= .Item(x, "DEACTIVATIONREMARKS") %>' -- DEACTIVATIONREMARKS
-                                                ,'<%= FRMWORKORDERS.RbnUser.Text %>' -- CREATEDBY
-                                                ,'<%= Convert.ToInt32(.Item(x, "TAG")) %>' -- ISACTIVE
-                                                ,'CHANGED'
-                                       </s>
-                            ExeQuery(sqly)
-                        End If
-                    End If
-                Next
-            End With
+            drl_DETAIL_EXECUTE_INSERT(0,
+                                "", 'WORKORDERRESOURCECODE
+                                vWOID, 'WORKORDERID
+                                xWOCODE.Text, 'WORKORDERCODE
+                                "", 'PLANQTY
+                                "", 'POTID
+                                "", 'UNITPRICE
+                                "", 'COSTPRICE
+                                "", 'JUSTIFICATION
+                                "", 'DEACTIVATIONREMARKS
+                                FRMWORKORDERS.RbnUser.Text, 'CREATEDBY
+                                0, 'ISACTIVE
+                                "INSERT" 'TRANS             
+                                    )
         End If
+
+        Dim sqly As String = ""
+        With dgWOres
+            For x As Integer = 1 To .Rows.Count - 1
+                If .Rows(x).IsNode = False Then
+                    If .Item(x, "STATUS") = "INSERT" Then
+                        Dim vWORESCODE As String = drl_GenerateCodeWORESOURCE()
+                        drl_DETAIL_EXECUTE_INSERT(0,
+                                                 vWORESCODE, 'WORKORDERRESOURCECODE
+                                                 vWOID, 'WORKORDERID
+                                                 xWOCODE.Text, 'WORKORDERCODE
+                                                 .Item(x, "PLANQTY"), 'PLANQTY
+                                                 .Item(x, "POTID"), 'POTID
+                                                 .Item(x, "UNITPRICE"), 'UNITPRICE
+                                                 .Item(x, "COSTPRICE"), 'COSTPRICE
+                                                 .Item(x, "JUSTIFICATION"), 'JUSTIFICATION
+                                                 .Item(x, "DEACTIVATIONREMARKS"), 'DEACTIVATIONREMARKS
+                                                 FRMWORKORDERS.RbnUser.Text, 'CREATEDBY
+                                                 1, 'ISACTIVE
+                                                "INSERT" 'TRANS             
+                                                     )
+                    ElseIf .Item(x, "STATUS") = "CHANGED" Then
+                        drl_DETAIL_EXECUTE_INSERT(.Item(x, "WORKORDERRESOURCEID"),
+                                                  .Item(x, "WORKORDERRESOURCECODE"), 'WORKORDERRESOURCECODE
+                                                  vWOID, 'WORKORDERID
+                                                  xWOCODE.Text, 'WORKORDERCODE
+                                                 .Item(x, "PLANQTY"), 'PLANQTY
+                                                 .Item(x, "POTID"), 'POTID
+                                                 .Item(x, "UNITPRICE"), 'UNITPRICE
+                                                 .Item(x, "COSTPRICE"), 'COSTPRICE
+                                                 .Item(x, "JUSTIFICATION"), 'JUSTIFICATION
+                                                 .Item(x, "DEACTIVATIONREMARKS"), 'DEACTIVATIONREMARKS
+                                                 FRMWORKORDERS.RbnUser.Text, 'CREATEDBY
+                                                 Convert.ToInt32(.Item(x, "TAG")), 'ISACTIVE
+                                                 "CHANGED" 'TRANS             
+                                                     )
+                    End If
+                End If
+            Next
+        End With
 
         MsgBox("WorkOrder SuccessFully Saved", vbInformation, "VALIDATION")
 
