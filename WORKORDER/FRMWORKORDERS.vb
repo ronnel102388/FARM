@@ -504,6 +504,11 @@ Public Class FRMWORKORDERS
 
 
     End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
+    End Sub
+
     Private Sub BtCancelled_Click(sender As Object, e As EventArgs) Handles btCancelledHeader.Click
         If ConTools.CheckAccess(RbnUser.Text, RbnExeCode.Text, "Approval1") = False Then
             MsgBox("You have no access to open work order in this facility", MsgBoxStyle.Information, "Contact System Administrator")
