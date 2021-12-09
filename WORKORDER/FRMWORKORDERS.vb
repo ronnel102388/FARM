@@ -504,6 +504,11 @@ Public Class FRMWORKORDERS
 
 
     End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+
+    End Sub
+
     Private Sub BtCancelled_Click(sender As Object, e As EventArgs) Handles btCancelledHeader.Click
         If dgWOHeader.Rows.Count = 1 Then
             Exit Sub
