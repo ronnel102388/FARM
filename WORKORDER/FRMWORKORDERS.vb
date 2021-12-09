@@ -400,7 +400,7 @@ Public Class FRMWORKORDERS
                     Exit Sub
                 End If
 
-                drl_HEADER_EXECUTE(vWOID,
+                drl_HEADER_EXECUTE_UCCR(vWOID,
                             vMAINWOID, 'MAINWOID
                            "", 'SUBFIELDNO
                            "",  'WORKORDECODE
@@ -460,7 +460,7 @@ Public Class FRMWORKORDERS
                     Exit Sub
                 End If
 
-                drl_HEADER_EXECUTE(vWOID,
+                drl_HEADER_EXECUTE_UCCR(vWOID,
                              vMAINWOID, 'MAINWOID
                             "", 'SUBFIELDNO
                             "",  'WORKORDECODE
@@ -510,6 +510,11 @@ Public Class FRMWORKORDERS
     End Sub
 
     Private Sub BtCancelled_Click(sender As Object, e As EventArgs) Handles btCancelledHeader.Click
+        If ConTools.CheckAccess(RbnUser.Text, RbnExeCode.Text, "Approval1") = False Then
+            MsgBox("You have no access to open work order in this facility", MsgBoxStyle.Information, "Contact System Administrator")
+            Exit Sub
+        End If
+
         If dgWOHeader.Rows.Count = 1 Then
             Exit Sub
         End If
@@ -533,7 +538,7 @@ Public Class FRMWORKORDERS
             MsgBox("Please input remarks.", MsgBoxStyle.Exclamation, "ERROR")
             Exit Sub
         End If
-        drl_HEADER_EXECUTE(vWOID,
+        drl_HEADER_EXECUTE_UCCR(vWOID,
                              vMAINWOID, 'MAINWOID
                             "", 'SUBFIELDNO
                             "",  'WORKORDECODE
@@ -571,5 +576,7 @@ Public Class FRMWORKORDERS
         POPULATEWOHEADER(vMAINWOID)
         POPULATEWODETAIL(vWOID)
         vWOID = 0
+
+
     End Sub
 End Class

@@ -16,8 +16,38 @@
         Return Find
     End Function
 #End Region
-#Region "SUB"
-    Public Sub drl_HEADER_EXECUTE(ByVal WOID As Integer, ByVal MAINWOID As String, ByVal SUBFIELDNO As String,
+#Region "ACTION"
+
+#Region "MAIN - ACTION"
+    Function drl_MAIN_EXECUTE_INSERT(ByVal MAINWOID As Integer, ByVal MAINWOCODE As String, ByVal SUBFIELDNO As String,
+                                      ByVal CROPCLASSDETAIL As String, ByVal CROPYEAR As String, ByVal REMARKS As String,
+                                     ByVal REOPENREMARKS As String, ByVal USERNAME As String, ByVal TRANS As String) As Integer
+        Dim sql As String = <s>
+                                      EXEC WORKORDER_MAIN_ACTION 
+                                    0
+                                    ,'<%= MAINWOCODE %>' --MAINWOCODE
+                                    ,'<%= SUBFIELDNO %>' --SUBFIELDNO
+                                    ,'<%= CROPCLASSDETAIL %>' --CROPCLASSDETAIL
+                                    ,'<%= CROPYEAR %>' --CROPYEAR
+                                    ,'<%= REMARKS %>' -- REMARKS
+                                    ,'<%= REOPENREMARKS %>' -- REOPENRMAINWOREMARKS
+                                    ,'<%= USERNAME %>' -- CREATEDBY
+                                    ,'<%= TRANS %>'
+                            </s>
+        ExeReader(sql)
+        Dim vMAINWOID As Integer = 0
+        While dr.Read
+            vMAINWOID = dr.Item("ID")
+        End While
+        dr.Close()
+        Conn.Close()
+
+        Return vMAINWOID
+    End Function
+
+#End Region
+#Region "HEADER - ACTION"
+    Function drl_HEADER_EXECUTE_INSERT(ByVal WOID As Integer, ByVal MAINWOID As String, ByVal SUBFIELDNO As String,
                        ByVal WOCODE As String, ByVal LANDOWNER As String, ByVal FARMMODEL As String,
                        ByVal WEEKENDING As Date, ByVal ARABLEAREA As Double, ByVal PLANTEDAREA As Double,
                        ByVal CROPYEAR As String, ByVal PLANTINGDATE As String, ByVal CROPCLASS As String,
@@ -27,10 +57,10 @@
                        ByVal CANCELLATIONREMARKS As String, ByVal REOPENREMARKS As String, ByVal UPDATEJUSTIFICATION As String,
                        ByVal DEACTIVATIONREMARKS As String, ByVal USERNAME As String, ByVal FURROWDISTANCE As Double,
                        ByVal TOTALSTALKWEIGHT As Double, ByVal EQUIVALENTTONS As Double, ByVal YIELD As Double,
-                       ByVal ISMANUAL As Integer, ByVal CROPCLOGREMARKS As String, ByVal TRANS As String)
+                       ByVal ISMANUAL As Integer, ByVal CROPCLOGREMARKS As String, ByVal TRANS As String) As Integer
 
         Dim sql As String = <s>
-                                                                                       EXEC WORKORDER_HEADER_ACTION
+                                     EXEC WORKORDER_HEADER_ACTION
                                         <%= WOID %> -- WORKORDERID
                                         ,<%= MAINWOID %>-- MAINWOID
                                         ,'<%= SUBFIELDNO %>' -- SUBFIELDNO
@@ -63,11 +93,97 @@
                                         ,'<%= YIELD %>' -- YIELD
                                         ,'<%= ISMANUAL %>' -- ISMANUAL
                                         ,'<%= CROPCLOGREMARKS %>' -- CROPLOGREMARKS
-                                        ,'<%= TRANS %>'
+                                        ,'<%= TRANS %>' --TRANS
+                            </s>
+        ExeReader(sql)
+        Dim vWOID As Integer = 0
+        While dr.Read
+            vWOID = dr.Item("ID").ToString
+        End While
+        dr.Close()
+        Conn.Close()
+
+        Return vWOID
+    End Function
+
+    Public Sub drl_HEADER_EXECUTE_UCCR(ByVal WOID As Integer, ByVal MAINWOID As String, ByVal SUBFIELDNO As String,
+                       ByVal WOCODE As String, ByVal LANDOWNER As String, ByVal FARMMODEL As String,
+                       ByVal WEEKENDING As Date, ByVal ARABLEAREA As Double, ByVal PLANTEDAREA As Double,
+                       ByVal CROPYEAR As String, ByVal PLANTINGDATE As String, ByVal CROPCLASS As String,
+                       ByVal CROPCLASSDETAIL As String, ByVal FARMMANAGER As String, ByVal FARMASSISTANT As String,
+                       ByVal FARMADDRESS As String, ByVal WOACTIVITYDATE As Date, ByVal AREAOFACTIIVTY As Double,
+                       ByVal MAJORACTIVITY As String, ByVal MINORACTIVITY As String, ByVal VERSION As String,
+                       ByVal CANCELLATIONREMARKS As String, ByVal REOPENREMARKS As String, ByVal UPDATEJUSTIFICATION As String,
+                       ByVal DEACTIVATIONREMARKS As String, ByVal USERNAME As String, ByVal FURROWDISTANCE As Double,
+                       ByVal TOTALSTALKWEIGHT As Double, ByVal EQUIVALENTTONS As Double, ByVal YIELD As Double,
+                       ByVal ISMANUAL As Integer, ByVal CROPCLOGREMARKS As String, ByVal TRANS As String)
+
+        Dim sql As String = <s>
+                                     EXEC WORKORDER_HEADER_ACTION
+                                        <%= WOID %> -- WORKORDERID
+                                        ,<%= MAINWOID %>-- MAINWOID
+                                        ,'<%= SUBFIELDNO %>' -- SUBFIELDNO
+                                        ,'<%= WOCODE %>' -- WORKORDERCODE
+                                        ,'<%= LANDOWNER %>' -- LANDOWNER
+                                        ,'<%= FARMMODEL %>' -- FARMMODEL
+                                        ,'<%= WEEKENDING %>' -- WEEKENDING
+                                        ,'<%= ARABLEAREA %>' -- ARABLEAREA
+                                        ,'<%= PLANTEDAREA %>' -- PLANTEDAREA
+                                        ,'<%= CROPYEAR %>' -- CROPYEAR
+                                        ,'<%= PLANTINGDATE %>' -- PLANTINGDATE
+                                        ,'<%= CROPCLASS %>' -- CROPCLASS
+                                        ,'<%= CROPCLASSDETAIL %>' -- CROPCLASSDETAIL
+                                        ,'<%= FARMMANAGER %>' -- FARMMANAGER
+                                        ,'<%= FARMASSISTANT %>' -- FARMASSISTANT
+                                        ,'<%= FARMADDRESS %>' -- FARMADDRESS
+                                        ,'<%= WOACTIVITYDATE %>' -- WORK ORDER ACTIVITY DATE
+                                        ,'<%= AREAOFACTIIVTY %>' -- AREAOFACTIVITY
+                                        ,'<%= MAJORACTIVITY %>' -- MAJORACTIVITY
+                                        ,'<%= MINORACTIVITY %>' -- MINORACTIVITY
+                                        ,'<%= VERSION %>' -- VERSION
+                                        ,'<%= CANCELLATIONREMARKS %>' -- CANCELLATIONREMARKS
+                                        ,'<%= REOPENREMARKS %>' -- REOPENWOREMARKS
+                                        ,'<%= UPDATEJUSTIFICATION %>' -- UPDATEJUSTIFICATION
+                                        ,'<%= DEACTIVATIONREMARKS %>' -- DEACTIVATIONREMARKS
+                                        ,'<%= USERNAME %>' -- USERNAME
+                                        ,'<%= FURROWDISTANCE %>' -- FURROWDISTANCE 
+                                        ,'<%= TOTALSTALKWEIGHT %>' -- TOTALSTALKWEIGHT
+                                        ,'<%= EQUIVALENTTONS %>' --EQUIVALENTTONS
+                                        ,'<%= YIELD %>' -- YIELD
+                                        ,'<%= ISMANUAL %>' -- ISMANUAL
+                                        ,'<%= CROPCLOGREMARKS %>' -- CROPLOGREMARKS
+                                        ,'<%= TRANS %>' --TRANS
                             </s>
         ExeQuery(sql)
     End Sub
+
 #End Region
+#Region "DETAIL - ACTION"
+    Public Sub drl_DETAIL_EXECUTE_INSERT(ByVal WORESID As Integer, ByVal WORESCODE As String, ByVal WOID As Integer, ByVal WOCODE As String,
+                                         ByVal PLANQTY As Double, ByVal POTID As Integer, ByVal UNITPRICE As Double,
+                                         ByVal COSTPRICE As Double, ByVal JUSTIFICATION As String, ByVal DEACTIVATIONREMARKS As String,
+                                         ByVal USERNAME As String, ByVal ISACTIVE As Integer, ByVal TRANS As String)
+        Dim sql As String = <s>
+                                                EXEC WORKORDER_DETAIL_ACTION
+                                                 <%= WORESID %>   
+                                                ,'<%= WORESCODE %>' -- WORKORDERRESOURCECODE
+                                                ,<%= WOID %>-- WORKORDERID
+                                                ,'<%= WOCODE %>' -- WORKORDERCODE
+                                                ,<%= PLANQTY %> -- PLANQTY
+                                                ,<%= POTID %> -- POTID
+                                                ,'<%= UNITPRICE %>' -- UNITPRICE
+                                                ,'<%= COSTPRICE %>' -- COSTPRICE
+                                                ,'<%= JUSTIFICATION %>' -- JUSTIFICATION
+                                                ,'<%= DEACTIVATIONREMARKS %>' -- DEACTIVATIONREMARKS
+                                                ,'<%= USERNAME %>' -- CREATEDBY
+                                                ,<%= ISACTIVE %>  --ISACTIVE
+                                                ,'<%= TRANS %>'
+                                             </s>
+        ExeQuery(sql)
+    End Sub
+#End Region
+#End Region
+
 
 
     Function drl_CountDFAR(ByVal WOcode As String) As Integer
