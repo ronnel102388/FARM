@@ -376,6 +376,11 @@ Public Class FRMWORKORDERS
     End Sub
 
     Private Sub BtCloseHeader_Click(sender As Object, e As EventArgs) Handles btCloseHeader.Click
+        If ConTools.CheckAccess(RbnUser.Text, RbnExeCode.Text, "Approval1") = False Then
+            MsgBox("You have no access to open work order in this facility", MsgBoxStyle.Information, "Contact System Administrator")
+            Exit Sub
+        End If
+
         If dgWOHeader.Rows.Count = 1 Then
             Exit Sub
         End If
@@ -389,11 +394,53 @@ Public Class FRMWORKORDERS
                 Exit Sub
             End If
 
-            If .Item(x, "ISCLOSE") = True Then
-                If ConTools.CheckAccess(RbnUser.Text, RbnExeCode.Text, "Approval1") = False Then
-                    MsgBox("You have no access to open work order in this facility", MsgBoxStyle.Information, "Contact System Administrator")
+            If .Item(x, "ISCLOSE") = False Then
+
+                If MsgBox("Are You Sure you Want to Open this Work Order?", vbQuestion + vbYesNo + vbDefaultButton2) = vbNo Then
                     Exit Sub
                 End If
+
+                drl_HEADER_EXECUTE(vWOID,
+                            vMAINWOID, 'MAINWOID
+                           "", 'SUBFIELDNO
+                           "",  'WORKORDECODE
+                           "",  'LANDOWNER
+                           "",  'FARMMODEL
+                           "",  'WEEKENDING
+                           "",  'ARABLEAREA
+                           "",  'PLANTEDAREA
+                           "",  'CROPYEAR
+                           "",  'PLANTINGDATE
+                           "",  'CROPCLASS
+                           "",  'CROPCLASSDETAIL
+                           "",  'FARMMANAGER
+                           "",  'FARMASSISTANT
+                           "",  'FARMADDRESS
+                           "",  'WORK ORDER ACTIVITY DATE
+                           "",  'AREAOFACTIVITY
+                           "",  'MAJORACTIVITY
+                           "",  'MINORACTIVITY
+                           "",  'VERSION
+                           "",  'CANCELLATIONREMARKS
+                           "",  'REOPENREMARKS
+                           "",  'UPDATEJUSTIFICATION
+                           "",  'DEACTIVATIONREMARKS
+                           RbnUser.Text,  'USERNAME
+                           "",  'FURROWDISTANCE
+                           "",  'TOTALSTALKWEIGHT
+                           "",  'EQUIVALENTTONS
+                           "",  'YIELD
+                           "",  'ISMANUAL
+                           "",  'CROPLOGREMARKS
+                           "CLOSE") 'TRANS
+
+                MsgBox("Successfully close transaction.", vbInformation, "VALIDATION")
+                POPULATEWOHEADER(vMAINWOID)
+                POPULATEWODETAIL(vWOID)
+                vWOID = 0
+
+            ElseIf .Item(x, "ISCLOSE") = True Then
+
 
                 If dgMAINWO.Item(dgMAINWO.RowSel, "MAINWOID") <> 0 And dgMAINWO.Item(dgMAINWO.RowSel, "ISCLOSED") = 0 Then
                     If MsgBox("Are You Sure you Want to Open this Work Order?", vbQuestion + vbYesNo + vbDefaultButton2) = vbNo Then
@@ -413,52 +460,45 @@ Public Class FRMWORKORDERS
                     Exit Sub
                 End If
 
-                Dim sql As String = <s>
-                                                                            EXEC WORKORDER_HEADER_ACTION
-                                        <%= vWOID %>
-                                        ,<%= vMAINWOID %> -- MAINWOID
-                                        ,'<%= xCBOSUBFIELDNO.Text %>' -- SUBFIELDNO
-                                        ,'<%= xWOCODE.Text %>' -- WORKORDERCODE
-                                        ,'<%= xLANDOWNER.Text %>' -- LANDOWNER
-                                        ,'<%= xFARMMODEL.Text %>' -- FARMMODEL
-
-                                        ,'<%= drl_GetLastDayOfWeek(xDTPWOACTIVITYDATE.Value) %>' -- WEEKENDING
-                                        ,'<%= Val(xARABLEAREA.Text) %>' -- ARABLEAREA
-                                        ,'<%= Val(xPLANTEDAREA.Text) %>' -- PLANTEDAREA
-
-                                        ,'<%= xCROPYEAR.Text %>' -- CROPYEAR
-                                        ,'<%= xPLANTINGDATE.Text %>' -- PLANTINGDATE
-                                        ,'<%= xCROPCLASS.Text %>' -- CROPCLASS
-                                        ,'<%= xCROPCLASSDETAIL.Text %>' -- CROPCLASSDETAIL
-
-                                        ,'<%= xFARMMANAGER.Text %>' -- FARMMANAGER
-                                        ,'<%= xFARMASSISTANT.Text %>' -- FARMASSISTANT
-                                        ,'<%= xFARMADDRESS.Text %>' -- FARMADDRESS
-
-                                        ,'<%= xDTPWOACTIVITYDATE.Value.ToShortDateString %>' -- WORK ORDER ACTIVITY DATE
-                                        ,'<%= Val(xAREAOFACTIVITY.Text) %>' -- AREAOFACTIVITY
-                                        ,'<%= xCBOMAJORACTIVITY.Text %>' -- MAJORACTIVITY
-                                        ,'<%= xCBOMINORACTIVITY.Text %>' -- MINORACTIVITY
-                                        ,'<%= xVERSION.Text %>' -- VERSION
-                                        
-                                        ,'' -- CANCELLATIONREMARKS
-                                        ,'' -- REOPENWOREMARKS
-                                        ,'<%= vJUSTIFIATION %>' -- UPDATEJUSTIFICATION
-
-                                        ,'' -- DEACTIVATIONREMARKS
-                                        ,'<%= FRMWORKORDERS.RbnUser.Text %>'
-
-                                        ,0 -- FURROWDISTANCE 
-                                        ,0 -- TOTALSTALKWEIGHT
-                                        ,0 --EQUIVALENTTONS
-                                        ,0 -- YIELD
-                                        ,0 -- ISMANUAL
-                                        ,'' -- CROPLOGREMARKS
-                                        ,'UPDATE'
-
-                                    </s>
+                drl_HEADER_EXECUTE(vWOID,
+                             vMAINWOID, 'MAINWOID
+                            "", 'SUBFIELDNO
+                            "",  'WORKORDECODE
+                            "",  'LANDOWNER
+                            "",  'FARMMODEL
+                            "",  'WEEKENDING
+                            "",  'ARABLEAREA
+                            "",  'PLANTEDAREA
+                            "",  'CROPYEAR
+                            "",  'PLANTINGDATE
+                            "",  'CROPCLASS
+                            "",  'CROPCLASSDETAIL
+                            "",  'FARMMANAGER
+                            "",  'FARMASSISTANT
+                            "",  'FARMADDRESS
+                            "",  'WORK ORDER ACTIVITY DATE
+                            "",  'AREAOFACTIVITY
+                            "",  'MAJORACTIVITY
+                            "",  'MINORACTIVITY
+                            "",  'VERSION
+                            "",  'CANCELLATIONREMARKS
+                            vREOPENREMARKS,  'REOPENREMARKS
+                            "",  'UPDATEJUSTIFICATION
+                            "",  'DEACTIVATIONREMARKS
+                            RbnUser.Text,  'USERNAME
+                            "",  'FURROWDISTANCE
+                            "",  'TOTALSTALKWEIGHT
+                            "",  'EQUIVALENTTONS
+                            "",  'YIELD
+                            "",  'ISMANUAL
+                            "",  'CROPLOGREMARKS
+                            "REOPEN") 'TRANS
 
 
+                MsgBox("Successfully re-open transaction.", vbInformation, "VALIDATION")
+                POPULATEWOHEADER(vMAINWOID)
+                POPULATEWODETAIL(vWOID)
+                vWOID = 0
             End If
         End With
 
@@ -477,14 +517,14 @@ Public Class FRMWORKORDERS
             Exit Sub
         End If
 
-        Dim vremarkInput As String = ""
+        Dim vCANCELLATIONREMARKS As String = ""
 
         If MsgBox("Are you sure you want to cancel this this transaction?", vbQuestion + vbYesNo + vbDefaultButton2, "VALIDATION") = vbNo Then
             Exit Sub
         End If
 
-        vremarkInput = InputBox("Enter your remarks:", "REMARKS", "")
-        If vremarkInput = "" Then
+        vCANCELLATIONREMARKS = InputBox("Enter your remarks:", "REMARKS", "")
+        If vCANCELLATIONREMARKS = "" Then
             MsgBox("Please input remarks.", MsgBoxStyle.Exclamation, "ERROR")
             Exit Sub
         End If
@@ -509,21 +549,18 @@ Public Class FRMWORKORDERS
                             "",  'MAJORACTIVITY
                             "",  'MINORACTIVITY
                             "",  'VERSION
-                            "",  'CANCELLATIONREMARKS
+                            vCANCELLATIONREMARKS,  'CANCELLATIONREMARKS
                             "",  'REOPENREMARKS
                             "",  'UPDATEJUSTIFICATION
                             "",  'DEACTIVATIONREMARKS
-                            "",  'USERNAME
+                            RbnUser.Text,  'USERNAME
                             "",  'FURROWDISTANCE
                             "",  'TOTALSTALKWEIGHT
                             "",  'EQUIVALENTTONS
                             "",  'YIELD
                             "",  'ISMANUAL
                             "",  'CROPLOGREMARKS
-                            "") 'TRANS
-
-
-
+                            "CANCEL") 'TRANS
 
         MsgBox("Successfully cancelled transaction.", vbInformation, "VALIDATION")
         POPULATEWOHEADER(vMAINWOID)
