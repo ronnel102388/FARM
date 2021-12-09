@@ -312,7 +312,7 @@ and Employee = '<%= FM %>'
         With frmDetailsPOT
             .FM = DGCOSTPERFIELD.Item(i, "FARMMANAGER").ToString
             '.FA = DGCOSTPERFIELD.Item(i, "FARMASSISTANT").ToString
-            '.TMPID = DGCOSTPERFIELD.Item(i, "TEMPID").ToString
+            .CY = DGCOSTPERFIELD.Item(i, "CROPYEAR").ToString
             .CC = DGCOSTPERFIELD.Item(i, "cropclassdetail").ToString
             .SF = DGCOSTPERFIELD.Item(i, "SUBFIELDNO").ToString
             .AREA = DGCOSTPERFIELD.Item(i, "PRODUCTIVEAREA").ToString

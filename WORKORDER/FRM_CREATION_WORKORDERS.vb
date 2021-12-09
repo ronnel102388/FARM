@@ -348,8 +348,6 @@ Public Class FRM_CREATION_WORKORDERS
             xCBOSUBFIELDNO.Enabled = False
         End If
     End Sub
-
-
     Private Sub FRM_CREATION_WORKORDERS_FormClosed(sender As Object, e As FormClosedEventArgs) Handles Me.FormClosed
         Me.Dispose()
     End Sub

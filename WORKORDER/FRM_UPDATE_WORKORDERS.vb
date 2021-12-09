@@ -111,7 +111,6 @@ Public Class FRM_UPDATE_WORKORDERS
         End With
     End Sub
 #End Region
-
 #Region "FORM CONTROL EVENTS"
     Private Sub XCBOMAJORACTIVITY_SelectedIndexChanged(sender As Object, e As EventArgs) Handles xCBOMAJORACTIVITY.SelectedIndexChanged
         If xCBOMAJORACTIVITY.SelectedIndex = -1 Or xCBOMAJORACTIVITY.Text = "" Then
@@ -271,7 +270,7 @@ Public Class FRM_UPDATE_WORKORDERS
                                 "", 'DEACTIVATIONREMARKS
                                 FRMWORKORDERS.RbnUser.Text, 'CREATEDBY
                                 0, 'ISACTIVE
-                                "INSERT" 'TRANS             
+                                "UPDATE" 'TRANS             
                                     )
         End If
 

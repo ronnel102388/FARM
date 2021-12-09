@@ -181,10 +181,9 @@
                                              </s>
         ExeQuery(sql)
     End Sub
+
 #End Region
 #End Region
-
-
 
     Function drl_CountDFAR(ByVal WOcode As String) As Integer
         Dim sql As String = <s>

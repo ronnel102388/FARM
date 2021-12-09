@@ -67,9 +67,9 @@ Public Class frmDetailsPOT
         End Try
 
     End Sub
-    Sub FIELDINFO(ByVal fm As String, sf As String, ByVal iscb As Integer, ByVal type As String, ByVal cc As String)
+    Sub FIELDINFO(ByVal fm As String, sf As String, ByVal iscb As Integer, ByVal type As String, ByVal cc As String, ByVal cy As String)
         Dim sql As String = <S>
-                              EXEC FM_LIST_POT_DETAIL '<%= fm %>','<%= cc %>', '<%= sf %>', <%= iscb %>, '<%= type %>'
+                              EXEC FM_LIST_POT_DETAIL '<%= fm %>','<%= cc %>', '<%= sf %>', <%= iscb %>, '<%= type %>', '<%= cy %>'
                             </S>
 
         dtINFO = ConTools.DataReader(SConn, sql)
@@ -104,6 +104,7 @@ Public Class frmDetailsPOT
             .Cols("ACTIVITYDATE").TextAlign = TextAlignEnum.CenterCenter
         End With
 
+
         setgrid()
 
     End Sub
@@ -128,11 +129,10 @@ Public Class frmDetailsPOT
             .Subtotal(AggregateEnum.Sum, -1, -1, -1, .Cols("BUDGETCOST").Index, "{0}")
             '.Cols.Frozen = 4
             '.AutoSizeCols()
-
         End With
     End Sub
 
-    Private Sub DgFIELDCOST_Click(sender As Object, e As EventArgs) Handles dgFIELDCOST.Click
+    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
 
     End Sub
 
@@ -140,9 +140,6 @@ Public Class frmDetailsPOT
         POPULATECROPCLASS(SF)
         LBLFARMMANAGER.Text = FM.ToUpper
 
-        xLBLACTUALCOST.Text = Format(vACTUAL, "n0")
-        xLBLLABORHAUL.Text = Format(vLABORHAUL, "n0")
-        XGRANDTOTAL.Text = Format(Val(vACTUAL) + Val(vLABORHAUL), "n0")
 
         'POPULATEDETAILS()
     End Sub
@@ -232,44 +229,48 @@ Public Class frmDetailsPOT
         End Try
     End Sub
     Private Sub xCROPCLASS_SelectedIndexChanged(sender As Object, e As EventArgs) Handles xCROPCLASS.SelectedIndexChanged
-        'Try
+        Try
 
-        FIELDINFO(FM, SF, isCB, TP, xCROPCLASS.Text)
-        With dgFieldInfo
+            FIELDINFO(FM, SF, isCB, TP, xCROPCLASS.Text, CY)
+            With dgFieldInfo
                 .Rows.Count = 0
-                For x As Integer = 0 To dtINFO.Rows.Count - 1
-
-
-                    For i As Integer = 0 To dtINFO.Columns.Count - 1
-                        If xCROPCLASS.SelectedIndex <> 0 Then
+            For x As Integer = 0 To dtINFO.Rows.Count - 1
+                For i As Integer = 0 To dtINFO.Columns.Count - 1
+                    If xCROPCLASS.SelectedIndex <> 0 Then
                         If dtINFO.Columns(i).Caption = "MAINWOID" Or dtINFO.Columns(i).Caption = "WORKORDERID" Or dtINFO.Columns(i).Caption = "AGEOFCANEMONTH" Or
-                            dtINFO.Columns(i).Caption.Contains("COST") Or dtINFO.Columns(i).Caption = "VARIANCE" Or dtINFO.Columns(i).Caption = "REMARKS" Then
-
-                        Else
+                                dtINFO.Columns(i).Caption.Contains("COST") Or dtINFO.Columns(i).Caption = "VARIANCE" Or dtINFO.Columns(i).Caption = "REMARKS" Then
+                                xLBLACTUALCOST.Text = Format(dtINFO(x)("ACTUALCOST"), "N0")
+                                xLBLLABORHAUL.Text = Format(dtINFO(x)("LABORHAULCOST"), "n0")
+                                XGRANDTOTAL.Text = Format(Val(dtINFO(x)("ACTUALCOST")) + Val(dtINFO(x)("LABORHAULCOST")), "n0")
+                            Else
                             .Rows.Add()
-                                .Item(.Rows.Count - 1, 0) = dtINFO.Columns(i).Caption
+                            .Item(.Rows.Count - 1, 0) = dtINFO.Columns(i).Caption
                             .Item(.Rows.Count - 1, 1) = ":" & dtINFO(x)(i).ToString
                         End If
-                        Else
+                    Else
                         If dtINFO.Columns(i).Caption = "MAINWOID" Or dtINFO.Columns(i).Caption = "WORKORDERID" Or
-                                    dtINFO.Columns(i).Caption.Contains("COST") Or dtINFO.Columns(i).Caption = "VARIANCE" Or dtINFO.Columns(i).Caption = "REMARKS" Then
-
-                        Else
+                                            dtINFO.Columns(i).Caption.Contains("COST") Or dtINFO.Columns(i).Caption = "VARIANCE" Or dtINFO.Columns(i).Caption = "REMARKS" Then
+                                xLBLACTUALCOST.Text = Format(dtINFO(x)("ACTUALCOST"), "N0")
+                                xLBLLABORHAUL.Text = Format(dtINFO(x)("LABORHAULCOST"), "n0")
+                                XGRANDTOTAL.Text = Format(Val(dtINFO(x)("ACTUALCOST")) + Val(dtINFO(x)("LABORHAULCOST")), "n0")
+                            Else
                             .Rows.Add()
-                                .Item(.Rows.Count - 1, 0) = dtINFO.Columns(i).Caption
-                                .Item(.Rows.Count - 1, 1) = ":" & dtINFO(x)(i).ToString
-                            End If
+                            .Item(.Rows.Count - 1, 0) = dtINFO.Columns(i).Caption
+                            .Item(.Rows.Count - 1, 1) = ":" & dtINFO(x)(i).ToString
                         End If
-                    Next
+                    End If
                 Next
-                .AutoSizeCols()
+            Next
+            .AutoSizeCols()
                 .ExtendLastCol = True
             End With
             POPULATEDETAILS(FM, dtINFO(0)("CROPCLASS").ToString, isCB, TP, SF, dtINFO(0)("AREA"))
-        'Catch ex As Exception
-        '    POPULATEDETAILS(FM, "", isCB, TP, SF, 0)
-        '    MsgBox(ex.Message)
-        'End Try
+
+
+        Catch ex As Exception
+        POPULATEDETAILS(FM, "", isCB, TP, SF, 0)
+        MsgBox(ex.Message)
+        End Try
 
     End Sub
 
